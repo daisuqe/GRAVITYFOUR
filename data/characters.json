@@ -1,0 +1,3096 @@
+{
+  "source": "E:\\User\\Daisuke\\Unity\\GRAVITYFOUR\\data\\human01.psd",
+  "source_sha256": "7719c46d359d4e6867a4c25eb9d10fc37c9f3eb9257d9141cc7c74d20a48c4aa",
+  "seed": 20260923,
+  "count": 99,
+  "palette_sizes": {
+    "hair": 13,
+    "cloth": 16,
+    "skin": 4
+  },
+  "changes": [
+    {
+      "name": "SAVI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair11",
+        "mouth": "mouth6",
+        "eyes": "eye1"
+      },
+      "after": {
+        "hair": "hair11",
+        "mouth": "mouth1",
+        "eyes": "eye11"
+      }
+    },
+    {
+      "name": "BUBI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair7",
+        "mouth": "mouth6",
+        "eyes": "eye12"
+      },
+      "after": {
+        "hair": "hair7",
+        "mouth": "mouth9",
+        "eyes": "eye15"
+      }
+    },
+    {
+      "name": "PESI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair3",
+        "mouth": "mouth6",
+        "eyes": "eye8"
+      },
+      "after": {
+        "hair": "hair3",
+        "mouth": "mouth7",
+        "eyes": "eye9"
+      }
+    },
+    {
+      "name": "DEPI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair10",
+        "mouth": "mouth6",
+        "eyes": "eye15"
+      },
+      "after": {
+        "hair": "hair10",
+        "mouth": "mouth8",
+        "eyes": "eye2"
+      }
+    },
+    {
+      "name": "TAZA",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair5",
+        "mouth": "mouth6",
+        "eyes": "eye10"
+      },
+      "after": {
+        "hair": "hair5",
+        "mouth": "mouth3",
+        "eyes": "eye7"
+      }
+    },
+    {
+      "name": "TIHI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair4",
+        "mouth": "mouth6",
+        "eyes": "eye9"
+      },
+      "after": {
+        "hair": "hair4",
+        "mouth": "mouth10",
+        "eyes": "eye13"
+      }
+    },
+    {
+      "name": "DERI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair2",
+        "mouth": "mouth6",
+        "eyes": "eye7"
+      },
+      "after": {
+        "hair": "hair2",
+        "mouth": "mouth4",
+        "eyes": "eye5"
+      }
+    },
+    {
+      "name": "NUFU",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair8",
+        "mouth": "mouth6",
+        "eyes": "eye13"
+      },
+      "after": {
+        "hair": "hair8",
+        "mouth": "mouth2",
+        "eyes": "eye9"
+      }
+    },
+    {
+      "name": "KOFE",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair9",
+        "mouth": "mouth6",
+        "eyes": "eye14"
+      },
+      "after": {
+        "hair": "hair9",
+        "mouth": "mouth5",
+        "eyes": "eye13"
+      }
+    },
+    {
+      "name": "VEBA",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair1",
+        "mouth": "mouth6",
+        "eyes": "eye6"
+      },
+      "after": {
+        "hair": "hair1",
+        "mouth": "mouth1",
+        "eyes": "eye1"
+      }
+    },
+    {
+      "name": "KUKA",
+      "reason": "KUKA redesign",
+      "before": {
+        "hair": "hair9",
+        "mouth": "mouth10",
+        "eyes": "eye3"
+      },
+      "after": {
+        "hair": "hair1",
+        "mouth": "mouth2",
+        "eyes": "eye2"
+      }
+    },
+    {
+      "name": "VONA",
+      "reason": "KUKA redesign",
+      "before": {
+        "hair": "hair1",
+        "mouth": "mouth2",
+        "eyes": "eye2"
+      },
+      "after": {
+        "hair": "hair9",
+        "mouth": "mouth10",
+        "eyes": "eye3"
+      }
+    },
+    {
+      "name": "KUKA",
+      "reason": "color update",
+      "before": {
+        "hair": "#000000",
+        "cloth": "#2A2A2A",
+        "skin": "#FCC79F"
+      },
+      "after": {
+        "hair": "#800000",
+        "cloth": "#005700",
+        "skin": "#FFB985"
+      }
+    },
+    {
+      "name": "ROLA",
+      "reason": "color update",
+      "before": {
+        "hair": "#CEBF00",
+        "cloth": "#CEBF00",
+        "skin": "#FFCDB3"
+      },
+      "after": {
+        "hair": "#CEBF00",
+        "cloth": "#FFB985",
+        "skin": "#FFCDB3"
+      }
+    },
+    {
+      "name": "DOSI",
+      "reason": "color update",
+      "before": {
+        "hair": "#800000",
+        "cloth": "#800000",
+        "skin": "#FFB985"
+      },
+      "after": {
+        "hair": "#800000",
+        "cloth": "#C95407",
+        "skin": "#FFB985"
+      }
+    }
+  ],
+  "characters": [
+    {
+      "id": 1,
+      "name": "KUKA",
+      "file": "KUKA.png",
+      "hair": "hair1",
+      "mouth": "mouth2",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#005700",
+        "skin": "#FFB985"
+      },
+      "sha256": "e7468f8c0a48a26fb2495e437d1c73f31cbae88926ddd6a4f82a4f07a5545013",
+      "profile": {
+        "rank": "beginner",
+        "strength": 34,
+        "depth": 1,
+        "mistake": 26,
+        "attack": 21,
+        "defense": 51,
+        "trick": 58,
+        "edgeExplore": 39,
+        "ride": 69,
+        "unusual": 54,
+        "center": 26,
+        "consistency": 36,
+        "talkativeness": 38
+      }
+    },
+    {
+      "id": 2,
+      "name": "FULE",
+      "file": "FULE.png",
+      "hair": "hair7",
+      "mouth": "mouth2",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#48164B",
+        "skin": "#FFB985"
+      },
+      "sha256": "d569ac282e3e15546a70fcedb88d2806b1da933d6b0d0d9d9307d900b744e435",
+      "profile": {
+        "rank": "champion",
+        "strength": 69,
+        "depth": 3,
+        "mistake": 4,
+        "attack": 62,
+        "defense": 76,
+        "trick": 85,
+        "edgeExplore": 46,
+        "ride": 22,
+        "unusual": 90,
+        "center": 53,
+        "consistency": 60,
+        "talkativeness": 5
+      }
+    },
+    {
+      "id": 3,
+      "name": "TENE",
+      "file": "TENE.png",
+      "hair": "hair1",
+      "mouth": "mouth4",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#C95407",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "01d04d37129493a71178d17116cba3c2197a51fcd834208f53747dbdb5db4866",
+      "profile": {
+        "rank": "regular",
+        "strength": 52,
+        "depth": 2,
+        "mistake": 10,
+        "attack": 36,
+        "defense": 27,
+        "trick": 27,
+        "edgeExplore": 3,
+        "ride": 31,
+        "unusual": 14,
+        "center": 29,
+        "consistency": 48,
+        "talkativeness": 0
+      }
+    },
+    {
+      "id": 4,
+      "name": "ZEKU",
+      "file": "ZEKU.png",
+      "hair": "hair8",
+      "mouth": "mouth4",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#152E4C",
+        "skin": "#FFB985"
+      },
+      "sha256": "32052293a1089a5b61431a8f49a1daf4d6d2e86e8ccb5245096b09020439d2c6",
+      "profile": {
+        "rank": "champion",
+        "strength": 75,
+        "depth": 3,
+        "mistake": 0,
+        "attack": 48,
+        "defense": 28,
+        "trick": 27,
+        "edgeExplore": 63,
+        "ride": 53,
+        "unusual": 63,
+        "center": 71,
+        "consistency": 72,
+        "talkativeness": 45
+      }
+    },
+    {
+      "id": 5,
+      "name": "TONE",
+      "file": "TONE.png",
+      "hair": "hair4",
+      "mouth": "mouth4",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#48164B",
+        "skin": "#FCC79F"
+      },
+      "sha256": "21cb9c74c38597554210075718ecc9fb351155506cdcf192dbd8743e7ca419e4",
+      "profile": {
+        "rank": "beginner",
+        "strength": 33,
+        "depth": 1,
+        "mistake": 36,
+        "attack": 48,
+        "defense": 76,
+        "trick": 31,
+        "edgeExplore": 99,
+        "ride": 24,
+        "unusual": 11,
+        "center": 92,
+        "consistency": 37,
+        "talkativeness": 6
+      }
+    },
+    {
+      "id": 6,
+      "name": "PIGU",
+      "file": "PIGU.png",
+      "hair": "hair11",
+      "mouth": "mouth10",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#2A2A2A",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "53e6fe21aacba33e88920799231073d8151e7a7fb8df183dab5bb9e893bd0867",
+      "profile": {
+        "rank": "champion",
+        "strength": 93,
+        "depth": 3,
+        "mistake": 4,
+        "attack": 44,
+        "defense": 82,
+        "trick": 30,
+        "edgeExplore": 4,
+        "ride": 25,
+        "unusual": 54,
+        "center": 96,
+        "consistency": 57,
+        "talkativeness": 47
+      }
+    },
+    {
+      "id": 7,
+      "name": "NEHA",
+      "file": "NEHA.png",
+      "hair": "hair8",
+      "mouth": "mouth3",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#DDB4FF",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "de4511c5aeb4f8cba791972ae6f4fddd541f987d14cdb2f5906322650133c668",
+      "profile": {
+        "rank": "beginner",
+        "strength": 42,
+        "depth": 1,
+        "mistake": 30,
+        "attack": 31,
+        "defense": 27,
+        "trick": 98,
+        "edgeExplore": 23,
+        "ride": 38,
+        "unusual": 73,
+        "center": 12,
+        "consistency": 91,
+        "talkativeness": 74
+      }
+    },
+    {
+      "id": 8,
+      "name": "NAZI",
+      "file": "NAZI.png",
+      "hair": "hair1",
+      "mouth": "mouth3",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#EEEEEE",
+        "skin": "#FCC79F"
+      },
+      "sha256": "8b7d0909a45ea9430c55b10b24f7af1e6bf2d269a2bf4edb7096cd3e3a77b0d8",
+      "profile": {
+        "rank": "regular",
+        "strength": 65,
+        "depth": 2,
+        "mistake": 8,
+        "attack": 58,
+        "defense": 32,
+        "trick": 92,
+        "edgeExplore": 93,
+        "ride": 26,
+        "unusual": 2,
+        "center": 28,
+        "consistency": 97,
+        "talkativeness": 68
+      }
+    },
+    {
+      "id": 9,
+      "name": "ZOME",
+      "file": "ZOME.png",
+      "hair": "hair7",
+      "mouth": "mouth3",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#CD0000",
+        "skin": "#FFB985"
+      },
+      "sha256": "379eb02ea28ef897da7a8c5fc0235214ef18ce0c4367357be5adcb44bf2c0dc7",
+      "profile": {
+        "rank": "beginner",
+        "strength": 37,
+        "depth": 1,
+        "mistake": 25,
+        "attack": 42,
+        "defense": 55,
+        "trick": 57,
+        "edgeExplore": 44,
+        "ride": 4,
+        "unusual": 59,
+        "center": 31,
+        "consistency": 76,
+        "talkativeness": 31
+      }
+    },
+    {
+      "id": 10,
+      "name": "LURI",
+      "file": "LURI.png",
+      "hair": "hair10",
+      "mouth": "mouth5",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#DDB4FF",
+        "skin": "#FFB985"
+      },
+      "sha256": "6db1ce8e9edf9e6772cd77075df27ef1513efe7be9ffafb0f0d0acac4b3e2d15",
+      "profile": {
+        "rank": "regular",
+        "strength": 54,
+        "depth": 2,
+        "mistake": 10,
+        "attack": 58,
+        "defense": 29,
+        "trick": 94,
+        "edgeExplore": 10,
+        "ride": 53,
+        "unusual": 24,
+        "center": 68,
+        "consistency": 65,
+        "talkativeness": 56
+      }
+    },
+    {
+      "id": 11,
+      "name": "GOLE",
+      "file": "GOLE.png",
+      "hair": "hair4",
+      "mouth": "mouth1",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#800000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "ee18aa5df86e223a6e8a9df070dab2769d051a683bc526da61a61b44005b921b",
+      "profile": {
+        "rank": "champion",
+        "strength": 79,
+        "depth": 3,
+        "mistake": 3,
+        "attack": 72,
+        "defense": 82,
+        "trick": 20,
+        "edgeExplore": 28,
+        "ride": 1,
+        "unusual": 97,
+        "center": 2,
+        "consistency": 59,
+        "talkativeness": 6
+      }
+    },
+    {
+      "id": 12,
+      "name": "SAVI",
+      "file": "SAVI.png",
+      "hair": "hair11",
+      "mouth": "mouth1",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#CEBF00",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "9983366debbeefddb3ba53b9a05838319b2930ca9dd356e1f4022e7f58ce9c53",
+      "profile": {
+        "rank": "regular",
+        "strength": 62,
+        "depth": 2,
+        "mistake": 12,
+        "attack": 58,
+        "defense": 45,
+        "trick": 42,
+        "edgeExplore": 45,
+        "ride": 56,
+        "unusual": 80,
+        "center": 11,
+        "consistency": 90,
+        "talkativeness": 41
+      }
+    },
+    {
+      "id": 13,
+      "name": "GIHI",
+      "file": "GIHI.png",
+      "hair": "hair9",
+      "mouth": "mouth1",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#2A2A2A",
+        "skin": "#FFB985"
+      },
+      "sha256": "60cdd44c9a4127b552625220be3e6d66d2b87bbe4991709b6bc684d6dcc0ecb2",
+      "profile": {
+        "rank": "regular",
+        "strength": 61,
+        "depth": 2,
+        "mistake": 14,
+        "attack": 68,
+        "defense": 44,
+        "trick": 79,
+        "edgeExplore": 94,
+        "ride": 20,
+        "unusual": 5,
+        "center": 39,
+        "consistency": 54,
+        "talkativeness": 29
+      }
+    },
+    {
+      "id": 14,
+      "name": "FADU",
+      "file": "FADU.png",
+      "hair": "hair7",
+      "mouth": "mouth5",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#CD0000",
+        "skin": "#FFB985"
+      },
+      "sha256": "f8d1108482d63d170e24e137b8e9184d40ac12790744cfaee2681fd59e3c7699",
+      "profile": {
+        "rank": "regular",
+        "strength": 60,
+        "depth": 2,
+        "mistake": 10,
+        "attack": 90,
+        "defense": 23,
+        "trick": 79,
+        "edgeExplore": 41,
+        "ride": 53,
+        "unusual": 60,
+        "center": 17,
+        "consistency": 75,
+        "talkativeness": 68
+      }
+    },
+    {
+      "id": 15,
+      "name": "HUTU",
+      "file": "HUTU.png",
+      "hair": "hair3",
+      "mouth": "mouth3",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#005700",
+        "skin": "#FFB985"
+      },
+      "sha256": "2b5a0dd0abd290b89d32abe49d192cfa431d18e286b382786acfee2eb9d9ae92",
+      "profile": {
+        "rank": "beginner",
+        "strength": 23,
+        "depth": 1,
+        "mistake": 39,
+        "attack": 83,
+        "defense": 46,
+        "trick": 67,
+        "edgeExplore": 33,
+        "ride": 58,
+        "unusual": 15,
+        "center": 26,
+        "consistency": 55,
+        "talkativeness": 60
+      }
+    },
+    {
+      "id": 16,
+      "name": "NESA",
+      "file": "NESA.png",
+      "hair": "hair6",
+      "mouth": "mouth2",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#C95407",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "978e8058a68534d98ebd1e9f40c2675add0257f94e4a4dce4949a5f33e168d5d",
+      "profile": {
+        "rank": "regular",
+        "strength": 49,
+        "depth": 2,
+        "mistake": 7,
+        "attack": 89,
+        "defense": 53,
+        "trick": 23,
+        "edgeExplore": 63,
+        "ride": 2,
+        "unusual": 21,
+        "center": 25,
+        "consistency": 95,
+        "talkativeness": 53
+      }
+    },
+    {
+      "id": 17,
+      "name": "TAFO",
+      "file": "TAFO.png",
+      "hair": "hair6",
+      "mouth": "mouth1",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#00ACCE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "389dcb2c11536ccb7816165ed2a4c42092639ebcc13f91d8797cdb26c350de67",
+      "profile": {
+        "rank": "beginner",
+        "strength": 42,
+        "depth": 1,
+        "mistake": 24,
+        "attack": 64,
+        "defense": 67,
+        "trick": 34,
+        "edgeExplore": 99,
+        "ride": 14,
+        "unusual": 9,
+        "center": 93,
+        "consistency": 62,
+        "talkativeness": 30
+      }
+    },
+    {
+      "id": 18,
+      "name": "RUMI",
+      "file": "RUMI.png",
+      "hair": "hair1",
+      "mouth": "mouth8",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#CD0000",
+        "skin": "#FFB985"
+      },
+      "sha256": "7afb60abb6cdaae1c87b9a49df39bab8f6cbddb5e9f037f6176535331ea2c6cd",
+      "profile": {
+        "rank": "regular",
+        "strength": 57,
+        "depth": 2,
+        "mistake": 18,
+        "attack": 49,
+        "defense": 28,
+        "trick": 39,
+        "edgeExplore": 35,
+        "ride": 74,
+        "unusual": 17,
+        "center": 71,
+        "consistency": 65,
+        "talkativeness": 8
+      }
+    },
+    {
+      "id": 19,
+      "name": "KIGU",
+      "file": "KIGU.png",
+      "hair": "hair3",
+      "mouth": "mouth5",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#CEBF00",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "d46e92a012a92d6217f56ec6a03a9a244e3b22d4efb0aad7faf6d50466d31e35",
+      "profile": {
+        "rank": "regular",
+        "strength": 60,
+        "depth": 2,
+        "mistake": 7,
+        "attack": 80,
+        "defense": 84,
+        "trick": 18,
+        "edgeExplore": 84,
+        "ride": 4,
+        "unusual": 62,
+        "center": 22,
+        "consistency": 58,
+        "talkativeness": 72
+      }
+    },
+    {
+      "id": 20,
+      "name": "BUBI",
+      "file": "BUBI.png",
+      "hair": "hair7",
+      "mouth": "mouth9",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#CD0000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "d628ea658aaac0eedd85af866a5b2d5347ad66f3006764d5f01148ff2b8588c4",
+      "profile": {
+        "rank": "champion",
+        "strength": 94,
+        "depth": 3,
+        "mistake": 0,
+        "attack": 26,
+        "defense": 27,
+        "trick": 15,
+        "edgeExplore": 100,
+        "ride": 56,
+        "unusual": 34,
+        "center": 2,
+        "consistency": 42,
+        "talkativeness": 71
+      }
+    },
+    {
+      "id": 21,
+      "name": "LEKA",
+      "file": "LEKA.png",
+      "hair": "hair11",
+      "mouth": "mouth4",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#800000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "fc7256e74b858ca43795f0ba7a12b165741077fbf8ee2e48b40985675535adf8",
+      "profile": {
+        "rank": "beginner",
+        "strength": 24,
+        "depth": 1,
+        "mistake": 31,
+        "attack": 92,
+        "defense": 29,
+        "trick": 66,
+        "edgeExplore": 88,
+        "ride": 65,
+        "unusual": 51,
+        "center": 3,
+        "consistency": 82,
+        "talkativeness": 35
+      }
+    },
+    {
+      "id": 22,
+      "name": "FAVE",
+      "file": "FAVE.png",
+      "hair": "hair8",
+      "mouth": "mouth8",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#000000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "b2a0f8fe335d2112e5a26e9b76eee426b18ee12ddb3254c8e3a01c8d7434e5a7",
+      "profile": {
+        "rank": "beginner",
+        "strength": 31,
+        "depth": 1,
+        "mistake": 19,
+        "attack": 29,
+        "defense": 42,
+        "trick": 27,
+        "edgeExplore": 92,
+        "ride": 22,
+        "unusual": 25,
+        "center": 38,
+        "consistency": 45,
+        "talkativeness": 38
+      }
+    },
+    {
+      "id": 23,
+      "name": "RIFI",
+      "file": "RIFI.png",
+      "hair": "hair3",
+      "mouth": "mouth1",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#066F85",
+        "cloth": "#800000",
+        "skin": "#FFB985"
+      },
+      "sha256": "f549edbe4651444f5114baaa82bde7c097a0dcded5599bac1cbc1e9ae8e4d686",
+      "profile": {
+        "rank": "champion",
+        "strength": 77,
+        "depth": 3,
+        "mistake": 6,
+        "attack": 30,
+        "defense": 22,
+        "trick": 55,
+        "edgeExplore": 1,
+        "ride": 78,
+        "unusual": 48,
+        "center": 5,
+        "consistency": 41,
+        "talkativeness": 59
+      }
+    },
+    {
+      "id": 24,
+      "name": "TAGI",
+      "file": "TAGI.png",
+      "hair": "hair9",
+      "mouth": "mouth2",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#CD0000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "1765897952a187bd249cc4ac366bf82fead76218b396172d047175a47f92413c",
+      "profile": {
+        "rank": "beginner",
+        "strength": 30,
+        "depth": 1,
+        "mistake": 19,
+        "attack": 73,
+        "defense": 56,
+        "trick": 57,
+        "edgeExplore": 51,
+        "ride": 23,
+        "unusual": 51,
+        "center": 5,
+        "consistency": 64,
+        "talkativeness": 50
+      }
+    },
+    {
+      "id": 25,
+      "name": "MUSI",
+      "file": "MUSI.png",
+      "hair": "hair4",
+      "mouth": "mouth8",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#C95407",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "495fdd3fe74636b15e2a4321456f9118ff9536cfcf10c29e05bf5e8bbfccc89c",
+      "profile": {
+        "rank": "beginner",
+        "strength": 21,
+        "depth": 1,
+        "mistake": 23,
+        "attack": 32,
+        "defense": 78,
+        "trick": 70,
+        "edgeExplore": 81,
+        "ride": 14,
+        "unusual": 15,
+        "center": 90,
+        "consistency": 64,
+        "talkativeness": 6
+      }
+    },
+    {
+      "id": 26,
+      "name": "HEDO",
+      "file": "HEDO.png",
+      "hair": "hair1",
+      "mouth": "mouth10",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#CEBF00",
+        "skin": "#FCC79F"
+      },
+      "sha256": "56262ef6b00ae0e04c24141d8bdff09d19633ceca88e70212e388ce69117e656",
+      "profile": {
+        "rank": "regular",
+        "strength": 52,
+        "depth": 2,
+        "mistake": 12,
+        "attack": 61,
+        "defense": 76,
+        "trick": 48,
+        "edgeExplore": 4,
+        "ride": 2,
+        "unusual": 14,
+        "center": 37,
+        "consistency": 35,
+        "talkativeness": 2
+      }
+    },
+    {
+      "id": 27,
+      "name": "NIPO",
+      "file": "NIPO.png",
+      "hair": "hair2",
+      "mouth": "mouth7",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#FFB985",
+        "skin": "#FFB985"
+      },
+      "sha256": "15c5d93dc72f1e3e70c446d56aa188d28041ade6ffc51e7af1c35beaa45cef9a",
+      "profile": {
+        "rank": "beginner",
+        "strength": 32,
+        "depth": 1,
+        "mistake": 28,
+        "attack": 91,
+        "defense": 23,
+        "trick": 36,
+        "edgeExplore": 4,
+        "ride": 14,
+        "unusual": 47,
+        "center": 94,
+        "consistency": 68,
+        "talkativeness": 55
+      }
+    },
+    {
+      "id": 28,
+      "name": "ZOZE",
+      "file": "ZOZE.png",
+      "hair": "hair4",
+      "mouth": "mouth3",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#B5B5B5",
+        "skin": "#FFB985"
+      },
+      "sha256": "2c916f12cfe91aa9dc9e791fc2df8bd6e5205a15ab719672b15ca7ac6debec29",
+      "profile": {
+        "rank": "champion",
+        "strength": 84,
+        "depth": 3,
+        "mistake": 0,
+        "attack": 64,
+        "defense": 52,
+        "trick": 70,
+        "edgeExplore": 74,
+        "ride": 52,
+        "unusual": 75,
+        "center": 36,
+        "consistency": 93,
+        "talkativeness": 74
+      }
+    },
+    {
+      "id": 29,
+      "name": "PESI",
+      "file": "PESI.png",
+      "hair": "hair3",
+      "mouth": "mouth7",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#2A2A2A",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "4c0347a61ee4229d17e7c3f41a737ece3b31ae0512af9c42ff118edd9b1f9133",
+      "profile": {
+        "rank": "regular",
+        "strength": 64,
+        "depth": 2,
+        "mistake": 10,
+        "attack": 42,
+        "defense": 38,
+        "trick": 72,
+        "edgeExplore": 60,
+        "ride": 75,
+        "unusual": 10,
+        "center": 38,
+        "consistency": 72,
+        "talkativeness": 68
+      }
+    },
+    {
+      "id": 30,
+      "name": "SENA",
+      "file": "SENA.png",
+      "hair": "hair7",
+      "mouth": "mouth1",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#152E4C",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "22017563caa81c4c07ad18223d11ffe97286d1715bcd93d164442dbe38b52687",
+      "profile": {
+        "rank": "beginner",
+        "strength": 38,
+        "depth": 1,
+        "mistake": 19,
+        "attack": 67,
+        "defense": 67,
+        "trick": 75,
+        "edgeExplore": 14,
+        "ride": 37,
+        "unusual": 86,
+        "center": 82,
+        "consistency": 55,
+        "talkativeness": 35
+      }
+    },
+    {
+      "id": 31,
+      "name": "GOHU",
+      "file": "GOHU.png",
+      "hair": "hair8",
+      "mouth": "mouth7",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#000000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "854cde996fc5dc77a3b2ecd101f3b290e8b1123514660b1ed21776007fdc4a26",
+      "profile": {
+        "rank": "beginner",
+        "strength": 35,
+        "depth": 1,
+        "mistake": 38,
+        "attack": 32,
+        "defense": 30,
+        "trick": 26,
+        "edgeExplore": 4,
+        "ride": 16,
+        "unusual": 51,
+        "center": 42,
+        "consistency": 94,
+        "talkativeness": 36
+      }
+    },
+    {
+      "id": 32,
+      "name": "PODU",
+      "file": "PODU.png",
+      "hair": "hair6",
+      "mouth": "mouth8",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#800000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "3b4aa242764bf8327887316940b8799f282c54f0e7e5805adf417c766ae65068",
+      "profile": {
+        "rank": "champion",
+        "strength": 92,
+        "depth": 3,
+        "mistake": 5,
+        "attack": 60,
+        "defense": 55,
+        "trick": 51,
+        "edgeExplore": 86,
+        "ride": 29,
+        "unusual": 7,
+        "center": 12,
+        "consistency": 62,
+        "talkativeness": 6
+      }
+    },
+    {
+      "id": 33,
+      "name": "HIPU",
+      "file": "HIPU.png",
+      "hair": "hair5",
+      "mouth": "mouth1",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#00ACCE",
+        "skin": "#FCC79F"
+      },
+      "sha256": "ff295c1e7af6a60d5e19b88036f25007f4f4ea0d381964c0fbd6662455249128",
+      "profile": {
+        "rank": "champion",
+        "strength": 83,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 98,
+        "defense": 97,
+        "trick": 49,
+        "edgeExplore": 89,
+        "ride": 8,
+        "unusual": 27,
+        "center": 39,
+        "consistency": 40,
+        "talkativeness": 55
+      }
+    },
+    {
+      "id": 34,
+      "name": "LEZI",
+      "file": "LEZI.png",
+      "hair": "hair1",
+      "mouth": "mouth7",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#B5B5B5",
+        "skin": "#FFB985"
+      },
+      "sha256": "d25b87ad8373da6f09a09646f2874befcf1cd7a91aa31a52fc0c948eebac71f5",
+      "profile": {
+        "rank": "beginner",
+        "strength": 26,
+        "depth": 1,
+        "mistake": 36,
+        "attack": 89,
+        "defense": 42,
+        "trick": 67,
+        "edgeExplore": 21,
+        "ride": 25,
+        "unusual": 6,
+        "center": 1,
+        "consistency": 38,
+        "talkativeness": 53
+      }
+    },
+    {
+      "id": 35,
+      "name": "GILA",
+      "file": "GILA.png",
+      "hair": "hair10",
+      "mouth": "mouth1",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#48164B",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "72388898c2b0fe117b96936932290ee258acae1e1e5ce9087e1486946af133e6",
+      "profile": {
+        "rank": "regular",
+        "strength": 45,
+        "depth": 2,
+        "mistake": 15,
+        "attack": 55,
+        "defense": 30,
+        "trick": 100,
+        "edgeExplore": 32,
+        "ride": 8,
+        "unusual": 33,
+        "center": 5,
+        "consistency": 82,
+        "talkativeness": 4
+      }
+    },
+    {
+      "id": 36,
+      "name": "DEZO",
+      "file": "DEZO.png",
+      "hair": "hair3",
+      "mouth": "mouth9",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#000000",
+        "skin": "#FFB985"
+      },
+      "sha256": "638a21eb8852673c94871dac5f6e93eac98194757a5f775d832d3b3ccc2a282a",
+      "profile": {
+        "rank": "beginner",
+        "strength": 31,
+        "depth": 1,
+        "mistake": 24,
+        "attack": 71,
+        "defense": 79,
+        "trick": 25,
+        "edgeExplore": 12,
+        "ride": 15,
+        "unusual": 31,
+        "center": 5,
+        "consistency": 46,
+        "talkativeness": 26
+      }
+    },
+    {
+      "id": 37,
+      "name": "ZOVO",
+      "file": "ZOVO.png",
+      "hair": "hair7",
+      "mouth": "mouth4",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#48164B",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "0d6a86f9661501edc8f16a4a062e79f2e2544320ce809058dd6e91e7636bc0fe",
+      "profile": {
+        "rank": "champion",
+        "strength": 76,
+        "depth": 3,
+        "mistake": 3,
+        "attack": 90,
+        "defense": 65,
+        "trick": 71,
+        "edgeExplore": 34,
+        "ride": 47,
+        "unusual": 5,
+        "center": 12,
+        "consistency": 84,
+        "talkativeness": 75
+      }
+    },
+    {
+      "id": 38,
+      "name": "FOBU",
+      "file": "FOBU.png",
+      "hair": "hair2",
+      "mouth": "mouth9",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#CEBF00",
+        "skin": "#FCC79F"
+      },
+      "sha256": "9df321a5780d47206ff034ed7c883ec77437fb81c61739b02ea8c3bc29c09384",
+      "profile": {
+        "rank": "champion",
+        "strength": 91,
+        "depth": 3,
+        "mistake": 6,
+        "attack": 45,
+        "defense": 39,
+        "trick": 64,
+        "edgeExplore": 19,
+        "ride": 67,
+        "unusual": 37,
+        "center": 22,
+        "consistency": 36,
+        "talkativeness": 69
+      }
+    },
+    {
+      "id": 39,
+      "name": "HOBE",
+      "file": "HOBE.png",
+      "hair": "hair11",
+      "mouth": "mouth8",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#800000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "1cd45090c3fd3dbe8b336b77b42e44e22bc79df951ad6078a2b7cc42e8732fbf",
+      "profile": {
+        "rank": "regular",
+        "strength": 66,
+        "depth": 2,
+        "mistake": 16,
+        "attack": 64,
+        "defense": 44,
+        "trick": 87,
+        "edgeExplore": 20,
+        "ride": 67,
+        "unusual": 17,
+        "center": 0,
+        "consistency": 87,
+        "talkativeness": 56
+      }
+    },
+    {
+      "id": 40,
+      "name": "ZUBE",
+      "file": "ZUBE.png",
+      "hair": "hair5",
+      "mouth": "mouth5",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#0D00FF",
+        "skin": "#FCC79F"
+      },
+      "sha256": "7b9023e395b5abc1704f9ce126fad7ecc513334898538075a11074be61c37826",
+      "profile": {
+        "rank": "beginner",
+        "strength": 39,
+        "depth": 1,
+        "mistake": 30,
+        "attack": 80,
+        "defense": 100,
+        "trick": 26,
+        "edgeExplore": 28,
+        "ride": 40,
+        "unusual": 31,
+        "center": 24,
+        "consistency": 88,
+        "talkativeness": 73
+      }
+    },
+    {
+      "id": 41,
+      "name": "KOGE",
+      "file": "KOGE.png",
+      "hair": "hair2",
+      "mouth": "mouth8",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#FFB985",
+        "skin": "#FCC79F"
+      },
+      "sha256": "08ae29911e40f638d3901b916403e5b9374a4d287b92e5e10cf493af7ea5aef7",
+      "profile": {
+        "rank": "beginner",
+        "strength": 39,
+        "depth": 1,
+        "mistake": 24,
+        "attack": 58,
+        "defense": 26,
+        "trick": 60,
+        "edgeExplore": 63,
+        "ride": 96,
+        "unusual": 0,
+        "center": 36,
+        "consistency": 77,
+        "talkativeness": 44
+      }
+    },
+    {
+      "id": 42,
+      "name": "TELU",
+      "file": "TELU.png",
+      "hair": "hair2",
+      "mouth": "mouth5",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#005700",
+        "skin": "#FCC79F"
+      },
+      "sha256": "0e87bae471692554c57d59f6502bbcd0d070e45ebd028414b15c4ba8ded66fd8",
+      "profile": {
+        "rank": "beginner",
+        "strength": 37,
+        "depth": 1,
+        "mistake": 30,
+        "attack": 53,
+        "defense": 45,
+        "trick": 34,
+        "edgeExplore": 74,
+        "ride": 72,
+        "unusual": 29,
+        "center": 21,
+        "consistency": 70,
+        "talkativeness": 44
+      }
+    },
+    {
+      "id": 43,
+      "name": "DEPI",
+      "file": "DEPI.png",
+      "hair": "hair10",
+      "mouth": "mouth8",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#0D00FF",
+        "skin": "#FFB985"
+      },
+      "sha256": "d72862a8f16bd3297fbf5f6e50e8f2d2572e2253b2efda372bbdb4ddc75ae953",
+      "profile": {
+        "rank": "beginner",
+        "strength": 31,
+        "depth": 1,
+        "mistake": 23,
+        "attack": 49,
+        "defense": 35,
+        "trick": 45,
+        "edgeExplore": 40,
+        "ride": 47,
+        "unusual": 34,
+        "center": 6,
+        "consistency": 76,
+        "talkativeness": 70
+      }
+    },
+    {
+      "id": 44,
+      "name": "SAPA",
+      "file": "SAPA.png",
+      "hair": "hair10",
+      "mouth": "mouth9",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#009B0C",
+        "skin": "#FCC79F"
+      },
+      "sha256": "a6ec46fb881856fd9bb450c66cebe42cf8f307654ba5f82da15d5dd7cea402da",
+      "profile": {
+        "rank": "champion",
+        "strength": 78,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 90,
+        "defense": 86,
+        "trick": 27,
+        "edgeExplore": 77,
+        "ride": 84,
+        "unusual": 16,
+        "center": 46,
+        "consistency": 85,
+        "talkativeness": 64
+      }
+    },
+    {
+      "id": 45,
+      "name": "PIZU",
+      "file": "PIZU.png",
+      "hair": "hair4",
+      "mouth": "mouth9",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#B5B5B5",
+        "skin": "#FFB985"
+      },
+      "sha256": "e52444200a65acc3e2042741918c74927aee0311785df5421a2ae47cfabe1076",
+      "profile": {
+        "rank": "champion",
+        "strength": 75,
+        "depth": 3,
+        "mistake": 2,
+        "attack": 26,
+        "defense": 23,
+        "trick": 22,
+        "edgeExplore": 89,
+        "ride": 6,
+        "unusual": 32,
+        "center": 80,
+        "consistency": 78,
+        "talkativeness": 37
+      }
+    },
+    {
+      "id": 46,
+      "name": "SEPA",
+      "file": "SEPA.png",
+      "hair": "hair6",
+      "mouth": "mouth9",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#005700",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "b0b400b940626209a79cc43e330a82d5c555890a0b7d1847e85b51e2e8a577d5",
+      "profile": {
+        "rank": "regular",
+        "strength": 45,
+        "depth": 2,
+        "mistake": 8,
+        "attack": 34,
+        "defense": 51,
+        "trick": 30,
+        "edgeExplore": 17,
+        "ride": 55,
+        "unusual": 16,
+        "center": 9,
+        "consistency": 91,
+        "talkativeness": 49
+      }
+    },
+    {
+      "id": 47,
+      "name": "PODO",
+      "file": "PODO.png",
+      "hair": "hair7",
+      "mouth": "mouth7",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#C95407",
+        "skin": "#FFB985"
+      },
+      "sha256": "ac014838365a21626af92eedded500a95186aa1ba7bef6b535f3c0e078ccdf5f",
+      "profile": {
+        "rank": "beginner",
+        "strength": 25,
+        "depth": 1,
+        "mistake": 24,
+        "attack": 20,
+        "defense": 81,
+        "trick": 68,
+        "edgeExplore": 62,
+        "ride": 84,
+        "unusual": 90,
+        "center": 37,
+        "consistency": 85,
+        "talkativeness": 69
+      }
+    },
+    {
+      "id": 48,
+      "name": "VOHA",
+      "file": "VOHA.png",
+      "hair": "hair5",
+      "mouth": "mouth7",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#CEBF00",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "547fb333d114775d5f5f3ac28823951a856248c9f66c9786499ca89d7b548ef9",
+      "profile": {
+        "rank": "regular",
+        "strength": 47,
+        "depth": 2,
+        "mistake": 8,
+        "attack": 57,
+        "defense": 39,
+        "trick": 48,
+        "edgeExplore": 48,
+        "ride": 11,
+        "unusual": 84,
+        "center": 97,
+        "consistency": 45,
+        "talkativeness": 75
+      }
+    },
+    {
+      "id": 49,
+      "name": "TIHU",
+      "file": "TIHU.png",
+      "hair": "hair9",
+      "mouth": "mouth8",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#C95407",
+        "skin": "#FCC79F"
+      },
+      "sha256": "49d517f6e2a9a7fd20038c0d9d885481783f82b7f3903d263bd07fe671a75433",
+      "profile": {
+        "rank": "regular",
+        "strength": 46,
+        "depth": 2,
+        "mistake": 8,
+        "attack": 84,
+        "defense": 58,
+        "trick": 51,
+        "edgeExplore": 87,
+        "ride": 9,
+        "unusual": 60,
+        "center": 20,
+        "consistency": 78,
+        "talkativeness": 67
+      }
+    },
+    {
+      "id": 50,
+      "name": "TAZA",
+      "file": "TAZA.png",
+      "hair": "hair5",
+      "mouth": "mouth3",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#2A2A2A",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "0d34a9d93f46f33ff55178ed48366259cfc9e874589c1f135e93a95c9abc4f6c",
+      "profile": {
+        "rank": "regular",
+        "strength": 65,
+        "depth": 2,
+        "mistake": 11,
+        "attack": 41,
+        "defense": 34,
+        "trick": 45,
+        "edgeExplore": 13,
+        "ride": 40,
+        "unusual": 59,
+        "center": 66,
+        "consistency": 40,
+        "talkativeness": 75
+      }
+    },
+    {
+      "id": 51,
+      "name": "RUGA",
+      "file": "RUGA.png",
+      "hair": "hair2",
+      "mouth": "mouth3",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#EEEEEE",
+        "skin": "#FFB985"
+      },
+      "sha256": "ce6cbda380fc5ac00d548388b9bf6f489e98e64bbc119a5783340f0c2f671fae",
+      "profile": {
+        "rank": "champion",
+        "strength": 77,
+        "depth": 3,
+        "mistake": 4,
+        "attack": 21,
+        "defense": 49,
+        "trick": 94,
+        "edgeExplore": 32,
+        "ride": 67,
+        "unusual": 69,
+        "center": 4,
+        "consistency": 86,
+        "talkativeness": 70
+      }
+    },
+    {
+      "id": 52,
+      "name": "HAPE",
+      "file": "HAPE.png",
+      "hair": "hair10",
+      "mouth": "mouth4",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#009B0C",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "526c928f291d2d3a2964069bd3c1b4255a4a04900bbf8dd9ace2487571bf4d2d",
+      "profile": {
+        "rank": "beginner",
+        "strength": 39,
+        "depth": 1,
+        "mistake": 39,
+        "attack": 72,
+        "defense": 68,
+        "trick": 34,
+        "edgeExplore": 31,
+        "ride": 46,
+        "unusual": 20,
+        "center": 26,
+        "consistency": 61,
+        "talkativeness": 68
+      }
+    },
+    {
+      "id": 53,
+      "name": "VUKO",
+      "file": "VUKO.png",
+      "hair": "hair6",
+      "mouth": "mouth4",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#EEEEEE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "b5d5bb8a46134438672c6f83bc7ecad919a9de996566f15762f4ed748059a4bf",
+      "profile": {
+        "rank": "beginner",
+        "strength": 39,
+        "depth": 1,
+        "mistake": 39,
+        "attack": 52,
+        "defense": 63,
+        "trick": 18,
+        "edgeExplore": 22,
+        "ride": 59,
+        "unusual": 65,
+        "center": 33,
+        "consistency": 82,
+        "talkativeness": 28
+      }
+    },
+    {
+      "id": 54,
+      "name": "ROLA",
+      "file": "ROLA.png",
+      "hair": "hair2",
+      "mouth": "mouth1",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#FFB985",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "9c2d0a546a570e4e16067dec3f6547227b741b38dd1b7e11286d0d73e712b9c3",
+      "profile": {
+        "rank": "regular",
+        "strength": 48,
+        "depth": 2,
+        "mistake": 10,
+        "attack": 21,
+        "defense": 80,
+        "trick": 63,
+        "edgeExplore": 99,
+        "ride": 21,
+        "unusual": 39,
+        "center": 19,
+        "consistency": 48,
+        "talkativeness": 42
+      }
+    },
+    {
+      "id": 55,
+      "name": "MEBE",
+      "file": "MEBE.png",
+      "hair": "hair2",
+      "mouth": "mouth10",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#0D00FF",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "41befed4847b4d9f37d0d623916e5f966a994155b5384316fa38fea158934fa9",
+      "profile": {
+        "rank": "champion",
+        "strength": 71,
+        "depth": 3,
+        "mistake": 6,
+        "attack": 51,
+        "defense": 36,
+        "trick": 76,
+        "edgeExplore": 16,
+        "ride": 39,
+        "unusual": 51,
+        "center": 32,
+        "consistency": 60,
+        "talkativeness": 37
+      }
+    },
+    {
+      "id": 56,
+      "name": "HEKI",
+      "file": "HEKI.png",
+      "hair": "hair9",
+      "mouth": "mouth7",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#066F85",
+        "cloth": "#DDB4FF",
+        "skin": "#FCC79F"
+      },
+      "sha256": "ec9ff96e309d599355d1d136a5bf3878608bb6d8cf8608cc514d8b4f484f84c3",
+      "profile": {
+        "rank": "beginner",
+        "strength": 27,
+        "depth": 1,
+        "mistake": 37,
+        "attack": 87,
+        "defense": 89,
+        "trick": 23,
+        "edgeExplore": 85,
+        "ride": 47,
+        "unusual": 74,
+        "center": 27,
+        "consistency": 90,
+        "talkativeness": 54
+      }
+    },
+    {
+      "id": 57,
+      "name": "HUNE",
+      "file": "HUNE.png",
+      "hair": "hair9",
+      "mouth": "mouth4",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#DDB4FF",
+        "skin": "#FCC79F"
+      },
+      "sha256": "c010c841e0276628999fb5ffaf4ba0472c607c313b6a1fc23c672aace0e69554",
+      "profile": {
+        "rank": "regular",
+        "strength": 62,
+        "depth": 2,
+        "mistake": 11,
+        "attack": 79,
+        "defense": 88,
+        "trick": 86,
+        "edgeExplore": 51,
+        "ride": 4,
+        "unusual": 36,
+        "center": 89,
+        "consistency": 91,
+        "talkativeness": 38
+      }
+    },
+    {
+      "id": 58,
+      "name": "FIPE",
+      "file": "FIPE.png",
+      "hair": "hair8",
+      "mouth": "mouth9",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#EEEEEE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "8a31b8df6fb28becd3779999d25af87979aa5425d207b9ff1eea62fa93a4155e",
+      "profile": {
+        "rank": "beginner",
+        "strength": 25,
+        "depth": 1,
+        "mistake": 19,
+        "attack": 70,
+        "defense": 60,
+        "trick": 72,
+        "edgeExplore": 13,
+        "ride": 54,
+        "unusual": 3,
+        "center": 5,
+        "consistency": 37,
+        "talkativeness": 47
+      }
+    },
+    {
+      "id": 59,
+      "name": "VOTO",
+      "file": "VOTO.png",
+      "hair": "hair6",
+      "mouth": "mouth7",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#EEEEEE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "5381de372c36f24d1c9795d9f08009878bbf898c3ca1a888c226ae9a7e026f1e",
+      "profile": {
+        "rank": "champion",
+        "strength": 78,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 74,
+        "defense": 29,
+        "trick": 29,
+        "edgeExplore": 85,
+        "ride": 64,
+        "unusual": 64,
+        "center": 14,
+        "consistency": 63,
+        "talkativeness": 43
+      }
+    },
+    {
+      "id": 60,
+      "name": "DOSI",
+      "file": "DOSI.png",
+      "hair": "hair3",
+      "mouth": "mouth4",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#C95407",
+        "skin": "#FFB985"
+      },
+      "sha256": "ead440d7a4e650e8a6a98f296b13ee459c6c612117166d198639d7959dd7298f",
+      "profile": {
+        "rank": "regular",
+        "strength": 52,
+        "depth": 2,
+        "mistake": 12,
+        "attack": 92,
+        "defense": 87,
+        "trick": 45,
+        "edgeExplore": 44,
+        "ride": 39,
+        "unusual": 14,
+        "center": 90,
+        "consistency": 76,
+        "talkativeness": 62
+      }
+    },
+    {
+      "id": 61,
+      "name": "RUTE",
+      "file": "RUTE.png",
+      "hair": "hair10",
+      "mouth": "mouth10",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#009B0C",
+        "skin": "#FCC79F"
+      },
+      "sha256": "3bc9dc3c5b22e196dc098e56f95cec7185fba7b32a8cb032b14c67503f67d41f",
+      "profile": {
+        "rank": "champion",
+        "strength": 81,
+        "depth": 3,
+        "mistake": 3,
+        "attack": 73,
+        "defense": 65,
+        "trick": 30,
+        "edgeExplore": 43,
+        "ride": 78,
+        "unusual": 38,
+        "center": 63,
+        "consistency": 42,
+        "talkativeness": 57
+      }
+    },
+    {
+      "id": 62,
+      "name": "TIHI",
+      "file": "TIHI.png",
+      "hair": "hair4",
+      "mouth": "mouth10",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#066F85",
+        "cloth": "#CD0000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "6ecae7e28255245c0abe2da43c6b8cd26e6bfe16f4530547646883844b5fc934",
+      "profile": {
+        "rank": "champion",
+        "strength": 87,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 22,
+        "defense": 75,
+        "trick": 23,
+        "edgeExplore": 100,
+        "ride": 0,
+        "unusual": 12,
+        "center": 28,
+        "consistency": 50,
+        "talkativeness": 3
+      }
+    },
+    {
+      "id": 63,
+      "name": "PUHE",
+      "file": "PUHE.png",
+      "hair": "hair7",
+      "mouth": "mouth8",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#B5B5B5",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "2e82de2fb0ae2634f8c9ed8e37ae565a79a131222eee9d47a568826961e11daf",
+      "profile": {
+        "rank": "regular",
+        "strength": 62,
+        "depth": 2,
+        "mistake": 17,
+        "attack": 31,
+        "defense": 84,
+        "trick": 41,
+        "edgeExplore": 100,
+        "ride": 48,
+        "unusual": 75,
+        "center": 1,
+        "consistency": 92,
+        "talkativeness": 27
+      }
+    },
+    {
+      "id": 64,
+      "name": "KIFA",
+      "file": "KIFA.png",
+      "hair": "hair5",
+      "mouth": "mouth4",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#152E4C",
+        "skin": "#FFB985"
+      },
+      "sha256": "27b678701be7e23d53d96e55aa0acd2006eafd8f2d97eff9843c8899a8fa1a6b",
+      "profile": {
+        "rank": "beginner",
+        "strength": 38,
+        "depth": 1,
+        "mistake": 33,
+        "attack": 23,
+        "defense": 28,
+        "trick": 15,
+        "edgeExplore": 17,
+        "ride": 3,
+        "unusual": 87,
+        "center": 72,
+        "consistency": 66,
+        "talkativeness": 54
+      }
+    },
+    {
+      "id": 65,
+      "name": "DERI",
+      "file": "DERI.png",
+      "hair": "hair2",
+      "mouth": "mouth4",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#0D00FF",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "c49b0be1fb2fc66d5edb0524b64658edc5c3d7ee8768c49e879c0754d7f68786",
+      "profile": {
+        "rank": "regular",
+        "strength": 65,
+        "depth": 2,
+        "mistake": 14,
+        "attack": 88,
+        "defense": 65,
+        "trick": 22,
+        "edgeExplore": 11,
+        "ride": 78,
+        "unusual": 52,
+        "center": 25,
+        "consistency": 43,
+        "talkativeness": 47
+      }
+    },
+    {
+      "id": 66,
+      "name": "GEGI",
+      "file": "GEGI.png",
+      "hair": "hair4",
+      "mouth": "mouth7",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#000000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "20db62a87a763daf6b6989547791e1afdbecdb9b9755a4f2f5634295d4161d1d",
+      "profile": {
+        "rank": "champion",
+        "strength": 78,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 92,
+        "defense": 57,
+        "trick": 90,
+        "edgeExplore": 44,
+        "ride": 58,
+        "unusual": 79,
+        "center": 42,
+        "consistency": 84,
+        "talkativeness": 51
+      }
+    },
+    {
+      "id": 67,
+      "name": "HELE",
+      "file": "HELE.png",
+      "hair": "hair3",
+      "mouth": "mouth2",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#C95407",
+        "skin": "#FFB985"
+      },
+      "sha256": "bfb72c44c2b270ce3eb03db3c258d994c8699d90a775c5d65e577860af8731d5",
+      "profile": {
+        "rank": "champion",
+        "strength": 85,
+        "depth": 3,
+        "mistake": 5,
+        "attack": 58,
+        "defense": 44,
+        "trick": 24,
+        "edgeExplore": 59,
+        "ride": 16,
+        "unusual": 29,
+        "center": 22,
+        "consistency": 57,
+        "talkativeness": 8
+      }
+    },
+    {
+      "id": 68,
+      "name": "MEMO",
+      "file": "MEMO.png",
+      "hair": "hair11",
+      "mouth": "mouth5",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#DDB4FF",
+        "skin": "#FFB985"
+      },
+      "sha256": "6dc21604ce46fd916787eebe495d1968231138f925091e4f1cf414be5238d005",
+      "profile": {
+        "rank": "beginner",
+        "strength": 30,
+        "depth": 1,
+        "mistake": 32,
+        "attack": 20,
+        "defense": 83,
+        "trick": 63,
+        "edgeExplore": 70,
+        "ride": 89,
+        "unusual": 87,
+        "center": 68,
+        "consistency": 40,
+        "talkativeness": 62
+      }
+    },
+    {
+      "id": 69,
+      "name": "BERI",
+      "file": "BERI.png",
+      "hair": "hair9",
+      "mouth": "mouth9",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#48164B",
+        "skin": "#FCC79F"
+      },
+      "sha256": "e46346e304cbb16f2561ee74ebb685a0440c9b1a7b9cac998e6bc4d7791f72bc",
+      "profile": {
+        "rank": "beginner",
+        "strength": 33,
+        "depth": 1,
+        "mistake": 28,
+        "attack": 86,
+        "defense": 31,
+        "trick": 81,
+        "edgeExplore": 76,
+        "ride": 96,
+        "unusual": 97,
+        "center": 5,
+        "consistency": 80,
+        "talkativeness": 59
+      }
+    },
+    {
+      "id": 70,
+      "name": "NUFU",
+      "file": "NUFU.png",
+      "hair": "hair8",
+      "mouth": "mouth2",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#CD0000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "a083008b1322eb877c7fdeb15e554b55ccd16d22098eba4edf6e832c5ac4fdaa",
+      "profile": {
+        "rank": "champion",
+        "strength": 79,
+        "depth": 3,
+        "mistake": 0,
+        "attack": 86,
+        "defense": 39,
+        "trick": 69,
+        "edgeExplore": 97,
+        "ride": 91,
+        "unusual": 98,
+        "center": 1,
+        "consistency": 98,
+        "talkativeness": 1
+      }
+    },
+    {
+      "id": 71,
+      "name": "GENI",
+      "file": "GENI.png",
+      "hair": "hair6",
+      "mouth": "mouth5",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#EEEEEE",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "999907d4021c7f3c49e0362b2295d2928b6b9f750d13bcb3d23ba319702a86c4",
+      "profile": {
+        "rank": "regular",
+        "strength": 58,
+        "depth": 2,
+        "mistake": 9,
+        "attack": 27,
+        "defense": 67,
+        "trick": 90,
+        "edgeExplore": 16,
+        "ride": 57,
+        "unusual": 15,
+        "center": 49,
+        "consistency": 41,
+        "talkativeness": 54
+      }
+    },
+    {
+      "id": 72,
+      "name": "KOFE",
+      "file": "KOFE.png",
+      "hair": "hair9",
+      "mouth": "mouth5",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#2A2A2A",
+        "skin": "#FCC79F"
+      },
+      "sha256": "bb200e9406c7d2b25d0e0773e3f04dd7517a8e1030042c996628a43cdf540784",
+      "profile": {
+        "rank": "beginner",
+        "strength": 33,
+        "depth": 1,
+        "mistake": 32,
+        "attack": 46,
+        "defense": 20,
+        "trick": 63,
+        "edgeExplore": 1,
+        "ride": 21,
+        "unusual": 98,
+        "center": 53,
+        "consistency": 46,
+        "talkativeness": 59
+      }
+    },
+    {
+      "id": 73,
+      "name": "HENE",
+      "file": "HENE.png",
+      "hair": "hair3",
+      "mouth": "mouth8",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#005700",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "8ff42da0f186cf4068227ab7224f5bb4b05d283381dcce258e0e2438a47b783d",
+      "profile": {
+        "rank": "beginner",
+        "strength": 37,
+        "depth": 1,
+        "mistake": 32,
+        "attack": 34,
+        "defense": 91,
+        "trick": 20,
+        "edgeExplore": 67,
+        "ride": 34,
+        "unusual": 100,
+        "center": 11,
+        "consistency": 89,
+        "talkativeness": 50
+      }
+    },
+    {
+      "id": 74,
+      "name": "VONA",
+      "file": "VONA.png",
+      "hair": "hair9",
+      "mouth": "mouth10",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#CD0000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "12589f29e07f53af602ee8b6b3189b0bb16d5060ce7956a374571ab949b725a9",
+      "profile": {
+        "rank": "beginner",
+        "strength": 23,
+        "depth": 1,
+        "mistake": 22,
+        "attack": 58,
+        "defense": 72,
+        "trick": 75,
+        "edgeExplore": 36,
+        "ride": 58,
+        "unusual": 94,
+        "center": 81,
+        "consistency": 72,
+        "talkativeness": 46
+      }
+    },
+    {
+      "id": 75,
+      "name": "MILE",
+      "file": "MILE.png",
+      "hair": "hair5",
+      "mouth": "mouth9",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#000000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "357f8725f8ccf93bf5abb23da962429e64e3a75448598631c0097318dfcaa7e6",
+      "profile": {
+        "rank": "champion",
+        "strength": 72,
+        "depth": 3,
+        "mistake": 4,
+        "attack": 57,
+        "defense": 77,
+        "trick": 55,
+        "edgeExplore": 37,
+        "ride": 25,
+        "unusual": 17,
+        "center": 48,
+        "consistency": 86,
+        "talkativeness": 31
+      }
+    },
+    {
+      "id": 76,
+      "name": "SUDA",
+      "file": "SUDA.png",
+      "hair": "hair11",
+      "mouth": "mouth7",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#009B0C",
+        "skin": "#FFB985"
+      },
+      "sha256": "c4a39a3575715fa65c874cb57c94501ef5e9d67340960c4767b6b7ff1401a521",
+      "profile": {
+        "rank": "champion",
+        "strength": 80,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 46,
+        "defense": 45,
+        "trick": 99,
+        "edgeExplore": 95,
+        "ride": 39,
+        "unusual": 6,
+        "center": 15,
+        "consistency": 68,
+        "talkativeness": 30
+      }
+    },
+    {
+      "id": 77,
+      "name": "NUSI",
+      "file": "NUSI.png",
+      "hair": "hair8",
+      "mouth": "mouth10",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#0D00FF",
+        "skin": "#FCC79F"
+      },
+      "sha256": "1d9c5abbaa7e042d111e79f859e0fd920a37d77537b64c5183995cfc789f92ce",
+      "profile": {
+        "rank": "champion",
+        "strength": 75,
+        "depth": 3,
+        "mistake": 4,
+        "attack": 38,
+        "defense": 74,
+        "trick": 21,
+        "edgeExplore": 78,
+        "ride": 75,
+        "unusual": 3,
+        "center": 69,
+        "consistency": 69,
+        "talkativeness": 74
+      }
+    },
+    {
+      "id": 78,
+      "name": "REFA",
+      "file": "REFA.png",
+      "hair": "hair11",
+      "mouth": "mouth2",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#2A2A2A",
+        "skin": "#FFB985"
+      },
+      "sha256": "9140ce9df53ca6bc7b3211c2e4eacd71aad3b1ed6c46d97cd4af4b6fd56525bc",
+      "profile": {
+        "rank": "champion",
+        "strength": 89,
+        "depth": 3,
+        "mistake": 3,
+        "attack": 41,
+        "defense": 22,
+        "trick": 90,
+        "edgeExplore": 47,
+        "ride": 20,
+        "unusual": 92,
+        "center": 12,
+        "consistency": 53,
+        "talkativeness": 59
+      }
+    },
+    {
+      "id": 79,
+      "name": "SUVA",
+      "file": "SUVA.png",
+      "hair": "hair4",
+      "mouth": "mouth2",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#C95407",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "2a22f3efed4647a30712366008856abdc8731dfb3d869d86a74bf6ab09f57ae0",
+      "profile": {
+        "rank": "regular",
+        "strength": 46,
+        "depth": 2,
+        "mistake": 14,
+        "attack": 40,
+        "defense": 37,
+        "trick": 38,
+        "edgeExplore": 5,
+        "ride": 14,
+        "unusual": 47,
+        "center": 94,
+        "consistency": 51,
+        "talkativeness": 55
+      }
+    },
+    {
+      "id": 80,
+      "name": "LULI",
+      "file": "LULI.png",
+      "hair": "hair5",
+      "mouth": "mouth8",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#005700",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "9a23102cfea4dd584a6aecb7de1b6c8925f83ecdcf955fc862c7bcef8640fa74",
+      "profile": {
+        "rank": "champion",
+        "strength": 82,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 96,
+        "defense": 89,
+        "trick": 27,
+        "edgeExplore": 30,
+        "ride": 5,
+        "unusual": 1,
+        "center": 66,
+        "consistency": 70,
+        "talkativeness": 64
+      }
+    },
+    {
+      "id": 81,
+      "name": "MAHA",
+      "file": "MAHA.png",
+      "hair": "hair10",
+      "mouth": "mouth3",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#000000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "a02ae07c5d609aed14f483e892bec3858937a0c61ea2ac5df5f0a8ce1150d7d9",
+      "profile": {
+        "rank": "beginner",
+        "strength": 29,
+        "depth": 1,
+        "mistake": 29,
+        "attack": 64,
+        "defense": 26,
+        "trick": 64,
+        "edgeExplore": 57,
+        "ride": 85,
+        "unusual": 50,
+        "center": 10,
+        "consistency": 77,
+        "talkativeness": 3
+      }
+    },
+    {
+      "id": 82,
+      "name": "SOVE",
+      "file": "SOVE.png",
+      "hair": "hair2",
+      "mouth": "mouth2",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#800000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "f9ca72dd96b84dff1af4385d9c0fa8da13ca2df463527ea34a0b950acf38595c",
+      "profile": {
+        "rank": "champion",
+        "strength": 71,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 40,
+        "defense": 23,
+        "trick": 65,
+        "edgeExplore": 93,
+        "ride": 97,
+        "unusual": 84,
+        "center": 3,
+        "consistency": 80,
+        "talkativeness": 70
+      }
+    },
+    {
+      "id": 83,
+      "name": "ZIKA",
+      "file": "ZIKA.png",
+      "hair": "hair7",
+      "mouth": "mouth10",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#800000",
+        "skin": "#FFB985"
+      },
+      "sha256": "8396d158e69d01c24dcfbb4aae1d29c171a53e18a18cf64cc4496d5e07a8c61c",
+      "profile": {
+        "rank": "champion",
+        "strength": 76,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 66,
+        "defense": 77,
+        "trick": 20,
+        "edgeExplore": 12,
+        "ride": 91,
+        "unusual": 25,
+        "center": 76,
+        "consistency": 37,
+        "talkativeness": 58
+      }
+    },
+    {
+      "id": 84,
+      "name": "KABI",
+      "file": "KABI.png",
+      "hair": "hair1",
+      "mouth": "mouth9",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#00ACCE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "a8a1a87fe1e0866f2c52976d913bd7b5c8b7a64f3ef24954cff20ed377096097",
+      "profile": {
+        "rank": "champion",
+        "strength": 89,
+        "depth": 3,
+        "mistake": 4,
+        "attack": 47,
+        "defense": 80,
+        "trick": 35,
+        "edgeExplore": 30,
+        "ride": 82,
+        "unusual": 35,
+        "center": 17,
+        "consistency": 42,
+        "talkativeness": 8
+      }
+    },
+    {
+      "id": 85,
+      "name": "SIPU",
+      "file": "SIPU.png",
+      "hair": "hair9",
+      "mouth": "mouth3",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#EEEEEE",
+        "skin": "#FFB985"
+      },
+      "sha256": "41bab8cb28e38d40d4566661268301de85b51fbf7b8942e6dd6223d14a26c2ef",
+      "profile": {
+        "rank": "regular",
+        "strength": 44,
+        "depth": 2,
+        "mistake": 12,
+        "attack": 28,
+        "defense": 87,
+        "trick": 79,
+        "edgeExplore": 44,
+        "ride": 98,
+        "unusual": 26,
+        "center": 49,
+        "consistency": 78,
+        "talkativeness": 35
+      }
+    },
+    {
+      "id": 86,
+      "name": "GOVO",
+      "file": "GOVO.png",
+      "hair": "hair10",
+      "mouth": "mouth7",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#009B0C",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "e883ba51d076b276dde774f9d3dd30285929ab958c5681643a51d32b7483b2fa",
+      "profile": {
+        "rank": "regular",
+        "strength": 62,
+        "depth": 2,
+        "mistake": 14,
+        "attack": 99,
+        "defense": 31,
+        "trick": 44,
+        "edgeExplore": 49,
+        "ride": 81,
+        "unusual": 53,
+        "center": 78,
+        "consistency": 70,
+        "talkativeness": 69
+      }
+    },
+    {
+      "id": 87,
+      "name": "DOLO",
+      "file": "DOLO.png",
+      "hair": "hair11",
+      "mouth": "mouth3",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#005700",
+        "skin": "#FFB985"
+      },
+      "sha256": "4bd4a91f1abbf49b82097d33e1bb466dd841b4bd968bcc044a036daaad8e1cf4",
+      "profile": {
+        "rank": "champion",
+        "strength": 70,
+        "depth": 3,
+        "mistake": 2,
+        "attack": 46,
+        "defense": 70,
+        "trick": 23,
+        "edgeExplore": 36,
+        "ride": 78,
+        "unusual": 36,
+        "center": 15,
+        "consistency": 82,
+        "talkativeness": 74
+      }
+    },
+    {
+      "id": 88,
+      "name": "LOGA",
+      "file": "LOGA.png",
+      "hair": "hair8",
+      "mouth": "mouth5",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#FFB985",
+        "skin": "#FFB985"
+      },
+      "sha256": "915b80d4ee84c59d2cda000f9807ad85029ba5720077d4d566bc1f833f7cf117",
+      "profile": {
+        "rank": "regular",
+        "strength": 58,
+        "depth": 2,
+        "mistake": 17,
+        "attack": 85,
+        "defense": 36,
+        "trick": 49,
+        "edgeExplore": 59,
+        "ride": 75,
+        "unusual": 36,
+        "center": 17,
+        "consistency": 61,
+        "talkativeness": 40
+      }
+    },
+    {
+      "id": 89,
+      "name": "VEBA",
+      "file": "VEBA.png",
+      "hair": "hair1",
+      "mouth": "mouth1",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#CD0000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "3a9c23b3990f28d3427571fdd9573e05e2c387bdb2f9cc83608e38c55ff6b132",
+      "profile": {
+        "rank": "regular",
+        "strength": 50,
+        "depth": 2,
+        "mistake": 10,
+        "attack": 79,
+        "defense": 23,
+        "trick": 95,
+        "edgeExplore": 75,
+        "ride": 52,
+        "unusual": 18,
+        "center": 39,
+        "consistency": 47,
+        "talkativeness": 60
+      }
+    },
+    {
+      "id": 90,
+      "name": "VAFO",
+      "file": "VAFO.png",
+      "hair": "hair10",
+      "mouth": "mouth2",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#000000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "25149283b4ed1b4d7aafc16756ca76035d0914588c6d3295f5424a3ad849d021",
+      "profile": {
+        "rank": "regular",
+        "strength": 65,
+        "depth": 2,
+        "mistake": 18,
+        "attack": 65,
+        "defense": 55,
+        "trick": 44,
+        "edgeExplore": 66,
+        "ride": 38,
+        "unusual": 23,
+        "center": 83,
+        "consistency": 84,
+        "talkativeness": 47
+      }
+    },
+    {
+      "id": 91,
+      "name": "KASI",
+      "file": "KASI.png",
+      "hair": "hair1",
+      "mouth": "mouth5",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#48164B",
+        "skin": "#FFB985"
+      },
+      "sha256": "fee5c9a19ce0740a35096254365f758d182167e56851ad933b6814186aa094d1",
+      "profile": {
+        "rank": "champion",
+        "strength": 79,
+        "depth": 3,
+        "mistake": 4,
+        "attack": 36,
+        "defense": 81,
+        "trick": 30,
+        "edgeExplore": 18,
+        "ride": 25,
+        "unusual": 12,
+        "center": 17,
+        "consistency": 42,
+        "talkativeness": 7
+      }
+    },
+    {
+      "id": 92,
+      "name": "KEVA",
+      "file": "KEVA.png",
+      "hair": "hair3",
+      "mouth": "mouth10",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#EEEEEE",
+        "skin": "#FCC79F"
+      },
+      "sha256": "8601afe37f996c7f055102c6540c1af1d12e3cad5369a7c61360a205aa967986",
+      "profile": {
+        "rank": "regular",
+        "strength": 63,
+        "depth": 2,
+        "mistake": 17,
+        "attack": 83,
+        "defense": 82,
+        "trick": 65,
+        "edgeExplore": 56,
+        "ride": 34,
+        "unusual": 12,
+        "center": 98,
+        "consistency": 61,
+        "talkativeness": 57
+      }
+    },
+    {
+      "id": 93,
+      "name": "VIRO",
+      "file": "VIRO.png",
+      "hair": "hair8",
+      "mouth": "mouth1",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#C95407",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "8ac4fae39bf14bfc6dd61b20e76977ff2a10e4e25c9323f97b5c6ba741e7dba0",
+      "profile": {
+        "rank": "regular",
+        "strength": 54,
+        "depth": 2,
+        "mistake": 7,
+        "attack": 77,
+        "defense": 37,
+        "trick": 70,
+        "edgeExplore": 26,
+        "ride": 53,
+        "unusual": 47,
+        "center": 9,
+        "consistency": 84,
+        "talkativeness": 5
+      }
+    },
+    {
+      "id": 94,
+      "name": "VAME",
+      "file": "VAME.png",
+      "hair": "hair6",
+      "mouth": "mouth10",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#000000",
+        "skin": "#FFB985"
+      },
+      "sha256": "8b319852a340789cf8844b45846fbcad510a55a9b02a3cb505eb1955622994bf",
+      "profile": {
+        "rank": "regular",
+        "strength": 52,
+        "depth": 2,
+        "mistake": 10,
+        "attack": 89,
+        "defense": 31,
+        "trick": 68,
+        "edgeExplore": 0,
+        "ride": 90,
+        "unusual": 9,
+        "center": 84,
+        "consistency": 94,
+        "talkativeness": 55
+      }
+    },
+    {
+      "id": 95,
+      "name": "MIPU",
+      "file": "MIPU.png",
+      "hair": "hair11",
+      "mouth": "mouth9",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#2A2A2A",
+        "skin": "#FFB985"
+      },
+      "sha256": "ac1c3df177e8758f0df92f3587806040f50c71d67f21355b276b4487e67c9815",
+      "profile": {
+        "rank": "beginner",
+        "strength": 31,
+        "depth": 1,
+        "mistake": 30,
+        "attack": 46,
+        "defense": 32,
+        "trick": 40,
+        "edgeExplore": 15,
+        "ride": 80,
+        "unusual": 53,
+        "center": 42,
+        "consistency": 85,
+        "talkativeness": 29
+      }
+    },
+    {
+      "id": 96,
+      "name": "FADI",
+      "file": "FADI.png",
+      "hair": "hair6",
+      "mouth": "mouth3",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#800000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "9224c1df0f4c28aa17be2205dcd0f0fa437ecaf7f07566e9da8e02de3756e96f",
+      "profile": {
+        "rank": "beginner",
+        "strength": 22,
+        "depth": 1,
+        "mistake": 33,
+        "attack": 64,
+        "defense": 79,
+        "trick": 92,
+        "edgeExplore": 94,
+        "ride": 29,
+        "unusual": 89,
+        "center": 37,
+        "consistency": 38,
+        "talkativeness": 68
+      }
+    },
+    {
+      "id": 97,
+      "name": "FOKU",
+      "file": "FOKU.png",
+      "hair": "hair5",
+      "mouth": "mouth2",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#000000",
+        "skin": "#FFB985"
+      },
+      "sha256": "fe61853d20f98534b94607b837eb557c2ba9303efb0fa5ba7d26a8b736a12507",
+      "profile": {
+        "rank": "champion",
+        "strength": 80,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 23,
+        "defense": 80,
+        "trick": 62,
+        "edgeExplore": 28,
+        "ride": 23,
+        "unusual": 55,
+        "center": 39,
+        "consistency": 42,
+        "talkativeness": 73
+      }
+    },
+    {
+      "id": 98,
+      "name": "DAHE",
+      "file": "DAHE.png",
+      "hair": "hair4",
+      "mouth": "mouth5",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#800000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "6a6d822edac029846e662a467afcab28374f91f0fd8fe74e2e15153472566a89",
+      "profile": {
+        "rank": "regular",
+        "strength": 48,
+        "depth": 2,
+        "mistake": 12,
+        "attack": 57,
+        "defense": 97,
+        "trick": 50,
+        "edgeExplore": 48,
+        "ride": 40,
+        "unusual": 28,
+        "center": 39,
+        "consistency": 66,
+        "talkativeness": 30
+      }
+    },
+    {
+      "id": 99,
+      "name": "ZIRO",
+      "file": "ZIRO.png",
+      "hair": "hair5",
+      "mouth": "mouth10",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#0D00FF",
+        "skin": "#FFB985"
+      },
+      "sha256": "4812a3fb13b02b04660483cc748f9b908c6feb1bbfe6c32e4d9013e6f6a7ba4c",
+      "profile": {
+        "rank": "champion",
+        "strength": 71,
+        "depth": 3,
+        "mistake": 1,
+        "attack": 28,
+        "defense": 96,
+        "trick": 59,
+        "edgeExplore": 45,
+        "ride": 93,
+        "unusual": 99,
+        "center": 80,
+        "consistency": 41,
+        "talkativeness": 47
+      }
+    }
+  ]
+}

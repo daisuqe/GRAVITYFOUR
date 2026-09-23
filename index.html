@@ -3,245 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#e8d9b5">
-  <title>四方争覇 — GRAVITY FOUR</title>
+  <meta name="theme-color" content="#050a0b">
+  <title>GRAVITY FOUR</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="intro" aria-hidden="true"><div class="intro-lockup"><div class="intro-kanji" lang="ja">四方争覇</div><div class="intro-english">GRAVITY FOUR</div></div></div>
   <main class="app">
-    <section class="stage" aria-label="Gravity Four">
-      <div class="hud">
-        <div class="player active" id="human-card"><span class="mini-stone black" aria-hidden="true"></span><span id="human-score">0</span><span class="fraction">/3</span></div>
-        <div class="player com" id="com-card"><span class="mini-stone white" aria-hidden="true"></span><span id="com-score">0</span><span class="fraction">/3</span></div>
+    <section class="menu" id="menu" aria-label="Tournament selection">
+      <header class="brand"><h1>GRAVITY FOUR</h1></header>
+      <p class="menu-lead">SELECT TOURNAMENT</p>
+      <div class="tournament-list" id="tournament-list"></div>
+      <a class="help-button" href="help.html">HOW TO PLAY</a>
+    </section>
+    <section class="stage" id="stage" aria-label="Gravity Four" hidden>
+      <div class="match-bar"><button class="back-button" id="back" type="button">← MENU</button><span id="match-progress"></span></div>
+      <div class="arena">
+        <div class="board-column">
+          <div class="scoreboard" id="human-card" aria-label="Four-in-a-row score">
+            <p class="speech" id="speech" role="status" aria-live="polite" hidden></p>
+            <div class="enemy-portrait"><img id="opponent-face" alt="" width="150" height="150"><div class="thinking" id="thinking" hidden>THINKING<span aria-hidden="true">···</span></div></div>
+            <span class="score-you">YOU</span><strong id="human-score">0</strong><span class="score-dash">-</span><strong id="com-score">0</strong><span id="score-opponent-name"></span>
+          </div>
+          <div class="board-frame" id="board-frame">
+            <div class="board" id="board" role="grid" aria-label="Ten by ten crystal board"><canvas class="board-art" id="board-art" width="320" height="320" aria-hidden="true"></canvas></div>
+            <div class="result" id="result" role="status" aria-live="polite" hidden></div>
+          </div>
+        </div>
       </div>
-      <div class="board-frame">
-        <div class="board" id="board" role="grid" aria-label="Ten by ten Go board"><canvas class="board-art" id="board-art" width="320" height="320" aria-hidden="true"></canvas></div>
-        <div class="result" id="result" role="status" aria-live="polite" hidden></div>
+      <div class="victory-effect" id="victory-effect" aria-hidden="true" hidden>
+        <div class="victory-ring ring-one"></div><div class="victory-ring ring-two"></div>
+        <div class="victory-particles" id="victory-particles"></div>
+        <div class="victory-message"><span id="victory-kicker"></span><strong id="victory-title"></strong><span id="victory-subtitle"></span></div>
       </div>
+      <section class="tournament-recap" id="tournament-recap" aria-label="Tournament standings" hidden>
+        <div class="recap-card"><div class="recap-head"><span class="eyebrow">TOURNAMENT UPDATE</span><h2 id="recap-title"></h2><p id="recap-subtitle"></p></div><div class="bracket-rounds" id="bracket-rounds"></div><div class="match-actions" id="match-actions" hidden><button id="next-match" type="button"></button><button id="menu-after" type="button">MENU</button></div></div>
+      </section>
     </section>
   </main>
   <button class="place-button" id="place" type="button" disabled>PLACE</button>
-  <script>
-  (() => {
-    'use strict';
-    const N=10, HUMAN=1, COM=2, EMPTY=0;
-    const boardEl=document.getElementById('board');
-    const art=document.getElementById('board-art');
-    const ctx=art.getContext('2d');
-    ctx.imageSmoothingEnabled=false;
-    ctx.setTransform(2,0,0,2,0,0);
-    const requiresPlace=typeof window.matchMedia==='function'&&window.matchMedia('(hover: none), (pointer: coarse)').matches;
-    const cells=[];const directions=[[0,1],[1,0],[1,1],[1,-1]];
-    const windows=[];
-    for(let r=0;r<N;r++)for(let c=0;c<N;c++)for(const [dr,dc] of directions){
-      for(const length of [4,5]){
-        const endR=r+dr*(length-1),endC=c+dc*(length-1);
-        if(endR<0||endR>=N||endC<0||endC>=N)continue;
-        const indices=Array.from({length},(_,k)=>(r+dr*k)*N+c+dc*k);
-        windows.push({indices,length,dr,dc,r,c});
-      }
-    }
-    let board=new Uint8Array(N*N),turn=HUMAN,ended=false,winningCells=new Set(),thinking=false,hoverIndex=-1,selectedIndex=-1;
-    const settings={depth:2,mistake:10,trick:30};
-    const byId=id=>document.getElementById(id);
-    function legalMoves(b){
-      const result=[];
-      for(let r=0;r<N;r++)for(let c=0;c<N;c++){
-        const i=r*N+c;if(b[i])continue;
-        let ok=true;
-        for(let x=c-1;x>=0;x--)if(!b[r*N+x]){ok=false;break;}
-        if(!ok){ok=true;for(let x=c+1;x<N;x++)if(!b[r*N+x]){ok=false;break;}}
-        if(!ok){ok=true;for(let y=r-1;y>=0;y--)if(!b[y*N+c]){ok=false;break;}}
-        if(!ok){ok=true;for(let y=r+1;y<N;y++)if(!b[y*N+c]){ok=false;break;}}
-        if(ok)result.push(i);
-      }
-      return result;
-    }
-    function wins(b,player){
-      const four=[],five=[];
-      for(const w of windows){
-        if(!w.indices.every(i=>b[i]===player))continue;
-        // Only count complete runs of exactly four; a run of five wins separately.
-        if(w.length===5){five.push(w.indices);continue;}
-        const beforeR=w.r-w.dr,beforeC=w.c-w.dc,afterR=w.r+w.dr*4,afterC=w.c+w.dc*4;
-        const before=beforeR>=0&&beforeR<N&&beforeC>=0&&beforeC<N&&b[beforeR*N+beforeC]===player;
-        const after=afterR>=0&&afterR<N&&afterC>=0&&afterC<N&&b[afterR*N+afterC]===player;
-        if(!before&&!after)four.push(w.indices);
-      }
-      return {four,five,won:five.length>0||four.length>=3};
-    }
-    function positionValue(i){const r=Math.floor(i/N),c=i%N;return (4.5-Math.abs(r-4.5))+(4.5-Math.abs(c-4.5));}
-    function potential(b,player){
-      let value=0,threats=0;
-      for(const w of windows){
-        if(w.length!==4)continue;
-        let own=0,enemy=0;
-        for(const i of w.indices){if(b[i]===player)own++;else if(b[i]!==EMPTY)enemy++;}
-        if(enemy)continue;
-        if(own===4)value+=1900;
-        else if(own===3){value+=105;threats++;}
-        else if(own===2)value+=13;
-        else if(own===1)value+=1.5;
-      }
-      return {value,threats};
-    }
-    function evaluate(b){
-      const cw=wins(b,COM),hw=wins(b,HUMAN);
-      if(cw.won)return 1000000;
-      if(hw.won)return -1000000;
-      const cp=potential(b,COM),hp=potential(b,HUMAN);
-      let score=cp.value-hp.value*1.16+(cp.threats**2-hp.threats**2)*settings.trick*.035;
-      for(let i=0;i<N*N;i++)if(b[i])score+=positionValue(i)*(b[i]===COM?1:-1)*.45;
-      return score;
-    }
-    function rankedMoves(b,player,limit){
-      const moves=legalMoves(b).map(i=>{
-        b[i]=player;const w=wins(b,player);const value=w.won?1000000:evaluate(b)*(player===COM?1:-1);b[i]=EMPTY;
-        return {i,value};
-      });
-      moves.sort((a,z)=>z.value-a.value);
-      return limit?moves.slice(0,limit):moves;
-    }
-    function search(b,player,depth,alpha,beta){
-      const cw=wins(b,COM),hw=wins(b,HUMAN);
-      if(cw.won)return 1000000+depth;
-      if(hw.won)return -1000000-depth;
-      if(depth===0)return evaluate(b);
-      const moves=rankedMoves(b,player,depth>=2?7:10);
-      if(!moves.length)return evaluate(b);
-      if(player===COM){
-        let best=-Infinity;
-        for(const {i} of moves){b[i]=COM;best=Math.max(best,search(b,HUMAN,depth-1,alpha,beta));b[i]=EMPTY;alpha=Math.max(alpha,best);if(beta<=alpha)break;}
-        return best;
-      }
-      let best=Infinity;
-      for(const {i} of moves){b[i]=HUMAN;best=Math.min(best,search(b,COM,depth-1,alpha,beta));b[i]=EMPTY;beta=Math.min(beta,best);if(beta<=alpha)break;}
-      return best;
-    }
-    function chooseComMove(){
-      const moves=legalMoves(board);if(!moves.length)return -1;
-      const blunder=Math.random()*100<settings.mistake;
-      // Check immediate finishes and threats before deeper search.
-      const immediate=[];for(const i of moves){board[i]=COM;if(wins(board,COM).won)immediate.push(i);board[i]=EMPTY;}
-      if(immediate.length&&!blunder)return immediate[Math.floor(Math.random()*immediate.length)];
-      const threats=[];for(const i of moves){board[i]=HUMAN;if(wins(board,HUMAN).won)threats.push(i);board[i]=EMPTY;}
-      const candidates=(threats.length===1&&!blunder?threats:moves);
-      const scored=[];
-      for(const i of candidates){
-        board[i]=COM;
-        const score=search(board,HUMAN,settings.depth-1,-Infinity,Infinity);
-        const lead=potential(board,COM).threats-potential(board,HUMAN).threats;
-        board[i]=EMPTY;
-        scored.push({i,score:score+lead*settings.trick*.16});
-      }
-      scored.sort((a,z)=>z.score-a.score);
-      if(blunder&&scored.length>1){
-        const pool=scored.slice(1,Math.min(scored.length,Math.max(3,Math.ceil(scored.length*.3))));
-        return pool[Math.floor(Math.random()*pool.length)].i;
-      }
-      return scored[0].i;
-    }
-    const stoneShape=[
-      '....###....','..#######..','.#########.','.#########.',
-      '###########','###########','###########',
-      '.#########.','.#########.','..#######..','....###....'
-    ];
-    function drawStone(cx,cy,player,won){
-      for(let y=0;y<11;y++)for(let x=0;x<11;x++){
-        if(stoneShape[y][x]!=='#')continue;
-        const edge=y===0||y===10||x===0||x===10||
-          stoneShape[y-1]?.[x]!== '#' || stoneShape[y+1]?.[x]!== '#' ||
-          stoneShape[y]?.[x-1]!== '#' || stoneShape[y]?.[x+1]!== '#';
-        if(player===HUMAN)ctx.fillStyle=edge?'#0a0909':y<4?'#514b45':y>7?'#211f1d':'#302b27';
-        else ctx.fillStyle=edge?'#8b806e':y<4?'#fff9e8':y>7?'#c9bda9':'#e9e0cf';
-        ctx.fillRect(cx+x-5,cy+y-5,1,1);
-      }
-      ctx.fillStyle=player===HUMAN?'#82786b':'#ffffff';
-      ctx.fillRect(cx-2,cy-3,2,1);
-      if(won){
-        ctx.fillStyle='#bd5141';
-        for(const [x,y] of [[-7,-7],[6,-7],[-7,6],[6,6]])ctx.fillRect(cx+x,cy+y,2,2);
-      }
-    }
-    function drawBoard(legal){
-      ctx.fillStyle='#d8ad73';ctx.fillRect(0,0,160,160);
-      ctx.fillStyle='#76563a';
-      for(let n=0;n<N;n++){
-        ctx.fillRect(8,8+n*16,144.5,.5);
-        ctx.fillRect(8+n*16,8,.5,144.5);
-      }
-      const cursor=selectedIndex>=0?selectedIndex:hoverIndex;
-      if(legal.has(cursor)){
-        const x=8+(cursor%N)*16,y=8+Math.floor(cursor/N)*16;
-        ctx.fillStyle='#a74738';
-        for(const [dx,dy,sx,sy] of [[-7,-7,1,4],[-7,-7,4,1],[6,-7,1,4],[3,-7,4,1],[-7,3,1,4],[-7,6,4,1],[6,3,1,4],[3,6,4,1]]){
-          ctx.fillRect(x+dx,y+dy,sx,sy);
-        }
-      }
-      for(let i=0;i<N*N;i++)if(board[i]){
-        drawStone(8+(i%N)*16,8+Math.floor(i/N)*16,board[i],winningCells.has(i));
-      }
-    }
-    function play(i,player){
-      if(ended||board[i]||!legalMoves(board).includes(i))return false;
-      board[i]=player;selectedIndex=-1;hoverIndex=-1;
-      const result=wins(board,player);
-      if(result.won){ended=true;winningCells=new Set((result.five[0]||result.four[0]).concat(result.four.flat()));}
-      else if(!legalMoves(board).length)ended=true;
-      else turn=player===HUMAN?COM:HUMAN;
-      render();return true;
-    }
-    function render(){
-      const legal=!ended&&turn===HUMAN&&!thinking?new Set(legalMoves(board)):new Set();
-      for(let i=0;i<cells.length;i++){
-        const cell=cells[i],owner=board[i];cell.className='cell'+(legal.has(i)?' legal':'');
-        cell.disabled=!legal.has(i);
-        cell.setAttribute('aria-label',`Row ${Math.floor(i/N)+1}, column ${i%N+1}: ${owner===HUMAN?'black stone':owner===COM?'white stone':legal.has(i)?'open':'unavailable'}`);
-      }
-      drawBoard(legal);
-      const hs=wins(board,HUMAN),cs=wins(board,COM);
-      byId('human-score').textContent=hs.four.length;byId('com-score').textContent=cs.four.length;
-      byId('human-card').classList.toggle('active',!ended&&turn===HUMAN);
-      byId('com-card').classList.toggle('active',!ended&&turn===COM);
-      byId('place').disabled=!requiresPlace||!legal.has(selectedIndex);
-      const result=byId('result');
-      result.hidden=!ended;
-      if(ended){
-        result.textContent=hs.won?'BLACK WINS':cs.won?'WHITE WINS':'DRAW';
-      }
-    }
-    function scheduleCom(){
-      thinking=true;render();
-      setTimeout(()=>{
-        if(ended||turn!==COM)return;
-        const i=chooseComMove();thinking=false;
-        if(i>=0)play(i,COM);else{ended=true;render();}
-      },180);
-    }
-    for(let i=0;i<N*N;i++){
-      const button=document.createElement('button');button.type='button';button.className='cell';button.setAttribute('role','gridcell');
-      button.addEventListener('click',()=>{
-        if(turn!==HUMAN||thinking||ended||!legalMoves(board).includes(i))return;
-        if(requiresPlace){selectedIndex=i;render();}
-        else if(play(i,HUMAN)&&!ended)scheduleCom();
-      });
-      button.addEventListener('mouseenter',()=>{hoverIndex=i;render();});
-      button.addEventListener('mouseleave',()=>{hoverIndex=-1;render();});
-      button.addEventListener('focus',()=>{hoverIndex=i;render();});
-      button.addEventListener('blur',()=>{hoverIndex=-1;render();});
-      boardEl.append(button);cells.push(button);
-    }
-    byId('place').addEventListener('click',()=>{
-      if(!requiresPlace||selectedIndex<0||turn!==HUMAN||thinking||ended)return;
-      const i=selectedIndex;
-      if(play(i,HUMAN)&&!ended)scheduleCom();
-    });
-    const presets={rookie:{depth:1,mistake:35,trick:10},balanced:{depth:2,mistake:10,trick:30},expert:{depth:3,mistake:0,trick:75}};
-    render();
-    window.GravityFour={legalMoves,wins,evaluate,settings,presets,getBoard:()=>board.slice()};
-  })();
-  </script>
+  <script src="characters.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
-

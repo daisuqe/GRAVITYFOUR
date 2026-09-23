@@ -8,7 +8,7 @@ from fontTools.pens.ttGlyphPen import TTGlyphPen
 
 
 ROOT = Path(__file__).parent
-IMAGE = Image.open(ROOT / "kaisyo02-source.png").convert("RGB")
+IMAGE = Image.open(ROOT / "yodaka-source.png").convert("RGB")
 INK = (148, 171, 255)
 ORIGIN_X, ORIGIN_Y, SOURCE_PIXEL = 42, 258, 6
 UNIT = 140
@@ -174,5 +174,5 @@ font.setupMaxp()
 ttf = ROOT / "yodaka.ttf"
 font.save(ttf)
 font.font.flavor = "woff"
-font.save(ROOT / "yodaka.woff")
+font.save(ROOT.parent / "yodaka.woff")
 print(f"Wrote {ttf.name} and yodaka.woff ({len(patterns) + len(title_patterns)} visible glyphs)")

@@ -1,0 +1,1611 @@
+{
+  "source": "E:\\User\\Daisuke\\Unity\\GRAVITYFOUR\\data\\human01.psd",
+  "source_sha256": "7719c46d359d4e6867a4c25eb9d10fc37c9f3eb9257d9141cc7c74d20a48c4aa",
+  "seed": 20260923,
+  "count": 99,
+  "palette_sizes": {
+    "hair": 13,
+    "cloth": 16,
+    "skin": 4
+  },
+  "changes": [
+    {
+      "name": "SAVI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair11",
+        "mouth": "mouth6",
+        "eyes": "eye1"
+      },
+      "after": {
+        "hair": "hair11",
+        "mouth": "mouth1",
+        "eyes": "eye11"
+      }
+    },
+    {
+      "name": "BUBI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair7",
+        "mouth": "mouth6",
+        "eyes": "eye12"
+      },
+      "after": {
+        "hair": "hair7",
+        "mouth": "mouth9",
+        "eyes": "eye15"
+      }
+    },
+    {
+      "name": "PESI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair3",
+        "mouth": "mouth6",
+        "eyes": "eye8"
+      },
+      "after": {
+        "hair": "hair3",
+        "mouth": "mouth7",
+        "eyes": "eye9"
+      }
+    },
+    {
+      "name": "DEPI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair10",
+        "mouth": "mouth6",
+        "eyes": "eye15"
+      },
+      "after": {
+        "hair": "hair10",
+        "mouth": "mouth8",
+        "eyes": "eye2"
+      }
+    },
+    {
+      "name": "TAZA",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair5",
+        "mouth": "mouth6",
+        "eyes": "eye10"
+      },
+      "after": {
+        "hair": "hair5",
+        "mouth": "mouth3",
+        "eyes": "eye7"
+      }
+    },
+    {
+      "name": "TIHI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair4",
+        "mouth": "mouth6",
+        "eyes": "eye9"
+      },
+      "after": {
+        "hair": "hair4",
+        "mouth": "mouth10",
+        "eyes": "eye13"
+      }
+    },
+    {
+      "name": "DERI",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair2",
+        "mouth": "mouth6",
+        "eyes": "eye7"
+      },
+      "after": {
+        "hair": "hair2",
+        "mouth": "mouth4",
+        "eyes": "eye5"
+      }
+    },
+    {
+      "name": "NUFU",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair8",
+        "mouth": "mouth6",
+        "eyes": "eye13"
+      },
+      "after": {
+        "hair": "hair8",
+        "mouth": "mouth2",
+        "eyes": "eye9"
+      }
+    },
+    {
+      "name": "KOFE",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair9",
+        "mouth": "mouth6",
+        "eyes": "eye14"
+      },
+      "after": {
+        "hair": "hair9",
+        "mouth": "mouth5",
+        "eyes": "eye13"
+      }
+    },
+    {
+      "name": "VEBA",
+      "reason": "retired mouth6",
+      "before": {
+        "hair": "hair1",
+        "mouth": "mouth6",
+        "eyes": "eye6"
+      },
+      "after": {
+        "hair": "hair1",
+        "mouth": "mouth1",
+        "eyes": "eye1"
+      }
+    },
+    {
+      "name": "KUKA",
+      "reason": "KUKA redesign",
+      "before": {
+        "hair": "hair9",
+        "mouth": "mouth10",
+        "eyes": "eye3"
+      },
+      "after": {
+        "hair": "hair1",
+        "mouth": "mouth2",
+        "eyes": "eye2"
+      }
+    },
+    {
+      "name": "VONA",
+      "reason": "KUKA redesign",
+      "before": {
+        "hair": "hair1",
+        "mouth": "mouth2",
+        "eyes": "eye2"
+      },
+      "after": {
+        "hair": "hair9",
+        "mouth": "mouth10",
+        "eyes": "eye3"
+      }
+    },
+    {
+      "name": "KUKA",
+      "reason": "color update",
+      "before": {
+        "hair": "#000000",
+        "cloth": "#2A2A2A",
+        "skin": "#FCC79F"
+      },
+      "after": {
+        "hair": "#800000",
+        "cloth": "#005700",
+        "skin": "#FFB985"
+      }
+    },
+    {
+      "name": "ROLA",
+      "reason": "color update",
+      "before": {
+        "hair": "#CEBF00",
+        "cloth": "#CEBF00",
+        "skin": "#FFCDB3"
+      },
+      "after": {
+        "hair": "#CEBF00",
+        "cloth": "#FFB985",
+        "skin": "#FFCDB3"
+      }
+    },
+    {
+      "name": "DOSI",
+      "reason": "color update",
+      "before": {
+        "hair": "#800000",
+        "cloth": "#800000",
+        "skin": "#FFB985"
+      },
+      "after": {
+        "hair": "#800000",
+        "cloth": "#C95407",
+        "skin": "#FFB985"
+      }
+    }
+  ],
+  "characters": [
+    {
+      "id": 1,
+      "name": "KUKA",
+      "file": "KUKA.png",
+      "hair": "hair1",
+      "mouth": "mouth2",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#005700",
+        "skin": "#FFB985"
+      },
+      "sha256": "e7468f8c0a48a26fb2495e437d1c73f31cbae88926ddd6a4f82a4f07a5545013"
+    },
+    {
+      "id": 2,
+      "name": "FULE",
+      "file": "FULE.png",
+      "hair": "hair7",
+      "mouth": "mouth2",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#48164B",
+        "skin": "#FFB985"
+      },
+      "sha256": "d569ac282e3e15546a70fcedb88d2806b1da933d6b0d0d9d9307d900b744e435"
+    },
+    {
+      "id": 3,
+      "name": "TENE",
+      "file": "TENE.png",
+      "hair": "hair1",
+      "mouth": "mouth4",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#C95407",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "01d04d37129493a71178d17116cba3c2197a51fcd834208f53747dbdb5db4866"
+    },
+    {
+      "id": 4,
+      "name": "ZEKU",
+      "file": "ZEKU.png",
+      "hair": "hair8",
+      "mouth": "mouth4",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#152E4C",
+        "skin": "#FFB985"
+      },
+      "sha256": "32052293a1089a5b61431a8f49a1daf4d6d2e86e8ccb5245096b09020439d2c6"
+    },
+    {
+      "id": 5,
+      "name": "TONE",
+      "file": "TONE.png",
+      "hair": "hair4",
+      "mouth": "mouth4",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#48164B",
+        "skin": "#FCC79F"
+      },
+      "sha256": "21cb9c74c38597554210075718ecc9fb351155506cdcf192dbd8743e7ca419e4"
+    },
+    {
+      "id": 6,
+      "name": "PIGU",
+      "file": "PIGU.png",
+      "hair": "hair11",
+      "mouth": "mouth10",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#2A2A2A",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "53e6fe21aacba33e88920799231073d8151e7a7fb8df183dab5bb9e893bd0867"
+    },
+    {
+      "id": 7,
+      "name": "NEHA",
+      "file": "NEHA.png",
+      "hair": "hair8",
+      "mouth": "mouth3",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#DDB4FF",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "de4511c5aeb4f8cba791972ae6f4fddd541f987d14cdb2f5906322650133c668"
+    },
+    {
+      "id": 8,
+      "name": "NAZI",
+      "file": "NAZI.png",
+      "hair": "hair1",
+      "mouth": "mouth3",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#EEEEEE",
+        "skin": "#FCC79F"
+      },
+      "sha256": "8b7d0909a45ea9430c55b10b24f7af1e6bf2d269a2bf4edb7096cd3e3a77b0d8"
+    },
+    {
+      "id": 9,
+      "name": "ZOME",
+      "file": "ZOME.png",
+      "hair": "hair7",
+      "mouth": "mouth3",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#CD0000",
+        "skin": "#FFB985"
+      },
+      "sha256": "379eb02ea28ef897da7a8c5fc0235214ef18ce0c4367357be5adcb44bf2c0dc7"
+    },
+    {
+      "id": 10,
+      "name": "LURI",
+      "file": "LURI.png",
+      "hair": "hair10",
+      "mouth": "mouth5",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#DDB4FF",
+        "skin": "#FFB985"
+      },
+      "sha256": "6db1ce8e9edf9e6772cd77075df27ef1513efe7be9ffafb0f0d0acac4b3e2d15"
+    },
+    {
+      "id": 11,
+      "name": "GOLE",
+      "file": "GOLE.png",
+      "hair": "hair4",
+      "mouth": "mouth1",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#800000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "ee18aa5df86e223a6e8a9df070dab2769d051a683bc526da61a61b44005b921b"
+    },
+    {
+      "id": 12,
+      "name": "SAVI",
+      "file": "SAVI.png",
+      "hair": "hair11",
+      "mouth": "mouth1",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#CEBF00",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "9983366debbeefddb3ba53b9a05838319b2930ca9dd356e1f4022e7f58ce9c53"
+    },
+    {
+      "id": 13,
+      "name": "GIHI",
+      "file": "GIHI.png",
+      "hair": "hair9",
+      "mouth": "mouth1",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#2A2A2A",
+        "skin": "#FFB985"
+      },
+      "sha256": "60cdd44c9a4127b552625220be3e6d66d2b87bbe4991709b6bc684d6dcc0ecb2"
+    },
+    {
+      "id": 14,
+      "name": "FADU",
+      "file": "FADU.png",
+      "hair": "hair7",
+      "mouth": "mouth5",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#CD0000",
+        "skin": "#FFB985"
+      },
+      "sha256": "f8d1108482d63d170e24e137b8e9184d40ac12790744cfaee2681fd59e3c7699"
+    },
+    {
+      "id": 15,
+      "name": "HUTU",
+      "file": "HUTU.png",
+      "hair": "hair3",
+      "mouth": "mouth3",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#005700",
+        "skin": "#FFB985"
+      },
+      "sha256": "2b5a0dd0abd290b89d32abe49d192cfa431d18e286b382786acfee2eb9d9ae92"
+    },
+    {
+      "id": 16,
+      "name": "NESA",
+      "file": "NESA.png",
+      "hair": "hair6",
+      "mouth": "mouth2",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#C95407",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "978e8058a68534d98ebd1e9f40c2675add0257f94e4a4dce4949a5f33e168d5d"
+    },
+    {
+      "id": 17,
+      "name": "TAFO",
+      "file": "TAFO.png",
+      "hair": "hair6",
+      "mouth": "mouth1",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#00ACCE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "389dcb2c11536ccb7816165ed2a4c42092639ebcc13f91d8797cdb26c350de67"
+    },
+    {
+      "id": 18,
+      "name": "RUMI",
+      "file": "RUMI.png",
+      "hair": "hair1",
+      "mouth": "mouth8",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#CD0000",
+        "skin": "#FFB985"
+      },
+      "sha256": "7afb60abb6cdaae1c87b9a49df39bab8f6cbddb5e9f037f6176535331ea2c6cd"
+    },
+    {
+      "id": 19,
+      "name": "KIGU",
+      "file": "KIGU.png",
+      "hair": "hair3",
+      "mouth": "mouth5",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#CEBF00",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "d46e92a012a92d6217f56ec6a03a9a244e3b22d4efb0aad7faf6d50466d31e35"
+    },
+    {
+      "id": 20,
+      "name": "BUBI",
+      "file": "BUBI.png",
+      "hair": "hair7",
+      "mouth": "mouth9",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#CD0000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "d628ea658aaac0eedd85af866a5b2d5347ad66f3006764d5f01148ff2b8588c4"
+    },
+    {
+      "id": 21,
+      "name": "LEKA",
+      "file": "LEKA.png",
+      "hair": "hair11",
+      "mouth": "mouth4",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#800000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "fc7256e74b858ca43795f0ba7a12b165741077fbf8ee2e48b40985675535adf8"
+    },
+    {
+      "id": 22,
+      "name": "FAVE",
+      "file": "FAVE.png",
+      "hair": "hair8",
+      "mouth": "mouth8",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#000000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "b2a0f8fe335d2112e5a26e9b76eee426b18ee12ddb3254c8e3a01c8d7434e5a7"
+    },
+    {
+      "id": 23,
+      "name": "RIFI",
+      "file": "RIFI.png",
+      "hair": "hair3",
+      "mouth": "mouth1",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#066F85",
+        "cloth": "#800000",
+        "skin": "#FFB985"
+      },
+      "sha256": "f549edbe4651444f5114baaa82bde7c097a0dcded5599bac1cbc1e9ae8e4d686"
+    },
+    {
+      "id": 24,
+      "name": "TAGI",
+      "file": "TAGI.png",
+      "hair": "hair9",
+      "mouth": "mouth2",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#CD0000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "1765897952a187bd249cc4ac366bf82fead76218b396172d047175a47f92413c"
+    },
+    {
+      "id": 25,
+      "name": "MUSI",
+      "file": "MUSI.png",
+      "hair": "hair4",
+      "mouth": "mouth8",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#C95407",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "495fdd3fe74636b15e2a4321456f9118ff9536cfcf10c29e05bf5e8bbfccc89c"
+    },
+    {
+      "id": 26,
+      "name": "HEDO",
+      "file": "HEDO.png",
+      "hair": "hair1",
+      "mouth": "mouth10",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#CEBF00",
+        "skin": "#FCC79F"
+      },
+      "sha256": "56262ef6b00ae0e04c24141d8bdff09d19633ceca88e70212e388ce69117e656"
+    },
+    {
+      "id": 27,
+      "name": "NIPO",
+      "file": "NIPO.png",
+      "hair": "hair2",
+      "mouth": "mouth7",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#FFB985",
+        "skin": "#FFB985"
+      },
+      "sha256": "15c5d93dc72f1e3e70c446d56aa188d28041ade6ffc51e7af1c35beaa45cef9a"
+    },
+    {
+      "id": 28,
+      "name": "ZOZE",
+      "file": "ZOZE.png",
+      "hair": "hair4",
+      "mouth": "mouth3",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#B5B5B5",
+        "skin": "#FFB985"
+      },
+      "sha256": "2c916f12cfe91aa9dc9e791fc2df8bd6e5205a15ab719672b15ca7ac6debec29"
+    },
+    {
+      "id": 29,
+      "name": "PESI",
+      "file": "PESI.png",
+      "hair": "hair3",
+      "mouth": "mouth7",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#2A2A2A",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "4c0347a61ee4229d17e7c3f41a737ece3b31ae0512af9c42ff118edd9b1f9133"
+    },
+    {
+      "id": 30,
+      "name": "SENA",
+      "file": "SENA.png",
+      "hair": "hair7",
+      "mouth": "mouth1",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#152E4C",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "22017563caa81c4c07ad18223d11ffe97286d1715bcd93d164442dbe38b52687"
+    },
+    {
+      "id": 31,
+      "name": "GOHU",
+      "file": "GOHU.png",
+      "hair": "hair8",
+      "mouth": "mouth7",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#000000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "854cde996fc5dc77a3b2ecd101f3b290e8b1123514660b1ed21776007fdc4a26"
+    },
+    {
+      "id": 32,
+      "name": "PODU",
+      "file": "PODU.png",
+      "hair": "hair6",
+      "mouth": "mouth8",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#800000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "3b4aa242764bf8327887316940b8799f282c54f0e7e5805adf417c766ae65068"
+    },
+    {
+      "id": 33,
+      "name": "HIPU",
+      "file": "HIPU.png",
+      "hair": "hair5",
+      "mouth": "mouth1",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#00ACCE",
+        "skin": "#FCC79F"
+      },
+      "sha256": "ff295c1e7af6a60d5e19b88036f25007f4f4ea0d381964c0fbd6662455249128"
+    },
+    {
+      "id": 34,
+      "name": "LEZI",
+      "file": "LEZI.png",
+      "hair": "hair1",
+      "mouth": "mouth7",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#B5B5B5",
+        "skin": "#FFB985"
+      },
+      "sha256": "d25b87ad8373da6f09a09646f2874befcf1cd7a91aa31a52fc0c948eebac71f5"
+    },
+    {
+      "id": 35,
+      "name": "GILA",
+      "file": "GILA.png",
+      "hair": "hair10",
+      "mouth": "mouth1",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#48164B",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "72388898c2b0fe117b96936932290ee258acae1e1e5ce9087e1486946af133e6"
+    },
+    {
+      "id": 36,
+      "name": "DEZO",
+      "file": "DEZO.png",
+      "hair": "hair3",
+      "mouth": "mouth9",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#000000",
+        "skin": "#FFB985"
+      },
+      "sha256": "638a21eb8852673c94871dac5f6e93eac98194757a5f775d832d3b3ccc2a282a"
+    },
+    {
+      "id": 37,
+      "name": "ZOVO",
+      "file": "ZOVO.png",
+      "hair": "hair7",
+      "mouth": "mouth4",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#48164B",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "0d6a86f9661501edc8f16a4a062e79f2e2544320ce809058dd6e91e7636bc0fe"
+    },
+    {
+      "id": 38,
+      "name": "FOBU",
+      "file": "FOBU.png",
+      "hair": "hair2",
+      "mouth": "mouth9",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#CEBF00",
+        "skin": "#FCC79F"
+      },
+      "sha256": "9df321a5780d47206ff034ed7c883ec77437fb81c61739b02ea8c3bc29c09384"
+    },
+    {
+      "id": 39,
+      "name": "HOBE",
+      "file": "HOBE.png",
+      "hair": "hair11",
+      "mouth": "mouth8",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#800000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "1cd45090c3fd3dbe8b336b77b42e44e22bc79df951ad6078a2b7cc42e8732fbf"
+    },
+    {
+      "id": 40,
+      "name": "ZUBE",
+      "file": "ZUBE.png",
+      "hair": "hair5",
+      "mouth": "mouth5",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#0D00FF",
+        "skin": "#FCC79F"
+      },
+      "sha256": "7b9023e395b5abc1704f9ce126fad7ecc513334898538075a11074be61c37826"
+    },
+    {
+      "id": 41,
+      "name": "KOGE",
+      "file": "KOGE.png",
+      "hair": "hair2",
+      "mouth": "mouth8",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#FFB985",
+        "skin": "#FCC79F"
+      },
+      "sha256": "08ae29911e40f638d3901b916403e5b9374a4d287b92e5e10cf493af7ea5aef7"
+    },
+    {
+      "id": 42,
+      "name": "TELU",
+      "file": "TELU.png",
+      "hair": "hair2",
+      "mouth": "mouth5",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#005700",
+        "skin": "#FCC79F"
+      },
+      "sha256": "0e87bae471692554c57d59f6502bbcd0d070e45ebd028414b15c4ba8ded66fd8"
+    },
+    {
+      "id": 43,
+      "name": "DEPI",
+      "file": "DEPI.png",
+      "hair": "hair10",
+      "mouth": "mouth8",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#0D00FF",
+        "skin": "#FFB985"
+      },
+      "sha256": "d72862a8f16bd3297fbf5f6e50e8f2d2572e2253b2efda372bbdb4ddc75ae953"
+    },
+    {
+      "id": 44,
+      "name": "SAPA",
+      "file": "SAPA.png",
+      "hair": "hair10",
+      "mouth": "mouth9",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#009B0C",
+        "skin": "#FCC79F"
+      },
+      "sha256": "a6ec46fb881856fd9bb450c66cebe42cf8f307654ba5f82da15d5dd7cea402da"
+    },
+    {
+      "id": 45,
+      "name": "PIZU",
+      "file": "PIZU.png",
+      "hair": "hair4",
+      "mouth": "mouth9",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#B5B5B5",
+        "skin": "#FFB985"
+      },
+      "sha256": "e52444200a65acc3e2042741918c74927aee0311785df5421a2ae47cfabe1076"
+    },
+    {
+      "id": 46,
+      "name": "SEPA",
+      "file": "SEPA.png",
+      "hair": "hair6",
+      "mouth": "mouth9",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#005700",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "b0b400b940626209a79cc43e330a82d5c555890a0b7d1847e85b51e2e8a577d5"
+    },
+    {
+      "id": 47,
+      "name": "PODO",
+      "file": "PODO.png",
+      "hair": "hair7",
+      "mouth": "mouth7",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#C95407",
+        "skin": "#FFB985"
+      },
+      "sha256": "ac014838365a21626af92eedded500a95186aa1ba7bef6b535f3c0e078ccdf5f"
+    },
+    {
+      "id": 48,
+      "name": "VOHA",
+      "file": "VOHA.png",
+      "hair": "hair5",
+      "mouth": "mouth7",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#CEBF00",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "547fb333d114775d5f5f3ac28823951a856248c9f66c9786499ca89d7b548ef9"
+    },
+    {
+      "id": 49,
+      "name": "TIHU",
+      "file": "TIHU.png",
+      "hair": "hair9",
+      "mouth": "mouth8",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#C95407",
+        "skin": "#FCC79F"
+      },
+      "sha256": "49d517f6e2a9a7fd20038c0d9d885481783f82b7f3903d263bd07fe671a75433"
+    },
+    {
+      "id": 50,
+      "name": "TAZA",
+      "file": "TAZA.png",
+      "hair": "hair5",
+      "mouth": "mouth3",
+      "eyes": "eye7",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#2A2A2A",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "0d34a9d93f46f33ff55178ed48366259cfc9e874589c1f135e93a95c9abc4f6c"
+    },
+    {
+      "id": 51,
+      "name": "RUGA",
+      "file": "RUGA.png",
+      "hair": "hair2",
+      "mouth": "mouth3",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#EEEEEE",
+        "skin": "#FFB985"
+      },
+      "sha256": "ce6cbda380fc5ac00d548388b9bf6f489e98e64bbc119a5783340f0c2f671fae"
+    },
+    {
+      "id": 52,
+      "name": "HAPE",
+      "file": "HAPE.png",
+      "hair": "hair10",
+      "mouth": "mouth4",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#009B0C",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "526c928f291d2d3a2964069bd3c1b4255a4a04900bbf8dd9ace2487571bf4d2d"
+    },
+    {
+      "id": 53,
+      "name": "VUKO",
+      "file": "VUKO.png",
+      "hair": "hair6",
+      "mouth": "mouth4",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#EEEEEE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "b5d5bb8a46134438672c6f83bc7ecad919a9de996566f15762f4ed748059a4bf"
+    },
+    {
+      "id": 54,
+      "name": "ROLA",
+      "file": "ROLA.png",
+      "hair": "hair2",
+      "mouth": "mouth1",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#FFB985",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "9c2d0a546a570e4e16067dec3f6547227b741b38dd1b7e11286d0d73e712b9c3"
+    },
+    {
+      "id": 55,
+      "name": "MEBE",
+      "file": "MEBE.png",
+      "hair": "hair2",
+      "mouth": "mouth10",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#0D00FF",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "41befed4847b4d9f37d0d623916e5f966a994155b5384316fa38fea158934fa9"
+    },
+    {
+      "id": 56,
+      "name": "HEKI",
+      "file": "HEKI.png",
+      "hair": "hair9",
+      "mouth": "mouth7",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#066F85",
+        "cloth": "#DDB4FF",
+        "skin": "#FCC79F"
+      },
+      "sha256": "ec9ff96e309d599355d1d136a5bf3878608bb6d8cf8608cc514d8b4f484f84c3"
+    },
+    {
+      "id": 57,
+      "name": "HUNE",
+      "file": "HUNE.png",
+      "hair": "hair9",
+      "mouth": "mouth4",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#DDB4FF",
+        "skin": "#FCC79F"
+      },
+      "sha256": "c010c841e0276628999fb5ffaf4ba0472c607c313b6a1fc23c672aace0e69554"
+    },
+    {
+      "id": 58,
+      "name": "FIPE",
+      "file": "FIPE.png",
+      "hair": "hair8",
+      "mouth": "mouth9",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#EEEEEE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "8a31b8df6fb28becd3779999d25af87979aa5425d207b9ff1eea62fa93a4155e"
+    },
+    {
+      "id": 59,
+      "name": "VOTO",
+      "file": "VOTO.png",
+      "hair": "hair6",
+      "mouth": "mouth7",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#EEEEEE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "5381de372c36f24d1c9795d9f08009878bbf898c3ca1a888c226ae9a7e026f1e"
+    },
+    {
+      "id": 60,
+      "name": "DOSI",
+      "file": "DOSI.png",
+      "hair": "hair3",
+      "mouth": "mouth4",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#C95407",
+        "skin": "#FFB985"
+      },
+      "sha256": "ead440d7a4e650e8a6a98f296b13ee459c6c612117166d198639d7959dd7298f"
+    },
+    {
+      "id": 61,
+      "name": "RUTE",
+      "file": "RUTE.png",
+      "hair": "hair10",
+      "mouth": "mouth10",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#009B0C",
+        "skin": "#FCC79F"
+      },
+      "sha256": "3bc9dc3c5b22e196dc098e56f95cec7185fba7b32a8cb032b14c67503f67d41f"
+    },
+    {
+      "id": 62,
+      "name": "TIHI",
+      "file": "TIHI.png",
+      "hair": "hair4",
+      "mouth": "mouth10",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#066F85",
+        "cloth": "#CD0000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "6ecae7e28255245c0abe2da43c6b8cd26e6bfe16f4530547646883844b5fc934"
+    },
+    {
+      "id": 63,
+      "name": "PUHE",
+      "file": "PUHE.png",
+      "hair": "hair7",
+      "mouth": "mouth8",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#B5B5B5",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "2e82de2fb0ae2634f8c9ed8e37ae565a79a131222eee9d47a568826961e11daf"
+    },
+    {
+      "id": 64,
+      "name": "KIFA",
+      "file": "KIFA.png",
+      "hair": "hair5",
+      "mouth": "mouth4",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#152E4C",
+        "skin": "#FFB985"
+      },
+      "sha256": "27b678701be7e23d53d96e55aa0acd2006eafd8f2d97eff9843c8899a8fa1a6b"
+    },
+    {
+      "id": 65,
+      "name": "DERI",
+      "file": "DERI.png",
+      "hair": "hair2",
+      "mouth": "mouth4",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#0D00FF",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "c49b0be1fb2fc66d5edb0524b64658edc5c3d7ee8768c49e879c0754d7f68786"
+    },
+    {
+      "id": 66,
+      "name": "GEGI",
+      "file": "GEGI.png",
+      "hair": "hair4",
+      "mouth": "mouth7",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#000000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "20db62a87a763daf6b6989547791e1afdbecdb9b9755a4f2f5634295d4161d1d"
+    },
+    {
+      "id": 67,
+      "name": "HELE",
+      "file": "HELE.png",
+      "hair": "hair3",
+      "mouth": "mouth2",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#C95407",
+        "skin": "#FFB985"
+      },
+      "sha256": "bfb72c44c2b270ce3eb03db3c258d994c8699d90a775c5d65e577860af8731d5"
+    },
+    {
+      "id": 68,
+      "name": "MEMO",
+      "file": "MEMO.png",
+      "hair": "hair11",
+      "mouth": "mouth5",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#DDB4FF",
+        "skin": "#FFB985"
+      },
+      "sha256": "6dc21604ce46fd916787eebe495d1968231138f925091e4f1cf414be5238d005"
+    },
+    {
+      "id": 69,
+      "name": "BERI",
+      "file": "BERI.png",
+      "hair": "hair9",
+      "mouth": "mouth9",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#48164B",
+        "skin": "#FCC79F"
+      },
+      "sha256": "e46346e304cbb16f2561ee74ebb685a0440c9b1a7b9cac998e6bc4d7791f72bc"
+    },
+    {
+      "id": 70,
+      "name": "NUFU",
+      "file": "NUFU.png",
+      "hair": "hair8",
+      "mouth": "mouth2",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#CD0000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "a083008b1322eb877c7fdeb15e554b55ccd16d22098eba4edf6e832c5ac4fdaa"
+    },
+    {
+      "id": 71,
+      "name": "GENI",
+      "file": "GENI.png",
+      "hair": "hair6",
+      "mouth": "mouth5",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#EEEEEE",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "999907d4021c7f3c49e0362b2295d2928b6b9f750d13bcb3d23ba319702a86c4"
+    },
+    {
+      "id": 72,
+      "name": "KOFE",
+      "file": "KOFE.png",
+      "hair": "hair9",
+      "mouth": "mouth5",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#2A2A2A",
+        "skin": "#FCC79F"
+      },
+      "sha256": "bb200e9406c7d2b25d0e0773e3f04dd7517a8e1030042c996628a43cdf540784"
+    },
+    {
+      "id": 73,
+      "name": "HENE",
+      "file": "HENE.png",
+      "hair": "hair3",
+      "mouth": "mouth8",
+      "eyes": "eye10",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#005700",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "8ff42da0f186cf4068227ab7224f5bb4b05d283381dcce258e0e2438a47b783d"
+    },
+    {
+      "id": 74,
+      "name": "VONA",
+      "file": "VONA.png",
+      "hair": "hair9",
+      "mouth": "mouth10",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#CD0000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "12589f29e07f53af602ee8b6b3189b0bb16d5060ce7956a374571ab949b725a9"
+    },
+    {
+      "id": 75,
+      "name": "MILE",
+      "file": "MILE.png",
+      "hair": "hair5",
+      "mouth": "mouth9",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#00ACCE",
+        "cloth": "#000000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "357f8725f8ccf93bf5abb23da962429e64e3a75448598631c0097318dfcaa7e6"
+    },
+    {
+      "id": 76,
+      "name": "SUDA",
+      "file": "SUDA.png",
+      "hair": "hair11",
+      "mouth": "mouth7",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#009B0C",
+        "skin": "#FFB985"
+      },
+      "sha256": "c4a39a3575715fa65c874cb57c94501ef5e9d67340960c4767b6b7ff1401a521"
+    },
+    {
+      "id": 77,
+      "name": "NUSI",
+      "file": "NUSI.png",
+      "hair": "hair8",
+      "mouth": "mouth10",
+      "eyes": "eye2",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#0D00FF",
+        "skin": "#FCC79F"
+      },
+      "sha256": "1d9c5abbaa7e042d111e79f859e0fd920a37d77537b64c5183995cfc789f92ce"
+    },
+    {
+      "id": 78,
+      "name": "REFA",
+      "file": "REFA.png",
+      "hair": "hair11",
+      "mouth": "mouth2",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#2A2A2A",
+        "skin": "#FFB985"
+      },
+      "sha256": "9140ce9df53ca6bc7b3211c2e4eacd71aad3b1ed6c46d97cd4af4b6fd56525bc"
+    },
+    {
+      "id": 79,
+      "name": "SUVA",
+      "file": "SUVA.png",
+      "hair": "hair4",
+      "mouth": "mouth2",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#813D3C",
+        "cloth": "#C95407",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "2a22f3efed4647a30712366008856abdc8731dfb3d869d86a74bf6ab09f57ae0"
+    },
+    {
+      "id": 80,
+      "name": "LULI",
+      "file": "LULI.png",
+      "hair": "hair5",
+      "mouth": "mouth8",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#005700",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "9a23102cfea4dd584a6aecb7de1b6c8925f83ecdcf955fc862c7bcef8640fa74"
+    },
+    {
+      "id": 81,
+      "name": "MAHA",
+      "file": "MAHA.png",
+      "hair": "hair10",
+      "mouth": "mouth3",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#FF86CD",
+        "cloth": "#000000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "a02ae07c5d609aed14f483e892bec3858937a0c61ea2ac5df5f0a8ce1150d7d9"
+    },
+    {
+      "id": 82,
+      "name": "SOVE",
+      "file": "SOVE.png",
+      "hair": "hair2",
+      "mouth": "mouth2",
+      "eyes": "eye3",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#800000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "f9ca72dd96b84dff1af4385d9c0fa8da13ca2df463527ea34a0b950acf38595c"
+    },
+    {
+      "id": 83,
+      "name": "ZIKA",
+      "file": "ZIKA.png",
+      "hair": "hair7",
+      "mouth": "mouth10",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#800000",
+        "skin": "#FFB985"
+      },
+      "sha256": "8396d158e69d01c24dcfbb4aae1d29c171a53e18a18cf64cc4496d5e07a8c61c"
+    },
+    {
+      "id": 84,
+      "name": "KABI",
+      "file": "KABI.png",
+      "hair": "hair1",
+      "mouth": "mouth9",
+      "eyes": "eye9",
+      "colors": {
+        "hair": "#DADADA",
+        "cloth": "#00ACCE",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "a8a1a87fe1e0866f2c52976d913bd7b5c8b7a64f3ef24954cff20ed377096097"
+    },
+    {
+      "id": 85,
+      "name": "SIPU",
+      "file": "SIPU.png",
+      "hair": "hair9",
+      "mouth": "mouth3",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#EEEEEE",
+        "skin": "#FFB985"
+      },
+      "sha256": "41bab8cb28e38d40d4566661268301de85b51fbf7b8942e6dd6223d14a26c2ef"
+    },
+    {
+      "id": 86,
+      "name": "GOVO",
+      "file": "GOVO.png",
+      "hair": "hair10",
+      "mouth": "mouth7",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#009B0C",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "e883ba51d076b276dde774f9d3dd30285929ab958c5681643a51d32b7483b2fa"
+    },
+    {
+      "id": 87,
+      "name": "DOLO",
+      "file": "DOLO.png",
+      "hair": "hair11",
+      "mouth": "mouth3",
+      "eyes": "eye13",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#005700",
+        "skin": "#FFB985"
+      },
+      "sha256": "4bd4a91f1abbf49b82097d33e1bb466dd841b4bd968bcc044a036daaad8e1cf4"
+    },
+    {
+      "id": 88,
+      "name": "LOGA",
+      "file": "LOGA.png",
+      "hair": "hair8",
+      "mouth": "mouth5",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#7F3100",
+        "cloth": "#FFB985",
+        "skin": "#FFB985"
+      },
+      "sha256": "915b80d4ee84c59d2cda000f9807ad85029ba5720077d4d566bc1f833f7cf117"
+    },
+    {
+      "id": 89,
+      "name": "VEBA",
+      "file": "VEBA.png",
+      "hair": "hair1",
+      "mouth": "mouth1",
+      "eyes": "eye1",
+      "colors": {
+        "hair": "#009B0C",
+        "cloth": "#CD0000",
+        "skin": "#FCC79F"
+      },
+      "sha256": "3a9c23b3990f28d3427571fdd9573e05e2c387bdb2f9cc83608e38c55ff6b132"
+    },
+    {
+      "id": 90,
+      "name": "VAFO",
+      "file": "VAFO.png",
+      "hair": "hair10",
+      "mouth": "mouth2",
+      "eyes": "eye11",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#000000",
+        "skin": "#FFCDB3"
+      },
+      "sha256": "25149283b4ed1b4d7aafc16756ca76035d0914588c6d3295f5424a3ad849d021"
+    },
+    {
+      "id": 91,
+      "name": "KASI",
+      "file": "KASI.png",
+      "hair": "hair1",
+      "mouth": "mouth5",
+      "eyes": "eye5",
+      "colors": {
+        "hair": "#500099",
+        "cloth": "#48164B",
+        "skin": "#FFB985"
+      },
+      "sha256": "fee5c9a19ce0740a35096254365f758d182167e56851ad933b6814186aa094d1"
+    },
+    {
+      "id": 92,
+      "name": "KEVA",
+      "file": "KEVA.png",
+      "hair": "hair3",
+      "mouth": "mouth10",
+      "eyes": "eye12",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#EEEEEE",
+        "skin": "#FCC79F"
+      },
+      "sha256": "8601afe37f996c7f055102c6540c1af1d12e3cad5369a7c61360a205aa967986"
+    },
+    {
+      "id": 93,
+      "name": "VIRO",
+      "file": "VIRO.png",
+      "hair": "hair8",
+      "mouth": "mouth1",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#C95407",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "8ac4fae39bf14bfc6dd61b20e76977ff2a10e4e25c9323f97b5c6ba741e7dba0"
+    },
+    {
+      "id": 94,
+      "name": "VAME",
+      "file": "VAME.png",
+      "hair": "hair6",
+      "mouth": "mouth10",
+      "eyes": "eye15",
+      "colors": {
+        "hair": "#800000",
+        "cloth": "#000000",
+        "skin": "#FFB985"
+      },
+      "sha256": "8b319852a340789cf8844b45846fbcad510a55a9b02a3cb505eb1955622994bf"
+    },
+    {
+      "id": 95,
+      "name": "MIPU",
+      "file": "MIPU.png",
+      "hair": "hair11",
+      "mouth": "mouth9",
+      "eyes": "eye4",
+      "colors": {
+        "hair": "#4B1515",
+        "cloth": "#2A2A2A",
+        "skin": "#FFB985"
+      },
+      "sha256": "ac1c3df177e8758f0df92f3587806040f50c71d67f21355b276b4487e67c9815"
+    },
+    {
+      "id": 96,
+      "name": "FADI",
+      "file": "FADI.png",
+      "hair": "hair6",
+      "mouth": "mouth3",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#800000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "9224c1df0f4c28aa17be2205dcd0f0fa437ecaf7f07566e9da8e02de3756e96f"
+    },
+    {
+      "id": 97,
+      "name": "FOKU",
+      "file": "FOKU.png",
+      "hair": "hair5",
+      "mouth": "mouth2",
+      "eyes": "eye6",
+      "colors": {
+        "hair": "#2A2A2A",
+        "cloth": "#000000",
+        "skin": "#FFB985"
+      },
+      "sha256": "fe61853d20f98534b94607b837eb557c2ba9303efb0fa5ba7d26a8b736a12507"
+    },
+    {
+      "id": 98,
+      "name": "DAHE",
+      "file": "DAHE.png",
+      "hair": "hair4",
+      "mouth": "mouth5",
+      "eyes": "eye8",
+      "colors": {
+        "hair": "#CEBF00",
+        "cloth": "#800000",
+        "skin": "#7F5A3F"
+      },
+      "sha256": "6a6d822edac029846e662a467afcab28374f91f0fd8fe74e2e15153472566a89"
+    },
+    {
+      "id": 99,
+      "name": "ZIRO",
+      "file": "ZIRO.png",
+      "hair": "hair5",
+      "mouth": "mouth10",
+      "eyes": "eye14",
+      "colors": {
+        "hair": "#000000",
+        "cloth": "#0D00FF",
+        "skin": "#FFB985"
+      },
+      "sha256": "4812a3fb13b02b04660483cc748f9b908c6feb1bbfe6c32e4d9013e6f6a7ba4c"
+    }
+  ]
+}
