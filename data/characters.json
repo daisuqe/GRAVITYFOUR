@@ -1,6 +1,6 @@
 {
   "source": "E:\\User\\Daisuke\\Unity\\GRAVITYFOUR\\data\\human01.psd",
-  "source_sha256": "7719c46d359d4e6867a4c25eb9d10fc37c9f3eb9257d9141cc7c74d20a48c4aa",
+  "source_sha256": "efb78b241e95e33736df2c6fefb9ecc26d19c9fd42ab5b245092aed32af05f58",
   "seed": 20260923,
   "count": 99,
   "palette_sizes": {
@@ -233,7 +233,7 @@
         "cloth": "#005700",
         "skin": "#FFB985"
       },
-      "sha256": "e7468f8c0a48a26fb2495e437d1c73f31cbae88926ddd6a4f82a4f07a5545013",
+      "sha256": "b90a97c4227bb50421964b4cfa85e1d45ef97e199d26b7c6c00c68015bc38546",
       "profile": {
         "rank": "beginner",
         "strength": 34,
@@ -247,8 +247,23 @@
         "unusual": 54,
         "center": 26,
         "consistency": 36,
-        "talkativeness": 38
-      }
+        "talkativeness": 38,
+        "friendliness": 41,
+        "taunt": 21,
+        "expressiveness": 37,
+        "quirk": 2,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "0e955018ee5b0e07ece8233ddd80cf0abbd1eb0204a020cb264efb2475322664",
+      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
     },
     {
       "id": 2,
@@ -262,7 +277,7 @@
         "cloth": "#48164B",
         "skin": "#FFB985"
       },
-      "sha256": "d569ac282e3e15546a70fcedb88d2806b1da933d6b0d0d9d9307d900b744e435",
+      "sha256": "676a671cef5438ea829d68ec184c02210a0ed3b46b55a0bb6401759e269be8fb",
       "profile": {
         "rank": "champion",
         "strength": 69,
@@ -276,8 +291,23 @@
         "unusual": 90,
         "center": 53,
         "consistency": 60,
-        "talkativeness": 5
-      }
+        "talkativeness": 5,
+        "friendliness": 56,
+        "taunt": 64,
+        "expressiveness": 16,
+        "quirk": 34,
+        "personality": "reserved",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "b5b94ca774b7c7e70f83237a5b83e67fea67054b43acfff586106255cd2a3410",
+      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 3,
@@ -291,7 +321,7 @@
         "cloth": "#C95407",
         "skin": "#FFCDB3"
       },
-      "sha256": "01d04d37129493a71178d17116cba3c2197a51fcd834208f53747dbdb5db4866",
+      "sha256": "739c9f713007d01df2445f75dfa620cc191f112fc315d84a359c03e9f47df025",
       "profile": {
         "rank": "regular",
         "strength": 52,
@@ -305,8 +335,23 @@
         "unusual": 14,
         "center": 29,
         "consistency": 48,
-        "talkativeness": 0
-      }
+        "talkativeness": 0,
+        "friendliness": 41,
+        "taunt": 41,
+        "expressiveness": 39,
+        "quirk": 65,
+        "personality": "reserved",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "511ba7ad9cf9728eb2ded9ff610e68f2ebb83f3306651a2357fd53f23efd57be",
+      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
     },
     {
       "id": 4,
@@ -320,7 +365,7 @@
         "cloth": "#152E4C",
         "skin": "#FFB985"
       },
-      "sha256": "32052293a1089a5b61431a8f49a1daf4d6d2e86e8ccb5245096b09020439d2c6",
+      "sha256": "6b735ff2e661249fd738f47e11339021cfaab82b312727d22400e55002af7ff2",
       "profile": {
         "rank": "champion",
         "strength": 75,
@@ -334,8 +379,23 @@
         "unusual": 63,
         "center": 71,
         "consistency": 72,
-        "talkativeness": 45
-      }
+        "talkativeness": 45,
+        "friendliness": 59,
+        "taunt": 19,
+        "expressiveness": 54,
+        "quirk": 79,
+        "personality": "thoughtful",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "4ee3cf2e96de14e4f4dbb5a97a683ecb92231c49ed399c3a98cbf1d1eed825d4",
+      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
     },
     {
       "id": 5,
@@ -349,7 +409,7 @@
         "cloth": "#48164B",
         "skin": "#FCC79F"
       },
-      "sha256": "21cb9c74c38597554210075718ecc9fb351155506cdcf192dbd8743e7ca419e4",
+      "sha256": "56b7d8e7ad0a8d01027e5866a46f1c8654e465567fed577051ca2657c731583b",
       "profile": {
         "rank": "beginner",
         "strength": 33,
@@ -363,8 +423,23 @@
         "unusual": 11,
         "center": 92,
         "consistency": 37,
-        "talkativeness": 6
-      }
+        "talkativeness": 6,
+        "friendliness": 69,
+        "taunt": 35,
+        "expressiveness": 47,
+        "quirk": 70,
+        "personality": "friendly",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "8cabc50dcb1b53078c6a4275f7696e7322c4c3c09c143db1c6e7db290e8ce0a7",
+      "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
     },
     {
       "id": 6,
@@ -378,7 +453,7 @@
         "cloth": "#2A2A2A",
         "skin": "#7F5A3F"
       },
-      "sha256": "53e6fe21aacba33e88920799231073d8151e7a7fb8df183dab5bb9e893bd0867",
+      "sha256": "c111fbb953050cae8227801d98ede974e2536fb12c5bb48f39585535241df98e",
       "profile": {
         "rank": "champion",
         "strength": 93,
@@ -392,8 +467,23 @@
         "unusual": 54,
         "center": 96,
         "consistency": 57,
-        "talkativeness": 47
-      }
+        "talkativeness": 47,
+        "friendliness": 46,
+        "taunt": 25,
+        "expressiveness": 54,
+        "quirk": 78,
+        "personality": "eccentric",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "b8beda5e6819a2c859df1b55ccc498ebf8a042857e45505ce8e70a0c34e526f0",
+      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
     },
     {
       "id": 7,
@@ -407,7 +497,7 @@
         "cloth": "#DDB4FF",
         "skin": "#FFCDB3"
       },
-      "sha256": "de4511c5aeb4f8cba791972ae6f4fddd541f987d14cdb2f5906322650133c668",
+      "sha256": "87651008e62b8b597ca9815012256b9b1412019d401a10625d77a22699b5c30f",
       "profile": {
         "rank": "beginner",
         "strength": 42,
@@ -421,8 +511,23 @@
         "unusual": 73,
         "center": 12,
         "consistency": 91,
-        "talkativeness": 74
-      }
+        "talkativeness": 74,
+        "friendliness": 66,
+        "taunt": 25,
+        "expressiveness": 47,
+        "quirk": 98,
+        "personality": "friendly",
+        "voice": "quirky",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "35e9d7b7c9deed5c5acced9322e4f16aab93c8f1b3ed4cb19a0f424315dfab26",
+      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
     },
     {
       "id": 8,
@@ -436,7 +541,7 @@
         "cloth": "#EEEEEE",
         "skin": "#FCC79F"
       },
-      "sha256": "8b7d0909a45ea9430c55b10b24f7af1e6bf2d269a2bf4edb7096cd3e3a77b0d8",
+      "sha256": "4dee466420739dced589288d935ee2f1e511e20de2a4c46df66c5f3b61bed321",
       "profile": {
         "rank": "regular",
         "strength": 65,
@@ -450,8 +555,23 @@
         "unusual": 2,
         "center": 28,
         "consistency": 97,
-        "talkativeness": 68
-      }
+        "talkativeness": 68,
+        "friendliness": 35,
+        "taunt": 40,
+        "expressiveness": 77,
+        "quirk": 13,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "2e56b6718b5a7e99055a9580b3832009d828e2094531e4eda0eab45f8e1f5b0d",
+      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
     },
     {
       "id": 9,
@@ -465,7 +585,7 @@
         "cloth": "#CD0000",
         "skin": "#FFB985"
       },
-      "sha256": "379eb02ea28ef897da7a8c5fc0235214ef18ce0c4367357be5adcb44bf2c0dc7",
+      "sha256": "872a25a1eda8ea04f15b883595158cfb6a49e7dcdf439c8e19f814ae9cbc4bd4",
       "profile": {
         "rank": "beginner",
         "strength": 37,
@@ -479,8 +599,23 @@
         "unusual": 59,
         "center": 31,
         "consistency": 76,
-        "talkativeness": 31
-      }
+        "talkativeness": 31,
+        "friendliness": 55,
+        "taunt": 38,
+        "expressiveness": 24,
+        "quirk": 22,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "308ffe7ffcd2af94a69a166ab74a87362f872b084789b5cf86dd825595484234",
+      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 10,
@@ -494,7 +629,7 @@
         "cloth": "#DDB4FF",
         "skin": "#FFB985"
       },
-      "sha256": "6db1ce8e9edf9e6772cd77075df27ef1513efe7be9ffafb0f0d0acac4b3e2d15",
+      "sha256": "897b9df882229fa596dc8a65e58d13fe586fdf579313caf2db8f7fe35f6eb6e6",
       "profile": {
         "rank": "regular",
         "strength": 54,
@@ -508,8 +643,23 @@
         "unusual": 24,
         "center": 68,
         "consistency": 65,
-        "talkativeness": 56
-      }
+        "talkativeness": 56,
+        "friendliness": 21,
+        "taunt": 47,
+        "expressiveness": 71,
+        "quirk": 51,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "919471bbb01224f53dcccd5bd6dfb9ecc1cb06b990e4f68baec0b2ab3d7c3fde",
+      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 11,
@@ -523,7 +673,7 @@
         "cloth": "#800000",
         "skin": "#FCC79F"
       },
-      "sha256": "ee18aa5df86e223a6e8a9df070dab2769d051a683bc526da61a61b44005b921b",
+      "sha256": "82432fa6f678d1deeb4c73da8858df17c41a07a82b548f5e0573f85abfa199e5",
       "profile": {
         "rank": "champion",
         "strength": 79,
@@ -537,8 +687,23 @@
         "unusual": 97,
         "center": 2,
         "consistency": 59,
-        "talkativeness": 6
-      }
+        "talkativeness": 6,
+        "friendliness": 62,
+        "taunt": 43,
+        "expressiveness": 41,
+        "quirk": 42,
+        "personality": "reserved",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "949506b6113a60b9bfe9532eff88cfef32b580da7c3cdcbfaaca949e6389b8b4",
+      "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
     },
     {
       "id": 12,
@@ -552,7 +717,7 @@
         "cloth": "#CEBF00",
         "skin": "#7F5A3F"
       },
-      "sha256": "9983366debbeefddb3ba53b9a05838319b2930ca9dd356e1f4022e7f58ce9c53",
+      "sha256": "d3cec650b5bcc2412c5beda7e2f3bfe18791e80f0d6c451257cbf0864d966aae",
       "profile": {
         "rank": "regular",
         "strength": 62,
@@ -566,8 +731,23 @@
         "unusual": 80,
         "center": 11,
         "consistency": 90,
-        "talkativeness": 41
-      }
+        "talkativeness": 41,
+        "friendliness": 52,
+        "taunt": 26,
+        "expressiveness": 32,
+        "quirk": 77,
+        "personality": "eccentric",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "f27764069ec5faa19f591869082a6f45068e1aae7a1ff8b1fe1e56b8813893cc",
+      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
     },
     {
       "id": 13,
@@ -581,7 +761,7 @@
         "cloth": "#2A2A2A",
         "skin": "#FFB985"
       },
-      "sha256": "60cdd44c9a4127b552625220be3e6d66d2b87bbe4991709b6bc684d6dcc0ecb2",
+      "sha256": "f5dc792e83f5a777fb57abbf6aa6f5b2ed9b85b191d09e0a6ff0553953582331",
       "profile": {
         "rank": "regular",
         "strength": 61,
@@ -595,8 +775,23 @@
         "unusual": 5,
         "center": 39,
         "consistency": 54,
-        "talkativeness": 29
-      }
+        "talkativeness": 29,
+        "friendliness": 57,
+        "taunt": 62,
+        "expressiveness": 44,
+        "quirk": 52,
+        "personality": "competitive",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "500ce874e579985dc7e7d3602c06ddd08f4efe3712c8835c89beaeb00dce5787",
+      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
     },
     {
       "id": 14,
@@ -610,7 +805,7 @@
         "cloth": "#CD0000",
         "skin": "#FFB985"
       },
-      "sha256": "f8d1108482d63d170e24e137b8e9184d40ac12790744cfaee2681fd59e3c7699",
+      "sha256": "4d87c185cebe109a3ca43f5df1c34bcdf443323627c0cce3d2acde4d3e0bd7de",
       "profile": {
         "rank": "regular",
         "strength": 60,
@@ -624,8 +819,23 @@
         "unusual": 60,
         "center": 17,
         "consistency": 75,
-        "talkativeness": 68
-      }
+        "talkativeness": 68,
+        "friendliness": 32,
+        "taunt": 59,
+        "expressiveness": 56,
+        "quirk": 44,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "c3ac9e1b11d884e774ae407656933074886e7dd7e3e956e5072bc4b99bca9a41",
+      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 15,
@@ -639,7 +849,7 @@
         "cloth": "#005700",
         "skin": "#FFB985"
       },
-      "sha256": "2b5a0dd0abd290b89d32abe49d192cfa431d18e286b382786acfee2eb9d9ae92",
+      "sha256": "2e9de5126693af98fabc4c872400bc603a9d0415b11f607c3159bd17198a12a8",
       "profile": {
         "rank": "beginner",
         "strength": 23,
@@ -653,8 +863,23 @@
         "unusual": 15,
         "center": 26,
         "consistency": 55,
-        "talkativeness": 60
-      }
+        "talkativeness": 60,
+        "friendliness": 33,
+        "taunt": 49,
+        "expressiveness": 44,
+        "quirk": 99,
+        "personality": "eccentric",
+        "voice": "quirky",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "a3a3e5d8db22901a6193429e1e94c73088db73a7668d1875180eb2fc4b42a9e6",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
     },
     {
       "id": 16,
@@ -668,7 +893,7 @@
         "cloth": "#C95407",
         "skin": "#FFCDB3"
       },
-      "sha256": "978e8058a68534d98ebd1e9f40c2675add0257f94e4a4dce4949a5f33e168d5d",
+      "sha256": "dab6928b36a0485a030a8e2de5ca61cb4e0fcdd278c6e22fb7607ce6f00535aa",
       "profile": {
         "rank": "regular",
         "strength": 49,
@@ -682,8 +907,23 @@
         "unusual": 21,
         "center": 25,
         "consistency": 95,
-        "talkativeness": 53
-      }
+        "talkativeness": 53,
+        "friendliness": 47,
+        "taunt": 43,
+        "expressiveness": 53,
+        "quirk": 25,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "cd521c8997c36ba67ee45b1e91c3de9a5ce007da1ff991ea634a50c05d320755",
+      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 17,
@@ -697,7 +937,7 @@
         "cloth": "#00ACCE",
         "skin": "#FFCDB3"
       },
-      "sha256": "389dcb2c11536ccb7816165ed2a4c42092639ebcc13f91d8797cdb26c350de67",
+      "sha256": "b7575503e46bde91b9986fba9dfe1970d72fde5ba21ff4fb759e3c29a24ebc28",
       "profile": {
         "rank": "beginner",
         "strength": 42,
@@ -711,8 +951,23 @@
         "unusual": 9,
         "center": 93,
         "consistency": 62,
-        "talkativeness": 30
-      }
+        "talkativeness": 30,
+        "friendliness": 49,
+        "taunt": 25,
+        "expressiveness": 60,
+        "quirk": 42,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "eb77ccfba2f3b9ae37d666c540bd9b60e213640ca39373f56c10a35b2987f097",
+      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 18,
@@ -726,7 +981,7 @@
         "cloth": "#CD0000",
         "skin": "#FFB985"
       },
-      "sha256": "7afb60abb6cdaae1c87b9a49df39bab8f6cbddb5e9f037f6176535331ea2c6cd",
+      "sha256": "28db752988ac5ed807cf716180c5b449d05f08aeae204567e5bd56c6f8261865",
       "profile": {
         "rank": "regular",
         "strength": 57,
@@ -740,8 +995,23 @@
         "unusual": 17,
         "center": 71,
         "consistency": 65,
-        "talkativeness": 8
-      }
+        "talkativeness": 8,
+        "friendliness": 35,
+        "taunt": 55,
+        "expressiveness": 21,
+        "quirk": 19,
+        "personality": "reserved",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "7040e41e127ce5c9109d2ec20d058b7eccc4824b6a13371b0f7ba37587e3ad2b",
+      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
     },
     {
       "id": 19,
@@ -755,7 +1025,7 @@
         "cloth": "#CEBF00",
         "skin": "#FFCDB3"
       },
-      "sha256": "d46e92a012a92d6217f56ec6a03a9a244e3b22d4efb0aad7faf6d50466d31e35",
+      "sha256": "ccf1a4853b39222f46ea192433430dbadfd61a59a3167cc7940cd871b15ff3db",
       "profile": {
         "rank": "regular",
         "strength": 60,
@@ -769,8 +1039,23 @@
         "unusual": 62,
         "center": 22,
         "consistency": 58,
-        "talkativeness": 72
-      }
+        "talkativeness": 72,
+        "friendliness": 69,
+        "taunt": 33,
+        "expressiveness": 52,
+        "quirk": 58,
+        "personality": "friendly",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "73f327797e3eceb550b2a06c17f3099cb5fbee79e2e7846a4289bce3b705764a",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
     },
     {
       "id": 20,
@@ -784,7 +1069,7 @@
         "cloth": "#CD0000",
         "skin": "#7F5A3F"
       },
-      "sha256": "d628ea658aaac0eedd85af866a5b2d5347ad66f3006764d5f01148ff2b8588c4",
+      "sha256": "9085d22c4b3e8eb68432b5c15f0c34bd38ac5fa3d8dfc8314dff301d64f67263",
       "profile": {
         "rank": "champion",
         "strength": 94,
@@ -798,8 +1083,23 @@
         "unusual": 34,
         "center": 2,
         "consistency": 42,
-        "talkativeness": 71
-      }
+        "talkativeness": 71,
+        "friendliness": 46,
+        "taunt": 15,
+        "expressiveness": 74,
+        "quirk": 18,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "ea12bc4786a4614b9dd14322e7bba1b564d68a82ecac1db85e49602c59a43282",
+      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 21,
@@ -813,7 +1113,7 @@
         "cloth": "#800000",
         "skin": "#7F5A3F"
       },
-      "sha256": "fc7256e74b858ca43795f0ba7a12b165741077fbf8ee2e48b40985675535adf8",
+      "sha256": "fd00e1d256d0f0bec8a3e6b41b7543cd9f0e2992ed56bac169383622721c05ad",
       "profile": {
         "rank": "beginner",
         "strength": 24,
@@ -827,8 +1127,23 @@
         "unusual": 51,
         "center": 3,
         "consistency": 82,
-        "talkativeness": 35
-      }
+        "talkativeness": 35,
+        "friendliness": 37,
+        "taunt": 70,
+        "expressiveness": 40,
+        "quirk": 42,
+        "personality": "teasing",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "57be15e9b057c79eb5d20456035e18e9f82861aaf231f2c06d8ebb60f557849a",
+      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
     },
     {
       "id": 22,
@@ -842,7 +1157,7 @@
         "cloth": "#000000",
         "skin": "#7F5A3F"
       },
-      "sha256": "b2a0f8fe335d2112e5a26e9b76eee426b18ee12ddb3254c8e3a01c8d7434e5a7",
+      "sha256": "ce5e1a1ccd9ac3818f39358551281d214120edfa153acea175ac16a7ef7aad92",
       "profile": {
         "rank": "beginner",
         "strength": 31,
@@ -856,8 +1171,23 @@
         "unusual": 25,
         "center": 38,
         "consistency": 45,
-        "talkativeness": 38
-      }
+        "talkativeness": 38,
+        "friendliness": 46,
+        "taunt": 25,
+        "expressiveness": 31,
+        "quirk": 37,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "db275d750107e7b1803f2d0a6939428a8f7ac2a4f70694cf0a9ceb1cbeed66f7",
+      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
     },
     {
       "id": 23,
@@ -871,7 +1201,7 @@
         "cloth": "#800000",
         "skin": "#FFB985"
       },
-      "sha256": "f549edbe4651444f5114baaa82bde7c097a0dcded5599bac1cbc1e9ae8e4d686",
+      "sha256": "667bee80200b1dfaed93c11717330cf18a550265d4c91ae354d475c5cc2fb18b",
       "profile": {
         "rank": "champion",
         "strength": 77,
@@ -885,8 +1215,23 @@
         "unusual": 48,
         "center": 5,
         "consistency": 41,
-        "talkativeness": 59
-      }
+        "talkativeness": 59,
+        "friendliness": 21,
+        "taunt": 48,
+        "expressiveness": 75,
+        "quirk": 56,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "9e9f345b31dd0080bd2e76c50d5c71be4755476a4165a83ea86ad5fb859d8974",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
     },
     {
       "id": 24,
@@ -900,7 +1245,7 @@
         "cloth": "#CD0000",
         "skin": "#FFCDB3"
       },
-      "sha256": "1765897952a187bd249cc4ac366bf82fead76218b396172d047175a47f92413c",
+      "sha256": "53fc2ad1b2db890c4fb5054c93307079d6051d2d0dae58aee37f85c3110c6976",
       "profile": {
         "rank": "beginner",
         "strength": 30,
@@ -914,8 +1259,23 @@
         "unusual": 51,
         "center": 5,
         "consistency": 64,
-        "talkativeness": 50
-      }
+        "talkativeness": 50,
+        "friendliness": 26,
+        "taunt": 61,
+        "expressiveness": 36,
+        "quirk": 70,
+        "personality": "competitive",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "537899c6b3f8c4f2004ca92eac8b631bf579c0288eaf82392d8654aaea6c0b90",
+      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ffc1ff81ff81ff80ff007e0018007e00ff0",
+      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
     },
     {
       "id": 25,
@@ -929,7 +1289,7 @@
         "cloth": "#C95407",
         "skin": "#FFCDB3"
       },
-      "sha256": "495fdd3fe74636b15e2a4321456f9118ff9536cfcf10c29e05bf5e8bbfccc89c",
+      "sha256": "2a4915596579d9762ee6998be76f6d70e582fa18516ad7e35f8a634978db4dd0",
       "profile": {
         "rank": "beginner",
         "strength": 21,
@@ -943,8 +1303,23 @@
         "unusual": 15,
         "center": 90,
         "consistency": 64,
-        "talkativeness": 6
-      }
+        "talkativeness": 6,
+        "friendliness": 63,
+        "taunt": 38,
+        "expressiveness": 36,
+        "quirk": 37,
+        "personality": "reserved",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "6ed74dba56e5dc6230c6b69299c53944f9eefb0ea4ec8012d610dc32fb5738a2",
+      "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
     },
     {
       "id": 26,
@@ -958,7 +1333,7 @@
         "cloth": "#CEBF00",
         "skin": "#FCC79F"
       },
-      "sha256": "56262ef6b00ae0e04c24141d8bdff09d19633ceca88e70212e388ce69117e656",
+      "sha256": "bc2efa7c9c55a2632af0f95b6b291f5a82393a378a1a1929febdb628c1ebae5d",
       "profile": {
         "rank": "regular",
         "strength": 52,
@@ -972,8 +1347,23 @@
         "unusual": 14,
         "center": 37,
         "consistency": 35,
-        "talkativeness": 2
-      }
+        "talkativeness": 2,
+        "friendliness": 38,
+        "taunt": 46,
+        "expressiveness": 16,
+        "quirk": 94,
+        "personality": "eccentric",
+        "voice": "quirky",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "5303cbacb1470cda2efc1678a616685f3253c76ba9253290f54edeb8eb0696e1",
+      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3dff3418207e00ff0",
+      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
     },
     {
       "id": 27,
@@ -987,7 +1377,7 @@
         "cloth": "#FFB985",
         "skin": "#FFB985"
       },
-      "sha256": "15c5d93dc72f1e3e70c446d56aa188d28041ade6ffc51e7af1c35beaa45cef9a",
+      "sha256": "c5370e9c580ebf5b96a12cfa57bbd64eea8f29f43a93bf6cf93750d7d39fdea1",
       "profile": {
         "rank": "beginner",
         "strength": 32,
@@ -1001,8 +1391,23 @@
         "unusual": 47,
         "center": 94,
         "consistency": 68,
-        "talkativeness": 55
-      }
+        "talkativeness": 55,
+        "friendliness": 12,
+        "taunt": 73,
+        "expressiveness": 68,
+        "quirk": 29,
+        "personality": "teasing",
+        "voice": "casual",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "ca9a1e8f68d6b4d273f16ef92fce167792dd4d73f24e904f3dfe0e1da5ffc666",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
     },
     {
       "id": 28,
@@ -1016,7 +1421,7 @@
         "cloth": "#B5B5B5",
         "skin": "#FFB985"
       },
-      "sha256": "2c916f12cfe91aa9dc9e791fc2df8bd6e5205a15ab719672b15ca7ac6debec29",
+      "sha256": "e775587ffbd0c78093b9bebd2ac18d567c5ea27b869e2fafe64226dcec14cde7",
       "profile": {
         "rank": "champion",
         "strength": 84,
@@ -1030,8 +1435,23 @@
         "unusual": 75,
         "center": 36,
         "consistency": 93,
-        "talkativeness": 74
-      }
+        "talkativeness": 74,
+        "friendliness": 34,
+        "taunt": 51,
+        "expressiveness": 86,
+        "quirk": 45,
+        "personality": "thoughtful",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "8a7dfb96082333096de6d7fb18da4a8a9b64bdfbc2adc85c18b2ab5282cb6f52",
+      "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
     },
     {
       "id": 29,
@@ -1045,7 +1465,7 @@
         "cloth": "#2A2A2A",
         "skin": "#FFCDB3"
       },
-      "sha256": "4c0347a61ee4229d17e7c3f41a737ece3b31ae0512af9c42ff118edd9b1f9133",
+      "sha256": "ca8025a905891902ba749031fd165a4c23628984a529c96dfff5336aad63af13",
       "profile": {
         "rank": "regular",
         "strength": 64,
@@ -1059,8 +1479,23 @@
         "unusual": 10,
         "center": 38,
         "consistency": 72,
-        "talkativeness": 68
-      }
+        "talkativeness": 68,
+        "friendliness": 43,
+        "taunt": 37,
+        "expressiveness": 63,
+        "quirk": 9,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "54b1b7306dc65e8e92127bccd0b7f876ed97f0a4f18ab1ef91d368c788904c44",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
     },
     {
       "id": 30,
@@ -1074,7 +1509,7 @@
         "cloth": "#152E4C",
         "skin": "#FFCDB3"
       },
-      "sha256": "22017563caa81c4c07ad18223d11ffe97286d1715bcd93d164442dbe38b52687",
+      "sha256": "07eafb8494a44a519ef714436a272d4dfafd1b7ed6fed4e17194f4e05cc9fcc7",
       "profile": {
         "rank": "beginner",
         "strength": 38,
@@ -1088,8 +1523,23 @@
         "unusual": 86,
         "center": 82,
         "consistency": 55,
-        "talkativeness": 35
-      }
+        "talkativeness": 35,
+        "friendliness": 56,
+        "taunt": 43,
+        "expressiveness": 37,
+        "quirk": 93,
+        "personality": "eccentric",
+        "voice": "quirky",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "bd0e54356da0faa07073f12fd055a1b71a03fae104ee8600a0767857d36eafa2",
+      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 31,
@@ -1103,7 +1553,7 @@
         "cloth": "#000000",
         "skin": "#7F5A3F"
       },
-      "sha256": "854cde996fc5dc77a3b2ecd101f3b290e8b1123514660b1ed21776007fdc4a26",
+      "sha256": "b17f37526d3d053eb2ca039fdd2b2c9d7af9862b586b8238d76133c39a3f9c13",
       "profile": {
         "rank": "beginner",
         "strength": 35,
@@ -1117,8 +1567,23 @@
         "unusual": 51,
         "center": 42,
         "consistency": 94,
-        "talkativeness": 36
-      }
+        "talkativeness": 36,
+        "friendliness": 65,
+        "taunt": 14,
+        "expressiveness": 48,
+        "quirk": 14,
+        "personality": "friendly",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "7b07762e015f38b19cf61f1ac85b0e1d6520ba6a21f0891b6ff274b74e0f8e23",
+      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
     },
     {
       "id": 32,
@@ -1132,7 +1597,7 @@
         "cloth": "#800000",
         "skin": "#FFCDB3"
       },
-      "sha256": "3b4aa242764bf8327887316940b8799f282c54f0e7e5805adf417c766ae65068",
+      "sha256": "ad68502638192f8a242735f8ff9f9652bbe6607177ff95b2706480c03fe2bf5b",
       "profile": {
         "rank": "champion",
         "strength": 92,
@@ -1146,8 +1611,23 @@
         "unusual": 7,
         "center": 12,
         "consistency": 62,
-        "talkativeness": 6
-      }
+        "talkativeness": 6,
+        "friendliness": 31,
+        "taunt": 48,
+        "expressiveness": 10,
+        "quirk": 27,
+        "personality": "reserved",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "84aedd297a78da99537b0b5754cc2726bf3be460d3f505added2825d1c4e107a",
+      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 33,
@@ -1161,7 +1641,7 @@
         "cloth": "#00ACCE",
         "skin": "#FCC79F"
       },
-      "sha256": "ff295c1e7af6a60d5e19b88036f25007f4f4ea0d381964c0fbd6662455249128",
+      "sha256": "bcf701141b003741369268ccca8e40be760ec59247b5210016483ac155d77602",
       "profile": {
         "rank": "champion",
         "strength": 83,
@@ -1175,8 +1655,23 @@
         "unusual": 27,
         "center": 39,
         "consistency": 40,
-        "talkativeness": 55
-      }
+        "talkativeness": 55,
+        "friendliness": 68,
+        "taunt": 62,
+        "expressiveness": 53,
+        "quirk": 81,
+        "personality": "friendly",
+        "voice": "polite",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "5b9fc30c5a1c672139a4bdd0c8cab2b561941996d61747d24a7d461f8da7e8f5",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 34,
@@ -1190,7 +1685,7 @@
         "cloth": "#B5B5B5",
         "skin": "#FFB985"
       },
-      "sha256": "d25b87ad8373da6f09a09646f2874befcf1cd7a91aa31a52fc0c948eebac71f5",
+      "sha256": "4932b10fdcfbca80ff0d320c068cfb6ba8e20f8553acd8ece18cdd02551e128b",
       "profile": {
         "rank": "beginner",
         "strength": 26,
@@ -1204,8 +1699,23 @@
         "unusual": 6,
         "center": 1,
         "consistency": 38,
-        "talkativeness": 53
-      }
+        "talkativeness": 53,
+        "friendliness": 38,
+        "taunt": 73,
+        "expressiveness": 38,
+        "quirk": 24,
+        "personality": "teasing",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "6a06faae2ebd5df0e0682c2ef8386f0cc8d8826c05e153b68ed9c06b89189e80",
+      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
     },
     {
       "id": 35,
@@ -1219,7 +1729,7 @@
         "cloth": "#48164B",
         "skin": "#7F5A3F"
       },
-      "sha256": "72388898c2b0fe117b96936932290ee258acae1e1e5ce9087e1486946af133e6",
+      "sha256": "818f607579bebef5922014380e740f39554851d65b51fccf3d7c659efd2ef758",
       "profile": {
         "rank": "regular",
         "strength": 45,
@@ -1233,8 +1743,23 @@
         "unusual": 33,
         "center": 5,
         "consistency": 82,
-        "talkativeness": 4
-      }
+        "talkativeness": 4,
+        "friendliness": 36,
+        "taunt": 45,
+        "expressiveness": 16,
+        "quirk": 53,
+        "personality": "reserved",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "b53c29cd1f0c038513781deb42882a08d3f3db6ab0e2c31a7cef7613cf3f186c",
+      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 36,
@@ -1248,7 +1773,7 @@
         "cloth": "#000000",
         "skin": "#FFB985"
       },
-      "sha256": "638a21eb8852673c94871dac5f6e93eac98194757a5f775d832d3b3ccc2a282a",
+      "sha256": "9f4ff9a09fc6aca2dd19f4d5abdbb8afdc330ba671aacd1773007cbd0be73331",
       "profile": {
         "rank": "beginner",
         "strength": 31,
@@ -1262,8 +1787,23 @@
         "unusual": 31,
         "center": 5,
         "consistency": 46,
-        "talkativeness": 26
-      }
+        "talkativeness": 26,
+        "friendliness": 54,
+        "taunt": 32,
+        "expressiveness": 56,
+        "quirk": 60,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "7db1a6e2d747453aa5fc83b975574baf93c76c030a5969d288a1cccf33ae52cf",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
     },
     {
       "id": 37,
@@ -1277,7 +1817,7 @@
         "cloth": "#48164B",
         "skin": "#7F5A3F"
       },
-      "sha256": "0d6a86f9661501edc8f16a4a062e79f2e2544320ce809058dd6e91e7636bc0fe",
+      "sha256": "3ff4097c012bfe933681fe26a4847395d3540c35cfbeb8b00e75f8390e08d519",
       "profile": {
         "rank": "champion",
         "strength": 76,
@@ -1291,8 +1831,23 @@
         "unusual": 5,
         "center": 12,
         "consistency": 84,
-        "talkativeness": 75
-      }
+        "talkativeness": 75,
+        "friendliness": 66,
+        "taunt": 40,
+        "expressiveness": 65,
+        "quirk": 67,
+        "personality": "friendly",
+        "voice": "polite",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "5ac22299152c8c9b133e7d904c4bff0a754267d1a2f8440fb6ba347ad5b2bbe0",
+      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 38,
@@ -1306,7 +1861,7 @@
         "cloth": "#CEBF00",
         "skin": "#FCC79F"
       },
-      "sha256": "9df321a5780d47206ff034ed7c883ec77437fb81c61739b02ea8c3bc29c09384",
+      "sha256": "da2e67a1546026172a01624aa823cc8a8a110bfa8ad17ab7e341c8e72c87fc99",
       "profile": {
         "rank": "champion",
         "strength": 91,
@@ -1320,8 +1875,23 @@
         "unusual": 37,
         "center": 22,
         "consistency": 36,
-        "talkativeness": 69
-      }
+        "talkativeness": 69,
+        "friendliness": 42,
+        "taunt": 24,
+        "expressiveness": 56,
+        "quirk": 39,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "8694f748992675502ca47684013b87be535c9f0d6c6c04f36ae046168cfc1cef",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
     },
     {
       "id": 39,
@@ -1335,7 +1905,7 @@
         "cloth": "#800000",
         "skin": "#FCC79F"
       },
-      "sha256": "1cd45090c3fd3dbe8b336b77b42e44e22bc79df951ad6078a2b7cc42e8732fbf",
+      "sha256": "9afa5305cd507788db66eed55f455076f1c19deb6ff826e2088d494894cf87f4",
       "profile": {
         "rank": "regular",
         "strength": 66,
@@ -1349,8 +1919,23 @@
         "unusual": 17,
         "center": 0,
         "consistency": 87,
-        "talkativeness": 56
-      }
+        "talkativeness": 56,
+        "friendliness": 26,
+        "taunt": 45,
+        "expressiveness": 67,
+        "quirk": 23,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "a681d0dd82f088b52095443e56e774cfbb078ffc227a5ebb1e322e73534936ea",
+      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
     },
     {
       "id": 40,
@@ -1364,7 +1949,7 @@
         "cloth": "#0D00FF",
         "skin": "#FCC79F"
       },
-      "sha256": "7b9023e395b5abc1704f9ce126fad7ecc513334898538075a11074be61c37826",
+      "sha256": "abbed640d0549d6ab1f1234a9c3433b436f57d60a45a123920fe5ee238291b67",
       "profile": {
         "rank": "beginner",
         "strength": 39,
@@ -1378,8 +1963,23 @@
         "unusual": 31,
         "center": 24,
         "consistency": 88,
-        "talkativeness": 73
-      }
+        "talkativeness": 73,
+        "friendliness": 47,
+        "taunt": 61,
+        "expressiveness": 79,
+        "quirk": 4,
+        "personality": "competitive",
+        "voice": "casual",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "ad58957cebd450ee67c1cd4bac97aef48404c77c53b1ee82a4c4a226c4337f52",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 41,
@@ -1393,7 +1993,7 @@
         "cloth": "#FFB985",
         "skin": "#FCC79F"
       },
-      "sha256": "08ae29911e40f638d3901b916403e5b9374a4d287b92e5e10cf493af7ea5aef7",
+      "sha256": "6c18bd6402593f75e03a8dadf032274306b4fa10df247072633bee2ea81944e1",
       "profile": {
         "rank": "beginner",
         "strength": 39,
@@ -1407,8 +2007,23 @@
         "unusual": 0,
         "center": 36,
         "consistency": 77,
-        "talkativeness": 44
-      }
+        "talkativeness": 44,
+        "friendliness": 55,
+        "taunt": 50,
+        "expressiveness": 48,
+        "quirk": 27,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "09884112cfa375508bbbfbd6a52242d54b4acd7896e97b863945449b35003fb7",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
     },
     {
       "id": 42,
@@ -1422,7 +2037,7 @@
         "cloth": "#005700",
         "skin": "#FCC79F"
       },
-      "sha256": "0e87bae471692554c57d59f6502bbcd0d070e45ebd028414b15c4ba8ded66fd8",
+      "sha256": "d95175258d3b0cd5d93f0367891a787b9a0a9280f3ef3f20cf80a3a82f9f10c5",
       "profile": {
         "rank": "beginner",
         "strength": 37,
@@ -1436,8 +2051,23 @@
         "unusual": 29,
         "center": 21,
         "consistency": 70,
-        "talkativeness": 44
-      }
+        "talkativeness": 44,
+        "friendliness": 51,
+        "taunt": 36,
+        "expressiveness": 46,
+        "quirk": 54,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "d87a1833d13b0f297518afd056be8d40a91468bd5d761c2a37b69fac33166f49",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
     },
     {
       "id": 43,
@@ -1451,7 +2081,7 @@
         "cloth": "#0D00FF",
         "skin": "#FFB985"
       },
-      "sha256": "d72862a8f16bd3297fbf5f6e50e8f2d2572e2253b2efda372bbdb4ddc75ae953",
+      "sha256": "da3c87ab89148b4511be02a981dec4df562f4d57bc9751ec2825ede78c14b371",
       "profile": {
         "rank": "beginner",
         "strength": 31,
@@ -1465,8 +2095,23 @@
         "unusual": 34,
         "center": 6,
         "consistency": 76,
-        "talkativeness": 70
-      }
+        "talkativeness": 70,
+        "friendliness": 37,
+        "taunt": 33,
+        "expressiveness": 74,
+        "quirk": 80,
+        "personality": "eccentric",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "26c1deb091134a63c3d0b077639f94c3b84484505901603beb33fc12b2aba58a",
+      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 44,
@@ -1480,7 +2125,7 @@
         "cloth": "#009B0C",
         "skin": "#FCC79F"
       },
-      "sha256": "a6ec46fb881856fd9bb450c66cebe42cf8f307654ba5f82da15d5dd7cea402da",
+      "sha256": "6f0196a08efc25e651441df0e8e4c64102e51f4d303458ae4e4e49a1e58db525",
       "profile": {
         "rank": "champion",
         "strength": 78,
@@ -1494,8 +2139,23 @@
         "unusual": 16,
         "center": 46,
         "consistency": 85,
-        "talkativeness": 64
-      }
+        "talkativeness": 64,
+        "friendliness": 74,
+        "taunt": 33,
+        "expressiveness": 63,
+        "quirk": 79,
+        "personality": "friendly",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "748640b027430de94e74d94c13d4c850f740a90d53818914856c15dcc24262bb",
+      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 45,
@@ -1509,7 +2169,7 @@
         "cloth": "#B5B5B5",
         "skin": "#FFB985"
       },
-      "sha256": "e52444200a65acc3e2042741918c74927aee0311785df5421a2ae47cfabe1076",
+      "sha256": "2113c167c785cc9d28b8c92aae289652531d1b9c73ef4907f0a62629920f9ca5",
       "profile": {
         "rank": "champion",
         "strength": 75,
@@ -1523,8 +2183,23 @@
         "unusual": 32,
         "center": 80,
         "consistency": 78,
-        "talkativeness": 37
-      }
+        "talkativeness": 37,
+        "friendliness": 48,
+        "taunt": 22,
+        "expressiveness": 58,
+        "quirk": 7,
+        "personality": "thoughtful",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "87b7515b8d567e9c78a70da5ce31b02e8fbe9971f7fc84fcca9aeef48e6973b3",
+      "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
     },
     {
       "id": 46,
@@ -1538,7 +2213,7 @@
         "cloth": "#005700",
         "skin": "#FFCDB3"
       },
-      "sha256": "b0b400b940626209a79cc43e330a82d5c555890a0b7d1847e85b51e2e8a577d5",
+      "sha256": "140abc9d2f59e18660e6c9691ec3f34edd9fe46e73500066be5b2df4a52800c0",
       "profile": {
         "rank": "regular",
         "strength": 45,
@@ -1552,8 +2227,23 @@
         "unusual": 16,
         "center": 9,
         "consistency": 91,
-        "talkativeness": 49
-      }
+        "talkativeness": 49,
+        "friendliness": 48,
+        "taunt": 21,
+        "expressiveness": 70,
+        "quirk": 97,
+        "personality": "eccentric",
+        "voice": "quirky",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "3e736220b430d385040da06b1e61e81238e1b89be08c72a940421ab5cb7434fe",
+      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 47,
@@ -1567,7 +2257,7 @@
         "cloth": "#C95407",
         "skin": "#FFB985"
       },
-      "sha256": "ac014838365a21626af92eedded500a95186aa1ba7bef6b535f3c0e078ccdf5f",
+      "sha256": "68c2ddf923726eec838df734f8291e0b44e20febab4f6db44f486694fa53a952",
       "profile": {
         "rank": "beginner",
         "strength": 25,
@@ -1581,8 +2271,23 @@
         "unusual": 90,
         "center": 37,
         "consistency": 85,
-        "talkativeness": 69
-      }
+        "talkativeness": 69,
+        "friendliness": 62,
+        "taunt": 34,
+        "expressiveness": 61,
+        "quirk": 23,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "33550c19becd03317c26350b2a93a42851ef7d6511b02917e891295af8dbb777",
+      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 48,
@@ -1596,7 +2301,7 @@
         "cloth": "#CEBF00",
         "skin": "#7F5A3F"
       },
-      "sha256": "547fb333d114775d5f5f3ac28823951a856248c9f66c9786499ca89d7b548ef9",
+      "sha256": "3ec289f94b8e5650eb6dcff23d3e80fc38a5c42ccd091efaad2352162ff61e45",
       "profile": {
         "rank": "regular",
         "strength": 47,
@@ -1610,8 +2315,23 @@
         "unusual": 84,
         "center": 97,
         "consistency": 45,
-        "talkativeness": 75
-      }
+        "talkativeness": 75,
+        "friendliness": 54,
+        "taunt": 32,
+        "expressiveness": 53,
+        "quirk": 21,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "6880a16eb99d098c84e6b03fad99585410c9f30a8cd8fefc05f74b398cb6ffb4",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 49,
@@ -1625,7 +2345,7 @@
         "cloth": "#C95407",
         "skin": "#FCC79F"
       },
-      "sha256": "49d517f6e2a9a7fd20038c0d9d885481783f82b7f3903d263bd07fe671a75433",
+      "sha256": "4b816807288aa7043b679c09c431b0ba5cbbb2e4f6fc74027f02b07e19ce36a7",
       "profile": {
         "rank": "regular",
         "strength": 46,
@@ -1639,8 +2359,23 @@
         "unusual": 60,
         "center": 20,
         "consistency": 78,
-        "talkativeness": 67
-      }
+        "talkativeness": 67,
+        "friendliness": 34,
+        "taunt": 54,
+        "expressiveness": 69,
+        "quirk": 53,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "6947ca26489362892ccc68591e884d54c26d2e5dcd85fe1d4874099444f2e295",
+      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
     },
     {
       "id": 50,
@@ -1654,7 +2389,7 @@
         "cloth": "#2A2A2A",
         "skin": "#FFCDB3"
       },
-      "sha256": "0d34a9d93f46f33ff55178ed48366259cfc9e874589c1f135e93a95c9abc4f6c",
+      "sha256": "5cac8c0c924e26a4c279e7f28d22d86862b08d12abb87b30aa4dc03d2f6fde81",
       "profile": {
         "rank": "regular",
         "strength": 65,
@@ -1668,8 +2403,23 @@
         "unusual": 59,
         "center": 66,
         "consistency": 40,
-        "talkativeness": 75
-      }
+        "talkativeness": 75,
+        "friendliness": 22,
+        "taunt": 22,
+        "expressiveness": 52,
+        "quirk": 6,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "589d522e2065e51b49cacfe8de3c854c254a70f7313be6a648e43f2a1b334b00",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 51,
@@ -1683,7 +2433,7 @@
         "cloth": "#EEEEEE",
         "skin": "#FFB985"
       },
-      "sha256": "ce6cbda380fc5ac00d548388b9bf6f489e98e64bbc119a5783340f0c2f671fae",
+      "sha256": "26a1fc65dcf37942624e0d1cc03982d81fd1f93af0cdffdc5aacd1637fcb3b0a",
       "profile": {
         "rank": "champion",
         "strength": 77,
@@ -1697,8 +2447,23 @@
         "unusual": 69,
         "center": 4,
         "consistency": 86,
-        "talkativeness": 70
-      }
+        "talkativeness": 70,
+        "friendliness": 36,
+        "taunt": 32,
+        "expressiveness": 74,
+        "quirk": 26,
+        "personality": "thoughtful",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "dc4657ff257f7d00ede785fcf4be57cd6e2df7f9f4a57c494aa692ebea33e689",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
     },
     {
       "id": 52,
@@ -1712,7 +2477,7 @@
         "cloth": "#009B0C",
         "skin": "#7F5A3F"
       },
-      "sha256": "526c928f291d2d3a2964069bd3c1b4255a4a04900bbf8dd9ace2487571bf4d2d",
+      "sha256": "24f228c7f297072aae8539d1fb249508d88af276704c0ff5e22c293c3720c5d8",
       "profile": {
         "rank": "beginner",
         "strength": 39,
@@ -1726,8 +2491,23 @@
         "unusual": 20,
         "center": 26,
         "consistency": 61,
-        "talkativeness": 68
-      }
+        "talkativeness": 68,
+        "friendliness": 42,
+        "taunt": 33,
+        "expressiveness": 60,
+        "quirk": 6,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "e852c95ea4229817c6f6425daf17f6e4c675f4018fc3fb8b1d880972c0b40cd6",
+      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 53,
@@ -1741,7 +2521,7 @@
         "cloth": "#EEEEEE",
         "skin": "#FFCDB3"
       },
-      "sha256": "b5d5bb8a46134438672c6f83bc7ecad919a9de996566f15762f4ed748059a4bf",
+      "sha256": "1e30199212ca5f60edbaac732f45948d3d3d714e636590c66b05badbfba7fd65",
       "profile": {
         "rank": "beginner",
         "strength": 39,
@@ -1755,8 +2535,23 @@
         "unusual": 65,
         "center": 33,
         "consistency": 82,
-        "talkativeness": 28
-      }
+        "talkativeness": 28,
+        "friendliness": 71,
+        "taunt": 18,
+        "expressiveness": 29,
+        "quirk": 48,
+        "personality": "friendly",
+        "voice": "polite",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "1302649a565bbe42d17159c0db72e72210a90f22a473a3a274b110e5d713e4c4",
+      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 54,
@@ -1770,7 +2565,7 @@
         "cloth": "#FFB985",
         "skin": "#FFCDB3"
       },
-      "sha256": "9c2d0a546a570e4e16067dec3f6547227b741b38dd1b7e11286d0d73e712b9c3",
+      "sha256": "d18ff878242ab6d994935ac93a00e7983c1fa971473c83884ce24c14211fbd7b",
       "profile": {
         "rank": "regular",
         "strength": 48,
@@ -1784,8 +2579,23 @@
         "unusual": 39,
         "center": 19,
         "consistency": 48,
-        "talkativeness": 42
-      }
+        "talkativeness": 42,
+        "friendliness": 76,
+        "taunt": 16,
+        "expressiveness": 49,
+        "quirk": 93,
+        "personality": "friendly",
+        "voice": "quirky",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "67ef8488958f275b0067113d88246a50eca4e03b256d7ae6b0efcaed36f2ddcc",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
     },
     {
       "id": 55,
@@ -1799,7 +2609,7 @@
         "cloth": "#0D00FF",
         "skin": "#FFCDB3"
       },
-      "sha256": "41befed4847b4d9f37d0d623916e5f966a994155b5384316fa38fea158934fa9",
+      "sha256": "06fb6ccc057bd0b6235d1df9114dc69789e78f44b2c5e97175ba8920de4dea7a",
       "profile": {
         "rank": "champion",
         "strength": 71,
@@ -1813,8 +2623,23 @@
         "unusual": 51,
         "center": 32,
         "consistency": 60,
-        "talkativeness": 37
-      }
+        "talkativeness": 37,
+        "friendliness": 35,
+        "taunt": 50,
+        "expressiveness": 37,
+        "quirk": 81,
+        "personality": "eccentric",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "e8d565f424f7857693ea83b06a73ca4fcd487bf724d81ace348d321ece3ee6ef",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
     },
     {
       "id": 56,
@@ -1828,7 +2653,7 @@
         "cloth": "#DDB4FF",
         "skin": "#FCC79F"
       },
-      "sha256": "ec9ff96e309d599355d1d136a5bf3878608bb6d8cf8608cc514d8b4f484f84c3",
+      "sha256": "7b1fe838526faefcfd6ae6bab780571cd43bee1442c1b2d2a63e1146bede6f68",
       "profile": {
         "rank": "beginner",
         "strength": 27,
@@ -1842,8 +2667,23 @@
         "unusual": 74,
         "center": 27,
         "consistency": 90,
-        "talkativeness": 54
-      }
+        "talkativeness": 54,
+        "friendliness": 71,
+        "taunt": 32,
+        "expressiveness": 51,
+        "quirk": 54,
+        "personality": "friendly",
+        "voice": "polite",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "e62c63803c42df55743bbb449b43fa0bc23ad14f42fcfe53eef69da8c579c56d",
+      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
     },
     {
       "id": 57,
@@ -1857,7 +2697,7 @@
         "cloth": "#DDB4FF",
         "skin": "#FCC79F"
       },
-      "sha256": "c010c841e0276628999fb5ffaf4ba0472c607c313b6a1fc23c672aace0e69554",
+      "sha256": "cae32a395977c274a069726d0f9113b7ae0b60926b8f9b201f4ee1a6a47c84bd",
       "profile": {
         "rank": "regular",
         "strength": 62,
@@ -1871,8 +2711,23 @@
         "unusual": 36,
         "center": 89,
         "consistency": 91,
-        "talkativeness": 38
-      }
+        "talkativeness": 38,
+        "friendliness": 56,
+        "taunt": 44,
+        "expressiveness": 51,
+        "quirk": 90,
+        "personality": "eccentric",
+        "voice": "quirky",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "ebad2d273df5faa73c47bad97ad4398e09edd4c0a33e5adc6645a0779a6f76e3",
+      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
     },
     {
       "id": 58,
@@ -1886,7 +2741,7 @@
         "cloth": "#EEEEEE",
         "skin": "#FFCDB3"
       },
-      "sha256": "8a31b8df6fb28becd3779999d25af87979aa5425d207b9ff1eea62fa93a4155e",
+      "sha256": "977744d2896686a5bcbd32b2c1c956b5f6b86d88768564daf5b6def5496ead87",
       "profile": {
         "rank": "beginner",
         "strength": 25,
@@ -1900,8 +2755,23 @@
         "unusual": 3,
         "center": 5,
         "consistency": 37,
-        "talkativeness": 47
-      }
+        "talkativeness": 47,
+        "friendliness": 38,
+        "taunt": 38,
+        "expressiveness": 37,
+        "quirk": 34,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "f05f2e4a90c8eb4f3df35013328d39ec3f5d0a3d579fdd9d13ef68ff7ddf5995",
+      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
     },
     {
       "id": 59,
@@ -1915,7 +2785,7 @@
         "cloth": "#EEEEEE",
         "skin": "#FFCDB3"
       },
-      "sha256": "5381de372c36f24d1c9795d9f08009878bbf898c3ca1a888c226ae9a7e026f1e",
+      "sha256": "a9ec86e887ebd8dfece45c65a5ed12b7da45a456825c75d4b47d05e143387357",
       "profile": {
         "rank": "champion",
         "strength": 78,
@@ -1929,8 +2799,23 @@
         "unusual": 64,
         "center": 14,
         "consistency": 63,
-        "talkativeness": 43
-      }
+        "talkativeness": 43,
+        "friendliness": 55,
+        "taunt": 52,
+        "expressiveness": 30,
+        "quirk": 1,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "d8631b10e187a357af2cab846fdfc0ad88c28586a7cfc264998501a94581bf8e",
+      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 60,
@@ -1944,7 +2829,7 @@
         "cloth": "#C95407",
         "skin": "#FFB985"
       },
-      "sha256": "ead440d7a4e650e8a6a98f296b13ee459c6c612117166d198639d7959dd7298f",
+      "sha256": "9a26900587ddfed818447b5ea2a76688f7b65404dc31f3cbd24e31effc159b00",
       "profile": {
         "rank": "regular",
         "strength": 52,
@@ -1958,8 +2843,23 @@
         "unusual": 14,
         "center": 90,
         "consistency": 76,
-        "talkativeness": 62
-      }
+        "talkativeness": 62,
+        "friendliness": 34,
+        "taunt": 44,
+        "expressiveness": 64,
+        "quirk": 6,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "c001bf0e2c8b46d29e76e9ccbe11343ba07ce9469b861f138e133a914e396a62",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
     },
     {
       "id": 61,
@@ -1973,7 +2873,7 @@
         "cloth": "#009B0C",
         "skin": "#FCC79F"
       },
-      "sha256": "3bc9dc3c5b22e196dc098e56f95cec7185fba7b32a8cb032b14c67503f67d41f",
+      "sha256": "0afcfe00f3a56a57d640ec6310b0bc68ccff7af2028984b7f6f8aac8e9a7ffb4",
       "profile": {
         "rank": "champion",
         "strength": 81,
@@ -1987,8 +2887,23 @@
         "unusual": 38,
         "center": 63,
         "consistency": 42,
-        "talkativeness": 57
-      }
+        "talkativeness": 57,
+        "friendliness": 28,
+        "taunt": 45,
+        "expressiveness": 75,
+        "quirk": 64,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "3ad0ddebf67bd3d2151a5f31c80aeb6c9ed49aa35f3d346fe94910a2d56e1bae",
+      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff81ff0018007e00ff0",
+      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 62,
@@ -2002,7 +2917,7 @@
         "cloth": "#CD0000",
         "skin": "#FCC79F"
       },
-      "sha256": "6ecae7e28255245c0abe2da43c6b8cd26e6bfe16f4530547646883844b5fc934",
+      "sha256": "fa7b0d18de9b2a4abe55e46b9b36abb0422be3972f23b810cba9129987c10957",
       "profile": {
         "rank": "champion",
         "strength": 87,
@@ -2016,8 +2931,23 @@
         "unusual": 12,
         "center": 28,
         "consistency": 50,
-        "talkativeness": 3
-      }
+        "talkativeness": 3,
+        "friendliness": 40,
+        "taunt": 33,
+        "expressiveness": 33,
+        "quirk": 72,
+        "personality": "eccentric",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "360cc50b83ad8615b50109feef2c742539be45646e53635a73ec956803ac021d",
+      "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc1ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
     },
     {
       "id": 63,
@@ -2031,7 +2961,7 @@
         "cloth": "#B5B5B5",
         "skin": "#7F5A3F"
       },
-      "sha256": "2e82de2fb0ae2634f8c9ed8e37ae565a79a131222eee9d47a568826961e11daf",
+      "sha256": "6a7c2ef3a4cd4a9938bae63d67abc637332e9514c19976c993c7d1a451440120",
       "profile": {
         "rank": "regular",
         "strength": 62,
@@ -2045,8 +2975,23 @@
         "unusual": 75,
         "center": 1,
         "consistency": 92,
-        "talkativeness": 27
-      }
+        "talkativeness": 27,
+        "friendliness": 77,
+        "taunt": 5,
+        "expressiveness": 23,
+        "quirk": 80,
+        "personality": "friendly",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "f85f3c33adeffc369f2ab6b7e4447ea76c2090f14a8cb0923519aa69023284e8",
+      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 64,
@@ -2060,7 +3005,7 @@
         "cloth": "#152E4C",
         "skin": "#FFB985"
       },
-      "sha256": "27b678701be7e23d53d96e55aa0acd2006eafd8f2d97eff9843c8899a8fa1a6b",
+      "sha256": "a6b0fcf501639ea3cfe360cd8ac78af7e8e8754dc99288e5cacc0695c8ae0113",
       "profile": {
         "rank": "beginner",
         "strength": 38,
@@ -2074,8 +3019,23 @@
         "unusual": 87,
         "center": 72,
         "consistency": 66,
-        "talkativeness": 54
-      }
+        "talkativeness": 54,
+        "friendliness": 54,
+        "taunt": 15,
+        "expressiveness": 40,
+        "quirk": 92,
+        "personality": "eccentric",
+        "voice": "quirky",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "a87f04a786b059ab7976f1061b5ffea106a12865f121a096c3269a2bdeade2b5",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 65,
@@ -2089,7 +3049,7 @@
         "cloth": "#0D00FF",
         "skin": "#7F5A3F"
       },
-      "sha256": "c49b0be1fb2fc66d5edb0524b64658edc5c3d7ee8768c49e879c0754d7f68786",
+      "sha256": "b286bc2c5189198bd493bde5307a64e7c196f31744bcc27417d33c8251009bd1",
       "profile": {
         "rank": "regular",
         "strength": 65,
@@ -2103,8 +3063,23 @@
         "unusual": 52,
         "center": 25,
         "consistency": 43,
-        "talkativeness": 47
-      }
+        "talkativeness": 47,
+        "friendliness": 57,
+        "taunt": 44,
+        "expressiveness": 54,
+        "quirk": 64,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "8314f72c8b95f7180b88e37edb579b22cca0c606c31fab044a7051583c830a5c",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
     },
     {
       "id": 66,
@@ -2118,7 +3093,7 @@
         "cloth": "#000000",
         "skin": "#FFCDB3"
       },
-      "sha256": "20db62a87a763daf6b6989547791e1afdbecdb9b9755a4f2f5634295d4161d1d",
+      "sha256": "e36ec38e0dfc77c3ad00f545fbe7718dcddeea039ad094cbed105772349bd274",
       "profile": {
         "rank": "champion",
         "strength": 78,
@@ -2132,8 +3107,23 @@
         "unusual": 79,
         "center": 42,
         "consistency": 84,
-        "talkativeness": 51
-      }
+        "talkativeness": 51,
+        "friendliness": 52,
+        "taunt": 82,
+        "expressiveness": 40,
+        "quirk": 63,
+        "personality": "teasing",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "65cc6d701b309c2ec533cd90b6e18b1500b6ab583cf290c46e5ece608e1fbad2",
+      "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
     },
     {
       "id": 67,
@@ -2147,7 +3137,7 @@
         "cloth": "#C95407",
         "skin": "#FFB985"
       },
-      "sha256": "bfb72c44c2b270ce3eb03db3c258d994c8699d90a775c5d65e577860af8731d5",
+      "sha256": "f031a1274f1358ab46a940474257566104f934253f7aae89b9a743c87e076d03",
       "profile": {
         "rank": "champion",
         "strength": 85,
@@ -2161,8 +3151,23 @@
         "unusual": 29,
         "center": 22,
         "consistency": 57,
-        "talkativeness": 8
-      }
+        "talkativeness": 8,
+        "friendliness": 23,
+        "taunt": 50,
+        "expressiveness": 39,
+        "quirk": 73,
+        "personality": "eccentric",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "1be8ac08addd95ee639493dda0d3870a0a0eaa8c511506af4a6fb28090df38f6",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
     },
     {
       "id": 68,
@@ -2176,7 +3181,7 @@
         "cloth": "#DDB4FF",
         "skin": "#FFB985"
       },
-      "sha256": "6dc21604ce46fd916787eebe495d1968231138f925091e4f1cf414be5238d005",
+      "sha256": "009155202df56b018e75b4b220bfe41e2db44456899e42a2c766824352f4e1fa",
       "profile": {
         "rank": "beginner",
         "strength": 30,
@@ -2190,8 +3195,23 @@
         "unusual": 87,
         "center": 68,
         "consistency": 40,
-        "talkativeness": 62
-      }
+        "talkativeness": 62,
+        "friendliness": 64,
+        "taunt": 34,
+        "expressiveness": 74,
+        "quirk": 19,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "48a42943f6ef16f4cbd69319a834624028d4e87826efca48bca736c7350c5e17",
+      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
     },
     {
       "id": 69,
@@ -2205,7 +3225,7 @@
         "cloth": "#48164B",
         "skin": "#FCC79F"
       },
-      "sha256": "e46346e304cbb16f2561ee74ebb685a0440c9b1a7b9cac998e6bc4d7791f72bc",
+      "sha256": "ce44e2b25754b442aa775dde40f5190a46745c9ae28eb46394354fcdea1976ff",
       "profile": {
         "rank": "beginner",
         "strength": 33,
@@ -2219,8 +3239,23 @@
         "unusual": 97,
         "center": 5,
         "consistency": 80,
-        "talkativeness": 59
-      }
+        "talkativeness": 59,
+        "friendliness": 36,
+        "taunt": 78,
+        "expressiveness": 61,
+        "quirk": 79,
+        "personality": "teasing",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "021cf4462ecf6935478170135dc5eb281aac41801f7083eea4ada6a7b4054207",
+      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
     },
     {
       "id": 70,
@@ -2234,7 +3269,7 @@
         "cloth": "#CD0000",
         "skin": "#FCC79F"
       },
-      "sha256": "a083008b1322eb877c7fdeb15e554b55ccd16d22098eba4edf6e832c5ac4fdaa",
+      "sha256": "4c93578fb959c2528ea339184e064ada981b5c5db11c446123c439048b0e0fa5",
       "profile": {
         "rank": "champion",
         "strength": 79,
@@ -2248,8 +3283,23 @@
         "unusual": 98,
         "center": 1,
         "consistency": 98,
-        "talkativeness": 1
-      }
+        "talkativeness": 1,
+        "friendliness": 51,
+        "taunt": 67,
+        "expressiveness": 10,
+        "quirk": 13,
+        "personality": "teasing",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "f1dd30cf7dac44d43a4e5857374e9fbd96da8975cf5e84d9b20e44d47ca6c757",
+      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
     },
     {
       "id": 71,
@@ -2263,7 +3313,7 @@
         "cloth": "#EEEEEE",
         "skin": "#7F5A3F"
       },
-      "sha256": "999907d4021c7f3c49e0362b2295d2928b6b9f750d13bcb3d23ba319702a86c4",
+      "sha256": "826471e7a540196ec3390a4b47d304cfed5c39d9c48a568594feaed9063185b7",
       "profile": {
         "rank": "regular",
         "strength": 58,
@@ -2277,8 +3327,23 @@
         "unusual": 15,
         "center": 49,
         "consistency": 41,
-        "talkativeness": 54
-      }
+        "talkativeness": 54,
+        "friendliness": 68,
+        "taunt": 22,
+        "expressiveness": 58,
+        "quirk": 26,
+        "personality": "friendly",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "7097b4dccab7886d23d60276baac64a7b66a11548b131f9cd1ef47d1e91ff1d3",
+      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 72,
@@ -2292,7 +3357,7 @@
         "cloth": "#2A2A2A",
         "skin": "#FCC79F"
       },
-      "sha256": "bb200e9406c7d2b25d0e0773e3f04dd7517a8e1030042c996628a43cdf540784",
+      "sha256": "b4e199ab4ec73a6bfd5366dffd32033bd1c83f4a2eff4d65ca94dba17481140a",
       "profile": {
         "rank": "beginner",
         "strength": 33,
@@ -2306,8 +3371,23 @@
         "unusual": 98,
         "center": 53,
         "consistency": 46,
-        "talkativeness": 59
-      }
+        "talkativeness": 59,
+        "friendliness": 52,
+        "taunt": 28,
+        "expressiveness": 51,
+        "quirk": 18,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "61a9b67de0a131f69ade4706cb028dc2be859c044e8bf623545c973a9cdb4f80",
+      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
     },
     {
       "id": 73,
@@ -2321,7 +3401,7 @@
         "cloth": "#005700",
         "skin": "#7F5A3F"
       },
-      "sha256": "8ff42da0f186cf4068227ab7224f5bb4b05d283381dcce258e0e2438a47b783d",
+      "sha256": "e9559f1f26c85b5e12281ffd813f5bc5c715cd2f1d7b656c28c233095d5d7cbf",
       "profile": {
         "rank": "beginner",
         "strength": 37,
@@ -2335,8 +3415,23 @@
         "unusual": 100,
         "center": 11,
         "consistency": 89,
-        "talkativeness": 50
-      }
+        "talkativeness": 50,
+        "friendliness": 53,
+        "taunt": 14,
+        "expressiveness": 58,
+        "quirk": 84,
+        "personality": "eccentric",
+        "voice": "quirky",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "0e3eae78ffd0bf6951404b71678013eb830d3319761e8f570b98d9a5b070c58f",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
     },
     {
       "id": 74,
@@ -2350,7 +3445,7 @@
         "cloth": "#CD0000",
         "skin": "#FCC79F"
       },
-      "sha256": "12589f29e07f53af602ee8b6b3189b0bb16d5060ce7956a374571ab949b725a9",
+      "sha256": "4f583c0de20444d588aa81da6745b3b1c39a19eb5d30b630a82e0f6b8808126e",
       "profile": {
         "rank": "beginner",
         "strength": 23,
@@ -2364,8 +3459,23 @@
         "unusual": 94,
         "center": 81,
         "consistency": 72,
-        "talkativeness": 46
-      }
+        "talkativeness": 46,
+        "friendliness": 73,
+        "taunt": 56,
+        "expressiveness": 49,
+        "quirk": 2,
+        "personality": "friendly",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "580613e90df2a93d278462fca4311dd9a0043b51b542f49abcec2e0b9cfe4f0e",
+      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff01ff0018007e00ff0",
+      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
     },
     {
       "id": 75,
@@ -2379,7 +3489,7 @@
         "cloth": "#000000",
         "skin": "#7F5A3F"
       },
-      "sha256": "357f8725f8ccf93bf5abb23da962429e64e3a75448598631c0097318dfcaa7e6",
+      "sha256": "81d18b21f8ed229ccdeef6c28ecb1360f3627dca953e7fea4da144fb5a72ae32",
       "profile": {
         "rank": "champion",
         "strength": 72,
@@ -2393,8 +3503,23 @@
         "unusual": 17,
         "center": 48,
         "consistency": 86,
-        "talkativeness": 31
-      }
+        "talkativeness": 31,
+        "friendliness": 47,
+        "taunt": 44,
+        "expressiveness": 22,
+        "quirk": 26,
+        "personality": "thoughtful",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "e65d57207fe1662f5646261dccd9c626ad803001ff0e94086666e28549f72c75",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 76,
@@ -2408,7 +3533,7 @@
         "cloth": "#009B0C",
         "skin": "#FFB985"
       },
-      "sha256": "c4a39a3575715fa65c874cb57c94501ef5e9d67340960c4767b6b7ff1401a521",
+      "sha256": "d95a07811709975bb8ec07e3a329a9892ab9862ec11accb678408570992f7d4f",
       "profile": {
         "rank": "champion",
         "strength": 80,
@@ -2422,8 +3547,23 @@
         "unusual": 6,
         "center": 15,
         "consistency": 68,
-        "talkativeness": 30
-      }
+        "talkativeness": 30,
+        "friendliness": 52,
+        "taunt": 45,
+        "expressiveness": 42,
+        "quirk": 14,
+        "personality": "thoughtful",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "454c51c19e06afc706f5697092a396c8e9d7ba12f6ce67d68b346eea4b691510",
+      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
     },
     {
       "id": 77,
@@ -2437,7 +3577,7 @@
         "cloth": "#0D00FF",
         "skin": "#FCC79F"
       },
-      "sha256": "1d9c5abbaa7e042d111e79f859e0fd920a37d77537b64c5183995cfc789f92ce",
+      "sha256": "5b61a29de2e5014974190fe3638bfa6b634cf3ed4a9568ce408be731de2ccee7",
       "profile": {
         "rank": "champion",
         "strength": 75,
@@ -2451,8 +3591,23 @@
         "unusual": 3,
         "center": 69,
         "consistency": 69,
-        "talkativeness": 74
-      }
+        "talkativeness": 74,
+        "friendliness": 60,
+        "taunt": 17,
+        "expressiveness": 77,
+        "quirk": 21,
+        "personality": "thoughtful",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "fc404821314b8de1fcd7331d02139a2dc2e52af59156807a1818a12a589a1ff1",
+      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff81ff0018007e00ff0",
+      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
     },
     {
       "id": 78,
@@ -2466,7 +3621,7 @@
         "cloth": "#2A2A2A",
         "skin": "#FFB985"
       },
-      "sha256": "9140ce9df53ca6bc7b3211c2e4eacd71aad3b1ed6c46d97cd4af4b6fd56525bc",
+      "sha256": "a9cb53730cf7d3f10e744d668c495be0f0419e68309e40db481a683c57ab83a3",
       "profile": {
         "rank": "champion",
         "strength": 89,
@@ -2480,8 +3635,23 @@
         "unusual": 92,
         "center": 12,
         "consistency": 53,
-        "talkativeness": 59
-      }
+        "talkativeness": 59,
+        "friendliness": 41,
+        "taunt": 62,
+        "expressiveness": 58,
+        "quirk": 25,
+        "personality": "competitive",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "0dbc5f0f16276392448a50786b7760f0c3e98cad545e282a6c0e25710cb8839f",
+      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
     },
     {
       "id": 79,
@@ -2495,7 +3665,7 @@
         "cloth": "#C95407",
         "skin": "#7F5A3F"
       },
-      "sha256": "2a22f3efed4647a30712366008856abdc8731dfb3d869d86a74bf6ab09f57ae0",
+      "sha256": "5cbb2020955bd9473adc63f2e345d27464d29ca28b274ed238211bf2b47f0ae2",
       "profile": {
         "rank": "regular",
         "strength": 46,
@@ -2509,8 +3679,23 @@
         "unusual": 47,
         "center": 94,
         "consistency": 51,
-        "talkativeness": 55
-      }
+        "talkativeness": 55,
+        "friendliness": 54,
+        "taunt": 45,
+        "expressiveness": 67,
+        "quirk": 63,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "ca206d7cf026a5ca09fdeb0154801c409add3b082919c8ede847b2a68ce30ea7",
+      "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
     },
     {
       "id": 80,
@@ -2524,7 +3709,7 @@
         "cloth": "#005700",
         "skin": "#FFCDB3"
       },
-      "sha256": "9a23102cfea4dd584a6aecb7de1b6c8925f83ecdcf955fc862c7bcef8640fa74",
+      "sha256": "b1c63431d67ca8a24dce95a62a2c26e2a21140248b11f1518c2ec56a916eba03",
       "profile": {
         "rank": "champion",
         "strength": 82,
@@ -2538,8 +3723,23 @@
         "unusual": 1,
         "center": 66,
         "consistency": 70,
-        "talkativeness": 64
-      }
+        "talkativeness": 64,
+        "friendliness": 52,
+        "taunt": 61,
+        "expressiveness": 63,
+        "quirk": 38,
+        "personality": "thoughtful",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "6a97104d88d59cc084a1b407b435804b2f42ec6c76f1bb42f7e1c0a03bf157ee",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 81,
@@ -2553,7 +3753,7 @@
         "cloth": "#000000",
         "skin": "#FFCDB3"
       },
-      "sha256": "a02ae07c5d609aed14f483e892bec3858937a0c61ea2ac5df5f0a8ce1150d7d9",
+      "sha256": "21aa83a8b800034e14e26726447654efd7c2a62e4dc44037add6c7fadf6cf339",
       "profile": {
         "rank": "beginner",
         "strength": 29,
@@ -2567,8 +3767,23 @@
         "unusual": 50,
         "center": 10,
         "consistency": 77,
-        "talkativeness": 3
-      }
+        "talkativeness": 3,
+        "friendliness": 22,
+        "taunt": 46,
+        "expressiveness": 17,
+        "quirk": 51,
+        "personality": "reserved",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "de7e876de71f6a3a411f4d871d951e1ee845b9e876a9f1f28a605f2dfb03823e",
+      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 82,
@@ -2582,7 +3797,7 @@
         "cloth": "#800000",
         "skin": "#FFCDB3"
       },
-      "sha256": "f9ca72dd96b84dff1af4385d9c0fa8da13ca2df463527ea34a0b950acf38595c",
+      "sha256": "7f7b6bac0818235868d4924fc6e38750df25478cc7cbeec7e2172b81097439b7",
       "profile": {
         "rank": "champion",
         "strength": 71,
@@ -2596,8 +3811,23 @@
         "unusual": 84,
         "center": 3,
         "consistency": 80,
-        "talkativeness": 70
-      }
+        "talkativeness": 70,
+        "friendliness": 48,
+        "taunt": 45,
+        "expressiveness": 66,
+        "quirk": 64,
+        "personality": "thoughtful",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "fca60dc97aa43f0dbb2b8e2f98e9e0254a8fd7dff5c5a57be361a8ee6ee9c3e9",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
     },
     {
       "id": 83,
@@ -2611,7 +3841,7 @@
         "cloth": "#800000",
         "skin": "#FFB985"
       },
-      "sha256": "8396d158e69d01c24dcfbb4aae1d29c171a53e18a18cf64cc4496d5e07a8c61c",
+      "sha256": "ac28ec0c0c5ed3f0cd424996e9b8f513e83f15a1e232d3570da2b718128919ba",
       "profile": {
         "rank": "champion",
         "strength": 76,
@@ -2625,8 +3855,23 @@
         "unusual": 25,
         "center": 76,
         "consistency": 37,
-        "talkativeness": 58
-      }
+        "talkativeness": 58,
+        "friendliness": 47,
+        "taunt": 50,
+        "expressiveness": 65,
+        "quirk": 55,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "1b2cd00166e4772b998748e0df332ec469ca44ae6365ab4328e89d89e61cfbfe",
+      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff81ff0018007e00ff0",
+      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 84,
@@ -2640,7 +3885,7 @@
         "cloth": "#00ACCE",
         "skin": "#FFCDB3"
       },
-      "sha256": "a8a1a87fe1e0866f2c52976d913bd7b5c8b7a64f3ef24954cff20ed377096097",
+      "sha256": "9786ee0001b87327cfcec7b50d86e8c8ee0db88b778a2e81300c7e86ed6650b1",
       "profile": {
         "rank": "champion",
         "strength": 89,
@@ -2654,8 +3899,23 @@
         "unusual": 35,
         "center": 17,
         "consistency": 42,
-        "talkativeness": 8
-      }
+        "talkativeness": 8,
+        "friendliness": 48,
+        "taunt": 46,
+        "expressiveness": 32,
+        "quirk": 25,
+        "personality": "reserved",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "a9a81effd3deb997493500dcea42a164393b1b2a2dfcdd8c5828bad46af91f3c",
+      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
     },
     {
       "id": 85,
@@ -2669,7 +3929,7 @@
         "cloth": "#EEEEEE",
         "skin": "#FFB985"
       },
-      "sha256": "41bab8cb28e38d40d4566661268301de85b51fbf7b8942e6dd6223d14a26c2ef",
+      "sha256": "9d96ad4802a85b39c67d40dc2e839d3fb9884962b92b15d5a6db9f1478f74837",
       "profile": {
         "rank": "regular",
         "strength": 44,
@@ -2683,8 +3943,23 @@
         "unusual": 26,
         "center": 49,
         "consistency": 78,
-        "talkativeness": 35
-      }
+        "talkativeness": 35,
+        "friendliness": 56,
+        "taunt": 25,
+        "expressiveness": 24,
+        "quirk": 69,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "07289fde78638f7f372d1fa46836680279c9671aad55db15453258b0a4c521eb",
+      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
+      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
     },
     {
       "id": 86,
@@ -2698,7 +3973,7 @@
         "cloth": "#009B0C",
         "skin": "#7F5A3F"
       },
-      "sha256": "e883ba51d076b276dde774f9d3dd30285929ab958c5681643a51d32b7483b2fa",
+      "sha256": "ae180b63c15da29912beb8553e7ab66e5fbafae913ae00e34c0ad334f20fb236",
       "profile": {
         "rank": "regular",
         "strength": 62,
@@ -2712,8 +3987,23 @@
         "unusual": 53,
         "center": 78,
         "consistency": 70,
-        "talkativeness": 69
-      }
+        "talkativeness": 69,
+        "friendliness": 40,
+        "taunt": 51,
+        "expressiveness": 66,
+        "quirk": 38,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "c3a5f5546f9ab3ecba57cad3cd2b9f62cc24a4f381de4ba6fdeba2d6958b3640",
+      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 87,
@@ -2727,7 +4017,7 @@
         "cloth": "#005700",
         "skin": "#FFB985"
       },
-      "sha256": "4bd4a91f1abbf49b82097d33e1bb466dd841b4bd968bcc044a036daaad8e1cf4",
+      "sha256": "414d3a4f1047a76c45490525babced518fc2e0e8989cb8da856c14ffdcbb8eec",
       "profile": {
         "rank": "champion",
         "strength": 70,
@@ -2741,8 +4031,23 @@
         "unusual": 36,
         "center": 15,
         "consistency": 82,
-        "talkativeness": 74
-      }
+        "talkativeness": 74,
+        "friendliness": 70,
+        "taunt": 17,
+        "expressiveness": 62,
+        "quirk": 38,
+        "personality": "friendly",
+        "voice": "polite",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "b3e12b12a7a0cd198fe7fa385b934e9b984bd57bab7c39dc776b17264e02828b",
+      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
     },
     {
       "id": 88,
@@ -2756,7 +4061,7 @@
         "cloth": "#FFB985",
         "skin": "#FFB985"
       },
-      "sha256": "915b80d4ee84c59d2cda000f9807ad85029ba5720077d4d566bc1f833f7cf117",
+      "sha256": "bed9b069969839d7e411a59712ee20e16b69c7883a26d1f571193e34a3c79226",
       "profile": {
         "rank": "regular",
         "strength": 58,
@@ -2770,8 +4075,23 @@
         "unusual": 36,
         "center": 17,
         "consistency": 61,
-        "talkativeness": 40
-      }
+        "talkativeness": 40,
+        "friendliness": 46,
+        "taunt": 68,
+        "expressiveness": 52,
+        "quirk": 22,
+        "personality": "teasing",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "26268844afef14ee7b508026853890416706eedfe2a1522604265ae565a13139",
+      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
     },
     {
       "id": 89,
@@ -2785,7 +4105,7 @@
         "cloth": "#CD0000",
         "skin": "#FCC79F"
       },
-      "sha256": "3a9c23b3990f28d3427571fdd9573e05e2c387bdb2f9cc83608e38c55ff6b132",
+      "sha256": "ba5faf3c48a8a0fa9cbd3a09eb1a2ffd2841993200ff2b6d39b442ed0073f7ab",
       "profile": {
         "rank": "regular",
         "strength": 50,
@@ -2799,8 +4119,23 @@
         "unusual": 18,
         "center": 39,
         "consistency": 47,
-        "talkativeness": 60
-      }
+        "talkativeness": 60,
+        "friendliness": 9,
+        "taunt": 71,
+        "expressiveness": 61,
+        "quirk": 43,
+        "personality": "teasing",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "c2fe132df8e0b189323b3332a872967919f34b230bd396a980372b3007b8bcaa",
+      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
     },
     {
       "id": 90,
@@ -2814,7 +4149,7 @@
         "cloth": "#000000",
         "skin": "#FFCDB3"
       },
-      "sha256": "25149283b4ed1b4d7aafc16756ca76035d0914588c6d3295f5424a3ad849d021",
+      "sha256": "8ed8a43690ebb15bbec03490f4f4f2b8348e3dd8e05ec49ee014f41affecee8d",
       "profile": {
         "rank": "regular",
         "strength": 65,
@@ -2828,8 +4163,23 @@
         "unusual": 23,
         "center": 83,
         "consistency": 84,
-        "talkativeness": 47
-      }
+        "talkativeness": 47,
+        "friendliness": 58,
+        "taunt": 28,
+        "expressiveness": 41,
+        "quirk": 8,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "7f8451f03877d884ae3a5a83e69e4f16da51f3a73b8ea6d6146c4b5b89845bf8",
+      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
+      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 91,
@@ -2843,7 +4193,7 @@
         "cloth": "#48164B",
         "skin": "#FFB985"
       },
-      "sha256": "fee5c9a19ce0740a35096254365f758d182167e56851ad933b6814186aa094d1",
+      "sha256": "108b4010c80882c4bbc32e24473eacb5cd0fc623cb049d33c3c771476096c69b",
       "profile": {
         "rank": "champion",
         "strength": 79,
@@ -2857,8 +4207,23 @@
         "unusual": 12,
         "center": 17,
         "consistency": 42,
-        "talkativeness": 7
-      }
+        "talkativeness": 7,
+        "friendliness": 71,
+        "taunt": 36,
+        "expressiveness": 49,
+        "quirk": 72,
+        "personality": "friendly",
+        "voice": "polite",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "e17b626521b145f58c8824877ac0ac3f1f77c829c01bad80d3a12eff262eae4b",
+      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
+      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
     },
     {
       "id": 92,
@@ -2872,7 +4237,7 @@
         "cloth": "#EEEEEE",
         "skin": "#FCC79F"
       },
-      "sha256": "8601afe37f996c7f055102c6540c1af1d12e3cad5369a7c61360a205aa967986",
+      "sha256": "cc10c5f3857925fc016cb83cde87aa826347893c8a0b9f2b51c7746c7639b64b",
       "profile": {
         "rank": "regular",
         "strength": 63,
@@ -2886,8 +4251,23 @@
         "unusual": 12,
         "center": 98,
         "consistency": 61,
-        "talkativeness": 57
-      }
+        "talkativeness": 57,
+        "friendliness": 37,
+        "taunt": 76,
+        "expressiveness": 37,
+        "quirk": 69,
+        "personality": "teasing",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "30919fa0a6977dd2d72aaee5420d5e146c515d227fa90c77e8a5c81613a1cf8e",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
     },
     {
       "id": 93,
@@ -2901,7 +4281,7 @@
         "cloth": "#C95407",
         "skin": "#7F5A3F"
       },
-      "sha256": "8ac4fae39bf14bfc6dd61b20e76977ff2a10e4e25c9323f97b5c6ba741e7dba0",
+      "sha256": "989e3042c73f5e0819edd7440448c6d470d79160c0eb96bbc1301fc846a5b96f",
       "profile": {
         "rank": "regular",
         "strength": 54,
@@ -2915,8 +4295,23 @@
         "unusual": 47,
         "center": 9,
         "consistency": 84,
-        "talkativeness": 5
-      }
+        "talkativeness": 5,
+        "friendliness": 58,
+        "taunt": 63,
+        "expressiveness": 48,
+        "quirk": 53,
+        "personality": "reserved",
+        "voice": "casual",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "86d0af55a60f62464b68b525fb7e220848722593c832c0a9de5ea562ad331d7c",
+      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
+      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
     },
     {
       "id": 94,
@@ -2930,7 +4325,7 @@
         "cloth": "#000000",
         "skin": "#FFB985"
       },
-      "sha256": "8b319852a340789cf8844b45846fbcad510a55a9b02a3cb505eb1955622994bf",
+      "sha256": "3d82f2c57d505475a719e2a10ba42c23d79b468ddef9bd3aa29d856f016851d1",
       "profile": {
         "rank": "regular",
         "strength": 52,
@@ -2944,8 +4339,23 @@
         "unusual": 9,
         "center": 84,
         "consistency": 94,
-        "talkativeness": 55
-      }
+        "talkativeness": 55,
+        "friendliness": 48,
+        "taunt": 63,
+        "expressiveness": 73,
+        "quirk": 100,
+        "personality": "eccentric",
+        "voice": "quirky",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "775649fd6d1d51c2a8c7a628051c42c478e6bc9d3dab252d54c6524d7315778a",
+      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff81ff0018007e00ff0",
+      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 95,
@@ -2959,7 +4369,7 @@
         "cloth": "#2A2A2A",
         "skin": "#FFB985"
       },
-      "sha256": "ac1c3df177e8758f0df92f3587806040f50c71d67f21355b276b4487e67c9815",
+      "sha256": "3949bc2dcd6ef46a211dd71565be04043df975f79bc8329085c03b29257c7b78",
       "profile": {
         "rank": "beginner",
         "strength": 31,
@@ -2973,8 +4383,23 @@
         "unusual": 53,
         "center": 42,
         "consistency": 85,
-        "talkativeness": 29
-      }
+        "talkativeness": 29,
+        "friendliness": 62,
+        "taunt": 42,
+        "expressiveness": 32,
+        "quirk": 38,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "2a53a026a5ae4b60794787b8c0653ad0e57b58915a9ff3c1be5557cf531731ef",
+      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
+      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
     },
     {
       "id": 96,
@@ -2988,7 +4413,7 @@
         "cloth": "#800000",
         "skin": "#7F5A3F"
       },
-      "sha256": "9224c1df0f4c28aa17be2205dcd0f0fa437ecaf7f07566e9da8e02de3756e96f",
+      "sha256": "bf946a475320aaba56509589272e35c3c9087daf9f35cf11090469a601421c1d",
       "profile": {
         "rank": "beginner",
         "strength": 22,
@@ -3002,8 +4427,23 @@
         "unusual": 89,
         "center": 37,
         "consistency": 38,
-        "talkativeness": 68
-      }
+        "talkativeness": 68,
+        "friendliness": 31,
+        "taunt": 43,
+        "expressiveness": 52,
+        "quirk": 32,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "7ef4f8baf99421d4e46b82196c3005f5b58f7c866ae12cadcaec2d2da4eb71e3",
+      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 97,
@@ -3017,7 +4457,7 @@
         "cloth": "#000000",
         "skin": "#FFB985"
       },
-      "sha256": "fe61853d20f98534b94607b837eb557c2ba9303efb0fa5ba7d26a8b736a12507",
+      "sha256": "bf7b6935cd8a3ea7c6e353df7b8a3811ccf28e3698e5cfd44bac0cace49209c0",
       "profile": {
         "rank": "champion",
         "strength": 80,
@@ -3031,8 +4471,23 @@
         "unusual": 55,
         "center": 39,
         "consistency": 42,
-        "talkativeness": 73
-      }
+        "talkativeness": 73,
+        "friendliness": 50,
+        "taunt": 23,
+        "expressiveness": 72,
+        "quirk": 22,
+        "personality": "competitive",
+        "voice": "plain",
+        "tearful": true
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "1f1730af9d42656320160f224f49f1918c5e5beaf5b0d4ef794939b6acae2189",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     },
     {
       "id": 98,
@@ -3046,7 +4501,7 @@
         "cloth": "#800000",
         "skin": "#7F5A3F"
       },
-      "sha256": "6a6d822edac029846e662a467afcab28374f91f0fd8fe74e2e15153472566a89",
+      "sha256": "8f6707d5f62480110b02242a1192b689de9b6305d4861a75ddcfb638ce0d2ae4",
       "profile": {
         "rank": "regular",
         "strength": 48,
@@ -3060,8 +4515,23 @@
         "unusual": 28,
         "center": 39,
         "consistency": 66,
-        "talkativeness": 30
-      }
+        "talkativeness": 30,
+        "friendliness": 50,
+        "taunt": 47,
+        "expressiveness": 48,
+        "quirk": 93,
+        "personality": "eccentric",
+        "voice": "quirky",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "7fca0c754a5d89e1fb84d1f77cb277fbb11acd05fbddc2ea56d5f5f3616f3142",
+      "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
     },
     {
       "id": 99,
@@ -3075,7 +4545,7 @@
         "cloth": "#0D00FF",
         "skin": "#FFB985"
       },
-      "sha256": "4812a3fb13b02b04660483cc748f9b908c6feb1bbfe6c32e4d9013e6f6a7ba4c",
+      "sha256": "17d9a07e1ac90ef104991d89eef82c633b212c64c3edfda6e072a09045c57c4b",
       "profile": {
         "rank": "champion",
         "strength": 71,
@@ -3089,8 +4559,23 @@
         "unusual": 99,
         "center": 80,
         "consistency": 41,
-        "talkativeness": 47
-      }
+        "talkativeness": 47,
+        "friendliness": 78,
+        "taunt": 36,
+        "expressiveness": 59,
+        "quirk": 34,
+        "personality": "friendly",
+        "voice": "plain",
+        "tearful": false
+      },
+      "winFile": "win.png",
+      "loseFile": "lose.png",
+      "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
+      "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
+      "faceSha256": "46fe9ee271a552e847d3c1f8aff8abea92a30204445c13ba2a3e8dc6869738e8",
+      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff81ff0018007e00ff0",
+      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
+      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
     }
   ]
 }

@@ -70,6 +70,8 @@ patterns.update({
     "-": [".....", ".....", ".###.", ".....", "....."],
     "!": [".#.", ".#.", ".#.", "...", ".#."],
     "?": [".###.", "#...#", "...#.", ".....", "..#.."],
+    "(": ["..#", ".#.", "#..", ".#.", "..#"],
+    ")": ["#..", ".#.", "..#", ".#.", "#.."],
 })
 
 # Sixteen-by-sixteen title glyphs, kept as pixel rows so the font can be rebuilt
@@ -111,6 +113,38 @@ title_patterns = {
 assert all(len(rows) == 16 and all(len(row) == 16 for row in rows)
            for rows in title_patterns.values())
 
+
+# Katakana occupy the right-hand 5 x 5 grid on the supplied sheet.
+# Rows are 36 source pixels apart; each source pixel is a 6 x 6 square.
+kana_rows = (
+    "アイウエオ", "カキクケコ", "サシスセソ", "タチツテト", "ナニヌネノ",
+    "ハヒフヘホ", "マミムメモ", "ヤ ユ ヨ", "ラリルレロ", "ワヰヱヲン",
+    "ァィゥェォ", "ッャュョヮ", "ー    ",
+    "ガギグゲゴ", "ザジズゼゾ", "ダヂヅデド", "バビブベボ", "パピプペポ",
+)
+for row, letters in enumerate(kana_rows):
+    for col, char in enumerate(letters):
+        if char == " ":
+            continue
+        pattern = ["".join(
+            "#" if IMAGE.getpixel((690 + 36 * col + SOURCE_PIXEL * x + 3,
+                                   42 + 36 * row + SOURCE_PIXEL * y + 3)) == INK else "."
+            for x in range(5)) for y in range(5)]
+        assert any("#" in line for line in pattern), (row, col, char)
+        patterns[char] = pattern
+
+# Punctuation absent from the sheet, drawn on the same five-row pixel grid.
+patterns.update({
+    "、": ["...", "...", "...", "..#", ".#."],
+    "。": ["...", "...", "###", "#.#", "###"],
+    "・": ["...", "...", ".#.", "...", "..."],
+    "！": [".#.", ".#.", ".#.", "...", ".#."],
+    "？": [".###.", "#...#", "...#.", ".....", "..#.."],
+    "…": [".....", ".....", ".....", ".....", "#.#.#"],
+    "♪": ["..###", "..#.#", "..#.#", ".##.#", "##..."],
+    "（": ["...#.", "..#..", ".#...", "..#..", "...#."],
+    "）": [".#...", "..#..", "...#.", "..#..", ".#..."],
+})
 
 def glyph_for(rows, unit=UNIT, left=70):
     pen = TTGlyphPen(None)

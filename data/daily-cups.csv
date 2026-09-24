@@ -1,0 +1,367 @@
+date,occasion,cup
+01-01,World Day of Peace,PEACE CUP
+01-02,National Science Fiction Day,SCIENCE FICTION CUP
+01-03,National Chocolate Covered Cherry Day,CHOCOLATE COVERED CHERRY CUP
+01-04,World Braille Day (UN),BRAILLE CUP
+01-05,National Bird Day,BIRD CUP
+01-06,National Take Down the Christmas Tree Day,CHRISTMAS TREE CUP
+01-07,National Tempura Day,TEMPURA CUP
+01-08,World Typing Day,TYPING CUP
+01-09,National Apricot Day,APRICOT CUP
+01-10,National Bittersweet Chocolate Day,BITTERSWEET CHOCOLATE CUP
+01-11,World Sketchnote Day,SKETCHNOTE CUP
+01-12,National Hot Tea Day,HOT TEA CUP
+01-13,National Sticker Day,STICKER CUP
+01-14,International Kite Day,KITE CUP
+01-15,National Hat Day,HAT CUP
+01-16,National Quinoa Day,QUINOA CUP
+01-17,National Classy Day,CLASSY CUP
+01-18,National Gourmet Coffee Day,GOURMET COFFEE CUP
+01-19,International Day of Acceptance,ACCEPTANCE CUP
+01-20,National Coffee Break Day,COFFEE BREAK CUP
+01-21,National Hugging Day (US),HUGGING CUP
+01-22,National Hot Sauce Day,HOT SAUCE CUP
+01-23,National Pie Day,PIE CUP
+01-24,National Compliment Day (US),COMPLIMENT CUP
+01-25,National Irish Coffee Day,IRISH COFFEE CUP
+01-26,International Customs Day (UN),CUSTOMS CUP
+01-27,National Chocolate Cake Day,CHOCOLATE CAKE CUP
+01-28,National Kazoo Day,KAZOO CUP
+01-29,National Puzzle Day (US),PUZZLE CUP
+01-30,National Escape Day,ESCAPE CUP
+01-31,National Hot Chocolate Day,HOT CHOCOLATE CUP
+02-01,International Cake Pop Day,CAKE POP CUP
+02-02,World Ukulele Day,UKULELE CUP
+02-03,National Carrot Cake Day,CARROT CAKE CUP
+02-04,National Hemp Day,HEMP CUP
+02-05,National Chocolate Fondue Day,CHOCOLATE FONDUE CUP
+02-06,National Chopsticks Day,CHOPSTICKS CUP
+02-07,National Patty Melt Day,PATTY MELT CUP
+02-08,National Kite Flying Day,KITE FLYING CUP
+02-09,National Pizza Day (US),PIZZA CUP
+02-10,National Flannel Day,FLANNEL CUP
+02-11,International Day of Women and Girls in Science,SCIENCE CUP
+02-12,"Darwin Day (international, Charles Darwin's birthday)",DARWIN CUP
+02-13,World Radio Day (UN),RADIO CUP
+02-14,International Book Giving Day,BOOK GIVING CUP
+02-15,National Hippo Day,HIPPO CUP
+02-16,International Syrah Day,SYRAH CUP
+02-17,National Public Science Day,PUBLIC SCIENCE CUP
+02-18,National Battery Day,BATTERY CUP
+02-19,National Chocolate Mint Day,CHOCOLATE MINT CUP
+02-20,World Day of Social Justice (UN),SOCIAL JUSTICE CUP
+02-21,International Mother Language Day (UN),MOTHER LANGUAGE CUP
+02-22,National Cook a Sweet Potato Day,COOK A SWEET POTATO CUP
+02-23,International Dog Biscuit Appreciation Day,DOG BISCUIT CUP
+02-24,World Bartender Day,BARTENDER CUP
+02-25,National Chocolate-Covered Peanuts Day,CHOCOLATE-COVERED PEANUTS CUP
+02-26,National Pistachio Day,PISTACHIO CUP
+02-27,World NGO Day (international),NGO CUP
+02-28,National Science Day,SCIENCE CUP
+02-29,National Frog Legs Day,FROG LEGS CUP
+03-01,World Compliment Day,COMPLIMENT CUP
+03-02,International Rescue Cat Day,RESCUE CAT CUP
+03-03,World Wildlife Day (UN),WILDLIFE CUP
+03-04,National Pound Cake Day,POUND CAKE CUP
+03-05,National Poutine Day,POUTINE CUP
+03-06,National White Chocolate Cheesecake Day,WHITE CHOCOLATE CHEESECAKE CUP
+03-07,National Cereal Day,CEREAL CUP
+03-08,International Women's Day (UN),WOMEN'S CUP
+03-09,National Crabmeat Day,CRABMEAT CUP
+03-10,International Lime Day,LIME CUP
+03-11,World Plumbing Day,PLUMBING CUP
+03-12,National Milky Way Day,MILKY WAY CUP
+03-13,National Jewel Day,JEWEL CUP
+03-14,National Potato Chip Day,POTATO CHIP CUP
+03-15,World Consumer Rights Day,CONSUMER RIGHTS CUP
+03-16,National Panda Day,PANDA CUP
+03-17,St. Patrick's Day,SHAMROCK CUP
+03-18,National Lacy Oatmeal Cookie Day,LACY OATMEAL COOKIE CUP
+03-19,National Chocolate Caramel Day,CHOCOLATE CARAMEL CUP
+03-20,International Day of Happiness,HAPPINESS CUP
+03-21,National Flower Day,FLOWER CUP
+03-22,World Water Day (UN),WATER CUP
+03-23,World Meteorological Day (UN),METEOROLOGICAL CUP
+03-24,National Chocolate Covered Raisins Day,CHOCOLATE COVERED RAISINS CUP
+03-25,International Waffle Day,WAFFLE CUP
+03-26,National Nougat Day,NOUGAT CUP
+03-27,World Theatre Day (international),THEATRE CUP
+03-28,National Black Forest Cake Day,BLACK FOREST CAKE CUP
+03-29,National Lemon Chiffon Cake Day,LEMON CHIFFON CAKE CUP
+03-30,National Doctors Day,DOCTORS CUP
+03-31,World Backup Day,BACKUP CUP
+04-01,International Edible Book Festival,EDIBLE BOOK FESTIVAL CUP
+04-02,International Children's Book Day,CHILDREN'S BOOK CUP
+04-03,National Chocolate Mousse Day,CHOCOLATE MOUSSE CUP
+04-04,World Rat Day,RAT CUP
+04-05,National Deep Dish Pizza Day,DEEP DISH PIZZA CUP
+04-06,National Siamese Cat Day,SIAMESE CAT CUP
+04-07,National Coffee Cake Day,COFFEE CAKE CUP
+04-08,International Romani Day,ROMANI CUP
+04-09,National Chinese Almond Cookie Day,CHINESE ALMOND COOKIE CUP
+04-10,National Hug Your Dog Day,HUG YOUR DOG CUP
+04-11,National Pet Day,PET CUP
+04-12,International Day of Human Space Flight,HUMAN SPACE FLIGHT CUP
+04-13,National Peach Cobbler Day,PEACH COBBLER CUP
+04-14,National Dolphin Day,DOLPHIN CUP
+04-15,World Art Day,ART CUP
+04-16,International Pizza Cake Day,PIZZA CAKE CUP
+04-17,International Haiku Poetry Day,HAIKU POETRY CUP
+04-18,National Lineman Appreciation Day,LINEMAN CUP
+04-19,Dutch-American Friendship Day,DUTCH-AMERICAN FRIENDSHIP CUP
+04-20,National Pineapple Upside-down Cake Day,PINEAPPLE CAKE CUP
+04-21,National Tea Day (UK),TEA CUP
+04-22,Earth Day (international),EARTH CUP
+04-23,World Book Day (UNESCO),BOOK CUP
+04-24,National Pigs-in-a-Blanket Day,PIGS IN A BLANKET CUP
+04-25,World Penguin Day,PENGUIN CUP
+04-26,National Pretzel Day,PRETZEL CUP
+04-27,National Devil Dog Day,DEVIL DOG CUP
+04-28,National Cubicle Day,CUBICLE CUP
+04-29,World Wish Day,WISH CUP
+04-30,National Bubble Tea Day,BUBBLE TEA CUP
+05-01,May Day,MAY DAY CUP
+05-02,World Tuna Day,TUNA CUP
+05-03,National Chocolate Custard Day,CHOCOLATE CUSTARD CUP
+05-04,World Give Day,GIVE CUP
+05-05,National Hoagie Day,HOAGIE CUP
+05-06,International No Diet Day,NO DIET CUP
+05-07,National Tourism Day,TOURISM CUP
+05-08,National Student Nurses Day,STUDENT NURSES CUP
+05-09,National Butterscotch Brownie Day,BROWNIE CUP
+05-10,National Lipid Day,LIPID CUP
+05-11,National Mocha Torte Day,MOCHA TORTE CUP
+05-12,"International Nurses Day (UN, Florence Nightingale's birthday)",NURSES CUP
+05-13,World Cocktail Day,COCKTAIL CUP
+05-14,National Brioche Day,BRIOCHE CUP
+05-15,National Chocolate Chip Day,CHOCOLATE CHIP CUP
+05-16,International Day of Light,LIGHT CUP
+05-17,National Walnut Day,WALNUT CUP
+05-18,International Museum Day (UNESCO),MUSEUM CUP
+05-19,National Devil's Food Cake Day (US),DEVIL'S FOOD CAKE CUP
+05-20,World Bee Day (UN),BEE CUP
+05-21,International Tea Day,TEA CUP
+05-22,World Goth Day,GOTH CUP
+05-23,World Turtle Day,TURTLE CUP
+05-24,International Tiara Day,TIARA CUP
+05-25,National Wine Day,WINE CUP
+05-26,World Dracula Day,DRACULA CUP
+05-27,National Iced Coffee Day,ICED COFFEE CUP
+05-28,National Brisket Day,BRISKET CUP
+05-29,International Everest Day,EVEREST CUP
+05-30,National Creativity Day,CREATIVITY CUP
+05-31,National Smile Day,SMILE CUP
+06-01,National Hazelnut Cake Day,HAZELNUT CAKE CUP
+06-02,National Bubba Day,BUBBA CUP
+06-03,World Bicycle Day,BICYCLE CUP
+06-04,National SAFE Day,SAFE CUP
+06-05,World Environment Day (UN),ENVIRONMENT CUP
+06-06,National Applesauce Cake Day,APPLESAUCE CAKE CUP
+06-07,National Chocolate Ice Cream Day,CHOCOLATE ICE CREAM CUP
+06-08,World Oceans Day (UN),OCEANS CUP
+06-09,International Archives Day,ARCHIVES CUP
+06-10,National Iced Tea Day (US),ICED TEA CUP
+06-11,National German Chocolate Cake Day,GERMAN CHOCOLATE CAKE CUP
+06-12,National Peanut Butter Cookie Day,PEANUT BUTTER COOKIE CUP
+06-13,World Softball Day,SOFTBALL CUP
+06-14,World Blood Donor Day (UN),BLOOD DONOR CUP
+06-15,National Smile Power Day,SMILE POWER CUP
+06-16,World Sea Turtle Day,SEA TURTLE CUP
+06-17,World Croc Day,CROC CUP
+06-18,International Sushi Day,SUSHI CUP
+06-19,World Albatross Day,ALBATROSS CUP
+06-20,National Ice Cream Soda Day,ICE CREAM SODA CUP
+06-21,World Music Day,MUSIC CUP
+06-22,National Chocolate Éclair Day,CHOCOLATE ECLAIR CUP
+06-23,National Detroit-Style Pizza Day,DETROIT-STYLE PIZZA CUP
+06-24,World UFO Day,UFO CUP
+06-25,National Catfish Day (US),CATFISH CUP
+06-26,National Chocolate Pudding Day,CHOCOLATE PUDDING CUP
+06-27,National Ice Cream Cake Day,ICE CREAM CAKE CUP
+06-28,National Foodie Day,FOODIE CUP
+06-29,National Darts Day,DARTS CUP
+06-30,International Asteroid Day (UN),ASTEROID CUP
+07-01,National Creative Ice Cream Flavor Day,CREATIVE ICE CREAM FLAVOR CUP
+07-02,World UFO Day,UFO CUP
+07-03,National Chocolate Wafer Day,CHOCOLATE WAFER CUP
+07-04,National Country Music Day,COUNTRY MUSIC CUP
+07-05,National Workaholics Day,WORKAHOLICS CUP
+07-06,International Kissing Day,KISSING CUP
+07-07,World Chocolate Day,CHOCOLATE CUP
+07-08,National Ice Cream Sundae Day,ICE CREAM SUNDAE CUP
+07-09,National Sugar Cookie Day,SUGAR COOKIE CUP
+07-10,National Kitten Day,KITTEN CUP
+07-11,World Population Day (UN),POPULATION CUP
+07-12,National Michelada Day,MICHELADA CUP
+07-13,National French Fry Day,FRENCH FRY CUP
+07-14,International Non-Binary Day,NON-BINARY CUP
+07-15,National Respect Canada Day,RESPECT CANADA CUP
+07-16,World Snake Day,SNAKE CUP
+07-17,World Day for International Justice (UN),INTERNATIONAL JUSTICE CUP
+07-18,World Listening Day,LISTENING CUP
+07-19,National Raspberry Cake Day,RASPBERRY CAKE CUP
+07-20,World Chess Day,CHESS CUP
+07-21,National Junk Food Day,JUNK FOOD CUP
+07-22,National Mango Day,MANGO CUP
+07-23,National Vanilla Ice Cream Day,VANILLA ICE CREAM CUP
+07-24,National Tequila Day,TEQUILA CUP
+07-25,International Decora Day,DECORA CUP
+07-26,National Coffee Milkshake Day,COFFEE MILKSHAKE CUP
+07-27,National Scotch Day,SCOTCH CUP
+07-28,National Milk Chocolate Day,MILK CHOCOLATE CUP
+07-29,International Tiger Day,TIGER CUP
+07-30,"International Day of Friendship (UN, July 30)",FRIENDSHIP CUP
+07-31,National Raspberry Cake Day,RASPBERRY CAKE CUP
+08-01,World Wide Web Day,WIDE WEB CUP
+08-02,National Coloring Book Day,COLORING BOOK CUP
+08-03,National Watermelon Day,WATERMELON CUP
+08-04,National Chocolate Chip Cookie Day,CHOCOLATE CHIP COOKIE CUP
+08-05,International Traffic Light Day,TRAFFIC LIGHT CUP
+08-06,National Gossip Day,GOSSIP CUP
+08-07,National Sea Serpent Day,SEA SERPENT CUP
+08-08,International Cat Day,CAT CUP
+08-09,National Veep Day,VEEP CUP
+08-10,National Spoil Your Dog Day,SPOIL YOUR DOG CUP
+08-11,National Panini Day,PANINI CUP
+08-12,International Youth Day (UN),YOUTH CUP
+08-13,National Prosecco Day,PROSECCO CUP
+08-14,National Creamsicle Day,CREAMSICLE CUP
+08-15,National Acadian Day (Canada),ACADIAN CUP
+08-16,World Clap Day,CLAP CUP
+08-17,National Black Cat Appreciation Day,BLACK CAT CUP
+08-18,National Bad Poetry Day,BAD POETRY CUP
+08-19,National Potato Day,POTATO CUP
+08-20,International Hawaiian Pizza Day,HAWAIIAN PIZZA CUP
+08-21,National Sweet Tea Day,SWEET TEA CUP
+08-22,World Plant Milk Day,PLANT MILK CUP
+08-23,National Sponge Cake Day,SPONGE CAKE CUP
+08-24,International Strange Music Day,STRANGE MUSIC CUP
+08-25,National Banana Split Day,BANANA SPLIT CUP
+08-26,National Dog Day (US),DOG CUP
+08-27,National Petroleum Day,PETROLEUM CUP
+08-28,National Bow Tie Day,BOW TIE CUP
+08-29,International Day Against Nuclear Tests,PEACE CUP
+08-30,National Beach Day,BEACH CUP
+08-31,National Trail Mix Day,TRAIL MIX CUP
+09-01,World Letter Writing Day,LETTER WRITING CUP
+09-02,World Coconut Day,COCONUT CUP
+09-03,National Skyscraper Day,SKYSCRAPER CUP
+09-04,National Wildlife Day,WILDLIFE CUP
+09-05,National Cheese Pizza Day,CHEESE PIZZA CUP
+09-06,National Read a Book Day,READ A BOOK CUP
+09-07,National Acorn Squash Day,ACORN SQUASH CUP
+09-08,International Literacy Day (UN),LITERACY CUP
+09-09,International Sudoku Day,SUDOKU CUP
+09-10,International Make-Up Day,MAKE-UP CUP
+09-11,National Hot Cross Bun Day,HOT CROSS BUN CUP
+09-12,World Dolphin Day,DOLPHIN CUP
+09-13,International Chocolate Day,CHOCOLATE CUP
+09-14,National Cream-Filled Donut Day,CREAM-FILLED DONUT CUP
+09-15,International Day of Democracy (UN),DEMOCRACY CUP
+09-16,National Guacamole Day,GUACAMOLE CUP
+09-17,National Monte Cristo Day,MONTE CRISTO CUP
+09-18,National Red Velvet Cake Day,RED VELVET CAKE CUP
+09-19,International Talk Like a Pirate Day,PIRATE CUP
+09-20,National Pepperoni Pizza Day,PEPPERONI PIZZA CUP
+09-21,National Pecan Cookie Day,PECAN COOKIE CUP
+09-22,National White Chocolate Day,WHITE CHOCOLATE CUP
+09-23,National Checkers Day,CHECKERS CUP
+09-24,National Horchata Day,HORCHATA CUP
+09-25,National Comic Book Day,COMIC BOOK CUP
+09-26,International Lace Day,LACE CUP
+09-27,National Chocolate Milk Day,CHOCOLATE MILK CUP
+09-28,National Drink Beer Day,DRINK BEER CUP
+09-29,National Coffee Day,COFFEE CUP
+09-30,International Translation Day,TRANSLATION CUP
+10-01,International Music Day,MUSIC CUP
+10-02,National Fried Scallops Day,SCALLOP CUP
+10-03,National Butterfly and Hummingbird Day,BUTTERFLY CUP
+10-04,World Animal Day,ANIMAL CUP
+10-05,World Teachers' Day (UNESCO),TEACHERS CUP
+10-06,National Badger Day,BADGER CUP
+10-07,National LED Light Day,LED LIGHT CUP
+10-08,World Octopus Day,OCTOPUS CUP
+10-09,International Beer and Pizza Day,BEER AND PIZZA CUP
+10-10,National Cake Decorating Day,CAKE DECORATING CUP
+10-11,National Sausage Pizza Day,SAUSAGE PIZZA CUP
+10-12,National Gumbo Day,GUMBO CUP
+10-13,National Train Your Brain Day,TRAIN YOUR BRAIN CUP
+10-14,National Chocolate-Covered Insect Day,CHOCOLATE-COVERED INSECT CUP
+10-15,Global Handwashing Day,HANDWASHING CUP
+10-16,World Food Day (UN),FOOD CUP
+10-17,International Sloth Day,SLOTH CUP
+10-18,National Chocolate Cupcake Day,CHOCOLATE CUPCAKE CUP
+10-19,National Seafood Bisque Day,SEAFOOD BISQUE CUP
+10-20,World Statistics Day (UN),STATISTICS CUP
+10-21,World Bolognese Ragù Day,BOLOGNESE RAGU CUP
+10-22,National Color Day,COLOR CUP
+10-23,National Croc Day,CROC CUP
+10-24,"United Nations Day (1945, UN Charter ratified)",UNITED NATIONS CUP
+10-25,World Pizza Makers Day,PIZZA MAKERS CUP
+10-26,National Mule Day,MULE CUP
+10-27,National Potato Day,POTATO CUP
+10-28,National Chocolate Day,CHOCOLATE CUP
+10-29,National Cat Day,CAT CUP
+10-30,National Bandanna Day,BANDANNA CUP
+10-31,World Savings Day,SAVINGS CUP
+11-01,World Vegan Day,VEGAN CUP
+11-02,International Doge Day,DOGE CUP
+11-03,World Jellyfish Day,JELLYFISH CUP
+11-04,National Candy Day (US),CANDY CUP
+11-05,National Doughnut Appreciation Day,DOUGHNUT CUP
+11-06,National Nachos Day,NACHOS CUP
+11-07,International Merlot Day,MERLOT CUP
+11-08,International Radiology Day,RADIOLOGY CUP
+11-09,World Freedom Day (US),FREEDOM CUP
+11-10,International Accounting Day,ACCOUNTING CUP
+11-11,National Metal Day,METAL CUP
+11-12,National French Dip Day,FRENCH DIP CUP
+11-13,World Kindness Day,KINDNESS CUP
+11-14,National Pickle Day,PICKLE CUP
+11-15,National Spicy Hermit Cookie Day,SPICY HERMIT COOKIE CUP
+11-16,International Day for Tolerance (UN),TOLERANCE CUP
+11-17,International Students' Day (1939),STUDENTS CUP
+11-18,National Princess Day,PRINCESS CUP
+11-19,International Men's Day,MEN'S CUP
+11-20,Universal Children's Day (UN),CHILDREN'S CUP
+11-21,World Hello Day,HELLO CUP
+11-22,National Kimchi Day (South Korea),KIMCHI CUP
+11-23,National Cashew Day,CASHEW CUP
+11-24,National Sardines Day,SARDINES CUP
+11-25,National Parfait Day,PARFAIT CUP
+11-26,National Cake Day,CAKE CUP
+11-27,National Electric Guitar Day,ELECTRIC GUITAR CUP
+11-28,International Aura Awareness Day,AURA CUP
+11-29,National Rice Cake Day,RICE CAKE CUP
+11-30,National Mousse Day,MOUSSE CUP
+12-01,National Cookie Cutter Day,COOKIE CUTTER CUP
+12-02,National Mutt Day,MUTT CUP
+12-03,National Apple Pie Day,APPLE PIE CUP
+12-04,National Cookie Day,COOKIE CUP
+12-05,World Soil Day (UN),SOIL CUP
+12-06,National Gazpacho Day,GAZPACHO CUP
+12-07,International Civil Aviation Day (UN),CIVIL AVIATION CUP
+12-08,National Christmas Tree Day,CHRISTMAS TREE CUP
+12-09,World Techno Day,TECHNO CUP
+12-10,"Human Rights Day (UN, 1948, UDHR adopted)",HUMAN RIGHTS CUP
+12-11,International Mountain Day (UN),MOUNTAIN CUP
+12-12,National Unity Day,UNITY CUP
+12-13,National Cocoa Day,COCOA CUP
+12-14,National Screwdriver Day,SCREWDRIVER CUP
+12-15,National Cupcake Day,CUPCAKE CUP
+12-16,National Chocolate Covered Anything Day,CHOCOLATE CUP
+12-17,National Maple Syrup Day,MAPLE SYRUP CUP
+12-18,International Migrants Day (UN),MIGRANTS CUP
+12-19,National Emo Day,EMO CUP
+12-20,International Human Solidarity Day (UN),HUMAN SOLIDARITY CUP
+12-21,National Coquito Day,COQUITO CUP
+12-22,National Cookie Exchange Day,COOKIE EXCHANGE CUP
+12-23,National Bake Day,BAKE CUP
+12-24,National Eggnog Day,EGGNOG CUP
+12-25,Christmas Day,CHRISTMAS CUP
+12-26,National Candy Cane Day,CANDY CANE CUP
+12-27,National Fruitcake Day,FRUITCAKE CUP
+12-28,National Chocolate Candy Day,CHOCOLATE CANDY CUP
+12-29,National Pepper Pot Day,PEPPER POT CUP
+12-30,National Bicarbonate of Soda Day,BAKING SODA CUP
+12-31,World Peace Meditation Day,PEACE MEDITATION CUP

@@ -4,7 +4,7 @@ Open `../index.html` in a browser. The game uses HTML5 Canvas, CSS, and vanilla 
 
 ## Publishing
 
-Publish only these project-root items: `index.html`, `help.html`, `style.css`, `game.js`, `characters.js`, `yodaka.woff`, and the complete `characters/` directory. Keep `data/` out of the published output. It holds the editable character manifest and PSD, font source and TTF, generators, tests, previews, source exports, ZIP archives, and handoff notes. `.git` and `.gitattributes` remain at the root for version control and are not game assets.
+Publish only these project-root items: `index.html`, `help.html`, `style.css`, `game.js`, `audio.js`, `characters.js`, `player.js`, `daily-cups.js`, `trophy.svg`, `yodaka.woff`, and the complete `characters/` directory. Keep `data/` out of the published output. It holds the editable character manifest and PSD, font source and TTF, generators, tests, previews, source exports, ZIP archives, and handoff notes. `.git` and `.gitattributes` remain at the root for version control and are not game assets.
 
 ## Tournaments
 
@@ -18,7 +18,13 @@ Choose a tournament on the title screen. You are one of the entrants and must wi
 
 The Champion tournament has 16 strong opponents, half of all entrants. Other matches are simulated from each character's strength rating, with some chance of an upset. A loss ends the run; a draw replays the current match.
 
-All 99 characters have individual profiles in `data/characters.json`. The browser loads the generated `../characters.js`; run `python data/build_roster.py` from the project root after editing the manifest to refresh the browser roster. Profiles include strength, search depth, mistake rate, attack, defense, trick, edge exploration, use of opposing stones as support, unusual moves, center preference, consistency, and talkativeness.
+The daily cup name comes from one fixed-date observance for each calendar date; February 29 has its own entry. `daily-cups.js` is the published calendar, `data/daily-cups.csv` records the date and observance behind each name, and `data/calendar-source.json` is the nonpublished research source from [Every Day is a Holiday](https://adayisaholiday.com/holidays.json), retrieved 2026-09-23. `python data/build_daily_cups.py` regenerates the calendar after reviewing fixed-date exclusions and overrides. UN observance dates can be checked against the [United Nations list](https://www.un.org/en/observances/list-days-weeks).
+
+The UTC date seeds the roster draw and simulated matches, so all players on the same date get the same opponents in each tournament. The trophy room stores each day's best placement, lifetime best placement, and number of first-place finishes in this browser's localStorage. A first-place count increases for every completed championship run, including repeats on the same date. The HISTORY page lists UTC dates, cups, each tournament's best rank, and a daily score. For a tournament with n round wins, its daily best earns 2^n - 1 points; the total score sums those daily best scores across all dates.
+
+All 99 characters have individual profiles in `data/characters.json`. The browser loads the generated `../characters.js`; run `python data/build_roster.py` from the project root after editing the manifest to refresh the browser roster. Profiles include strength, search depth, mistake rate, attack, defense, trick, edge exploration, use of opposing stones as support, unusual moves, center preference, consistency, talkativeness, friendliness, taunting, expressiveness, quirks, personality type, and voice style. The opening greeting is always spoken; later lines follow talkativeness and personality.
+
+After editing `data/human01.psd`, run `python data/build_roster.py` and then `python data/build_faces.py`. The face builder writes one faceless body PNG per character. Normal expressions combine shared eye and mouth PNGs at display time. It shares one `characters/win.png` and one `characters/lose.png` across the roster. A separate one-pixel `characters/tear.png` layer is shown for 20 characters. The game layers each expression above the hair; bright/dark scanlines are drawn into a Canvas whenever a portrait or expression appears, using silhouette masks in `characters.js`. The builder also refreshes `data/GRAVITYFOUR-characters/gallery.html` with all three expressions. Run `python data/test_faces.py` to check the split assets. Run `python data/build_player.py` after PSD edits to refresh the shared eye and mouth PNGs in `characters/player-parts/`, the shared expressions, and the published `player.js` selection, body masks, and silhouette. The browser colors skin, hair, and clothing from those masks at display time. The current player uses skin color 2, black hair6, clothing color 6, eye15, and mouth1. The character editor uses shared face parts and runtime palette colors, saves the selection in browser localStorage, and keeps the portrait layered for win and lose expressions. Random Match picks a fresh opponent without changing tournament records.
 
 ## Rules
 
@@ -29,8 +35,8 @@ All 99 characters have individual profiles in `data/characters.json`. The browse
 
 ## Pixel font
 
-`data/yodaka.ttf` and the published `yodaka.woff` contain the uppercase, lowercase, and numeric glyphs extracted from `data/yodaka-source.png`, plus the punctuation needed by the interface. They also include 16 × 16 pixel glyphs for the four title characters, 四方争覇. The game loads the WOFF file.
+`data/yodaka.ttf` and the published `yodaka.woff` contain the uppercase, lowercase, and numeric glyphs extracted from `data/yodaka-source.png`, plus the punctuation needed by the interface, including half-width and full-width parentheses. They also include 16 × 16 pixel glyphs for the four title characters, 四方争覇. Katakana is extracted directly from the right-hand grid of `data/yodaka-source.png`; dialogue punctuation is drawn on the same pixel grid. The game loads the WOFF file.
 
 ## Checks
 
-Run `node data/test.mjs` to verify the roster, tournament composition, rules, desktop play, touch confirmation, and COM responses.
+Run `node data/test_editor.mjs` and `python data/test_player.py` for the editor, random match, selectable layers, and win/lose faces. Run `node data/test.mjs` to verify the roster, fixed daily cup calendar, deterministic opponents, saved records, rules, desktop play, touch confirmation, and COM responses.

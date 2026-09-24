@@ -38,7 +38,34 @@ for index, character in enumerate(order):
         'consistency': varied(9, 35, 100),
         'talkativeness': varied(11, 0, 8) if seed[10] % 5 == 0 else varied(11, 25, 75),
     }
+    profile = character['profile']
+    clamp = lambda value: max(0, min(100, round(value)))
+    profile['friendliness'] = clamp(30 + profile['defense'] * .35 + profile['consistency'] * .15 - profile['attack'] * .2 + varied(12, -20, 20))
+    profile['taunt'] = clamp(18 + profile['attack'] * .4 + profile['trick'] * .25 - profile['friendliness'] * .25 + varied(13, -18, 18))
+    profile['expressiveness'] = clamp(20 + profile['talkativeness'] * .55 + varied(14, -15, 25))
+    profile['quirk'] = varied(15, 0, 100)
+    profile['personality'] = ('teasing' if profile['taunt'] >= 67 else
+                              'friendly' if profile['friendliness'] >= 65 else
+                              'thoughtful' if profile['depth'] == 3 and profile['consistency'] >= 65 else
+                              'eccentric' if profile['quirk'] >= 72 else
+                              'reserved' if profile['talkativeness'] <= 8 else 'competitive')
+    profile['voice'] = ('quirky' if profile['quirk'] >= 84 else
+                        'polite' if profile['friendliness'] >= 65 and seed[16] % 2 == 0 else
+                        'casual' if profile['taunt'] >= 60 else 'plain')
+    character.pop('faceFile', None)
+    character['winFile'] = 'win.png'
+    character['loseFile'] = 'lose.png'
+    for key in ('scanFile', 'winScanFile', 'loseScanFile'):
+        character.pop(key, None)
+for character in characters:
+    character['profile']['tearful'] = False
+for character in sorted(characters, key=lambda c: (-c['profile']['expressiveness'], c['name']))[:20]:
+    character['profile']['tearful'] = True
 manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-roster = [{'id': c['id'], 'name': c['name'], 'file': c['file'], 'profile': c['profile']} for c in characters]
+roster = [{'id': c['id'], 'name': c['name'], 'file': c['file'],
+           'eyes': c['eyes'], 'mouth': c['mouth'], 'winFile': c['winFile'],
+           'loseFile': c['loseFile'], 'profile': c['profile'],
+           **{key: c[key] for key in ('normalMask', 'winMask', 'loseMask') if key in c}}
+          for c in characters]
 (root.parent / 'characters.js').write_text('window.GravityFourRoster = ' + json.dumps(roster, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
 print('Profiles:', {tier: sum(c['profile']['rank'] == tier for c in characters) for tier in ('beginner', 'regular', 'champion')})
