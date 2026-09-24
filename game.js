@@ -207,7 +207,7 @@
     function renderDailyHeader(){
       const day=utcDate(),details=dayDetails(day);
       byId('daily-cup-title').textContent=details[0];
-      byId('daily-cup-date').textContent=day+' UTC · '+details[1];
+      byId('daily-cup-date').textContent=day+' UTC';
     }
     function rankText(rank){
       if(!Number.isInteger(rank)||rank<1)return '—';
@@ -223,14 +223,14 @@
     function renderHistory(){
       const day=utcDate(),details=dayDetails(day);
       byId('history-cup').textContent=details[0];
-      byId('history-date').textContent=day+' UTC · '+details[1];
+      byId('history-date').textContent=day+' UTC';
       const list=byId('history-list');list.replaceChildren();
       for(const type of tournamentTypes){
         const card=document.createElement('article');card.className='record-card';
         const title=document.createElement('h3');title.textContent=type.label+' TOURNAMENT';card.append(title);
         for(const [label,value] of [
           ['TODAY',rankText(records.days[day]?.[type.size])],
-          ['CAREER',rankText(records.best[type.size])],
+          ['BSET',rankText(records.best[type.size])],
           ['TOTAL 1ST',String(records.wins[type.size]||0)]
         ]){
           const row=document.createElement('div');row.className='record-row';
@@ -285,7 +285,7 @@
     function startRandomMatch(){
       audio.unlock();
       const challenger=roster[Math.floor(Math.random()*roster.length)];
-      const bracket=[null,challenger];
+      const bracket=Math.random()<.5?[null,challenger]:[challenger,null];
       tournament={type:{key:'random',label:'RANDOM MATCH',size:2},random:true,
         day:utcDate(),cup:'RANDOM MATCH',round:0,bracket,history:[bracket],battles:[]};
       byId('menu').hidden=true;byId('stage').hidden=false;
@@ -299,6 +299,7 @@
       comFlashAnimation?.cancel();comFlashAnimation=null;
       byId('victory-effect').hidden=true;
       byId('board-frame').className='board-frame';
+      byId('turn-banner').className='turn-banner';
       byId('tournament-recap').hidden=true;
       byId('thinking').hidden=true;
       opponent=tournament.bracket[tournament.bracket.indexOf(null)^1];
@@ -364,7 +365,7 @@
     }
     function showMenu(){
       matchToken++;tournament=null;opponent=null;outcome=null;pendingWinners=null;thinking=false;introActive=false;
-      audio.stop();byId('round-intro').hidden=true;
+      audio.stop();audio.setMusic('bracket');byId('round-intro').hidden=true;
       byId('stage').hidden=true;byId('menu').hidden=false;byId('place').hidden=true;
       byId('tournament-recap').hidden=true;byId('thinking').hidden=true;byId('victory-effect').hidden=true;
       byId('leave-confirm').hidden=true;
@@ -449,7 +450,19 @@
         y:top+((index%sideCount)+.5)*2**level*slot};
     }
     function appendBracketFace(entry,character){
-      if(character&&character!=='TBD'){
+      if(character===null&&player){
+        const portrait=document.createElement('span');portrait.className='bracket-portrait bracket-player-portrait';
+        for(const key of ['skin','hair','cloth']){
+          const canvas=document.createElement('canvas');canvas.width=16;canvas.height=16;canvas.className='portrait-layer';
+          const mask=key==='hair'?player.layerMasks.hair[playerSelection.hair]:player.layerMasks[key];
+          drawTintedPart(canvas,mask,playerSelection[key+'Color']);
+          portrait.append(canvas);
+        }
+        for(const key of ['eyes','mouth']){
+          const image=document.createElement('img');image.src=player.files[key][playerSelection[key]];image.alt='';portrait.append(image);
+        }
+        entry.append(portrait);
+      }else if(character&&character!=='TBD'){
         const portrait=document.createElement('span');portrait.className='bracket-portrait';
         for(const file of ['characters/'+character.file,
           'characters/player-parts/'+character.eyes+'.png',
@@ -465,7 +478,7 @@
       const list=byId('recap-battles');list.replaceChildren();
       list.hidden=tournament.random||!tournament.battles.length;
       if(list.hidden)return;
-      const heading=document.createElement('strong');heading.className='recap-battles-heading';heading.textContent='YOUR MATCHES';
+      const heading=document.createElement('strong');heading.className='recap-battles-heading';heading.textContent=playerName()+' MATCHES';
       list.append(heading);
       for(const battle of tournament.battles){
         const card=document.createElement('div');card.className='recap-battle '+battle.result;
@@ -479,6 +492,12 @@
         const result=document.createElement('b');result.textContent=battle.result==='win'?'WIN':'LOSE';
         card.append(round,face,name,result);list.append(card);
       }
+    }
+    function centerBracket(){
+      const container=byId('bracket-rounds'),canvas=container.children[0];
+      if(!canvas)return;
+      const contentWidth=canvas.offsetWidth||parseInt(canvas.style?.width,10)||0;
+      container.scrollLeft=Math.max(0,(contentWidth-(container.clientWidth||contentWidth))/2);
     }
     function renderBracket(revealedCount=tournament.revealRounds?.length||0){
       const container=byId('bracket-rounds');
@@ -571,7 +590,7 @@
         }
       }
       container.replaceChildren(canvas);
-      if(twoSided)container.scrollLeft=Math.max(0,(width-(container.clientWidth||width))/2);
+      centerBracket();
       byId('recap-title').textContent=outcome==='win'
         ?(tournament.bracket.length===2?'CHAMPION':'ROUND CLEARED')
         :outcome==='loss'?'ELIMINATED':'DRAW';
@@ -580,7 +599,7 @@
         :outcome==='win'&&tournament.bracket.length===2?playerName()+' WON THE TOURNAMENT'
         :outcome==='win'?'ADVANCING TO ROUND '+(tournament.round+2)
         :filledRounds===roundCount+1?rounds[roundCount][0].name+' WINS THE CUP'
-        :'THE BRACKET CONTINUES WITHOUT YOU';
+        :'THE BRACKET CONTINUES WITHOUT '+playerName();
       if(outcome==='loss'&&filledRounds===roundCount+1){
         const champion=rounds[roundCount][0];
         byId('bracket-crowning-name').textContent=champion.name+' CHAMPION';
@@ -621,7 +640,7 @@
         const childEdge=fromRight?from.x:from.x+cardWidth;
         const parentEdge=fromRight?to.x+cardWidth:to.x;
         const cornerX=level===Math.log2(size)&&size>=16?to.x-from.x:(childEdge+parentEdge)/2-from.x-cardWidth/2;
-        const ghost=document.createElement('div');ghost.className='bracket-entry bracket-traveler';
+        const ghost=document.createElement('div');ghost.className='bracket-entry bracket-traveler'+(winner===null?' you':'');
         ghost.setAttribute('style',`left:${from.x}px;top:${from.y-cardHeight/2}px;width:${cardWidth}px;height:${cardHeight}px;--corner-x:${cornerX}px;--travel-x:${to.x-from.x}px;--travel-y:${to.y-from.y}px;--travel-duration:${duration}ms;--delay:${index*stagger}ms`);
         appendBracketFace(ghost,winner);canvas.append(ghost);
       }
@@ -673,8 +692,8 @@
         if(token!==matchToken||!ended||!tournament)return;
         byId('victory-effect').hidden=true;
         byId('board-frame').className='board-frame';
-        renderBracket(0);
         byId('tournament-recap').hidden=false;
+        renderBracket(0);
         audio.setMusic('bracket');
         byId('match-actions').hidden=outcome==='loss'&&!!tournament.revealRounds;
         if(tournament.revealRounds)animateBracketReveal(1,token);
@@ -837,8 +856,8 @@
       ctx.clearRect(0,0,160,160);
       for(let n=0;n<N;n++){
         const p=8+n*16;
-        ctx.fillStyle='#10432f';ctx.fillRect(8,p-.75,144,1.5);ctx.fillRect(p-.75,8,1.5,144);
-        ctx.fillStyle='#218653';ctx.fillRect(8,p-.25,144,.5);ctx.fillRect(p-.25,8,.5,144);
+        ctx.fillStyle='#124d36';ctx.fillRect(8,p-.75,144,1.5);ctx.fillRect(p-.75,8,1.5,144);
+        ctx.fillStyle='#2a9e68';ctx.fillRect(8,p-.25,144,.5);ctx.fillRect(p-.25,8,.5,144);
       }
       const cursor=selectedIndex>=0?selectedIndex:hoverIndex;
       if(legal.has(cursor)){
@@ -857,6 +876,7 @@
       else if(!legalMoves(board).length){ended=true;outcome='draw';}
       else {turn=player===HUMAN?COM:HUMAN;showTurnBanner(turn);}
       if(ended){
+        byId('turn-banner').className='turn-banner';
         if(outcome!=='draw')tournament.battles.push({round:tournament.round,opponent,result:outcome});
         settleRound();
         recordResult();
@@ -917,14 +937,27 @@
       };
       setTimeout(respond,wait);
     }
+    function boardIndexFromPointer(event,fallback){
+      if(!event||typeof event.clientX!=='number'||typeof event.clientY!=='number'||!boardEl.getBoundingClientRect)return fallback;
+      const bounds=boardEl.getBoundingClientRect();
+      if(!bounds.width||!bounds.height)return fallback;
+      const col=Math.floor((event.clientX-bounds.left)*N/bounds.width);
+      const row=Math.floor((event.clientY-bounds.top)*N/bounds.height);
+      return row>=0&&row<N&&col>=0&&col<N?row*N+col:-1;
+    }
     for(let i=0;i<N*N;i++){
       const button=document.createElement('button');button.type='button';button.className='cell';button.setAttribute('role','gridcell');
-      button.addEventListener('click',()=>{
-        if(introActive||turn!==HUMAN||thinking||ended||!legalMoves(board).includes(i))return;
-        if(requiresPlace){selectedIndex=i;render();}
-        else if(play(i,HUMAN)&&!ended)scheduleCom();
+      button.addEventListener('click',event=>{
+        const index=boardIndexFromPointer(event,i);
+        if(introActive||turn!==HUMAN||thinking||ended||!legalMoves(board).includes(index))return;
+        if(requiresPlace){selectedIndex=index;render();}
+        else if(play(index,HUMAN)&&!ended)scheduleCom();
       });
-      button.addEventListener('mouseenter',()=>{hoverIndex=i;render();});
+      button.addEventListener('mouseenter',event=>{hoverIndex=boardIndexFromPointer(event,i);render();});
+      button.addEventListener('mousemove',event=>{
+        const index=boardIndexFromPointer(event,i);
+        if(index!==hoverIndex){hoverIndex=index;render();}
+      });
       button.addEventListener('mouseleave',()=>{hoverIndex=-1;render();});
       button.addEventListener('focus',()=>{hoverIndex=i;render();});
       button.addEventListener('blur',()=>{hoverIndex=-1;render();});
@@ -979,6 +1012,9 @@
     initPlayerEditor();
     renderPlayer();
     showMenu();
+    if(typeof window.addEventListener==='function')window.addEventListener('resize',()=>{
+      if(!byId('tournament-recap').hidden)centerBracket();
+    });
     if(typeof window.setInterval==='function'){
       let visibleDay=utcDate();
       window.setInterval(()=>{

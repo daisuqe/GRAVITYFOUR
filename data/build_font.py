@@ -146,6 +146,27 @@ patterns.update({
     "）": [".#...", "..#..", "...#.", "..#..", ".#..."],
 })
 
+# Left-bottom symbols and numerals are taken from the supplied sheet.
+# The two separate ink runs of the double quote form one character.
+source_rows = (
+    (42, list('!"#$%&\'()=*')),
+    (48, list('+-×÷/＼~^|\\@')),
+    (54, list('{}[]「」;:<>,') ),
+    (60, list('.?・_百千万円')),
+    (66, list('一二三四五六七八九十')),
+)
+for source_row, characters in source_rows:
+    runs = column_runs(source_row, 0, 66)
+    if source_row == 42:
+        runs[1:3] = [(runs[1][0], runs[2][1])]
+    assert len(runs) == len(characters), (source_row, runs, characters)
+    for character, (left, right) in zip(characters, runs):
+        patterns[character] = [
+            ''.join('#' if pixel(x, y) else '.' for x in range(left, right))
+            for y in range(source_row, source_row + 5)
+        ]
+patterns['　'] = ['.....'] * 5
+
 def glyph_for(rows, unit=UNIT, left=70):
     pen = TTGlyphPen(None)
     if rows:
@@ -172,17 +193,17 @@ def glyph_for(rows, unit=UNIT, left=70):
 
 glyph_names = {char: f"uni{ord(char):04X}" for char in [*patterns, *title_patterns]}
 glyph_names[" "] = "space"
-glyph_order = [".notdef", "space"] + [glyph_names[char] for char in [*patterns, *title_patterns]]
+glyph_order = [".notdef", "space"] + list(dict.fromkeys(glyph_names[char] for char in [*patterns, *title_patterns]))
 glyphs = {".notdef": glyph_for([]), "space": glyph_for([])}
 glyphs.update({glyph_names[char]: glyph_for(rows) for char, rows in patterns.items()})
 glyphs.update({glyph_names[char]: glyph_for(rows, unit=50, left=50)
-               for char, rows in title_patterns.items()})
+               for char, rows in title_patterns.items() if char not in patterns})
 metrics = {".notdef": (840, 0), "space": (420, 0)}
 metrics.update({
     glyph_names[char]: ((len(rows[0]) + 1) * UNIT, 70)
     for char, rows in patterns.items()
 })
-metrics.update({glyph_names[char]: (900, 50) for char in title_patterns})
+metrics.update({glyph_names[char]: (900, 50) for char in title_patterns if char not in patterns})
 
 font = FontBuilder(1000, isTTF=True)
 font.setupGlyphOrder(glyph_order)

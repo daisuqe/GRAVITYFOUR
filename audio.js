@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  let context=null, musicBus=null, musicTimer=null,voiceNodes=[],voiceBus=null;
+  let context=null, musicBus=null, musicTimer=null,voiceNodes=[],voiceBus=null,pendingMusicStart=null;
   let musicLevel=0,noiseBuffer=null;
   const formants={
     a:[760,1180,2850],i:[320,2250,3000],u:[360,1350,2650],
@@ -35,15 +35,16 @@
     return result;
   }
   function unlock(){
-    if(context){if(context.state==='suspended')context.resume().catch(()=>{});return context;}
+    if(context){if(context.state==='suspended')context.resume().then(()=>pendingMusicStart?.()).catch(()=>{});return context;}
     const AudioContext=window.AudioContext||window.webkitAudioContext;
     if(!AudioContext)return null;
-    try{context=new AudioContext();if(context.state==='suspended')context.resume().catch(()=>{});return context;}
+    try{context=new AudioContext();if(context.state==='suspended')context.resume().then(()=>pendingMusicStart?.()).catch(()=>{});return context;}
     catch{return null;}
   }
   function stopNodes(nodes){for(const node of nodes){try{node.stop();}catch{}}nodes.length=0;}
   function stopVoice(){stopNodes(voiceNodes);}
   function stopMusic(){
+    pendingMusicStart=null;
     if(musicTimer!==null){clearInterval(musicTimer);musicTimer=null;}
     if(musicBus){musicBus.disconnect();musicBus=null;}
   }
@@ -87,7 +88,14 @@
       if(step%4===2)pulse(note*track.harmony,track.duration*.55,'sine',track.volume*.38);
       step++;
     };
-    play();musicTimer=setInterval(play,track.interval);
+    const bus=musicBus;
+    const start=()=>{
+      if(musicBus!==bus||musicTimer!==null||context.state!=='running')return;
+      pendingMusicStart=null;
+      play();musicTimer=setInterval(play,track.interval);
+    };
+    if(context.state==='running')start();
+    else pendingMusicStart=start;
   }
   function noise(){
     if(noiseBuffer)return noiseBuffer;
@@ -141,4 +149,8 @@
   }
   function stop(){stopVoice();stopMusic();}
   window.GravityFourAudio={unlock,speak,setMusic,stop};
+  if(typeof window.addEventListener==='function'){
+    window.addEventListener('pointerdown',unlock,{once:true});
+    window.addEventListener('keydown',unlock,{once:true});
+  }
 })();

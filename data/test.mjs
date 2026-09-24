@@ -99,17 +99,17 @@ for(const [size,expected] of [[8,{beginner:7,regular:0,champion:0}],[16,{beginne
   assert.ok(desktop.drawn.some(([kind,...bytes])=>kind==='scan'&&bytes.some(value=>value>0)),'runtime scanlines are visible');
   assert.ok(desktop.drawn.some(([kind,...bytes])=>kind==='scan'&&bytes.some((value,index)=>index%4===3&&value===79)&&bytes.some((value,index)=>index%4===3&&value===86)),'scanline contrast uses the reduced alpha values');
 }
-game.startTournament(8);timers.shift()();
+timers.length=0;game.startTournament(8);timers.shift()();
 assert.equal(desktop.drawn.some(([,x,y,w,h])=>w===160&&h===160),false,'board has no solid fill');
-assert.ok(desktop.drawn.some(([color])=>color==='#31b978'),'board draws green lines');
+assert.ok(desktop.drawn.some(([color])=>color==='#2a9e68'),'board draws green lines');
 buttons[0].onclick();
 assert.equal(desktop.elements.get('thinking').hidden,false,'thinking indicator appears');
 assert.equal(game.getBoard()[0],1,'desktop click places a stone');
 timers.pop()();
 assert.equal([...game.getBoard()].filter(Boolean).length,2,'COM replies');
 assert.ok(desktop.drawn.some(([color])=>color==='#39ef9b'),'green crystal drawn');
-assert.ok(desktop.drawn.some(([color])=>color==='#ff5a76'),'red crystal drawn');
-assert.ok(desktop.drawn.some(([color])=>color==='#f1ffff'),'latest COM move glows white');
+assert.ok(desktop.drawn.some(([color])=>color==='#ff7891'),'red crystal drawn');
+assert.ok(desktop.drawn.some(([color])=>color==='#ffabc0'),'latest COM stone stays bright');
 const flash=desktop.elements.get('board').children.find(child=>child.className==='com-move-flash');
 assert.equal(flash.animation.options.iterations,2,'COM stone flashes twice');
 assert.equal(flash.animation.options.duration,900,'COM stone flashes slowly');
@@ -192,7 +192,7 @@ for(let round=0;round<3;round++){
   assert.equal(run.game.getTournament().round,round===2?0:round+1);
 }
 for(const size of [16,32]){
-  const fixture=boot();fixture.game.startTournament(size);fixture.timers.shift()();
+  const fixture=boot(false,null,'2026-09-24');fixture.game.startTournament(size);fixture.timers.shift()();
   for(let col=0;col<5;col++)fixture.play(col,1);
   fixture.timers.shift()();
   const canvas=fixture.elements.get('bracket-rounds').children[0];
@@ -200,7 +200,7 @@ for(const size of [16,32]){
   assert.ok(canvas.className.includes('two-sided'),size+' player bracket joins from both sides');
   assert.ok(canvas.children.filter(child=>child.className.includes('bracket-line')).length>20,'connector lines are visible');
 }
-const championAdvance=boot();
+const championAdvance=boot(false,null,'2026-09-24');
 championAdvance.game.startTournament(32);championAdvance.timers.shift()();
 for(let col=0;col<5;col++)championAdvance.play(col,1);
 championAdvance.timers.shift()();
@@ -210,7 +210,7 @@ championAdvance.timers.shift()(); // Stale bracket animation is cancelled by the
 championAdvance.timers.shift()(); // The next round introduction completes.
 assert.equal(championAdvance.game.getTournament().round,1,'champion tournament advances after one win');
 for(const size of [8,32]){
-  const loss=boot(false,null,'2026-09-23');
+  const loss=boot(false,null,size===32?'2026-09-24':'2026-09-23');
   loss.game.startTournament(size);loss.timers.shift()();
   for(let col=0;col<5;col++)loss.play(col,2);
   loss.timers.shift()();
@@ -229,7 +229,22 @@ for(const size of [8,32]){
   assert.equal(loss.elements.get('bracket-champion-expression').src,'characters/win.png','the champion has a winning expression');
   assert.ok(loss.elements.get('bracket-champion-scanlines'),'the large champion portrait receives the remote effect');
 }
-const redFour=boot();redFour.game.startTournament(8);redFour.timers.shift()();
+const pointer=boot(false,null,'2026-09-24');pointer.game.startTournament(32);pointer.timers.shift()();
+pointer.elements.get('board').getBoundingClientRect=()=>({left:100,top:200,width:320,height:320});
+pointer.buttons[0].onmousemove({clientX:404,clientY:216});
+pointer.buttons[0].onclick({clientX:404,clientY:216});
+assert.equal(pointer.game.getBoard()[9],1,'pointer coordinates select the crystal position on the canvas');const secondSeat=boot(false,null,'2026-09-24');
+secondSeat.game.startTournament(8);
+assert.equal(secondSeat.game.getTournament().playerIndex,3,'player gets a date-seeded bracket seat');
+assert.equal(secondSeat.game.getTournament().firstPlayer,'opponent','the upper entrant moves first');
+secondSeat.timers.shift()();
+assert.equal(secondSeat.elements.get('turn-banner').textContent,secondSeat.game.getTournament().opponent,'the first turn shows the opponent name');
+secondSeat.timers.shift()();
+assert.equal([...secondSeat.game.getBoard()].filter(value=>value===2).length,1,'opponent can place the opening stone');
+assert.equal(secondSeat.elements.get('turn-banner').textContent,'YOU','turn handoff shows the next name');
+const secondMove=secondSeat.game.legalMoves(secondSeat.game.getBoard())[0];
+secondSeat.buttons[secondMove].onclick();
+assert.equal(secondSeat.game.getBoard()[secondMove],1,'the player stays green when moving second');const redFour=boot();redFour.game.startTournament(8);redFour.timers.shift()();
 for(let col=0;col<4;col++)redFour.play(col,2);
 assert.equal(redFour.elements.get('com-score').textContent,1);
 for(let col=4;col<5;col++)redFour.play(col,2);

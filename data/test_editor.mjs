@@ -5,6 +5,7 @@ import vm from 'node:vm';
 const root=new URL('../',import.meta.url);
 const read=name=>fs.readFileSync(new URL(name,root),'utf8');
 const page=read('index.html');
+const styles=read('style.css');
 assert.doesNotMatch(page,/SELECT TOURNAMENT|8 PLAYERS|16 PLAYERS|32 PLAYERS|FIRST STEPS/);
 assert.match(page,/id="random-match"/);
 assert.match(page,/id="editor-button"/);
@@ -21,12 +22,19 @@ const document={getElementById(id){if(!elements.has(id))elements.set(id,element(
   createElement:element,querySelectorAll(){return []}};
 const window={matchMedia(){return {matches:false}},localStorage:{
   getItem(key){return storage.get(key)||null},setItem(key,value){storage.set(key,value)}}};
-const context={document,window,setTimeout(callback){timers.push(callback)},console};
+const context={document,window,Math:Object.assign(Object.create(Math),{random:()=>0}),setTimeout(callback){timers.push(callback)},console};
 for(const name of ['characters.js','player.js','daily-cups.js'])
   vm.runInNewContext(read(name),context,{filename:name});
 vm.runInNewContext(read('game.js').replace('    window.GravityFour={legalMoves',
-  '    window.__testPlay=play; window.GravityFour={legalMoves'),context,{filename:'game.js'});
+  '    window.__testPlay=play; window.__testAppendBracketFace=appendBracketFace; window.__testCenterBracket=centerBracket; window.GravityFour={legalMoves'),context,{filename:'game.js'});
 const get=id=>elements.get(id);
+const bracketViewport=document.getElementById('bracket-rounds');bracketViewport.clientWidth=900;
+bracketViewport.children=[{offsetWidth:1336}];window.__testCenterBracket();
+assert.equal(bracketViewport.scrollLeft,218,'wide bracket opens at its horizontal center');
+bracketViewport.children=[{offsetWidth:579}];window.__testCenterBracket();
+assert.equal(bracketViewport.scrollLeft,0,'narrow bracket needs no horizontal scroll');
+assert.match(styles,/\.bracket-canvas \{ margin-inline: auto; \}/,'a narrow bracket is centered in its panel');
+assert.match(styles,/\.recap-card \{ max-height: calc\(100svh - 20px\)/,'recap fits the viewport height');
 assert.equal(get('player-hair').image.data.length,16*16*4);
 function paintedColor(part){const pixels=get('player-'+part).image.data;
   for(let offset=0;offset<pixels.length;offset+=4)if(pixels[offset+3])
@@ -40,6 +48,13 @@ assert.equal(get('editor-view').hidden,true);
 get('editor-button').onclick();
 assert.equal(get('editor-view').hidden,false);
 assert.equal(get('menu').hidden,true);
+assert.match(page,/id="editor-name"[^>]*maxlength="4"/,'editor offers a four-letter name');
+get('editor-name').value='a9bcde';get('editor-name').oninput();
+assert.equal(get('editor-name').value,'ABCD','name keeps only four uppercase letters');
+assert.equal(get('score-player-name').textContent,'ABCD','score uses the chosen name');
+assert.equal(JSON.parse(storage.get('gravityfour-player-v1')).name,'ABCD','name is saved');
+get('editor-name').value='';get('editor-name').oninput();get('editor-name').onblur();
+assert.equal(get('editor-name').value,'ABCD','an empty name restores the last valid name');
 assert.doesNotMatch(page,/<select\b/,'the editor uses visual buttons instead of dropdowns');
 assert.doesNotMatch(page,/id="editor-(?:tint|scanlines)"/,'the editor preview has no remote effect');
 assert.equal(get('editor-hair-options').children.length,11);
@@ -62,12 +77,18 @@ for(const [id,value,part] of [
   if(id.endsWith('-color'))assert.equal(paintedColor(part),value);
 }
 assert.equal(JSON.parse(storage.get('gravityfour-player-v1')).hair,'hair1');
+const playerCard=element();window.__testAppendBracketFace(playerCard,null);
+assert.equal(playerCard.children[0].children.length,5,'bracket face combines the chosen body, eyes, and mouth');
+assert.equal(playerCard.children[1].textContent,'ABCD','bracket uses the chosen player name');
+assert.match(styles,/\.bracket-entry\.you \{[^}]*background:/,'player cards have a distinct bright background');
+assert.match(styles,/\.bracket-entry:not\(\.you\):not\(\.pending\) \{[^}]*background: #091610/,'opponent cards are dark');
 get('editor-back').onclick();
 assert.equal(get('menu').hidden,false);
 get('random-match').onclick();timers.shift()();
 assert.equal(window.GravityFour.getTournament().size,2);
 assert.equal(get('match-progress').textContent,'RANDOM MATCH');
 for(let col=0;col<5;col++)window.__testPlay(col,1);
+assert.equal(get('result').textContent,'ABCD WIN','match result uses the chosen name');
 assert.equal(get('player-expression').src,window.GravityFourPlayer.expressions.win);
 assert.equal(get('victory-player-expression').src,window.GravityFourPlayer.expressions.win);
 assert.equal(get('player-eyes').hidden,true);

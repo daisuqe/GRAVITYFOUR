@@ -30,7 +30,7 @@ h1, h2, p { margin-top: 0; }
 @keyframes blink { 50% { opacity: .1; } }
 .board-column { min-width: 0; }
 .board-frame { position: relative; padding: 8px; border: 1px solid #2ba46e; background: transparent; box-shadow: 0 0 21px #1baa6c47, inset 0 0 17px #0d402a80; }
-.board { position: relative; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); width: 100%; aspect-ratio: 1; background: transparent; touch-action: manipulation; }
+.board { position: relative; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); grid-template-rows: repeat(10, minmax(0, 1fr)); width: 100%; aspect-ratio: 1; background: transparent; touch-action: manipulation; }
 .board-art { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; pointer-events: none; }
 .cell { position: relative; z-index: 1; min-width: 0; padding: 0; border: 0; background: transparent; appearance: none; -webkit-tap-highlight-color: transparent; }
 .cell.legal { cursor: crosshair; }
@@ -576,3 +576,101 @@ h1, h2, p { margin-top: 0; }
 .editor-name-section label { color: #c7f9d8; font: clamp(19px, 2.5vw, 25px) yodaka, monospace; }
 .editor-name-section input { width: 5.2em; max-width: 100%; min-height: 50px; padding: 6px 10px; border: 1px solid #5fe69a; background: #0b2117; color: #e5ffed; font: 30px yodaka, monospace; letter-spacing: .12em; text-align: center; text-transform: uppercase; }
 .editor-name-section input:focus-visible { outline: 2px solid #b7ffd5; outline-offset: 3px; }
+/* Clear player identity in the bracket. */
+.bracket-entry:not(.you):not(.pending) { border-color: #203b2c; background: #091610; color: #8caf98; box-shadow: none; }
+.bracket-entry.you { border-color: #9effc5; background: linear-gradient(145deg, #267c4f, #174d33); color: #edfff3; box-shadow: inset 3px 0 #baffd2, 0 0 15px #48f49577; }
+.bracket-entry.champion:not(.you) { border-color: #8f7950; background: #211c12; color: #dacb9d; box-shadow: 0 0 8px #d9b65a44; }
+.bracket-entry.you.champion { border-color: #ffe6aa; background: linear-gradient(145deg, #397b4b, #36572c); color: #fff4cb; box-shadow: inset 3px 0 #ffe7a2, 0 0 18px #d8d77988; }
+.bracket-entry.you.out { opacity: .72 !important; filter: saturate(.65); }
+.bracket-entry.bracket-traveler:not(.you) { border-color: #6aa282; background: #143224; box-shadow: 0 0 11px #5add9966; }
+.bracket-entry.bracket-traveler.you { border-color: #bbffcf; background: #298052; box-shadow: 0 0 19px #8cffb1b0; }
+.bracket-portrait canvas, .bracket-portrait img { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; }
+.bracket-player-portrait img:nth-child(4) { z-index: 3; }
+.bracket-player-portrait img:nth-child(5) { z-index: 4; }
+/* Fit each game view to the viewport and center its main content. */
+.app { min-height: 100svh; padding-block: clamp(8px, 1.6svh, 28px); }
+.menu { min-height: calc(100svh - 56px); justify-content: center; gap: clamp(7px, 1.25svh, 18px); }
+.brand h1 { font-size: clamp(30px, min(6vw, 7svh), 60px); }
+.daily-cup h2 { font-size: clamp(29px, min(5vw, 7svh), 56px); }
+.menu .tournament-choice { min-height: clamp(44px, 7.5svh, 74px); padding-block: clamp(7px, 1.5svh, 14px); }
+.menu .random-button, .menu .history-button, .menu .editor-button { min-height: clamp(42px, 6.2svh, 56px); }
+.menu > .help-button { min-height: clamp(46px, 7svh, 66px); }
+.stage { width: min(100%, 900px); margin-inline: auto; }
+.board-column { width: min(100%, clamp(300px, calc(100svh - 320px), 730px)); }
+.editor-view, .history-view, .history-log-view { min-height: calc(100svh - 24px); }
+.editor-panel, .history-panel, .history-log-panel { max-height: calc(100svh - 24px); overflow-y: auto; padding: clamp(12px, 2.5svh, 38px); }
+.tournament-recap { padding: clamp(8px, 1.5svh, 16px); }
+.recap-card { max-height: calc(100svh - 20px); min-height: 0; overflow: hidden; padding: clamp(10px, 2svh, 25px); }
+.bracket-rounds { flex: 0 1 auto; min-height: 0; max-height: min(62svh, 620px); }
+.bracket-canvas { margin-inline: auto; }
+.recap-battles { min-height: 0; margin-block: clamp(3px, 1svh, 10px); }
+.match-actions { flex: none; }
+.bracket-crowning .crowning-portrait { width: clamp(72px, 14svh, 150px); height: clamp(72px, 14svh, 150px); }
+.victory-message { max-height: calc(100svh - 20px); gap: clamp(4px, 1.5svh, 14px); padding-block: clamp(14px, 4svh, 48px); }
+.victory-message strong { font-size: clamp(36px, min(10vw, 14svh), 120px); }
+@media (max-width: 620px) {
+  .app { padding-inline: 9px; }
+  .board-column { width: min(100%, clamp(300px, calc(100svh - 205px), 730px)); }
+  .menu { gap: clamp(6px, 1svh, 12px); }
+}
+@media (hover: none), (pointer: coarse) {
+  .app:has(.stage:not([hidden])) { padding-bottom: 70px; }
+}
+
+
+/* Navigation buttons share one size and palette. */
+.back-button, .history-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 45px;
+  padding: 8px 12px;
+  border: 1px solid #28674e;
+  background: #0a1c15;
+  color: #a3ebc8;
+  font: clamp(16px, 2.4vw, 23px) yodaka, monospace;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.history-panel .back-button { display: inline-flex; }
+.back-button:hover, .back-button:focus-visible,
+.history-open:hover, .history-open:focus-visible {
+  border-color: #83ffbd;
+  background: #17402c;
+}
+.ui-arrow {
+  --arrow-dot: 4px;
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: calc(5 * var(--arrow-dot));
+  height: calc(5 * var(--arrow-dot));
+}
+.ui-arrow::before {
+  content: "";
+  position: absolute;
+  top: calc(2 * var(--arrow-dot));
+  left: 0;
+  width: calc(5 * var(--arrow-dot));
+  height: var(--arrow-dot);
+  background: currentColor;
+}
+.ui-arrow::after {
+  content: "";
+  position: absolute;
+  top: var(--arrow-dot);
+  left: var(--arrow-dot);
+  width: var(--arrow-dot);
+  height: var(--arrow-dot);
+  background: currentColor;
+  box-shadow:
+    var(--arrow-dot) calc(-1 * var(--arrow-dot)) currentColor,
+    0 calc(2 * var(--arrow-dot)) currentColor,
+    var(--arrow-dot) calc(3 * var(--arrow-dot)) currentColor;
+}
+.ui-arrow.right { transform: rotate(180deg); }
+.ui-arrow.up { transform: rotate(90deg); }
+.ui-arrow.down { transform: rotate(-90deg); }
+.inline-arrow-label { display: inline-flex; align-items: center; gap: 5px; }

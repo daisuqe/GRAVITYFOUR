@@ -128,6 +128,16 @@ for date in sorted(by_date):
     selected = sorted(choices, key=lambda item: (-score(item), len(theme(item["name"])), item["name"]))[0]
     rows.append({"date": date, "occasion": selected["name"], "cup": theme(selected["name"]) + " CUP"})
 
+with (ROOT / "japan-cups.csv").open(encoding="utf-8", newline="") as file:
+    familiar = {item["date"]: item for item in csv.DictReader(file)}
+assert all(date in by_date for date in familiar)
+for row in rows:
+    update = familiar.get(row["date"])
+    if update:
+        row["cup"] = update["cup"]
+        if update["occasion"]:
+            row["occasion"] = update["occasion"]
+
 assert len(rows) == 366
 with (ROOT / "daily-cups.csv").open("w", encoding="utf-8", newline="") as file:
     writer = csv.DictWriter(file, fieldnames=("date", "occasion", "cup"))

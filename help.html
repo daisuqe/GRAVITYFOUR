@@ -9,7 +9,7 @@
 </head>
 <body>
   <main class="help-page">
-    <a class="back-button help-back" href="index.html">← GAME</a>
+    <a class="back-button help-back" href="index.html"><span class="ui-arrow" aria-hidden="true"></span>GAME</a>
     <header class="help-header"><span class="eyebrow">GRAVITY FOUR / GUIDE</span><h1>HOW TO PLAY</h1><p>置ける場所を広げながら 四つの連なりを作る対戦ゲームです</p></header>
     <section class="help-section">
       <h2>基本ルール</h2>
@@ -36,9 +36,11 @@
 </div>
       <p>試合後にトーナメント表が表示されます 敗北するとその大会は終了し 引き分けなら同じ対戦をやり直します</p>
       <p>トップ画面の<strong>TROPHIES / RECORDS</strong>から 各大会の今日の最高順位 通算最高順位 優勝回数を確認できます 記録は使用中のブラウザに保存されます</p>
-      <p><strong>HISTORY →</strong>では日ごとのカップ名 順位 スコアとトータルスコアを確認できます 各大会のその日の最高結果から計算し 1勝で1点 2勝で3点 3勝で7点です 同じ日に再挑戦してもスコアは重複しません</p>
+      <p><strong class="inline-arrow-label">HISTORY <span class="ui-arrow right" aria-hidden="true"></span></strong>では日ごとのカップ名 順位 スコアとトータルスコアを確認できます 各大会のその日の最高結果から計算し 1勝で1点 2勝で3点 3勝で7点です 同じ日に再挑戦してもスコアは重複しません</p>
 </section>
     <a class="help-button help-bottom" href="index.html">BACK TO GAME</a>
 </main>
+<script src="audio.js"></script>
+<script>window.GravityFourAudio.setMusic('bracket');</script>
 </body>
 </html>

@@ -35,7 +35,7 @@ After editing `data/human01.psd`, run `python data/build_roster.py` and then `py
 
 ## Pixel font
 
-`data/yodaka.ttf` and the published `yodaka.woff` contain the uppercase, lowercase, and numeric glyphs extracted from `data/yodaka-source.png`, plus the punctuation needed by the interface, including half-width and full-width parentheses. They also include 16 × 16 pixel glyphs for the four title characters, 四方争覇. Katakana is extracted directly from the right-hand grid of `data/yodaka-source.png`; dialogue punctuation is drawn on the same pixel grid. The game loads the WOFF file.
+`data/yodaka.ttf` and the published `yodaka.woff` contain uppercase, lowercase, numerals, symbols, and kanji extracted from `data/yodaka-source.png` (including the lower-left symbol grid), plus interface punctuation including full-width parentheses. The title characters 方争覇 retain their 16 × 16 pixel glyphs; 四 now uses the supplied source glyph. Katakana is extracted directly from the right-hand grid of `data/yodaka-source.png`; dialogue punctuation is drawn on the same pixel grid. The game loads the WOFF file.
 
 ## Checks
 

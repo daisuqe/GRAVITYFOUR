@@ -19,13 +19,13 @@
       <a class="help-button" href="help.html">HOW TO PLAY</a>
     </section>
     <section class="editor-view" id="editor-view" aria-label="Character editor" hidden>
-      <div class="editor-panel"><button class="back-button" id="editor-back" type="button">← MENU</button>
+      <div class="editor-panel"><button class="back-button" id="editor-back" type="button"><span class="ui-arrow" aria-hidden="true"></span>MENU</button>
         <h2>CHARACTER EDIT</h2><div class="editor-layout">
           <div class="editor-preview"><div class="portrait-stack"><canvas class="portrait-layer" id="editor-skin" width="16" height="16" aria-hidden="true"></canvas><canvas class="portrait-layer" id="editor-hair" width="16" height="16" aria-hidden="true"></canvas><canvas class="portrait-layer" id="editor-cloth" width="16" height="16" aria-hidden="true"></canvas><img id="editor-eyes" alt="" width="192" height="192"><img id="editor-mouth" alt="" width="192" height="192"><img id="editor-expression" alt="" width="192" height="192"><img id="editor-tear" src="characters/tear.png" alt="" width="192" height="192" hidden></div></div><div class="editor-controls"><section class="editor-section editor-name-section"><label for="editor-name">NAME</label><input id="editor-name" type="text" maxlength="4" pattern="[A-Z]{1,4}" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Player name, one to four uppercase letters"></section><section class="editor-section"><h3>HAIR STYLE</h3><div class="editor-options" id="editor-hair-options" role="group" aria-label="HAIR STYLE"></div></section><section class="editor-section"><h3>EYES</h3><div class="editor-options" id="editor-eyes-options" role="group" aria-label="EYES"></div></section><section class="editor-section"><h3>MOUTH</h3><div class="editor-options" id="editor-mouth-options" role="group" aria-label="MOUTH"></div></section><section class="editor-section"><h3>HAIR COLOR</h3><div class="editor-options" id="editor-hair-color-options" role="group" aria-label="HAIR COLOR"></div></section><section class="editor-section"><h3>CLOTH COLOR</h3><div class="editor-options" id="editor-cloth-color-options" role="group" aria-label="CLOTH COLOR"></div></section><section class="editor-section"><h3>SKIN COLOR</h3><div class="editor-options" id="editor-skin-color-options" role="group" aria-label="SKIN COLOR"></div></section></div></div></div>
     </section>
     <section class="history-view" id="history-view" aria-label="Trophies and records" hidden>
       <div class="history-panel">
-        <div class="history-nav"><button class="back-button" id="history-back" type="button">← MENU</button><button class="history-open" id="history-open" type="button">HISTORY →</button></div>
+        <div class="history-nav"><button class="back-button" id="history-back" type="button"><span class="ui-arrow" aria-hidden="true"></span>MENU</button><button class="history-open" id="history-open" type="button">HISTORY<span class="ui-arrow right" aria-hidden="true"></span></button></div>
         <span class="eyebrow">TROPHY ROOM</span>
         <div class="cup-heading"><img src="trophy.svg" alt="" width="54" height="36"><h2 id="history-cup"></h2><img src="trophy.svg" alt="" width="54" height="36"></div><p id="history-date"></p>
         <div class="history-list" id="history-list"></div>
@@ -34,7 +34,7 @@
     </section>
     <section class="history-log-view" id="history-log-view" aria-label="Daily tournament history" hidden>
       <div class="history-log-panel">
-        <button class="back-button" id="history-log-back" type="button">← RECORDS</button>
+        <button class="back-button" id="history-log-back" type="button"><span class="ui-arrow" aria-hidden="true"></span>RECORDS</button>
         <h2>HISTORY</h2>
         <div class="history-score-total"><span>TOTAL SCORE</span><strong id="history-score-total">0</strong></div>
         <div class="history-table-wrap"><table class="history-table"><thead><tr><th scope="col">MM/DD</th><th scope="col">CUP</th><th scope="col">BEGINNER RANK</th><th scope="col">REGULAR RANK</th><th scope="col">CHAMPION RANK</th><th scope="col">SCORE</th></tr></thead><tbody id="history-rows"></tbody></table></div>
@@ -42,7 +42,7 @@
       </div>
     </section>
     <section class="stage" id="stage" aria-label="Gravity Four" hidden>
-      <div class="match-bar"><button class="back-button" id="back" type="button">← MENU</button><span id="match-progress"></span></div>
+      <div class="match-bar"><button class="back-button" id="back" type="button"><span class="ui-arrow" aria-hidden="true"></span>MENU</button><span id="match-progress"></span></div>
       <div class="round-intro" id="round-intro" aria-live="polite" hidden><strong id="round-intro-title"></strong><span id="round-intro-count"></span></div>
       <div class="arena">
         <div class="board-column">
