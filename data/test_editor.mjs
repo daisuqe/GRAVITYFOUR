@@ -28,11 +28,13 @@ for(const name of ['characters.js','player.js','daily-cups.js'])
 vm.runInNewContext(read('game.js').replace('    window.GravityFour={legalMoves',
   '    window.__testPlay=play; window.__testAppendBracketFace=appendBracketFace; window.__testCenterBracket=centerBracket; window.GravityFour={legalMoves'),context,{filename:'game.js'});
 const get=id=>elements.get(id);
-const bracketViewport=document.getElementById('bracket-rounds');bracketViewport.clientWidth=900;
-bracketViewport.children=[{offsetWidth:1336}];window.__testCenterBracket();
-assert.equal(bracketViewport.scrollLeft,218,'wide bracket opens at its horizontal center');
-bracketViewport.children=[{offsetWidth:579}];window.__testCenterBracket();
-assert.equal(bracketViewport.scrollLeft,0,'narrow bracket needs no horizontal scroll');
+const bracketViewport=document.getElementById('bracket-rounds');
+bracketViewport.clientWidth=300;bracketViewport.clientHeight=250;
+const compactCanvas={bracketWidth:500,bracketHeight:500,setAttribute(name,value){this[name]=value}};
+bracketViewport.children=[compactCanvas];window.__testCenterBracket();
+assert.match(compactCanvas.style,/zoom:0\.5/,'the entire bracket fits its available height');
+assert.equal(bracketViewport.scrollLeft,0,'the bracket does not scroll horizontally');
+assert.equal(bracketViewport.scrollTop,0,'the bracket does not scroll vertically');
 assert.match(styles,/\.bracket-canvas \{ margin-inline: auto; \}/,'a narrow bracket is centered in its panel');
 assert.match(styles,/\.recap-card \{ max-height: calc\(100svh - 20px\)/,'recap fits the viewport height');
 assert.equal(get('player-hair').image.data.length,16*16*4);
@@ -88,7 +90,8 @@ get('random-match').onclick();timers.shift()();
 assert.equal(window.GravityFour.getTournament().size,2);
 assert.equal(get('match-progress').textContent,'RANDOM MATCH');
 for(let col=0;col<5;col++)window.__testPlay(col,1);
-assert.equal(get('result').textContent,'ABCD WIN','match result uses the chosen name');
+assert.equal(get('result').textContent,'ABCD WIN · TAP TO CONTINUE','match result names the player and offers continuation');
+assert.match(get('result')['aria-label'],/FIVE IN A ROW/,'the winning condition remains accessible');
 assert.equal(get('player-expression').src,window.GravityFourPlayer.expressions.win);
 assert.equal(get('victory-player-expression').src,window.GravityFourPlayer.expressions.win);
 assert.equal(get('player-eyes').hidden,true);

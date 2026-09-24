@@ -60,26 +60,26 @@
   const musicTracks={
     'battle-champion':{
       notes:[110,110,130.8,98,110,146.8,110,98,110,123.5,130.8,98,146.8,130.8,110,98],
-      interval:480,duration:.35,level:.44,volume:.22,wave:'triangle',harmony:1.5
+      interval:480,duration:.35,level:.54,volume:.24,wave:'triangle',harmony:1.5
     },
     'battle-regular':{
       notes:[146.8,164.8,196,174.6,164.8,220,196,174.6,146.8,196,220,174.6,164.8,196,146.8,130.8],
-      interval:420,duration:.30,level:.42,volume:.21,wave:'triangle',harmony:1.5
+      interval:420,duration:.30,level:.52,volume:.23,wave:'triangle',harmony:1.5
     },
     'battle-beginner':{
       notes:[196,246.9,261.6,293.7,261.6,329.6,293.7,246.9,220,261.6,293.7,329.6,349.2,329.6,293.7,261.6],
-      interval:360,duration:.26,level:.40,volume:.20,wave:'sine',harmony:1.25
+      interval:360,duration:.26,level:.50,volume:.22,wave:'sine',harmony:1.25
     },
     bracket:{
       notes:[220,277.2,329.6,440,329.6,277.2,246.9,329.6],
-      interval:245,duration:.22,level:.30,volume:.13,wave:'sine',harmony:1.5
+      interval:245,duration:.22,level:.40,volume:.16,wave:'sine',harmony:1.5
     }
   };
   function setMusic(mode){
     stopMusic();
     const track=musicTracks[mode];
     if(!track||!unlock())return;
-    musicLevel=track.level;
+    musicLevel=track.level*2;
     musicBus=context.createGain();musicBus.gain.value=musicLevel;musicBus.connect(context.destination);
     let step=0;
     const play=()=>{
@@ -113,7 +113,8 @@
     if(!voiceBus){voiceBus=context.createGain();voiceBus.connect(context.destination);}
     voiceBus.gain.value=kind==='announcer'?.43:.32;
     let cursor=start;
-    const pitch=kind==='announcer'?104:125+(voiceId%7)*7;
+    const characterPitches=[104,116,130,146,164,184,207,110,123,138,155,174];
+    const pitch=kind==='announcer'?104:characterPitches[(Math.abs(Number(voiceId)||0)*7)%characterPitches.length];
     for(const sound of sounds){
       if(sound.pause){cursor+=sound.duration;continue;}
       const end=cursor+sound.duration,osc=context.createOscillator(),env=context.createGain();
