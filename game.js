@@ -76,9 +76,9 @@
     const records=readHistory();
     function saveHistory(){try{window.localStorage.setItem(storageKey,JSON.stringify(records));}catch{}}
     const tournamentTypes=[
-      {key:'beginner',label:'BEGINNER',size:8,beginner:7,regular:0,champion:0},
-      {key:'regular',label:'REGULAR',size:16,beginner:7,regular:8,champion:0},
-      {key:'champion',label:'CHAMPION',size:32,beginner:7,regular:8,champion:16}
+      {key:'beginner',label:'BEGINNER',size:8,levels:[4,3,0,0,0]},
+      {key:'regular',label:'REGULAR',size:16,levels:[4,4,4,3,0]},
+      {key:'champion',label:'CHAMPION',size:32,levels:[0,8,8,8,7]}
     ];
     const settings={depth:2,mistake:10,trick:30,attack:50,defense:50,edgeExplore:50,ride:50,unusual:50,center:50,consistency:80};
     const watchSettings={...settings,depth:2,mistake:12,trick:35};
@@ -203,10 +203,10 @@
       for(let i=result.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}
       return result;
     };
-    function selectRank(rank,count,seed){
-      const pool=roster.filter(character=>character.profile.rank===rank);
-      if(pool.length<count)throw new Error('Character roster is incomplete: '+rank);
-      return shuffle(pool,seed+'|'+rank).slice(0,count);
+    function selectLevel(level,count,seed){
+      const pool=roster.filter(character=>character.profile.level===level);
+      if(pool.length<count)throw new Error('Character roster is incomplete: '+level);
+      return shuffle(pool,seed+'|'+level).slice(0,count);
     }
     function renderDailyHeader(){
       const day=localDate(),details=dayDetails(day);
@@ -275,16 +275,17 @@
       if(outcome==='win'&&rank===1)records.wins[size]=(Number(records.wins[size])||0)+1;
       saveHistory();
     }
-    function startTournament(size){
-      watchMode=false;watchLeft=null;
+    function startTournament(size,watching=false){
+      watchMode=watching;watchLeft=null;pendingWinners=null;
       audio.unlock();
       const type=tournamentTypes.find(item=>item.size===size);
       if(!type)throw new Error('Unknown tournament size: '+size);
       const day=localDate(),details=dayDetails(day),seed=day+'|'+size;
-      const bracket=[...selectRank('beginner',type.beginner,seed),...selectRank('regular',type.regular,seed),...selectRank('champion',type.champion,seed)];
+      const counts=watching?[0,8,8,8,8]:type.levels;
+      const bracket=counts.flatMap((count,index)=>selectLevel(index+1,count,seed));
       for(let i=bracket.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bracket[i],bracket[j]]=[bracket[j],bracket[i]];}
-      bracket.splice(Math.floor(Math.random()*size),0,null);
-      tournament={type,day,cup:details[0],round:0,bracket,history:[bracket],battles:[]};
+      if(!watching)bracket.splice(Math.floor(Math.random()*size),0,null);
+      tournament={type,day,cup:details[0],round:0,matchIndex:0,bracket,history:[bracket],battles:[]};
       byId('menu').hidden=true;byId('stage').hidden=false;
       startMatch();
     }
@@ -299,23 +300,27 @@
       byId('menu').hidden=true;byId('stage').hidden=false;
       startMatch();
     }
-    function startWatchMode(){
-      watchMode=true;
-      startRandomMatch();
-    }
+    function startWatchMode(){startTournament(32,true);}
     function startMatch(){
       matchToken++;introActive=true;
       byId('stage').className=watchMode?'stage watching':'stage';
-      board=new Uint8Array(N*ROWS);turn=tournament.bracket.indexOf(null)%2===0?HUMAN:COM;ended=false;thinking=false;
+      board=new Uint8Array(N*ROWS);turn=watchMode||tournament.bracket.indexOf(null)%2===0?HUMAN:COM;ended=false;thinking=false;
       setPlayerExpression('normal');
-      winningCells=new Set();hoverIndex=-1;selectedIndex=-1;lastComMove=-1;endedByScore=false;outcome=null;pendingWinners=null;tournament.revealRounds=null;
+      winningCells=new Set();hoverIndex=-1;selectedIndex=-1;lastComMove=-1;endedByScore=false;outcome=null;
+      if(!watchMode)pendingWinners=null;
+      tournament.revealRounds=null;
       byId('win-orbit').hidden=true;
+      byId('enemy-win-orbit').hidden=true;
+      byId('match-confetti').hidden=true;
       comFlashAnimation?.cancel();comFlashAnimation=null;clearStoneFlight();
       byId('victory-effect').hidden=true;
       byId('board-frame').className='board-frame';
       byId('tournament-recap').hidden=true;byId('continue-overlay').hidden=true;byId('back').hidden=false;
       byId('thinking').hidden=true;byId('watch-thinking').hidden=true;
-      opponent=tournament.bracket[tournament.bracket.indexOf(null)^1];
+      if(watchMode){
+        watchLeft=tournament.bracket[tournament.matchIndex*2];
+        opponent=tournament.bracket[tournament.matchIndex*2+1];
+      }else opponent=tournament.bracket[tournament.bracket.indexOf(null)^1];
       Object.assign(settings,opponent.profile);
       byId('score-player-name').textContent=watchMode?watchLeft.name:playerName();
       if(watchMode){
@@ -338,8 +343,8 @@
       byId('opponent-tear').hidden=true;
       drawScanlines(opponent.normalMask,'opponent-scanlines');
       const progress=byId('match-progress');
-      if(watchMode||tournament.random){
-        progress.textContent=watchMode?'WATCH MODE':'RANDOM MATCH';
+      if(tournament.random){
+        progress.textContent='RANDOM MATCH';
         progress.setAttribute('aria-label',progress.textContent);
       }else{
         const current=document.createElement('span');current.textContent=tournament.type.label+' '+tournament.bracket.length;
@@ -366,7 +371,7 @@
         render();
         if(turn===COM)setTimeout(()=>{if(token===matchToken&&!ended&&turn===COM)scheduleCom();},1800*(watchMode?3:1));
         else if(watchMode)scheduleWatchMove();
-      },Math.max(1700,duration+350)*(watchMode?3:1));
+      },Math.max(1700,duration+350)*(watchMode?1.5:1));
     }
     function simulatedWinner(first,second,index,round=tournament.round){
       const chance=1/(1+Math.exp((second.profile.strength-first.profile.strength)/12));
@@ -375,6 +380,12 @@
     function settleRound(){
       if(outcome==='draw'||tournament.random)return;
       const previous=tournament.bracket;
+      if(watchMode){
+        if(!pendingWinners)pendingWinners=Array(previous.length/2).fill('TBD');
+        pendingWinners[tournament.matchIndex]=outcome==='win'?watchLeft:opponent;
+        tournament.revealRounds=[pendingWinners.slice()];
+        return;
+      }
       const playerPair=tournament.bracket.indexOf(null)&~1;
       pendingWinners=[];
       for(let i=0;i<previous.length;i+=2){
@@ -401,6 +412,8 @@
       tournament.bracket=pendingWinners;
       tournament.history.push(pendingWinners);
       tournament.round++;
+      tournament.matchIndex=0;
+      pendingWinners=null;
       startMatch();
     }
     function showMenu(){
@@ -408,12 +421,12 @@
       byId('stage').className='stage';clearStoneFlight();
       audio.stop();audio.setMusic('bracket');byId('round-intro').hidden=true;
       byId('stage').hidden=true;byId('menu').hidden=false;byId('place').hidden=true;
-      byId('tournament-recap').hidden=true;byId('continue-overlay').hidden=true;byId('back').hidden=false;byId('thinking').hidden=true;byId('victory-effect').hidden=true;
+      byId('tournament-recap').hidden=true;byId('continue-overlay').hidden=true;byId('back').hidden=false;byId('thinking').hidden=true;byId('victory-effect').hidden=true;byId('win-orbit').hidden=true;byId('enemy-win-orbit').hidden=true;byId('match-confetti').hidden=true;
       byId('leave-confirm').hidden=true;
       byId('history-view').hidden=true;byId('history-log-view').hidden=true;byId('editor-view').hidden=true;renderDailyHeader();
     }
     function requestMenu(){
-      if(tournament&&!tournament.random&&!ended)byId('leave-confirm').hidden=false;
+      if(tournament&&!tournament.random&&!ended&&!watchMode)byId('leave-confirm').hidden=false;
       else showMenu();
     }
     function lineFor(character,create){
@@ -450,41 +463,41 @@
         ownFive:own.five.length,otherFive:other.five.length};
     }
     function openingLine(){
-      if(turn===COM&&Math.random()<.33)return chooseLine(['サキニイクヨ。','サッソクハジメヨウ。','センテハモラッタ。']);
+      if(turn===COM&&Math.random()<.33)return chooseLine(['サキニイクヨ。','サッソクハジメヨウ。','センテワモラッタ。']);
       if(settings.voice==='quirky')return chooseLine(['ヨロシクデスゾ。','オテヤワラカニダヨ。','ヨロシクッス！','イザショウブッス。','キョウモガンバルダヨ。','ドウゾヨロシクデスゾ。','オモシロクナリソウッス。','マケナイダヨ。','ハジメルデスゾ。']);
-      if(settings.voice==='polite')return chooseLine(['ヨロシクオネガイシマス。','オテヤワラカニ。','イイショウブヲ。','サア ハジメマショウ。','ゴタイセンオネガイシマス。','タノシミニシテイマシタ。','ドウゾオテヤワラカニ。','ヨイショウブニシマショウ。','セイイッパイイキマス。']);
-      if(settings.personality==='teasing')return chooseLine(['コンチワ。マケナイデネ？','ヨロシク。タノシマセテヨ。','ウィッス。ココカラダヨ。','キミノテヲミセテヨ。','スグニオワラセナイヨ。','サア ドコマデヤレル？','ワタシヲオドロカセテ。','ヨロシクネ オテヤワラカニ。','フフッ ハジメヨウカ。']);
-      if(settings.personality==='friendly')return chooseLine(['コンチワ！ヨロシクネ。','ヨロシク！タノシモウ。','オテヤワラカニネ。','キョウハイイショウブニシヨウ。','アエテウレシイヨ。','イッショニタノシモウネ。','オタガイガンバロウ。','ヨロシクオネガイシマス。','サア ハジメヨッカ。']);
+      if(settings.voice==='polite')return chooseLine(['ヨロシクオネガイシマス。','オテヤワラカニ。','イイショウブオ。','サア ハジメマショウ。','ゴタイセンオネガイシマス。','タノシミニシテイマシタ。','ドウゾオテヤワラカニ。','ヨイショウブニシマショウ。','セイイッパイイキマス。']);
+      if(settings.personality==='teasing')return chooseLine(['コンチワ。マケナイデネ？','ヨロシク。タノシマセテヨ。','ウィッス。ココカラダヨ。','キミノテオミセテヨ。','スグニオワラセナイヨ。','サア ドコマデヤレル？','ワタシオオドロカセテ。','ヨロシクネ オテヤワラカニ。','フフッ ハジメヨウカ。']);
+      if(settings.personality==='friendly')return chooseLine(['コンチワ！ヨロシクネ。','ヨロシク！タノシモウ。','オテヤワラカニネ。','キョウワイイショウブニシヨウ。','アエテウレシイヨ。','イッショニタノシモウネ。','オタガイガンバロウ。','ヨロシクオネガイシマス。','サア ハジメヨッカ。']);
       if(settings.personality==='reserved')return chooseLine(['ヨロシク。','……ヨロシク。','ハジメヨウ。','ドウゾ。','ウン。ヨロシク。','……ショウブ。']);
-      return chooseLine(['ヨロシク。','コンチワ。','ウィッス。','オテヤワラカニ。','サア ハジメヨウ。','イイショウブヲ。','カカッテキテ。','キョウハマケナイ。','ヨロシクネ。','サキハナガイヨ。','ショウブダ。','イザ タイセン。']);
+      return chooseLine(['ヨロシク。','コンチワ。','ウィッス。','オテヤワラカニ。','サア ハジメヨウ。','イイショウブオ。','カカッテキテ。','キョウワマケナイ。','ヨロシクネ。','サキワナガイヨ。','ショウブダ。','イザ タイセン。']);
     }
     function thinkingLine(player=COM){
       const state=battleSituation(player);
-      if(state.otherFours>=2)return chooseLine(['ツギヲトメナイト。','ココデマケラレナイ。','ウッ キビシイ。','マズイ テヲヨモウ。','イッポンデギャクテンカ。','アキラメナイ。']);
-      if(state.otherThreats>=2)return chooseLine(['アブナイナ……','フセグテヲサガソウ。','ソコハミエテイル。','ウーン ケイカイシヨウ。','ツギヲヨンデオコウ。','イマハマモリダ。']);
-      if(state.ownFours>=2)return chooseLine(['アトイッポンダ。','ココデキメタイ。','ショウブドコロダ。','カチスジヲサガソウ。','モウスコシデトドク。','アセルナ ヨクミロ。']);
-      if(state.ownThreats>=2)return chooseLine(['ツナガリソウダ。','イイカタチカモ。','ツギガミエタ。','ココヲノバソウ。','スキマヲネラオウ。','センヲツクレルカナ。']);
-      if(state.stones>=40)return chooseLine(['バンガセマクナッタ。','ノコリヲカゾエヨウ。','オワリガチカイ。','ココカラガムズカシイ。','イッテヲタイセツニ。','サイゴマデヨモウ。']);
+      if(state.otherFours>=2)return chooseLine(['ツギオトメナイト。','ココデマケラレナイ。','ウッ キビシイ。','マズイ テオヨモウ。','イッポンデギャクテンカ。','アキラメナイ。']);
+      if(state.otherThreats>=2)return chooseLine(['アブナイナ……','フセグテオサガソウ。','ソコワミエテイル。','ウーン ケイカイシヨウ。','ツギオヨンデオコウ。','イマワマモリダ。']);
+      if(state.ownFours>=2)return chooseLine(['アトイッポンダ。','ココデキメタイ。','ショウブドコロダ。','カチスジオサガソウ。','モウスコシデトドク。','アセルナ ヨクミロ。']);
+      if(state.ownThreats>=2)return chooseLine(['ツナガリソウダ。','イイカタチカモ。','ツギガミエタ。','ココオノバソウ。','スキマオネラオウ。','センオツクレルカナ。']);
+      if(state.stones>=40)return chooseLine(['バンガセマクナッタ。','ノコリオカゾエヨウ。','オワリガチカイ。','ココカラガムズカシイ。','イッテオタイセツニ。','サイゴマデヨモウ。']);
       const lines=['ウーン……','エット……','フム……','ンー ドウシヨウ。','♪ フフン フーン ♪','ナルホド……','コッチカナ……','チョットマッテ……','ドコガイイカナ。','マダキメラレナイ。','フフーン……','ムムム……','ソウダナ……','スコシカンガエル。','コレカ コレカ……','ヨシ ヨンデミヨウ。','ウーン ナヤムナ。','ナニカアルハズ。'];
-      if(settings.depth===3)lines.push('モウスコシヨム……','ソウキタカ……','サンテサキマデ……','ココハジックリ。','ウラノテモアルナ。','ミオトシハナイカ。');
-      if(settings.trick>70)lines.push('アノテデイクカ……','フフ ミエタ。','チョットヒネロウ。','ウラヲカコウ。','マヨワセタイナ。','ココデフイヲツク。');
-      if(settings.personality==='teasing')lines.push('ドコニオコウカナ？','マヨッテルフリ。','キミハキヅクカナ。');
+      if(settings.depth===3)lines.push('モウスコシヨム……','ソウキタカ……','サンテサキマデ……','ココワジックリ。','ウラノテモアルナ。','ミオトシワナイカ。');
+      if(settings.trick>70)lines.push('アノテデイクカ……','フフ ミエタ。','チョットヒネロウ。','ウラオカコウ。','マヨワセタイナ。','ココデフイオツク。');
+      if(settings.personality==='teasing')lines.push('ドコニオコウカナ？','マヨッテルフリ。','キミワキヅクカナ。');
       if(settings.personality==='reserved')lines.push('……。','フム……','……カンガエチュウ。');
       return chooseLine(lines);
     }
     function moveLine(player=COM){
       const state=battleSituation(player);
-      if(state.ownFours>=2)return chooseLine(['アトイッポン！','コレデキマルカナ。','ショウブハココカラ。','イイカタチダ。','ツギデネラエル。','サア ドウスル？']);
+      if(state.ownFours>=2)return chooseLine(['アトイッポン！','コレデキマルカナ。','ショウブワココカラ。','イイカタチダ。','ツギデネラエル。','サア ドウスル？']);
       if(state.ownFours>state.otherFours)return chooseLine(['イッポンモラッタ。','コッチガリード。','ヨシッ ツナガッタ。','コノママイクヨ。','イイナガレダ。','マダノバセル。']);
       if(state.otherFours>state.ownFours)return chooseLine(['マダマダコレカラ。','トリカエサナイト。','サガヒライタナ。','ウッ マズイカモ。','ココカラタテナオス。','オイツクヨ。']);
-      if(state.otherThreats>=2)return chooseLine(['ココハフセグ。','ソノセンハトメル。','アブナカッタ。','マモリヲカタメル。','ソコハワタサナイ。','イッタンシノゴウ。']);
-      if(state.stones>=40)return chooseLine(['ノコリハスクナイ。','コノイッテニカケル。','サイゴマデイクヨ。','ココデツナグ。','オワリヲヨモウ。','アトハタイミング。']);
-      const lines=['ココダ。','フム。','ヨシッ。','アッ コッチカ。','♪ フフフーン ♪','ナルホド……','ココニシヨウ。','イイカンジ。','オイテミタ。','マア コレデ。','コッチヲエラブ。','ウマクイクカナ。','ホイッ。','サテ ツギハ。','コレデドウダ。','ウン ワルクナイ。','チョットボウケン。','ココヲツカオウ。'];
-      if(settings.personality==='teasing')lines.push('オヤ？ソコデイイノ？','フフッ ドウスル？','マダマダダネ。','コノテハヨメタ？','チョットコマッタ？','キミノバンダヨ。','ホラ ミテミテ。','フフ コレハドウ？','ツギガタノシミ。');
+      if(state.otherThreats>=2)return chooseLine(['ココワフセグ。','ソノセンワトメル。','アブナカッタ。','マモリオカタメル。','ソコワワタサナイ。','イッタンシノゴウ。']);
+      if(state.stones>=40)return chooseLine(['ノコリワスクナイ。','コノイッテニカケル。','サイゴマデイクヨ。','ココデツナグ。','オワリオヨモウ。','アトワタイミング。']);
+      const lines=['ココダ。','フム。','ヨシッ。','アッ コッチカ。','♪ フフフーン ♪','ナルホド……','ココニシヨウ。','イイカンジ。','オイテミタ。','マア コレデ。','コッチオエラブ。','ウマクイクカナ。','ホイッ。','サテ ツギワ。','コレデドウダ。','ウン ワルクナイ。','チョットボウケン。','ココオツカオウ。'];
+      if(settings.personality==='teasing')lines.push('オヤ？ソコデイイノ？','フフッ ドウスル？','マダマダダネ。','コノテワヨメタ？','チョットコマッタ？','キミノバンダヨ。','ホラ ミテミテ。','フフ コレワドウ？','ツギガタノシミ。');
       if(settings.personality==='friendly')lines.push('イイテダネ！','イッショニタノシモウ。','オオ ヤルネ！','ココガスキ。','ナカナカイイネ。','キミノテモミタイ。','ワクワクスルネ。','オタガイガンバロウ。','イイショウブダネ。');
-      if(settings.personality==='thoughtful')lines.push('コノサキハ……','ヨミドオリ。','スジハミエテイル。','ココヲオサエル。','ツギノカタチヲミル。','コレガイチバン。');
-      if(settings.ride>75)lines.push('ソノコマ カリルヨ。','ソコヲアシバニ。','キミノコマモツカウヨ。');
-      if(settings.unusual>75)lines.push('コレハドウ？','ヘンナテモイイヨネ。','チョットカワッタテ。','ヨソウガイデショ。','ココカライケル。','ナナメノハッソウ。');
+      if(settings.personality==='thoughtful')lines.push('コノサキワ……','ヨミドオリ。','スジワミエテイル。','ココオオサエル。','ツギノカタチオミル。','コレガイチバン。');
+      if(settings.ride>75)lines.push('ソノコマ カリルヨ。','ソコオアシバニ。','キミノコマモツカウヨ。');
+      if(settings.unusual>75)lines.push('コレワドウ？','ヘンナテモイイヨネ。','チョットカワッタテ。','ヨソウガイデショ。','ココカライケル。','ナナメノハッソウ。');
       if(settings.expressiveness>65)lines.push('オッ！','ウッ……','アハハ！','ヤッタ。','エエッ？','フフフ。','ムムッ。','オオー。','ヨーシ。');
       return chooseLine(lines);
     }
@@ -492,20 +505,20 @@
       const state=battleSituation(player);
       if(result==='win'){
         const tone=settings.personality==='teasing'
-          ?['ウッ ヤラレタ……','ヤルネ ツギハマケナイヨ。','コレハクヤシイ。','チョットユダンダカナ。','ウマクヤッタネ。','フフ ツギハチガウヨ。']
+          ?['ウッ ヤラレタ……','ヤルネ ツギワマケナイヨ。','コレワクヤシイ。','チョットユダンダカナ。','ウマクヤッタネ。','フフ ツギワチガウヨ。']
           :settings.personality==='friendly'
             ?['オメデトウ！ツヨイネ。','マケチャッタ イイショウブ！','カッタネ オメデトウ。','タノシカッタヨ。','マタショウブシヨウ。','ステキナテダッタ。']
-            :['ウッ……ツヨイ。','ナルホド……ヤラレタ。','マケタカ……','ミゴトダヨ。','アノテガヨカッタ。','ツギハガンバル。'];
+            :['ウッ……ツヨイ。','ナルホド……ヤラレタ。','マケタカ……','ミゴトダヨ。','アノテガヨカッタ。','ツギワガンバル。'];
         const situation=state.otherFive
-          ?['ゴレンデキマッタ！','ソコマデヨンデタノ？','アッ ゴメン マケタ。','ゴレンハツヨイ。','ミゴトナイッテ。','ソレハトメラレナイ。']
+          ?['ゴレンデキマッタ！','ソコマデヨンデタノ？','アッ ゴメン マケタ。','ゴレンワツヨイ。','ミゴトナイッテ。','ソレワトメラレナイ。']
           :state.otherFours>=3
-            ?['サンボンソロッタカ。','センヲミオトシタ。','キレイニツナイダネ。','ウッ ヨマレタ。','ソノカタチハミゴト。','マイッタ ヤルネ。']
+            ?['サンボンソロッタカ。','センオミオトシタ。','キレイニツナイダネ。','ウッ ヨマレタ。','ソノカタチワミゴト。','マイッタ ヤルネ。']
             :[];
         return chooseLine([...situation,...tone]);
       }
       if(result==='loss'){
         const tone=settings.personality==='teasing'
-          ?['フフ コノショウブハモラッタヨ。','ドウ？オドロイタ？','ツギハマケナイデネ。','ココマデヨンデタ。','フフッ ウマクイッタ。','マタカカッテキテ。']
+          ?['フフ コノショウブワモラッタヨ。','ドウ？オドロイタ？','ツギワマケナイデネ。','ココマデヨンデタ。','フフッ ウマクイッタ。','マタカカッテキテ。']
           :settings.personality==='friendly'
             ?['アリガトウ！タノシカッタ。','イイショウブダッタネ！','マタアソボウネ。','ギリギリダッタヨ。','キミモツヨカッタ。','タノシイショウブダッタ。']
             :['ヨシッ カッタ。','フウ……ヤッタ。','ナントカトドイタ。','アブナカッタ。','コレデイッポン。','ツギモガンバル。'];
@@ -516,7 +529,7 @@
             :[];
         return chooseLine([...situation,...tone]);
       }
-      return chooseLine(['ヒキワケカ。','アララ オアイコ。','ウーン……モウイッカイ。','ドッチモユズラナイネ。','モウイチドショウブ。','キレイニナランダネ。','コレハサイセンカ。','マダオワラナイヨ。','ツギデキメヨウ。']);
+      return chooseLine(['ヒキワケカ。','アララ オアイコ。','ウーン……モウイッカイ。','ドッチモユズラナイネ。','モウイチドショウブ。','キレイニナランダネ。','コレワサイセンカ。','マダオワラナイヨ。','ツギデキメヨウ。']);
     }
     const bracketLayout={cardWidth:38,cardHeight:36,step:53,slot:37,margin:4,top:32,gap:19,championY:16};
     function bracketWidth(size){
@@ -526,7 +539,7 @@
     function bracketPosition(size,level,index,character){
       const {cardWidth,cardHeight,step,slot,margin,top,championY,gap}=bracketLayout;
       const roundCount=Math.log2(size),width=bracketWidth(size);
-      const name=character===null?playerName():character==='TBD'?'—':character?.name||'';
+      const name=character===null?(watchMode?watchLeft.name:playerName()):character==='TBD'?'—':character?.name||'';
       const ownWidth=character===null||character==='TBD'?cardHeight:Math.max(19,Math.min(cardWidth,Math.ceil(name.length*8.3+4)));
       if(level===roundCount)return {x:(width-ownWidth)/2,y:championY,width:ownWidth};
       const sideCount=size/2**(level+1),right=index>=sideCount;
@@ -537,7 +550,7 @@
         y:top+((index%sideCount)+.5)*2**level*slot,width:ownWidth};
     }
     function appendBracketFace(entry,character){
-      if(character===null&&player){
+      if(character===null&&!watchMode&&player){
         const portrait=document.createElement('span');portrait.className='bracket-portrait bracket-player-portrait';
         for(const key of ['skin','hair','cloth']){
           const canvas=document.createElement('canvas');canvas.width=16;canvas.height=16;canvas.className='portrait-layer';
@@ -549,7 +562,8 @@
           const image=document.createElement('img');image.src=player.files[key][playerSelection[key]];image.alt='';portrait.append(image);
         }
         entry.append(portrait);
-      }else if(character&&character!=='TBD'){
+      }else if((character||watchLeft)&&character!=='TBD'){
+        if(character===null)character=watchLeft;
         const portrait=document.createElement('span');portrait.className='bracket-portrait';
         for(const file of ['characters/'+character.file,
           'characters/player-parts/'+character.eyes+'.png',
@@ -558,14 +572,14 @@
         }
         entry.append(portrait);
       }
-      const label=document.createElement('span');label.textContent=character===null?playerName():character==='TBD'?'—':character.name;
+      const label=document.createElement('span');label.textContent=character===null?(watchMode?watchLeft.name:playerName()):character==='TBD'?'—':character.name;
       entry.append(label);
     }
     function renderBattleHistory(){
       const list=byId('recap-battles');list.replaceChildren();
-      list.hidden=tournament.random||!tournament.battles.length;
+      list.hidden=watchMode||tournament.random||!tournament.battles.length;
       if(list.hidden)return;
-      const heading=document.createElement('strong');heading.className='recap-battles-heading';heading.textContent=playerName()+' MATCHES';
+      const heading=document.createElement('strong');heading.className='recap-battles-heading';heading.textContent=(watchMode?watchLeft.name:playerName())+' MATCHES';
       list.append(heading);
       for(const battle of tournament.battles){
         const card=document.createElement('div');card.className='recap-battle '+battle.result;
@@ -597,7 +611,7 @@
       if(tournament.random){
         container.replaceChildren();
         container.hidden=true;
-        byId('recap-title').textContent=outcome==='win'?'VICTORY':outcome==='loss'?'ELIMINATED':'DRAW';
+        byId('recap-title').textContent=outcome==='win'?'VICTORY':outcome==='loss'?'LOSE':'DRAW';
         byId('recap-subtitle').textContent=outcome==='draw'?'REPLAY THE MATCH':'RANDOM MATCH COMPLETE';
         return;
       }
@@ -626,7 +640,7 @@
         entry.bracketCharacter=character;entry.bracketRound=level;
         entry.bracketX=position.x;entry.bracketY=position.y;
         entry.className='bracket-entry'+(character===null?' you':'')+(character==='TBD'?' pending':'')
-          +(revealedCount>0&&level===filledRounds-1?' winner promoted':'')
+          +(revealedCount>0&&level===filledRounds-1&&character!=='TBD'?' winner promoted':'')
           +(level===roundCount&&character!=='TBD'?' champion':'')
           +(outcome==='loss'&&level===tournament.round&&index===tournament.bracket.indexOf(null)?' out':'');
         entry.setAttribute('style',`left:${position.x}px;top:${position.y-cardHeight/2}px;width:${position.width}px;height:${cardHeight}px;--delay:${level*170+Math.min(index,16)*16}ms`);
@@ -659,9 +673,9 @@
           const rightParentIndex=count/2+pair;
           const rightParent=bracketPosition(size,level+1,rightParentIndex,rounds[level+1][rightParentIndex]);
           const active=level<filledRounds-1;
-          connectPair(leftFirst,leftSecond,leftParent,false,active,
+          connectPair(leftFirst,leftSecond,leftParent,false,active&&rounds[level+1][pair]!=='TBD',
             rounds[level][pair*2]===rounds[level+1][pair],level*170);
-          connectPair(rightFirst,rightSecond,rightParent,true,active,
+          connectPair(rightFirst,rightSecond,rightParent,true,active&&rounds[level+1][rightParentIndex]!=='TBD',
             rounds[level][count+pair*2]===rounds[level+1][rightParentIndex],level*170);
         }
       }
@@ -680,24 +694,30 @@
       centerBracket();
       byId('recap-title').textContent=outcome==='win'
         ?(tournament.bracket.length===2?'CHAMPION':'ROUND CLEARED')
-        :outcome==='loss'?'ELIMINATED':'DRAW';
+        :outcome==='loss'?'LOSE':'DRAW';
       byId('recap-subtitle').textContent=outcome==='draw'
         ?'THE MATCH WILL BE REPLAYED'
-        :outcome==='win'&&tournament.bracket.length===2?playerName()+' WON THE TOURNAMENT'
+        :outcome==='win'&&tournament.bracket.length===2?(watchMode?watchLeft.name:playerName())+' WON THE TOURNAMENT'
         :outcome==='win'?'ADVANCING TO ROUND '+(tournament.round+2)
         :filledRounds===roundCount+1?rounds[roundCount][0].name+' WINS THE CUP'
-        :'THE BRACKET CONTINUES WITHOUT '+playerName();
+        :'THE BRACKET CONTINUES WITHOUT '+(watchMode?watchLeft.name:playerName());
+      if(watchMode){
+        const winner=outcome==='win'?watchLeft:opponent;
+        byId('recap-title').textContent=tournament.bracket.length===2?'CHAMPION':'MATCH '+(tournament.matchIndex+1)+' / '+(tournament.bracket.length/2);
+        byId('recap-subtitle').textContent=tournament.bracket.length===2?winner.name+' WINS THE CUP':winner.name+' WIN';
+      }
       if(filledRounds===roundCount+1){
         const champion=rounds[roundCount][0],own=champion===null;
-        byId('bracket-crowning-name').textContent=(own?playerName():champion.name)+' CHAMPION';
-        byId('bracket-champion-player').hidden=!own;
+        byId('bracket-crowning-name').textContent=(own?(watchMode?watchLeft.name:playerName()):champion.name)+' CHAMPION';
+        byId('bracket-champion-player').hidden=!own||watchMode;
         for(const id of ['bracket-champion-face','bracket-champion-expression','bracket-champion-tint','bracket-champion-scanlines'])
-          byId(id).hidden=own;
-        if(own){if(player)paintPlayer('bracket-champion-player','win');}
+          byId(id).hidden=own&&!watchMode;
+        if(own&&!watchMode){if(player)paintPlayer('bracket-champion-player','win');}
         else{
-          byId('bracket-champion-face').src='characters/'+champion.file;
-          byId('bracket-champion-expression').src='characters/'+champion.winFile;
-          drawScanlines(champion.winMask,'bracket-champion-scanlines');
+          const winner=own?watchLeft:champion;
+          byId('bracket-champion-face').src='characters/'+winner.file;
+          byId('bracket-champion-expression').src='characters/'+winner.winFile;
+          drawScanlines(winner.winMask,'bracket-champion-scanlines');
         }
         const confetti=byId('bracket-confetti');confetti.replaceChildren();
         for(let n=0;n<48;n++){
@@ -743,18 +763,40 @@
         renderBracket(step);
         if(step<tournament.revealRounds.length)
           setTimeout(()=>animateBracketReveal(step+1,token),550);
-        else byId('match-actions').hidden=false;
+        else if(watchMode){
+          if(winners.length===1)audio.setMusic('victory');
+          setTimeout(()=>{
+            if(token!==matchToken||!tournament||byId('tournament-recap').hidden)return;
+            if(outcome==='win'&&tournament.bracket.length>2)advanceTournament();
+            else startTournament(32,true);
+          },2400);
+        }else{
+          if(winners.length===1&&outcome==='loss')audio.setMusic('victory');
+          byId('match-actions').hidden=false;
+        }
       },duration+(winners.length-1)*stagger+150);
     }
     function showVictoryEffect(){
-      const orbit=byId('win-orbit');
+      const orbit=byId(outcome==='loss'?'enemy-win-orbit':'win-orbit');
       if(!orbit.children.length)for(let n=0;n<11;n++){
         const block=document.createElement('i');
         block.setAttribute('style',`--angle:${n*360/11}deg`);
         orbit.append(block);
       }
       orbit.hidden=false;
-      const champion=!tournament.random&&tournament.bracket.length===2;
+      if(outcome==='loss')return;
+      if(!watchMode){
+        const confetti=byId('match-confetti'),pieces=[];
+        for(let n=0;n<56;n++){
+          const piece=document.createElement('i'),fromLeft=n%2===0;
+          piece.className='match-confetti-piece';
+          const spin=(fromLeft?1:-1)*(280+(n*41)%520);
+          piece.setAttribute('style',`--origin:${fromLeft?0:100}%;--apex-x:${fromLeft?'':'-'}${14+(n*17)%45}vw;--land-x:${fromLeft?'':'-'}${24+(n*23)%54}vw;--apex-y:-${28+(n*13)%43}vh;--mid-spin:${spin*.55}deg;--spin:${spin}deg;--duration:${2.2+(n%8)*.16}s;--delay:${(n%12)*.045}s;--hue:${n%4===0?47:n%4===1?153:n%4===2?345:190}`);
+          pieces.push(piece);
+        }
+        confetti.replaceChildren(...pieces);confetti.hidden=false;
+      }
+      const champion=!watchMode&&!tournament.random&&tournament.bracket.length===2;
       byId('board-frame').className='board-frame win-flash'+(champion?' champion-result':'');
       if(champion){
         const particles=[];
@@ -774,19 +816,20 @@
     }
     function showRecap(){
       if(!ended||!tournament||flightIndex>=0||!byId('tournament-recap').hidden)return;
-      if(watchMode){startRandomMatch();return;}
       byId('continue-overlay').hidden=true;byId('back').hidden=false;
-      byId('victory-effect').hidden=true;byId('win-orbit').hidden=true;
+      byId('victory-effect').hidden=true;byId('win-orbit').hidden=true;byId('enemy-win-orbit').hidden=true;byId('match-confetti').hidden=true;
       byId('board-frame').className='board-frame';
       byId('tournament-recap').hidden=false;
       renderBracket(0);
-      audio.setMusic('bracket');
-      byId('match-actions').hidden=outcome==='loss'&&!!tournament.revealRounds;
+      audio.setMusic(outcome==='win'&&!watchMode&&!tournament.random&&tournament.bracket.length===2?'victory':'bracket');
+      byId('match-actions').hidden=watchMode||(outcome==='loss'&&!!tournament.revealRounds);
+      byId('next-match').hidden=!watchMode&&outcome==='win'&&tournament.bracket.length===2;
       if(tournament.revealRounds)animateBracketReveal(1,matchToken);
+      else if(watchMode)setTimeout(()=>{if(tournament&&byId('tournament-recap').hidden===false)startMatch();},1800);
     }
     function scheduleRecap(){
       const token=matchToken;
-      const pause=(outcome==='win'?5200:3800)*(watchMode?3:1);
+      const pause=(outcome==='win'?5200:3800)*(watchMode?1.5:1);
       const advance=()=>{
         if(token!==matchToken||!ended||!tournament)return;
         if(flightIndex>=0){setTimeout(advance,80);return;}
@@ -1053,10 +1096,11 @@
         drawScanlines(leftMask,'watch-left-scanlines');
       }
       setPlayerExpression(outcome==='win'?'win':outcome==='loss'?'lose':'normal');
+      if(outcome==='win'&&!watchMode&&!tournament.random&&tournament.bracket.length===2)audio.setMusic('victory');
       maybeSay(resultLine(outcome),1,true);
       if(watchMode){ const token=matchToken, leftResult=outcome==='win'?'loss':outcome==='loss'?'win':'draw'; setTimeout(()=>{if(token===matchToken&&ended&&watchMode) maybeSay(lineFor(watchLeft,()=>resultLine(leftResult,HUMAN)),1,true,watchLeft);},1400); }
       render();
-      if(outcome==='win')showVictoryEffect();
+      if(outcome==='win'||outcome==='loss')showVictoryEffect();
       if(watchMode)scheduleRecap();else{byId('continue-overlay').hidden=false;byId('back').hidden=true;}
     }
     function play(i,player){
@@ -1094,10 +1138,11 @@
         const leftName=watchMode?watchLeft.name:playerName();
         const champion=outcome==='win'&&!tournament.random&&tournament.bracket.length===2;
         const status=champion?'CHAMPION':outcome==='win'?leftName+' WIN':outcome==='loss'?leftName+' LOSE':'DRAW';
-        result.textContent=status+(watchMode?' · NEXT MATCH SOON':' · TAP TO CONTINUE');
-        result.setAttribute('aria-label',status+' · '+reason+(watchMode?' · next match soon':' · tap to continue'));
+        result.textContent=status+(watchMode?'':' · TAP TO CONTINUE');
+        result.setAttribute('aria-label',status+' · '+reason+(watchMode?'':' · tap to continue'));
         byId('next-match').textContent=tournament.random?(outcome==='draw'?'REPLAY MATCH':'NEW MATCH'):outcome==='win'?'NEXT MATCH':outcome==='loss'?'TRY AGAIN':'REPLAY MATCH';
-        if(champion)byId('next-match').textContent='PLAY AGAIN';
+        if(champion||outcome==='loss'&&!tournament.random)byId('next-match').textContent='PLAY AGAIN';
+        byId('next-match').hidden=champion&&!watchMode;
       }
     }
     function scheduleCom(){
@@ -1237,6 +1282,7 @@
       getTournament:()=>tournament&&{size:tournament.type.size,round:tournament.round,day:tournament.day,cup:tournament.cup,opponent:opponent.name,
         playerIndex:tournament.bracket.indexOf(null),firstPlayer:tournament.bracket.indexOf(null)%2===0?'player':'opponent',
         entrants:tournament.bracket.filter(Boolean).map(character=>character.name),
-        ranks:tournament.bracket.filter(Boolean).map(character=>character.profile.rank)},
+        ranks:tournament.bracket.filter(Boolean).map(character=>character.profile.rank),
+        levels:tournament.bracket.filter(Boolean).map(character=>character.profile.level)},
       getBoard:()=>board.slice()};
   })();

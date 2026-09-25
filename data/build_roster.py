@@ -10,23 +10,17 @@ characters = manifest['characters']
 assert len(characters) == 99
 order = sorted(characters, key=lambda c: hashlib.sha256(c['name'].encode()).digest())
 for index, character in enumerate(order):
-    tier = ('beginner', 'regular', 'champion')[index // 33]
+    level = min(5, index // 20 + 1)
+    tier = 'beginner' if level <= 2 else 'regular' if level <= 4 else 'champion'
     seed = hashlib.sha256(('GRAVITYFOUR:' + character['name']).encode()).digest()
     varied = lambda offset, low, high: low + seed[offset] % (high - low + 1)
-    if tier == 'beginner':
-        strength = varied(0, 20, 42)
-        depth = 1
-        mistake = varied(1, 19, 39)
-    elif tier == 'regular':
-        strength = varied(0, 43, 68)
-        depth = 2
-        mistake = varied(1, 7, 18)
-    else:
-        strength = varied(0, 69, 95)
-        depth = 3
-        mistake = varied(1, 0, 6)
+    strength_ranges = [(18, 32), (33, 47), (48, 63), (64, 79), (80, 95)]
+    mistake_ranges = [(58, 73), (42, 58), (33, 47), (25, 38), (12, 23)]
+    strength = varied(0, *strength_ranges[level - 1])
+    depth = 1 if level <= 2 else 2 if level <= 4 else 3
+    mistake = varied(1, *mistake_ranges[level - 1])
     character['profile'] = {
-        'rank': tier, 'strength': strength, 'depth': depth,
+        'rank': tier, 'level': level, 'strength': strength, 'depth': depth,
         'mistake': mistake,
         'attack': varied(2, 20, 100),
         'defense': varied(3, 20, 100),
@@ -61,18 +55,6 @@ for character in characters:
     character['profile']['tearful'] = False
 for character in sorted(characters, key=lambda c: (-c['profile']['expressiveness'], c['name']))[:20]:
     character['profile']['tearful'] = True
-
-# Ease the strongest 60 opponents while preserving the weaker 39 profiles.
-for character in sorted(characters, key=lambda c: (-c['profile']['strength'], c['name']))[:60]:
-    character['profile']['mistake'] = min(100, character['profile']['mistake'] + 14)
-
-# Keep the two entry-level tiers more forgiving without changing champions.
-for character in characters:
-    profile = character['profile']
-    if profile['rank'] == 'beginner':
-        profile['mistake'] = min(100, profile['mistake'] + 20)
-    elif profile['rank'] == 'regular':
-        profile['mistake'] = min(100, profile['mistake'] + 18)
 
 manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 roster = [{'id': c['id'], 'name': c['name'], 'file': c['file'], 'hair': c['hair'],
