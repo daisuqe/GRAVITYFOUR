@@ -80,6 +80,10 @@ const viewing=boot(false,0);
 viewing.elements.get('watch-button').onclick();
 assert.equal(viewing.elements.get('stage').hidden,false,'watch mode opens the match');
 assert.equal(viewing.game.getTournament().size,32,'watch mode opens the champion tournament');
+assert.equal(viewing.game.getTournament().playerIndex,-1,'the player never enters the watch bracket');
+assert.equal(viewing.game.getTournament().entrants.length,32,'a COM fills every watch bracket slot');
+assert.equal(viewing.elements.get('player-portrait-stack').hidden,true,'the player portrait is hidden in watch mode');
+assert.equal(viewing.elements.get('watch-portrait-stack').hidden,false,'the COM portrait is shown in watch mode');
 assert.notEqual(viewing.elements.get('score-player-name').textContent,'YOU','watch mode chooses a COM for the green side');
 assert.notEqual(viewing.elements.get('score-player-name').textContent,viewing.elements.get('score-opponent-name').textContent,'the watching COMs differ');
 assert.match(viewing.elements.get('watch-left-face').src,/^characters\//,'the left COM has its own portrait');
@@ -114,8 +118,46 @@ looping.timers.pop()();
 assert.equal(looping.elements.get('tournament-recap').hidden,false,'watch mode animates the champion bracket');
 while(looping.elements.get('bracket-rounds').children[0]?.children.some(child=>child.className.includes('bracket-traveler'))){looping.timers.shift()();}
 looping.timers.shift()();
-assert.equal(looping.game.getTournament().round,1,'watch mode advances through the tournament');
+assert.equal(looping.game.getTournament().round,0,'watch mode stays in the round after one match');
+assert.equal(looping.game.getTournament().matchIndex,1,'watch mode advances to the next pairing');
+assert.equal(looping.elements.get('round-intro-title').textContent,'MATCH 2','later pairings show match numbers without replaying the round announcement');
+assert.equal(looping.elements.get('round-intro-count').textContent,'(2/16)','watch mode counts all first-round games');
+assert.equal(looping.game.getTournament().entrants.length,32,'all thirty-two entrants remain in the watched bracket');
 assert.equal(watchStorage.has('gravityfour-history-v1'),false,'watch mode does not alter records');
+let watchedMatches=1;
+for(let round=0;round<5;round++){
+  const pairs=16/2**round;
+  for(let pair=round===0?1:0;pair<pairs;pair++){
+    const state=looping.game.getTournament();
+    assert.equal(state.round,round,'watch mode follows every round');
+    assert.equal(state.matchIndex,pair,'watch mode follows every pairing in bracket order');
+    looping.timers.pop()(); // Round or match introduction.
+    for(let col=0;col<5;col++)assert.equal(looping.play(col,1),true);
+    looping.timers.pop()(); // Post-match pause.
+    const moving=looping.elements.get('bracket-rounds').children[0];
+    assert.equal(moving.children.filter(child=>child.className.includes('bracket-traveler')).length,1,
+      'exactly one winner travels after each watched match');
+    looping.timers.pop()(); // Winner reaches the next slot.
+    looping.timers.pop()(); // Continue to the next pairing.
+    watchedMatches++;
+  }
+}
+assert.equal(watchedMatches,31,'watch mode shows all thirty-one matches');
+assert.equal(looping.game.getTournament().round,0,'watch mode starts another tournament after the final');
+assert.equal(looping.game.getTournament().matchIndex,0,'the new tournament starts at its first pairing');
+const rightWatch=boot(false,0);
+rightWatch.elements.get('watch-button').onclick();
+rightWatch.timers.shift()();
+const rightWinner=rightWatch.game.getTournament().opponent;
+for(let col=0;col<5;col++)assert.equal(rightWatch.play(col,2),true);
+assert.equal(rightWatch.elements.get('enemy-win-orbit').hidden,false,'the right watcher celebrates its win');
+rightWatch.timers.pop()();
+const traveler=rightWatch.elements.get('bracket-rounds').children[0].children.find(child=>child.className.includes('bracket-traveler'));
+assert.equal(traveler.children.at(-1).textContent,rightWinner,'the right winner is the one promoted');
+rightWatch.timers.pop()();
+assert.equal(rightWatch.elements.get('recap-subtitle').textContent,rightWinner+' WIN','the watched result names the winner');
+rightWatch.timers.pop()();
+assert.equal(rightWatch.game.getTournament().matchIndex,1,'right-side wins also continue to the next match');
 
 const defending=boot(false,0);defending.game.startTournament(8);defending.timers.shift()();
 for(const cell of [0,1,2,9,10,11])defending.play(cell,1);

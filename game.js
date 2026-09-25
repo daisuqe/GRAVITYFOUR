@@ -285,7 +285,7 @@
       const bracket=counts.flatMap((count,index)=>selectLevel(index+1,count,seed));
       for(let i=bracket.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bracket[i],bracket[j]]=[bracket[j],bracket[i]];}
       if(!watching)bracket.splice(Math.floor(Math.random()*size),0,null);
-      tournament={type,day,cup:details[0],round:0,matchIndex:0,bracket,history:[bracket],battles:[]};
+      tournament={type,day,cup:details[0],round:0,matchIndex:0,watchPreviousWinners:null,bracket,history:[bracket],battles:[]};
       byId('menu').hidden=true;byId('stage').hidden=false;
       startMatch();
     }
@@ -304,6 +304,8 @@
     function startMatch(){
       matchToken++;introActive=true;
       byId('stage').className=watchMode?'stage watching':'stage';
+      byId('player-portrait-stack').hidden=watchMode;
+      byId('watch-portrait-stack').hidden=!watchMode;
       board=new Uint8Array(N*ROWS);turn=watchMode||tournament.bracket.indexOf(null)%2===0?HUMAN:COM;ended=false;thinking=false;
       setPlayerExpression('normal');
       winningCells=new Set();hoverIndex=-1;selectedIndex=-1;lastComMove=-1;endedByScore=false;outcome=null;
@@ -355,13 +357,17 @@
       }
       byId('speech').hidden=true;byId('watch-speech').hidden=true;watchLeftHasSpoken=false;
       const round=tournament.round,token=matchToken;
+      const roundOpening=!watchMode||tournament.matchIndex===0;
       byId('round-intro-tournament').textContent=tournament.type.label+'\nTOURNAMENT';
-      byId('round-intro-tournament').hidden=tournament.random;
-      byId('round-intro-title').textContent=tournament.random?'RANDOM MATCH':['1ST','2ND','3RD','4TH','5TH'][round]+' ROUND';
-      byId('round-intro-count').textContent=tournament.random?'':'('+(round+1)+'/'+Math.log2(tournament.type.size)+')';
+      byId('round-intro-tournament').hidden=tournament.random||!roundOpening;
+      byId('round-intro-title').textContent=watchMode&&!roundOpening?'MATCH '+(tournament.matchIndex+1)
+        :tournament.random?'RANDOM MATCH':['1ST','2ND','3RD','4TH','5TH'][round]+' ROUND';
+      byId('round-intro-count').textContent=tournament.random?'':watchMode&&!roundOpening
+        ?'('+(tournament.matchIndex+1)+'/'+(tournament.bracket.length/2)+')'
+        :'('+(round+1)+'/'+Math.log2(tournament.type.size)+')';
       byId('round-intro').hidden=false;
       audio.setMusic('off');
-      const duration=audio.speak(tournament.random?'ランダムマッチ':['ファーストラウンド','セカンドラウンド','サードラウンド','フォースラウンド','フィフスラウンド'][round],'announcer');
+      const duration=roundOpening?audio.speak(tournament.random?'ランダムマッチ':['ファーストラウンド','セカンドラウンド','サードラウンド','フォースラウンド','フィフスラウンド'][round],'announcer'):0;
       render();
       setTimeout(()=>{
         if(token!==matchToken||!tournament)return;
@@ -371,7 +377,7 @@
         render();
         if(turn===COM)setTimeout(()=>{if(token===matchToken&&!ended&&turn===COM)scheduleCom();},1800*(watchMode?3:1));
         else if(watchMode)scheduleWatchMove();
-      },Math.max(1700,duration+350)*(watchMode?1.5:1));
+      },watchMode&&!roundOpening?950:Math.max(1700,duration+350)*(watchMode?1.5:1));
     }
     function simulatedWinner(first,second,index,round=tournament.round){
       const chance=1/(1+Math.exp((second.profile.strength-first.profile.strength)/12));
@@ -382,6 +388,7 @@
       const previous=tournament.bracket;
       if(watchMode){
         if(!pendingWinners)pendingWinners=Array(previous.length/2).fill('TBD');
+        tournament.watchPreviousWinners=pendingWinners.slice();
         pendingWinners[tournament.matchIndex]=outcome==='win'?watchLeft:opponent;
         tournament.revealRounds=[pendingWinners.slice()];
         return;
@@ -413,6 +420,7 @@
       tournament.history.push(pendingWinners);
       tournament.round++;
       tournament.matchIndex=0;
+      tournament.watchPreviousWinners=null;
       pendingWinners=null;
       startMatch();
     }
@@ -617,7 +625,9 @@
       }
       const size=tournament.type.size,roundCount=Math.log2(size),depth=roundCount-1;
       container.hidden=false;
-      const rounds=tournament.history.concat((tournament.revealRounds||[]).slice(0,revealedCount));
+      const watchBefore=watchMode&&revealedCount===0&&tournament.watchPreviousWinners
+        ?[tournament.watchPreviousWinners]:[];
+      const rounds=tournament.history.concat(watchBefore.length?watchBefore:(tournament.revealRounds||[]).slice(0,revealedCount));
       const filledRounds=rounds.length;
       while(rounds.length<=roundCount)rounds.push(Array(rounds[rounds.length-1].length/2).fill('TBD'));
       const {cardWidth,cardHeight,slot,top}=bracketLayout;
@@ -683,7 +693,7 @@
 
       const leftFinal=bracketPosition(size,depth,0,rounds[depth][0]);
       const rightFinal=bracketPosition(size,depth,1,rounds[depth][1]);
-      const axis=width/2,finalY=leftFinal.y,championKnown=filledRounds>roundCount;
+      const axis=width/2,finalY=leftFinal.y,championKnown=filledRounds>roundCount&&champion!=='TBD';
       line(leftFinal.x+leftFinal.width,finalY,axis,finalY,
         championKnown&&rounds[depth][0]===champion,depth*170);
       line(axis,finalY,rightFinal.x,finalY,
@@ -706,7 +716,7 @@
         byId('recap-title').textContent=tournament.bracket.length===2?'CHAMPION':'MATCH '+(tournament.matchIndex+1)+' / '+(tournament.bracket.length/2);
         byId('recap-subtitle').textContent=tournament.bracket.length===2?winner.name+' WINS THE CUP':winner.name+' WIN';
       }
-      if(filledRounds===roundCount+1){
+      if(championKnown){
         const champion=rounds[roundCount][0],own=champion===null;
         byId('bracket-crowning-name').textContent=(own?(watchMode?watchLeft.name:playerName()):champion.name)+' CHAMPION';
         byId('bracket-champion-player').hidden=!own||watchMode;
@@ -1300,8 +1310,8 @@
       },30000);
     }
     window.GravityFour={legalMoves,wins,evaluate,settings,presets,startTournament,
-      getTournament:()=>tournament&&{size:tournament.type.size,round:tournament.round,day:tournament.day,cup:tournament.cup,opponent:opponent.name,
-        playerIndex:tournament.bracket.indexOf(null),firstPlayer:tournament.bracket.indexOf(null)%2===0?'player':'opponent',
+      getTournament:()=>tournament&&{size:tournament.type.size,round:tournament.round,matchIndex:tournament.matchIndex,day:tournament.day,cup:tournament.cup,opponent:opponent.name,
+        playerIndex:tournament.bracket.indexOf(null),firstPlayer:watchMode?'upper':tournament.bracket.indexOf(null)%2===0?'player':'opponent',
         entrants:tournament.bracket.filter(Boolean).map(character=>character.name),
         ranks:tournament.bracket.filter(Boolean).map(character=>character.profile.rank),
         levels:tournament.bracket.filter(Boolean).map(character=>character.profile.level)},

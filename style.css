@@ -946,8 +946,8 @@ html, body, button, a { touch-action: manipulation; }
 .stage.watching .win-orbit { animation-duration: 8s; }
 .stage.watching .win-orbit i { animation-duration: 8s, 2.2s; }
 .round-intro #round-intro-tournament { text-shadow: 0 0 5px #52ffac73; }
-.beginner .choice-trophy { filter: sepia(1) saturate(2.5) hue-rotate(-15deg) brightness(1.04) drop-shadow(0 0 5px #d18a50aa); }
-.tournament-choice.beginner { --trophy-color: #c4935a; }
+.beginner .choice-trophy { filter: sepia(1) saturate(3.3) hue-rotate(-36deg) brightness(.72) drop-shadow(0 0 2px #9e4b42a0); }
+.tournament-choice.beginner { --trophy-color: #a75849; }
 /* Fill the display for the champion reveal, then fade back to the final board. */
 .victory-effect.champion { background: radial-gradient(circle at 50% 48%, #8b783c 0, #3b3d24 23%, #12281f 52%, #030c09 100%); animation: champion-overlay-window 5s .25s both; }
 .victory-effect.champion::before { opacity: .55; background: repeating-conic-gradient(from 0deg at 50% 50%, #fce4a842 0deg 3deg, transparent 3deg 15deg); animation: champion-rays 5s ease-out .25s both; }
@@ -1008,3 +1008,21 @@ html, body, button, a { touch-action: manipulation; }
 .stage.watching .player-portrait #watch-thinking i:nth-child(4) { left: auto; top: 8px; }
 .stage.watching .player-portrait #watch-thinking i:nth-child(2),
 .stage.watching .player-portrait #watch-thinking i:nth-child(3) { left: auto; top: 2px; }
+/* Fit mobile pages inside the visible viewport while browser chrome is showing. */
+@media (hover: none), (pointer: coarse) {
+  html, body { height: 100%; min-height: 0; overflow: hidden; overscroll-behavior: none; }
+  body { height: 100dvh; }
+  .app { height: 100%; min-height: 0; overflow: hidden; padding-top: calc(1.5svh + env(safe-area-inset-top)); padding-bottom: calc(2svh + env(safe-area-inset-bottom)); }
+  .app:has(.stage:not([hidden])) { padding-bottom: calc(65px + env(safe-area-inset-bottom)); }
+  .menu, .editor-view, .history-view, .history-log-view { height: 100%; min-height: 0; max-height: 100%; }
+  .menu { --menu-action-height: clamp(34px, 5.5dvh, 56px); gap: clamp(3px, .7dvh, 9px); }
+  .menu .tournament-choice { padding-block: 4px; }
+  .editor-panel, .history-panel, .history-log-panel { max-height: 100%; }
+  .stage { height: 100%; overflow: hidden; }
+  .board-column { width: min(100%, max(220px, calc(100dvh - 370px))); }
+  .tournament-recap { padding-top: calc(1.5svh + env(safe-area-inset-top)); padding-bottom: calc(2svh + env(safe-area-inset-bottom)); }
+  .recap-card { max-height: 100%; }
+  .bracket-rounds.full-bracket { height: min(65dvh, 620px); max-height: min(65dvh, 620px); }
+  .place-button { bottom: calc(1.5svh + env(safe-area-inset-bottom)); }
+  .help-page { height: 100%; overflow-y: auto; overscroll-behavior: contain; padding-top: calc(1.5svh + env(safe-area-inset-top)); padding-bottom: calc(2svh + env(safe-area-inset-bottom)); }
+}
