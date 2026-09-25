@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import hashlib
+import unicodedata
 import struct
 import zlib
 
@@ -116,6 +117,8 @@ def load_psd(path):
                 group_type = struct.unpack_from(">I", content)[0]
         if r.pos != extra_end:
             raise ValueError(f"Invalid layer extra length at {index}: {r.pos} vs {extra_end}")
+        if name.startswith("hair"):
+            name = unicodedata.normalize("NFKC", name)
         layers.append({
             "index": index, "name": name, "group_type": group_type,
             "box": (left, top, right, bottom), "channels": channel_specs,

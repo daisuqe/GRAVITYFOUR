@@ -67,6 +67,7 @@ const pitchRange=Array.from({length:19},(_,index)=>pitchFrom(index+1));
 assert.ok(Math.max(...pitchRange)-Math.min(...pitchRange)>=150,'character voices span a clearly wider pitch range');
 for(const hair of ['hair1','hair2','hair10','hair11'])assert.ok(pitchFrom(1,hair)>Math.max(...pitchRange),'selected hair always uses a high voice: '+hair);
 assert.equal(pitchFrom(1,'hair11'),pitchFrom(1,'hair11'),'the high hair voice stays at its assigned pitch');
+assert.ok(pitchFrom(1,'hair3w')>pitchFrom(1,'hair8m'),'gendered hair styles select female and male voice ranges');
 audio.speak('ヨロシク','character',1);
 const regularPace=voices.at(-1).buffer.mora;
 assert.ok(regularPace>=144&&regularPace<=156,'ordinary lines use the source engine natural mora length');

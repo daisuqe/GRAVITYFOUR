@@ -29,7 +29,7 @@ def main():
     palettes = {part: ["#" + bytes(color).hex().upper()
                        for color in palette(psd, part + " color")]
                 for part in ("skin", "hair", "cloth")}
-    defaults = {"hair": "hair6", "eyes": "eye15", "mouth": "mouth1",
+    defaults = {"hair": "hair6w", "eyes": "eye15", "mouth": "mouth1",
                 "skinColor": palettes["skin"][1], "hairColor": "#000000",
                 "clothColor": palettes["cloth"][5]}
     output = PROJECT / "characters" / "player-parts"

@@ -59,13 +59,13 @@ get('editor-name').value='';get('editor-name').oninput();get('editor-name').onbl
 assert.equal(get('editor-name').value,'ABCD','an empty name restores the last valid name');
 assert.doesNotMatch(page,/<select\b/,'the editor uses visual buttons instead of dropdowns');
 assert.doesNotMatch(page,/id="editor-(?:tint|scanlines)"/,'the editor preview has no remote effect');
-assert.equal(get('editor-hair-options').children.length,11);
-assert.equal(get('editor-eyes-options').children.length,15);
+assert.equal(get('editor-hair-options').children.length,15);
+assert.equal(get('editor-eyes-options').children.length,18);
 assert.equal(get('editor-mouth-options').children.length,9);
 assert.equal(get('editor-hair-options').children[0].children[0].image.data.length,16*16*4,'hair choices are painted as images');
 assert.equal(get('editor-eyes-options').children[0].children[0].src,window.GravityFourPlayer.files.eyes.eye1);
 for(const [id,value,part] of [
-  ['hair','hair1','hair'],['eyes','eye1','eyes'],['mouth','mouth2','mouth'],
+  ['hair','hair1w','hair'],['eyes','eye1','eyes'],['mouth','mouth2','mouth'],
   ['hair-color',window.GravityFourPlayer.palettes.hair[0],'hair'],
   ['cloth-color',window.GravityFourPlayer.palettes.cloth[0],'cloth'],
   ['skin-color',window.GravityFourPlayer.palettes.skin[0],'skin']]){
@@ -78,7 +78,15 @@ for(const [id,value,part] of [
   else assert.equal(get('player-'+part).src,get('editor-'+part).src);
   if(id.endsWith('-color'))assert.equal(paintedColor(part),value);
 }
-assert.equal(JSON.parse(storage.get('gravityfour-player-v1')).hair,'hair1');
+assert.equal(JSON.parse(storage.get('gravityfour-player-v1')).hair,'hair1w');
+const mouth8=get('editor-mouth-options').children.find(item=>item.value==='mouth8');
+assert.equal(mouth8.hidden,true,'mouth8 is unavailable with female hair');
+get('editor-hair-options').children.find(item=>item.value==='hair8m').onclick();
+assert.equal(mouth8.hidden,false,'mouth8 remains available with male hair');
+mouth8.onclick();
+get('editor-hair-options').children.find(item=>item.value==='hair1w').onclick();
+assert.equal(JSON.parse(storage.get('gravityfour-player-v1')).mouth,'mouth1','switching to female hair replaces mouth8');
+assert.equal(mouth8.hidden,true);
 const playerCard=element();window.__testAppendBracketFace(playerCard,null);
 assert.equal(playerCard.children[0].children.length,5,'bracket face combines the chosen body, eyes, and mouth');
 assert.equal(playerCard.children[1].textContent,'ABCD','bracket uses the chosen player name');

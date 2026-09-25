@@ -1,6 +1,6 @@
 {
   "source": "E:\\User\\Daisuke\\Unity\\GRAVITYFOUR\\data\\human01.psd",
-  "source_sha256": "efb78b241e95e33736df2c6fefb9ecc26d19c9fd42ab5b245092aed32af05f58",
+  "source_sha256": "29ff689f90b1471f07536ebbc540da8438a59fa4889a35b62e1da855cf66bd47",
   "seed": 20260923,
   "count": 99,
   "palette_sizes": {
@@ -225,7 +225,7 @@
       "id": 1,
       "name": "KUKA",
       "file": "KUKA.png",
-      "hair": "hair1",
+      "hair": "hair1w",
       "mouth": "mouth2",
       "eyes": "eye2",
       "colors": {
@@ -255,6 +255,7 @@
         "quirk": 2,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -300,6 +301,7 @@
         "quirk": 34,
         "personality": "reserved",
         "voice": "casual",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -315,7 +317,7 @@
       "id": 3,
       "name": "TENE",
       "file": "TENE.png",
-      "hair": "hair1",
+      "hair": "hair1w",
       "mouth": "mouth4",
       "eyes": "eye4",
       "colors": {
@@ -345,6 +347,7 @@
         "quirk": 65,
         "personality": "reserved",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -360,7 +363,7 @@
       "id": 4,
       "name": "ZEKU",
       "file": "ZEKU.png",
-      "hair": "hair8",
+      "hair": "hair8m",
       "mouth": "mouth4",
       "eyes": "eye11",
       "colors": {
@@ -390,6 +393,7 @@
         "quirk": 79,
         "personality": "eccentric",
         "voice": "plain",
+        "gender": "male",
         "tearful": false
       },
       "winFile": "win.png",
@@ -435,6 +439,7 @@
         "quirk": 70,
         "personality": "friendly",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -450,7 +455,7 @@
       "id": 6,
       "name": "PIGU",
       "file": "PIGU.png",
-      "hair": "hair11",
+      "hair": "hair11w",
       "mouth": "mouth10",
       "eyes": "eye5",
       "colors": {
@@ -480,6 +485,7 @@
         "quirk": 78,
         "personality": "eccentric",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -495,15 +501,15 @@
       "id": 7,
       "name": "NEHA",
       "file": "NEHA.png",
-      "hair": "hair8",
+      "hair": "hair12w",
       "mouth": "mouth3",
-      "eyes": "eye10",
+      "eyes": "eye16",
       "colors": {
         "hair": "#DADADA",
         "cloth": "#DDB4FF",
         "skin": "#FFCDB3"
       },
-      "sha256": "87651008e62b8b597ca9815012256b9b1412019d401a10625d77a22699b5c30f",
+      "sha256": "7b495b70e4bb4de61f70245ed395d563a3a469cf3830740dd4204923653bed2e",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -525,22 +531,23 @@
         "quirk": 98,
         "personality": "friendly",
         "voice": "quirky",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "35e9d7b7c9deed5c5acced9322e4f16aab93c8f1b3ed4cb19a0f424315dfab26",
-      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
-      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
-      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
+      "faceSha256": "5cc06cb5ed6b9938346a69a8f75c897a21b2e94e4878e8c2fe29ab9a501ea41f",
+      "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
     },
     {
       "id": 8,
       "name": "NAZI",
       "file": "NAZI.png",
-      "hair": "hair1",
+      "hair": "hair1w",
       "mouth": "mouth3",
       "eyes": "eye3",
       "colors": {
@@ -570,6 +577,7 @@
         "quirk": 13,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -585,15 +593,15 @@
       "id": 9,
       "name": "ZOME",
       "file": "ZOME.png",
-      "hair": "hair7",
+      "hair": "hair14w",
       "mouth": "mouth3",
-      "eyes": "eye9",
+      "eyes": "eye17",
       "colors": {
         "hair": "#500099",
         "cloth": "#CD0000",
         "skin": "#FFB985"
       },
-      "sha256": "872a25a1eda8ea04f15b883595158cfb6a49e7dcdf439c8e19f814ae9cbc4bd4",
+      "sha256": "3c26b9663234d2ec046c274a5ea024e850b94c120755c1d74efb99811b159683",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -615,22 +623,23 @@
         "quirk": 22,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "308ffe7ffcd2af94a69a166ab74a87362f872b084789b5cf86dd825595484234",
-      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "faceSha256": "e7d9f56aa46d5edb8fe522be6156a11cc2d12e62bf8f76a250201eb3d33fe02a",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
     },
     {
       "id": 10,
       "name": "LURI",
       "file": "LURI.png",
-      "hair": "hair10",
+      "hair": "hair10w",
       "mouth": "mouth5",
       "eyes": "eye14",
       "colors": {
@@ -660,6 +669,7 @@
         "quirk": 51,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -705,6 +715,7 @@
         "quirk": 42,
         "personality": "reserved",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -720,7 +731,7 @@
       "id": 12,
       "name": "SAVI",
       "file": "SAVI.png",
-      "hair": "hair11",
+      "hair": "hair11w",
       "mouth": "mouth1",
       "eyes": "eye11",
       "colors": {
@@ -750,6 +761,7 @@
         "quirk": 77,
         "personality": "eccentric",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -765,7 +777,7 @@
       "id": 13,
       "name": "GIHI",
       "file": "GIHI.png",
-      "hair": "hair9",
+      "hair": "hair9m",
       "mouth": "mouth1",
       "eyes": "eye9",
       "colors": {
@@ -795,6 +807,7 @@
         "quirk": 52,
         "personality": "competitive",
         "voice": "casual",
+        "gender": "male",
         "tearful": false
       },
       "winFile": "win.png",
@@ -840,6 +853,7 @@
         "quirk": 44,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -855,7 +869,7 @@
       "id": 15,
       "name": "HUTU",
       "file": "HUTU.png",
-      "hair": "hair3",
+      "hair": "hair3w",
       "mouth": "mouth3",
       "eyes": "eye5",
       "colors": {
@@ -885,6 +899,7 @@
         "quirk": 99,
         "personality": "eccentric",
         "voice": "quirky",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -900,7 +915,7 @@
       "id": 16,
       "name": "NESA",
       "file": "NESA.png",
-      "hair": "hair6",
+      "hair": "hair6w",
       "mouth": "mouth2",
       "eyes": "eye7",
       "colors": {
@@ -930,6 +945,7 @@
         "quirk": 25,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -945,15 +961,15 @@
       "id": 17,
       "name": "TAFO",
       "file": "TAFO.png",
-      "hair": "hair6",
+      "hair": "hair14w",
       "mouth": "mouth1",
-      "eyes": "eye6",
+      "eyes": "eye18",
       "colors": {
         "hair": "#009B0C",
         "cloth": "#00ACCE",
         "skin": "#FFCDB3"
       },
-      "sha256": "b7575503e46bde91b9986fba9dfe1970d72fde5ba21ff4fb759e3c29a24ebc28",
+      "sha256": "3fa09a82bceac43472c17cb5f72572a1976eaea338ee67c272d78f581717598a",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -975,23 +991,24 @@
         "quirk": 42,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "eb77ccfba2f3b9ae37d666c540bd9b60e213640ca39373f56c10a35b2987f097",
-      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
+      "faceSha256": "f52706d0375428b41764cd57961aa47bd591a2812e87ce40141cc5dcdc48d75f",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
     },
     {
       "id": 18,
       "name": "RUMI",
       "file": "RUMI.png",
-      "hair": "hair1",
-      "mouth": "mouth8",
+      "hair": "hair1w",
+      "mouth": "mouth9",
       "eyes": "eye8",
       "colors": {
         "hair": "#800000",
@@ -1020,13 +1037,14 @@
         "quirk": 19,
         "personality": "reserved",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "7040e41e127ce5c9109d2ec20d058b7eccc4824b6a13371b0f7ba37587e3ad2b",
+      "faceSha256": "ddf6c5bb889bc77249b4e677a84ddc7aa53b095e0164f63420598e5b49e0f0a2",
       "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
       "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
       "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
@@ -1035,7 +1053,7 @@
       "id": 19,
       "name": "KIGU",
       "file": "KIGU.png",
-      "hair": "hair3",
+      "hair": "hair3w",
       "mouth": "mouth5",
       "eyes": "eye7",
       "colors": {
@@ -1065,6 +1083,7 @@
         "quirk": 58,
         "personality": "friendly",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -1110,6 +1129,7 @@
         "quirk": 18,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": true
       },
       "winFile": "win.png",
@@ -1125,7 +1145,7 @@
       "id": 21,
       "name": "LEKA",
       "file": "LEKA.png",
-      "hair": "hair11",
+      "hair": "hair11w",
       "mouth": "mouth4",
       "eyes": "eye14",
       "colors": {
@@ -1155,6 +1175,7 @@
         "quirk": 42,
         "personality": "teasing",
         "voice": "casual",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -1170,15 +1191,15 @@
       "id": 22,
       "name": "FAVE",
       "file": "FAVE.png",
-      "hair": "hair8",
-      "mouth": "mouth8",
-      "eyes": "eye15",
+      "hair": "hair12w",
+      "mouth": "mouth9",
+      "eyes": "eye17",
       "colors": {
         "hair": "#4B1515",
         "cloth": "#000000",
         "skin": "#7F5A3F"
       },
-      "sha256": "ce5e1a1ccd9ac3818f39358551281d214120edfa153acea175ac16a7ef7aad92",
+      "sha256": "6bc4d82876ab6ad6a1667f4c38ebe4e173a7b3fe67015e3f4f200ae9557c1366",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -1200,22 +1221,23 @@
         "quirk": 37,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "db275d750107e7b1803f2d0a6939428a8f7ac2a4f70694cf0a9ceb1cbeed66f7",
-      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
-      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
-      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
+      "faceSha256": "f57d37e4afeba4fa1291adb09a7652b0fd2acc3addfc2ebfe30f52f1a14c6a89",
+      "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
     },
     {
       "id": 23,
       "name": "RIFI",
       "file": "RIFI.png",
-      "hair": "hair3",
+      "hair": "hair3w",
       "mouth": "mouth1",
       "eyes": "eye3",
       "colors": {
@@ -1245,6 +1267,7 @@
         "quirk": 56,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -1260,15 +1283,15 @@
       "id": 24,
       "name": "TAGI",
       "file": "TAGI.png",
-      "hair": "hair9",
+      "hair": "hair13w",
       "mouth": "mouth2",
-      "eyes": "eye10",
+      "eyes": "eye17",
       "colors": {
         "hair": "#7F3100",
         "cloth": "#CD0000",
         "skin": "#FFCDB3"
       },
-      "sha256": "53fc2ad1b2db890c4fb5054c93307079d6051d2d0dae58aee37f85c3110c6976",
+      "sha256": "c4dbab0f3bc94c69a34ca5d9feb6f10eafe3f1ee57f0ff97de3a4b065646693a",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -1290,16 +1313,17 @@
         "quirk": 70,
         "personality": "competitive",
         "voice": "casual",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "537899c6b3f8c4f2004ca92eac8b631bf579c0288eaf82392d8654aaea6c0b90",
-      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ffc1ff81ff81ff80ff007e0018007e00ff0",
-      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
-      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
+      "faceSha256": "89df69ef0f937b6ab59b42c48ad9fa00b14edc48d9d23024cebb0906abcf5418",
+      "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
     },
     {
       "id": 25,
@@ -1307,7 +1331,7 @@
       "file": "MUSI.png",
       "hair": "hair4",
       "mouth": "mouth8",
-      "eyes": "eye11",
+      "eyes": "eye18",
       "colors": {
         "hair": "#DADADA",
         "cloth": "#C95407",
@@ -1335,13 +1359,14 @@
         "quirk": 37,
         "personality": "reserved",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "6ed74dba56e5dc6230c6b69299c53944f9eefb0ea4ec8012d610dc32fb5738a2",
+      "faceSha256": "dc6e253b80500192a972281f4b43cbd835d03108526bcf7729e481e9e614836b",
       "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
       "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
       "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
@@ -1350,7 +1375,7 @@
       "id": 26,
       "name": "HEDO",
       "file": "HEDO.png",
-      "hair": "hair1",
+      "hair": "hair1w",
       "mouth": "mouth10",
       "eyes": "eye10",
       "colors": {
@@ -1380,6 +1405,7 @@
         "quirk": 94,
         "personality": "eccentric",
         "voice": "quirky",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -1395,7 +1421,7 @@
       "id": 27,
       "name": "NIPO",
       "file": "NIPO.png",
-      "hair": "hair2",
+      "hair": "hair2w",
       "mouth": "mouth7",
       "eyes": "eye8",
       "colors": {
@@ -1425,6 +1451,7 @@
         "quirk": 29,
         "personality": "teasing",
         "voice": "casual",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -1470,6 +1497,7 @@
         "quirk": 45,
         "personality": "thoughtful",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": true
       },
       "winFile": "win.png",
@@ -1485,7 +1513,7 @@
       "id": 29,
       "name": "PESI",
       "file": "PESI.png",
-      "hair": "hair3",
+      "hair": "hair3w",
       "mouth": "mouth7",
       "eyes": "eye9",
       "colors": {
@@ -1515,6 +1543,7 @@
         "quirk": 9,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -1530,15 +1559,15 @@
       "id": 30,
       "name": "SENA",
       "file": "SENA.png",
-      "hair": "hair7",
+      "hair": "hair13w",
       "mouth": "mouth1",
-      "eyes": "eye7",
+      "eyes": "eye17",
       "colors": {
         "hair": "#4B1515",
         "cloth": "#152E4C",
         "skin": "#FFCDB3"
       },
-      "sha256": "07eafb8494a44a519ef714436a272d4dfafd1b7ed6fed4e17194f4e05cc9fcc7",
+      "sha256": "828bf655138891b114b4214bc22b58e77fad121eba7986bdd5a6e47c546496c9",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -1560,30 +1589,31 @@
         "quirk": 93,
         "personality": "eccentric",
         "voice": "quirky",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "bd0e54356da0faa07073f12fd055a1b71a03fae104ee8600a0767857d36eafa2",
-      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "faceSha256": "e2600e0ad1e2ae9a379e21c4fec1460328dcd7637dee42eaaee6f580136cb291",
+      "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
     },
     {
       "id": 31,
       "name": "GOHU",
       "file": "GOHU.png",
-      "hair": "hair8",
+      "hair": "hair14w",
       "mouth": "mouth7",
-      "eyes": "eye14",
+      "eyes": "eye17",
       "colors": {
         "hair": "#7F3100",
         "cloth": "#000000",
         "skin": "#7F5A3F"
       },
-      "sha256": "b17f37526d3d053eb2ca039fdd2b2c9d7af9862b586b8238d76133c39a3f9c13",
+      "sha256": "b29371f29bddc6c06baa62e11dd86897b860c37502d1c11788927ae44e83df72",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -1605,23 +1635,24 @@
         "quirk": 14,
         "personality": "friendly",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "7b07762e015f38b19cf61f1ac85b0e1d6520ba6a21f0891b6ff274b74e0f8e23",
-      "normalMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
-      "winMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0",
-      "loseMask": "1f003fe03ff83ffc3ffc3ffc1ffc1ffc1ffc1ffc1ffc0ff807e0018007e00ff0"
+      "faceSha256": "d2df641ba21e27a97f97c9d7865f96bf994400c5529db2ca921c13fa9b66d13f",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
     },
     {
       "id": 32,
       "name": "PODU",
       "file": "PODU.png",
-      "hair": "hair6",
-      "mouth": "mouth8",
+      "hair": "hair6w",
+      "mouth": "mouth9",
       "eyes": "eye13",
       "colors": {
         "hair": "#FF86CD",
@@ -1650,13 +1681,14 @@
         "quirk": 27,
         "personality": "reserved",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "84aedd297a78da99537b0b5754cc2726bf3be460d3f505added2825d1c4e107a",
+      "faceSha256": "e65d57207fe1662f5646261dccd9c626ad803001ff0e94086666e28549f72c75",
       "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
       "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
       "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
@@ -1665,7 +1697,7 @@
       "id": 33,
       "name": "HIPU",
       "file": "HIPU.png",
-      "hair": "hair5",
+      "hair": "hair5w",
       "mouth": "mouth1",
       "eyes": "eye5",
       "colors": {
@@ -1695,6 +1727,7 @@
         "quirk": 81,
         "personality": "friendly",
         "voice": "polite",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -1710,15 +1743,15 @@
       "id": 34,
       "name": "LEZI",
       "file": "LEZI.png",
-      "hair": "hair1",
+      "hair": "hair12w",
       "mouth": "mouth7",
-      "eyes": "eye7",
+      "eyes": "eye16",
       "colors": {
         "hair": "#800000",
         "cloth": "#B5B5B5",
         "skin": "#FFB985"
       },
-      "sha256": "4932b10fdcfbca80ff0d320c068cfb6ba8e20f8553acd8ece18cdd02551e128b",
+      "sha256": "9c585afccf0c8e348d1b25ee6a4657cdf83863038ffff4ec9d6ae0f5f6ffcde7",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -1740,22 +1773,23 @@
         "quirk": 24,
         "personality": "teasing",
         "voice": "casual",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "6a06faae2ebd5df0e0682c2ef8386f0cc8d8826c05e153b68ed9c06b89189e80",
-      "normalMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
-      "winMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0",
-      "loseMask": "000007f01ff83ff83ffc3ffc3ffc3ffcffffdffbdffbcff3c7e3418207e00ff0"
+      "faceSha256": "f23464dcfbe6bb03fc8065badd96888a1e96dd6eb4dfbf678cd1a0ee6c2182b7",
+      "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
     },
     {
       "id": 35,
       "name": "GILA",
       "file": "GILA.png",
-      "hair": "hair10",
+      "hair": "hair10w",
       "mouth": "mouth1",
       "eyes": "eye10",
       "colors": {
@@ -1785,6 +1819,7 @@
         "quirk": 53,
         "personality": "reserved",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -1800,15 +1835,15 @@
       "id": 36,
       "name": "DEZO",
       "file": "DEZO.png",
-      "hair": "hair3",
+      "hair": "hair14w",
       "mouth": "mouth9",
-      "eyes": "eye11",
+      "eyes": "eye18",
       "colors": {
         "hair": "#7F3100",
         "cloth": "#000000",
         "skin": "#FFB985"
       },
-      "sha256": "9f4ff9a09fc6aca2dd19f4d5abdbb8afdc330ba671aacd1773007cbd0be73331",
+      "sha256": "f2fdbd3f5154597713a1e9806de270ae10d43a26adb5972053267150d51cd48d",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -1830,16 +1865,17 @@
         "quirk": 60,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "7db1a6e2d747453aa5fc83b975574baf93c76c030a5969d288a1cccf33ae52cf",
-      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
-      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
-      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
+      "faceSha256": "d4b1b89d303bea14944ea53632b7cdb03644f13b4a23429055c3d688d7d367d9",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
     },
     {
       "id": 37,
@@ -1875,6 +1911,7 @@
         "quirk": 67,
         "personality": "friendly",
         "voice": "polite",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -1890,7 +1927,7 @@
       "id": 38,
       "name": "FOBU",
       "file": "FOBU.png",
-      "hair": "hair2",
+      "hair": "hair2w",
       "mouth": "mouth9",
       "eyes": "eye10",
       "colors": {
@@ -1920,6 +1957,7 @@
         "quirk": 39,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -1935,8 +1973,8 @@
       "id": 39,
       "name": "HOBE",
       "file": "HOBE.png",
-      "hair": "hair11",
-      "mouth": "mouth8",
+      "hair": "hair11w",
+      "mouth": "mouth9",
       "eyes": "eye3",
       "colors": {
         "hair": "#000000",
@@ -1965,13 +2003,14 @@
         "quirk": 23,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "a681d0dd82f088b52095443e56e774cfbb078ffc227a5ebb1e322e73534936ea",
+      "faceSha256": "748640b027430de94e74d94c13d4c850f740a90d53818914856c15dcc24262bb",
       "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
       "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
       "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
@@ -1980,15 +2019,15 @@
       "id": 40,
       "name": "ZUBE",
       "file": "ZUBE.png",
-      "hair": "hair5",
+      "hair": "hair15",
       "mouth": "mouth5",
-      "eyes": "eye9",
+      "eyes": "eye18",
       "colors": {
         "hair": "#500099",
         "cloth": "#0D00FF",
         "skin": "#FCC79F"
       },
-      "sha256": "abbed640d0549d6ab1f1234a9c3433b436f57d60a45a123920fe5ee238291b67",
+      "sha256": "3bb94344ba6a9f7c0c2f06f1374ae3631c07d1ef6a9b6e280295bc60d1e50109",
       "profile": {
         "rank": "beginner",
         "level": 2,
@@ -2010,23 +2049,24 @@
         "quirk": 4,
         "personality": "competitive",
         "voice": "casual",
+        "gender": "unspecified",
         "tearful": true
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "ad58957cebd450ee67c1cd4bac97aef48404c77c53b1ee82a4c4a226c4337f52",
-      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
+      "faceSha256": "bebf46fe14bbe3670f29c83a23de82c7d342d4b75ccb5410876b3d0561f2e303",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
     },
     {
       "id": 41,
       "name": "KOGE",
       "file": "KOGE.png",
-      "hair": "hair2",
-      "mouth": "mouth8",
+      "hair": "hair2w",
+      "mouth": "mouth9",
       "eyes": "eye9",
       "colors": {
         "hair": "#813D3C",
@@ -2055,13 +2095,14 @@
         "quirk": 27,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "09884112cfa375508bbbfbd6a52242d54b4acd7896e97b863945449b35003fb7",
+      "faceSha256": "a9a81effd3deb997493500dcea42a164393b1b2a2dfcdd8c5828bad46af91f3c",
       "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
       "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
       "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
@@ -2070,15 +2111,15 @@
       "id": 42,
       "name": "TELU",
       "file": "TELU.png",
-      "hair": "hair2",
+      "hair": "hair14w",
       "mouth": "mouth5",
-      "eyes": "eye6",
+      "eyes": "eye16",
       "colors": {
         "hair": "#4B1515",
         "cloth": "#005700",
         "skin": "#FCC79F"
       },
-      "sha256": "d95175258d3b0cd5d93f0367891a787b9a0a9280f3ef3f20cf80a3a82f9f10c5",
+      "sha256": "0c2af2bc75fc156bf17d30c3c3f305d9be08f6746f4b6a70a46adcaef7e1c223",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -2100,30 +2141,31 @@
         "quirk": 54,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "d87a1833d13b0f297518afd056be8d40a91468bd5d761c2a37b69fac33166f49",
-      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
-      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0",
-      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe7ffe7ffe07e00ff0"
+      "faceSha256": "2d4affea078d6bae160b1f4e921906c541409faadf128bd35076b0b0cb785512",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
     },
     {
       "id": 43,
       "name": "DEPI",
       "file": "DEPI.png",
-      "hair": "hair10",
-      "mouth": "mouth8",
-      "eyes": "eye2",
+      "hair": "hair14w",
+      "mouth": "mouth9",
+      "eyes": "eye17",
       "colors": {
         "hair": "#800000",
         "cloth": "#0D00FF",
         "skin": "#FFB985"
       },
-      "sha256": "da3c87ab89148b4511be02a981dec4df562f4d57bc9751ec2825ede78c14b371",
+      "sha256": "24f742d1062d73620758bc8f809e6132c3327e7f30f6b0a84ff57be787952dad",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -2145,22 +2187,23 @@
         "quirk": 80,
         "personality": "eccentric",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "26c1deb091134a63c3d0b077639f94c3b84484505901603beb33fc12b2aba58a",
-      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "faceSha256": "f57d37e4afeba4fa1291adb09a7652b0fd2acc3addfc2ebfe30f52f1a14c6a89",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
     },
     {
       "id": 44,
       "name": "SAPA",
       "file": "SAPA.png",
-      "hair": "hair10",
+      "hair": "hair10w",
       "mouth": "mouth9",
       "eyes": "eye3",
       "colors": {
@@ -2190,6 +2233,7 @@
         "quirk": 79,
         "personality": "friendly",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2235,6 +2279,7 @@
         "quirk": 7,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2250,7 +2295,7 @@
       "id": 46,
       "name": "SEPA",
       "file": "SEPA.png",
-      "hair": "hair6",
+      "hair": "hair6w",
       "mouth": "mouth9",
       "eyes": "eye14",
       "colors": {
@@ -2280,6 +2325,7 @@
         "quirk": 97,
         "personality": "eccentric",
         "voice": "quirky",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -2325,6 +2371,7 @@
         "quirk": 23,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2340,7 +2387,7 @@
       "id": 48,
       "name": "VOHA",
       "file": "VOHA.png",
-      "hair": "hair5",
+      "hair": "hair5w",
       "mouth": "mouth7",
       "eyes": "eye11",
       "colors": {
@@ -2370,6 +2417,7 @@
         "quirk": 21,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2385,7 +2433,7 @@
       "id": 49,
       "name": "TIHU",
       "file": "TIHU.png",
-      "hair": "hair9",
+      "hair": "hair9m",
       "mouth": "mouth8",
       "eyes": "eye1",
       "colors": {
@@ -2415,6 +2463,7 @@
         "quirk": 53,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "male",
         "tearful": true
       },
       "winFile": "win.png",
@@ -2430,7 +2479,7 @@
       "id": 50,
       "name": "TAZA",
       "file": "TAZA.png",
-      "hair": "hair5",
+      "hair": "hair5w",
       "mouth": "mouth3",
       "eyes": "eye7",
       "colors": {
@@ -2460,6 +2509,7 @@
         "quirk": 6,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2475,7 +2525,7 @@
       "id": 51,
       "name": "RUGA",
       "file": "RUGA.png",
-      "hair": "hair2",
+      "hair": "hair2w",
       "mouth": "mouth3",
       "eyes": "eye4",
       "colors": {
@@ -2505,6 +2555,7 @@
         "quirk": 26,
         "personality": "thoughtful",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -2520,15 +2571,15 @@
       "id": 52,
       "name": "HAPE",
       "file": "HAPE.png",
-      "hair": "hair10",
+      "hair": "hair12w",
       "mouth": "mouth4",
-      "eyes": "eye13",
+      "eyes": "eye17",
       "colors": {
         "hair": "#00ACCE",
         "cloth": "#009B0C",
         "skin": "#7F5A3F"
       },
-      "sha256": "24f228c7f297072aae8539d1fb249508d88af276704c0ff5e22c293c3720c5d8",
+      "sha256": "e51b43f6c85ea93d95a91967896b2ced1b7bd2a588970aded89c177916432afd",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -2550,22 +2601,23 @@
         "quirk": 6,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "e852c95ea4229817c6f6425daf17f6e4c675f4018fc3fb8b1d880972c0b40cd6",
-      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "faceSha256": "e13312797dcf7d9098c1bf36e79b5d6eb0148af3b09c9f62a61466583c7494d0",
+      "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
     },
     {
       "id": 53,
       "name": "VUKO",
       "file": "VUKO.png",
-      "hair": "hair6",
+      "hair": "hair15",
       "mouth": "mouth4",
       "eyes": "eye9",
       "colors": {
@@ -2573,7 +2625,7 @@
         "cloth": "#EEEEEE",
         "skin": "#FFCDB3"
       },
-      "sha256": "1e30199212ca5f60edbaac732f45948d3d3d714e636590c66b05badbfba7fd65",
+      "sha256": "ea5d471d62e1a4b27ea9125d022a02e0fc8ab515c34ebe0f20c9131061b5dbd5",
       "profile": {
         "rank": "beginner",
         "level": 2,
@@ -2595,6 +2647,7 @@
         "quirk": 48,
         "personality": "friendly",
         "voice": "polite",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2602,15 +2655,15 @@
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
       "faceSha256": "1302649a565bbe42d17159c0db72e72210a90f22a473a3a274b110e5d713e4c4",
-      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
     },
     {
       "id": 54,
       "name": "ROLA",
       "file": "ROLA.png",
-      "hair": "hair2",
+      "hair": "hair2w",
       "mouth": "mouth1",
       "eyes": "eye2",
       "colors": {
@@ -2640,6 +2693,7 @@
         "quirk": 93,
         "personality": "friendly",
         "voice": "quirky",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2655,7 +2709,7 @@
       "id": 55,
       "name": "MEBE",
       "file": "MEBE.png",
-      "hair": "hair2",
+      "hair": "hair2w",
       "mouth": "mouth10",
       "eyes": "eye11",
       "colors": {
@@ -2685,6 +2739,7 @@
         "quirk": 81,
         "personality": "eccentric",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2700,15 +2755,15 @@
       "id": 56,
       "name": "HEKI",
       "file": "HEKI.png",
-      "hair": "hair9",
+      "hair": "hair13w",
       "mouth": "mouth7",
-      "eyes": "eye15",
+      "eyes": "eye16",
       "colors": {
         "hair": "#066F85",
         "cloth": "#DDB4FF",
         "skin": "#FCC79F"
       },
-      "sha256": "7b1fe838526faefcfd6ae6bab780571cd43bee1442c1b2d2a63e1146bede6f68",
+      "sha256": "580d4ef37c9d3302cc334c6d808596cd40c40ba318347cae7a8978b60c4e5d3d",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -2730,22 +2785,23 @@
         "quirk": 54,
         "personality": "friendly",
         "voice": "polite",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "e62c63803c42df55743bbb449b43fa0bc23ad14f42fcfe53eef69da8c579c56d",
-      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
-      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
-      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
+      "faceSha256": "f23464dcfbe6bb03fc8065badd96888a1e96dd6eb4dfbf678cd1a0ee6c2182b7",
+      "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
     },
     {
       "id": 57,
       "name": "HUNE",
       "file": "HUNE.png",
-      "hair": "hair9",
+      "hair": "hair9m",
       "mouth": "mouth4",
       "eyes": "eye12",
       "colors": {
@@ -2775,6 +2831,7 @@
         "quirk": 90,
         "personality": "eccentric",
         "voice": "quirky",
+        "gender": "male",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2790,7 +2847,7 @@
       "id": 58,
       "name": "FIPE",
       "file": "FIPE.png",
-      "hair": "hair8",
+      "hair": "hair8m",
       "mouth": "mouth9",
       "eyes": "eye1",
       "colors": {
@@ -2820,6 +2877,7 @@
         "quirk": 34,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "male",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2835,7 +2893,7 @@
       "id": 59,
       "name": "VOTO",
       "file": "VOTO.png",
-      "hair": "hair6",
+      "hair": "hair6w",
       "mouth": "mouth7",
       "eyes": "eye12",
       "colors": {
@@ -2865,6 +2923,7 @@
         "quirk": 1,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2880,7 +2939,7 @@
       "id": 60,
       "name": "DOSI",
       "file": "DOSI.png",
-      "hair": "hair3",
+      "hair": "hair3w",
       "mouth": "mouth4",
       "eyes": "eye6",
       "colors": {
@@ -2910,6 +2969,7 @@
         "quirk": 6,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -2925,7 +2985,7 @@
       "id": 61,
       "name": "RUTE",
       "file": "RUTE.png",
-      "hair": "hair10",
+      "hair": "hair10w",
       "mouth": "mouth10",
       "eyes": "eye4",
       "colors": {
@@ -2955,6 +3015,7 @@
         "quirk": 64,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -3000,6 +3061,7 @@
         "quirk": 72,
         "personality": "eccentric",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3045,6 +3107,7 @@
         "quirk": 80,
         "personality": "friendly",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3060,15 +3123,15 @@
       "id": 64,
       "name": "KIFA",
       "file": "KIFA.png",
-      "hair": "hair5",
+      "hair": "hair13w",
       "mouth": "mouth4",
-      "eyes": "eye8",
+      "eyes": "eye17",
       "colors": {
         "hair": "#FF86CD",
         "cloth": "#152E4C",
         "skin": "#FFB985"
       },
-      "sha256": "a6b0fcf501639ea3cfe360cd8ac78af7e8e8754dc99288e5cacc0695c8ae0113",
+      "sha256": "d436d917c6b93192b38823553f449f778ec2afa257029c91f56b0aca25b955b0",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -3090,22 +3153,23 @@
         "quirk": 92,
         "personality": "eccentric",
         "voice": "quirky",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "a87f04a786b059ab7976f1061b5ffea106a12865f121a096c3269a2bdeade2b5",
-      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
+      "faceSha256": "e13312797dcf7d9098c1bf36e79b5d6eb0148af3b09c9f62a61466583c7494d0",
+      "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
     },
     {
       "id": 65,
       "name": "DERI",
       "file": "DERI.png",
-      "hair": "hair2",
+      "hair": "hair2w",
       "mouth": "mouth4",
       "eyes": "eye5",
       "colors": {
@@ -3135,6 +3199,7 @@
         "quirk": 64,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3180,6 +3245,7 @@
         "quirk": 63,
         "personality": "teasing",
         "voice": "casual",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3195,7 +3261,7 @@
       "id": 67,
       "name": "HELE",
       "file": "HELE.png",
-      "hair": "hair3",
+      "hair": "hair3w",
       "mouth": "mouth2",
       "eyes": "eye4",
       "colors": {
@@ -3225,6 +3291,7 @@
         "quirk": 73,
         "personality": "eccentric",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3240,15 +3307,15 @@
       "id": 68,
       "name": "MEMO",
       "file": "MEMO.png",
-      "hair": "hair11",
+      "hair": "hair13w",
       "mouth": "mouth5",
-      "eyes": "eye15",
+      "eyes": "eye16",
       "colors": {
         "hair": "#00ACCE",
         "cloth": "#DDB4FF",
         "skin": "#FFB985"
       },
-      "sha256": "009155202df56b018e75b4b220bfe41e2db44456899e42a2c766824352f4e1fa",
+      "sha256": "f5dbe7c99a17d157339be419b56b7f61dbb9f4cd2e4e22488f7f7bf2befed609",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -3270,30 +3337,31 @@
         "quirk": 19,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "48a42943f6ef16f4cbd69319a834624028d4e87826efca48bca736c7350c5e17",
-      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
-      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
-      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
+      "faceSha256": "2d4affea078d6bae160b1f4e921906c541409faadf128bd35076b0b0cb785512",
+      "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
     },
     {
       "id": 69,
       "name": "BERI",
       "file": "BERI.png",
-      "hair": "hair9",
+      "hair": "hair15",
       "mouth": "mouth9",
-      "eyes": "eye2",
+      "eyes": "eye18",
       "colors": {
         "hair": "#CEBF00",
         "cloth": "#48164B",
         "skin": "#FCC79F"
       },
-      "sha256": "ce44e2b25754b442aa775dde40f5190a46745c9ae28eb46394354fcdea1976ff",
+      "sha256": "0e08f418b8979c562693627e860ecd3990640c0333bc697d67de454825cbf2a0",
       "profile": {
         "rank": "beginner",
         "level": 2,
@@ -3315,22 +3383,23 @@
         "quirk": 79,
         "personality": "teasing",
         "voice": "casual",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "021cf4462ecf6935478170135dc5eb281aac41801f7083eea4ada6a7b4054207",
-      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
-      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
-      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
+      "faceSha256": "d4b1b89d303bea14944ea53632b7cdb03644f13b4a23429055c3d688d7d367d9",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
     },
     {
       "id": 70,
       "name": "NUFU",
       "file": "NUFU.png",
-      "hair": "hair8",
+      "hair": "hair8m",
       "mouth": "mouth2",
       "eyes": "eye9",
       "colors": {
@@ -3360,6 +3429,7 @@
         "quirk": 13,
         "personality": "teasing",
         "voice": "casual",
+        "gender": "male",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3375,7 +3445,7 @@
       "id": 71,
       "name": "GENI",
       "file": "GENI.png",
-      "hair": "hair6",
+      "hair": "hair6w",
       "mouth": "mouth5",
       "eyes": "eye10",
       "colors": {
@@ -3405,6 +3475,7 @@
         "quirk": 26,
         "personality": "friendly",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3420,15 +3491,15 @@
       "id": 72,
       "name": "KOFE",
       "file": "KOFE.png",
-      "hair": "hair9",
+      "hair": "hair12w",
       "mouth": "mouth5",
-      "eyes": "eye13",
+      "eyes": "eye16",
       "colors": {
         "hair": "#000000",
         "cloth": "#2A2A2A",
         "skin": "#FCC79F"
       },
-      "sha256": "b4e199ab4ec73a6bfd5366dffd32033bd1c83f4a2eff4d65ca94dba17481140a",
+      "sha256": "c18eccceb083a491ef985c430ba83554e9554b183c246eb458b40cc9256e68e8",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -3450,30 +3521,31 @@
         "quirk": 18,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "61a9b67de0a131f69ade4706cb028dc2be859c044e8bf623545c973a9cdb4f80",
-      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
-      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
-      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
+      "faceSha256": "2d4affea078d6bae160b1f4e921906c541409faadf128bd35076b0b0cb785512",
+      "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
     },
     {
       "id": 73,
       "name": "HENE",
       "file": "HENE.png",
-      "hair": "hair3",
+      "hair": "hair15",
       "mouth": "mouth8",
-      "eyes": "eye10",
+      "eyes": "eye18",
       "colors": {
         "hair": "#4B1515",
         "cloth": "#005700",
         "skin": "#7F5A3F"
       },
-      "sha256": "e9559f1f26c85b5e12281ffd813f5bc5c715cd2f1d7b656c28c233095d5d7cbf",
+      "sha256": "737ade0e5ba4230ac3d693f94b6acdcb123fed7a1a42ccfcddabc84469aa41da",
       "profile": {
         "rank": "beginner",
         "level": 2,
@@ -3495,30 +3567,31 @@
         "quirk": 84,
         "personality": "eccentric",
         "voice": "quirky",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "0e3eae78ffd0bf6951404b71678013eb830d3319761e8f570b98d9a5b070c58f",
-      "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
-      "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0",
-      "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc018007e00ff0"
+      "faceSha256": "dc6e253b80500192a972281f4b43cbd835d03108526bcf7729e481e9e614836b",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
     },
     {
       "id": 74,
       "name": "VONA",
       "file": "VONA.png",
-      "hair": "hair9",
+      "hair": "hair15",
       "mouth": "mouth10",
-      "eyes": "eye3",
+      "eyes": "eye18",
       "colors": {
         "hair": "#CEBF00",
         "cloth": "#CD0000",
         "skin": "#FCC79F"
       },
-      "sha256": "4f583c0de20444d588aa81da6745b3b1c39a19eb5d30b630a82e0f6b8808126e",
+      "sha256": "d61439372165a88cdcbca8d813d683b8e7d3cbcc6e1b88146a747123444a1854",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -3540,22 +3613,23 @@
         "quirk": 2,
         "personality": "friendly",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "580613e90df2a93d278462fca4311dd9a0043b51b542f49abcec2e0b9cfe4f0e",
-      "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff01ff0018007e00ff0",
-      "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
-      "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
+      "faceSha256": "4ee01387dbaf6206d9ff731a7ee91e086f6d099299ecab7ce935ebe6ba642d12",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff01ff0018007e00ff0",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
     },
     {
       "id": 75,
       "name": "MILE",
       "file": "MILE.png",
-      "hair": "hair5",
+      "hair": "hair5w",
       "mouth": "mouth9",
       "eyes": "eye13",
       "colors": {
@@ -3585,6 +3659,7 @@
         "quirk": 26,
         "personality": "thoughtful",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3600,7 +3675,7 @@
       "id": 76,
       "name": "SUDA",
       "file": "SUDA.png",
-      "hair": "hair11",
+      "hair": "hair11w",
       "mouth": "mouth7",
       "eyes": "eye2",
       "colors": {
@@ -3630,6 +3705,7 @@
         "quirk": 14,
         "personality": "thoughtful",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3645,7 +3721,7 @@
       "id": 77,
       "name": "NUSI",
       "file": "NUSI.png",
-      "hair": "hair8",
+      "hair": "hair8m",
       "mouth": "mouth10",
       "eyes": "eye2",
       "colors": {
@@ -3675,6 +3751,7 @@
         "quirk": 21,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "male",
         "tearful": true
       },
       "winFile": "win.png",
@@ -3690,7 +3767,7 @@
       "id": 78,
       "name": "REFA",
       "file": "REFA.png",
-      "hair": "hair11",
+      "hair": "hair11w",
       "mouth": "mouth2",
       "eyes": "eye12",
       "colors": {
@@ -3720,6 +3797,7 @@
         "quirk": 25,
         "personality": "competitive",
         "voice": "casual",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3765,6 +3843,7 @@
         "quirk": 63,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": true
       },
       "winFile": "win.png",
@@ -3780,8 +3859,8 @@
       "id": 80,
       "name": "LULI",
       "file": "LULI.png",
-      "hair": "hair5",
-      "mouth": "mouth8",
+      "hair": "hair5w",
+      "mouth": "mouth9",
       "eyes": "eye12",
       "colors": {
         "hair": "#2A2A2A",
@@ -3810,13 +3889,14 @@
         "quirk": 38,
         "personality": "thoughtful",
         "voice": "casual",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "6a97104d88d59cc084a1b407b435804b2f42ec6c76f1bb42f7e1c0a03bf157ee",
+      "faceSha256": "87b7515b8d567e9c78a70da5ce31b02e8fbe9971f7fc84fcca9aeef48e6973b3",
       "normalMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
       "winMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
       "loseMask": "00000fe01ff83ffc3ffc3ffc7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
@@ -3825,15 +3905,15 @@
       "id": 81,
       "name": "MAHA",
       "file": "MAHA.png",
-      "hair": "hair10",
+      "hair": "hair13w",
       "mouth": "mouth3",
-      "eyes": "eye12",
+      "eyes": "eye16",
       "colors": {
         "hair": "#FF86CD",
         "cloth": "#000000",
         "skin": "#FFCDB3"
       },
-      "sha256": "21aa83a8b800034e14e26726447654efd7c2a62e4dc44037add6c7fadf6cf339",
+      "sha256": "f4c523b4bbce13c63c11ae06c385d66c3bb0728755e31a2d8f126069ebf3163f",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -3855,22 +3935,23 @@
         "quirk": 51,
         "personality": "reserved",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "de7e876de71f6a3a411f4d871d951e1ee845b9e876a9f1f28a605f2dfb03823e",
-      "normalMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "f00ff00ff7ef1ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "faceSha256": "5cc06cb5ed6b9938346a69a8f75c897a21b2e94e4878e8c2fe29ab9a501ea41f",
+      "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
     },
     {
       "id": 82,
       "name": "SOVE",
       "file": "SOVE.png",
-      "hair": "hair2",
+      "hair": "hair2w",
       "mouth": "mouth2",
       "eyes": "eye3",
       "colors": {
@@ -3900,6 +3981,7 @@
         "quirk": 64,
         "personality": "thoughtful",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -3945,6 +4027,7 @@
         "quirk": 55,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -3960,7 +4043,7 @@
       "id": 84,
       "name": "KABI",
       "file": "KABI.png",
-      "hair": "hair1",
+      "hair": "hair1w",
       "mouth": "mouth9",
       "eyes": "eye9",
       "colors": {
@@ -3990,6 +4073,7 @@
         "quirk": 25,
         "personality": "reserved",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4005,7 +4089,7 @@
       "id": 85,
       "name": "SIPU",
       "file": "SIPU.png",
-      "hair": "hair9",
+      "hair": "hair9m",
       "mouth": "mouth3",
       "eyes": "eye11",
       "colors": {
@@ -4035,6 +4119,7 @@
         "quirk": 69,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "male",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4050,7 +4135,7 @@
       "id": 86,
       "name": "GOVO",
       "file": "GOVO.png",
-      "hair": "hair10",
+      "hair": "hair10w",
       "mouth": "mouth7",
       "eyes": "eye1",
       "colors": {
@@ -4080,6 +4165,7 @@
         "quirk": 38,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -4095,7 +4181,7 @@
       "id": 87,
       "name": "DOLO",
       "file": "DOLO.png",
-      "hair": "hair11",
+      "hair": "hair11w",
       "mouth": "mouth3",
       "eyes": "eye13",
       "colors": {
@@ -4125,6 +4211,7 @@
         "quirk": 38,
         "personality": "friendly",
         "voice": "polite",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4140,7 +4227,7 @@
       "id": 88,
       "name": "LOGA",
       "file": "LOGA.png",
-      "hair": "hair8",
+      "hair": "hair8m",
       "mouth": "mouth5",
       "eyes": "eye12",
       "colors": {
@@ -4170,6 +4257,7 @@
         "quirk": 22,
         "personality": "teasing",
         "voice": "casual",
+        "gender": "male",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4185,7 +4273,7 @@
       "id": 89,
       "name": "VEBA",
       "file": "VEBA.png",
-      "hair": "hair1",
+      "hair": "hair1w",
       "mouth": "mouth1",
       "eyes": "eye1",
       "colors": {
@@ -4215,6 +4303,7 @@
         "quirk": 43,
         "personality": "teasing",
         "voice": "casual",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4230,7 +4319,7 @@
       "id": 90,
       "name": "VAFO",
       "file": "VAFO.png",
-      "hair": "hair10",
+      "hair": "hair10w",
       "mouth": "mouth2",
       "eyes": "eye11",
       "colors": {
@@ -4260,6 +4349,7 @@
         "quirk": 8,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4275,7 +4365,7 @@
       "id": 91,
       "name": "KASI",
       "file": "KASI.png",
-      "hair": "hair1",
+      "hair": "hair1w",
       "mouth": "mouth5",
       "eyes": "eye5",
       "colors": {
@@ -4305,6 +4395,7 @@
         "quirk": 72,
         "personality": "friendly",
         "voice": "polite",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4320,7 +4411,7 @@
       "id": 92,
       "name": "KEVA",
       "file": "KEVA.png",
-      "hair": "hair3",
+      "hair": "hair3w",
       "mouth": "mouth10",
       "eyes": "eye12",
       "colors": {
@@ -4350,6 +4441,7 @@
         "quirk": 69,
         "personality": "teasing",
         "voice": "casual",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4365,7 +4457,7 @@
       "id": 93,
       "name": "VIRO",
       "file": "VIRO.png",
-      "hair": "hair8",
+      "hair": "hair8m",
       "mouth": "mouth1",
       "eyes": "eye8",
       "colors": {
@@ -4395,6 +4487,7 @@
         "quirk": 53,
         "personality": "reserved",
         "voice": "casual",
+        "gender": "male",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4410,7 +4503,7 @@
       "id": 94,
       "name": "VAME",
       "file": "VAME.png",
-      "hair": "hair6",
+      "hair": "hair6w",
       "mouth": "mouth10",
       "eyes": "eye15",
       "colors": {
@@ -4440,6 +4533,7 @@
         "quirk": 100,
         "personality": "eccentric",
         "voice": "quirky",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -4455,15 +4549,15 @@
       "id": 95,
       "name": "MIPU",
       "file": "MIPU.png",
-      "hair": "hair11",
+      "hair": "hair12w",
       "mouth": "mouth9",
-      "eyes": "eye4",
+      "eyes": "eye16",
       "colors": {
         "hair": "#4B1515",
         "cloth": "#2A2A2A",
         "skin": "#FFB985"
       },
-      "sha256": "3949bc2dcd6ef46a211dd71565be04043df975f79bc8329085c03b29257c7b78",
+      "sha256": "bef141cd9b7299726b131e7b5497a9b655085b42f2644ec6bf1252c91e8368ae",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -4485,30 +4579,31 @@
         "quirk": 38,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "2a53a026a5ae4b60794787b8c0653ad0e57b58915a9ff3c1be5557cf531731ef",
-      "normalMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
-      "winMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc",
-      "loseMask": "000007e01ff81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc3ffc"
+      "faceSha256": "b7eb42715f957064c2919c818e700fc045f35c9ca80d5a836dcb919e9f44b19d",
+      "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
+      "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
     },
     {
       "id": 96,
       "name": "FADI",
       "file": "FADI.png",
-      "hair": "hair6",
+      "hair": "hair15",
       "mouth": "mouth3",
-      "eyes": "eye8",
+      "eyes": "eye18",
       "colors": {
         "hair": "#2A2A2A",
         "cloth": "#800000",
         "skin": "#7F5A3F"
       },
-      "sha256": "bf946a475320aaba56509589272e35c3c9087daf9f35cf11090469a601421c1d",
+      "sha256": "69b934ba8df60ca1e97af949cc70ce9fb8d43230d46b3cafda3fa7f63d44c9e8",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -4530,22 +4625,23 @@
         "quirk": 32,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "7ef4f8baf99421d4e46b82196c3005f5b58f7c866ae12cadcaec2d2da4eb71e3",
-      "normalMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "winMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0",
-      "loseMask": "00000ff01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe3ffc1ff807e0018007e00ff0"
+      "faceSha256": "eefb039a7964c5d7b0c2dc9a91898d48c1a4e2366b58c4c02d61b2000d654090",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
     },
     {
       "id": 97,
       "name": "FOKU",
       "file": "FOKU.png",
-      "hair": "hair5",
+      "hair": "hair5w",
       "mouth": "mouth2",
       "eyes": "eye6",
       "colors": {
@@ -4575,6 +4671,7 @@
         "quirk": 22,
         "personality": "competitive",
         "voice": "plain",
+        "gender": "female",
         "tearful": true
       },
       "winFile": "win.png",
@@ -4620,6 +4717,7 @@
         "quirk": 93,
         "personality": "eccentric",
         "voice": "quirky",
+        "gender": "unspecified",
         "tearful": false
       },
       "winFile": "win.png",
@@ -4635,7 +4733,7 @@
       "id": 99,
       "name": "ZIRO",
       "file": "ZIRO.png",
-      "hair": "hair5",
+      "hair": "hair5w",
       "mouth": "mouth10",
       "eyes": "eye14",
       "colors": {
@@ -4665,6 +4763,7 @@
         "quirk": 34,
         "personality": "friendly",
         "voice": "plain",
+        "gender": "female",
         "tearful": false
       },
       "winFile": "win.png",

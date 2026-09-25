@@ -8,6 +8,7 @@ manifest_path = root / 'characters.json'
 manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
 characters = manifest['characters']
 assert len(characters) == 99
+assert all(c['mouth'] != 'mouth8' for c in characters if c['hair'].endswith('w'))
 order = sorted(characters, key=lambda c: hashlib.sha256(c['name'].encode()).digest())
 for index, character in enumerate(order):
     level = min(5, index // 20 + 1)
@@ -46,6 +47,8 @@ for index, character in enumerate(order):
     profile['voice'] = ('quirky' if profile['quirk'] >= 84 else
                         'polite' if profile['friendliness'] >= 65 and seed[16] % 2 == 0 else
                         'casual' if profile['taunt'] >= 60 else 'plain')
+    profile['gender'] = ('male' if character['hair'].endswith('m') else
+                         'female' if character['hair'].endswith('w') else 'unspecified')
     character.pop('faceFile', None)
     character['winFile'] = 'win.png'
     character['loseFile'] = 'lose.png'

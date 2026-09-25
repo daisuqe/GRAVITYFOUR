@@ -14,6 +14,13 @@ psd = load_psd(ROOT / "human01.psd")
 layers = {layer["name"]: layer for layer in psd["layers"] if layer["group_type"] == 0}
 records = json.loads((ROOT / "characters.json").read_text(encoding="utf-8"))["characters"]
 assert len(records) == 99
+assert len({record["hair"] for record in records}) == 15
+assert len({record["eyes"] for record in records}) == 18
+assert all(record["profile"]["gender"] == (
+    "male" if record["hair"].endswith("m") else
+    "female" if record["hair"].endswith("w") else "unspecified"
+) for record in records)
+assert all(record["mouth"] != "mouth8" for record in records if record["hair"].endswith("w"))
 assert sum(record["profile"]["tearful"] for record in records) == 20
 assert {record["winFile"] for record in records} == {"win.png"}
 assert {record["loseFile"] for record in records} == {"lose.png"}

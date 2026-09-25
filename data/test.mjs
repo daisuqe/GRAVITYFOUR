@@ -285,7 +285,7 @@ for(let round=0;round<3;round++){
   assert.equal(run.elements.get('win-orbit').hidden,false,'victory orbit appears around the player');
   assert.equal(run.elements.get('win-orbit').children.length,11,'eleven larger crystal blocks celebrate the win');
   assert.equal(run.elements.get('match-confetti').hidden,false,'paper bursts from the lower corners on a player win');
-  assert.equal(run.elements.get('match-confetti').children.length,56,'both lower corners launch paper pieces');
+  assert.equal(run.elements.get('match-confetti').children.length,84,'both lower corners fill the screen with paper pieces');
   assert.equal(run.elements.get('opponent-expression').src,'characters/lose.png','opponent reacts to defeat');
   assert.ok(run.drawn.some(([kind])=>kind==='scan'),'defeat scanlines redraw');
   assert.equal(run.elements.get('speech').hidden,false,'opponent always speaks after the result');

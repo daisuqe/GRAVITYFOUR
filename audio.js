@@ -82,8 +82,9 @@
     if(!mora.length)return 0;
     stopVoice();
     const id=Math.abs(Number(voiceId)||0);
-    const highHair=['hair1','hair2','hair10','hair11'].includes(String(hair).toLowerCase());
-    const preset=kind==='announcer'?'girl':highHair?'girl':voiceStyles[id%voiceStyles.length];
+    const hairName=String(hair).toLowerCase();
+    const highHair=/^hair(?:1|2|10|11)w?$/.test(hairName);
+    const preset=kind==='announcer'?'girl':highHair?'girl':hairName.endsWith('w')?'woman':hairName.endsWith('m')?'man':voiceStyles[id%voiceStyles.length];
     const params=synth.params(preset);
     params.f0=kind==='announcer'?355:voicePitch[preset]+(id%5-2)*8;
     if(highHair)params.f0=410+(id%5)*12;

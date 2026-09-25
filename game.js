@@ -35,6 +35,7 @@
       const selected={...player.defaults,...saved};
       for(const key of ['hair','eyes','mouth'])
         if(!player.options[key].includes(selected[key]))selected[key]=player.defaults[key];
+      if(selected.hair.endsWith('w')&&selected.mouth==='mouth8')selected.mouth=player.defaults.mouth;
       for(const key of ['hair','cloth','skin'])
         if(!player.palettes[key].includes(selected[key+'Color']))selected[key+'Color']=player.defaults[key+'Color'];
       selected.name=/^[A-Z]{1,4}$/.test(saved.name)?saved.name:'YOU';
@@ -144,6 +145,7 @@
       paintPlayer('victory-player',playerExpression);
       paintPlayer('editor','normal');
       for(const {button,id,key,value,preview} of editorButtons){
+        button.hidden=id==='mouth'&&value==='mouth8'&&playerSelection.hair.endsWith('w');
         button.setAttribute('aria-pressed',String(playerSelection[key]===value));
         button.className='editor-option'+(id.includes('color')?' color-option':'')+(playerSelection[key]===value?' selected':'');
         if(id==='hair')drawTintedPart(preview,player.layerMasks.hair[value],playerSelection.hairColor);
@@ -188,7 +190,9 @@
             button.append(preview);
           }
           button.addEventListener('click',()=>{
+            if(id==='mouth'&&value==='mouth8'&&playerSelection.hair.endsWith('w'))return;
             playerSelection[key]=value;
+            if(id==='hair'&&value.endsWith('w')&&playerSelection.mouth==='mouth8')playerSelection.mouth=player.defaults.mouth;
             try{window.localStorage.setItem(playerStorageKey,JSON.stringify(playerSelection));}catch{}
             renderPlayer();
           });
@@ -817,11 +821,12 @@
       if(outcome==='loss')return;
       if(!watchMode){
         const confetti=byId('match-confetti'),pieces=[];
-        for(let n=0;n<56;n++){
+        for(let n=0;n<84;n++){
           const piece=document.createElement('i'),fromLeft=n%2===0;
           piece.className='match-confetti-piece';
-          const spin=(fromLeft?1:-1)*(280+(n*41)%520);
-          piece.setAttribute('style',`--origin:${fromLeft?0:100}%;--apex-x:${fromLeft?'':'-'}${14+(n*17)%45}vw;--land-x:${fromLeft?'':'-'}${24+(n*23)%54}vw;--apex-y:-${28+(n*13)%43}vh;--mid-spin:${spin*.55}deg;--spin:${spin}deg;--duration:${2.2+(n%8)*.16}s;--delay:${(n%12)*.045}s;--hue:${n%4===0?47:n%4===1?153:n%4===2?345:190}`);
+          const spin=(fromLeft?1:-1)*(150+(n*31)%300);
+          const apex=30+(n*19)%62;
+          piece.setAttribute('style',`--origin:${fromLeft?0:100}%;--apex-x:${fromLeft?'':'-'}${18+(n*29)%77}vw;--land-x:${fromLeft?'':'-'}${24+(n*37)%79}vw;--apex-y:-${apex}vh;--land-y:-${Math.max(18,apex-8)}vh;--mid-spin:${spin*.55}deg;--spin:${spin}deg;--duration:${5.2+(n%9)*.3}s;--delay:${(n%18)*.075}s;--hue:${n%4===0?47:n%4===1?153:n%4===2?345:190}`);
           pieces.push(piece);
         }
         confetti.replaceChildren(...pieces);confetti.hidden=false;

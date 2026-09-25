@@ -1035,3 +1035,20 @@ html, body, button, a { touch-action: manipulation; }
 @media (hover: none), (pointer: coarse) {
   .player-portrait, .enemy-portrait { --portrait-size: clamp(78px, 12dvh, 104px); }
 }
+
+/* Slower, broader paper bursts and portrait-linked match effects. */
+.enemy-portrait .thinking i, .stage.watching .player-portrait #watch-thinking i { width: calc(var(--thinking-pixel) * 1.5); height: calc(var(--thinking-pixel) * 1.5); }
+.enemy-portrait .thinking, .stage.watching .player-portrait #watch-thinking { top: calc(100% - var(--portrait-size) - var(--thinking-pixel) * 2); }
+@keyframes thinking-pixel { 0%, 24% { opacity: .62; } 25%, 100% { opacity: 0; } }
+.win-orbit { --orbit-time: 6.667s; animation-duration: var(--orbit-time); }
+.win-orbit i { animation-duration: var(--orbit-time), 1.1s; }
+.stage.watching .win-orbit { --orbit-time: 13.333s; }
+.match-confetti-piece { bottom: -20px; width: 14px; height: 19px; animation-timing-function: cubic-bezier(.24,.66,.43,1); }
+.match-confetti-piece:nth-child(3n) { width: 11px; height: 15px; }
+.match-confetti-piece:nth-child(5n) { width: 17px; height: 11px; }
+@keyframes match-confetti-burst {
+  0% { transform: translate(0,0) rotate(0deg); opacity: 0; }
+  12% { opacity: .85; }
+  48% { transform: translate(var(--apex-x),var(--apex-y)) rotate(var(--mid-spin)); opacity: .9; }
+  100% { transform: translate(var(--land-x),var(--land-y)) rotate(var(--spin)); opacity: 0; }
+}
