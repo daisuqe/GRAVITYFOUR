@@ -763,18 +763,38 @@
         renderBracket(step);
         if(step<tournament.revealRounds.length)
           setTimeout(()=>animateBracketReveal(step+1,token),550);
-        else if(watchMode){
-          if(winners.length===1)audio.setMusic('victory');
-          setTimeout(()=>{
-            if(token!==matchToken||!tournament||byId('tournament-recap').hidden)return;
-            if(outcome==='win'&&tournament.bracket.length>2)advanceTournament();
-            else startTournament(32,true);
-          },2400);
-        }else{
+        else{
           if(winners.length===1&&outcome==='loss')audio.setMusic('victory');
           byId('match-actions').hidden=false;
         }
       },duration+(winners.length-1)*stagger+150);
+    }
+    function animateWatchMatch(token){
+      const size=tournament.type.size,level=tournament.round+1,roundCount=Math.log2(size);
+      const pair=tournament.matchIndex,winner=outcome==='win'?watchLeft:opponent;
+      const sourceIndex=pair*2+(winner===watchLeft?0:1);
+      const from=bracketPosition(size,level-1,sourceIndex,winner);
+      const to=bracketPosition(size,level,pair,winner);
+      const canvas=byId('bracket-rounds').children[0];
+      const fromRight=level<roundCount&&pair>=pendingWinners.length/2;
+      const childEdge=fromRight?from.x:from.x+from.width;
+      const parentEdge=fromRight?to.x+to.width:to.x;
+      const middle=level===roundCount?canvas.bracketWidth/2:(childEdge+parentEdge)/2;
+      const ghost=document.createElement('div'),duration=1900;
+      ghost.className='bracket-entry bracket-traveler';
+      ghost.setAttribute('style',`left:${from.x}px;top:${from.y-bracketLayout.cardHeight/2}px;width:${from.width}px;height:${bracketLayout.cardHeight}px;--corner-x:${middle-from.x-from.width/2}px;--travel-x:${to.x-from.x}px;--travel-y:${to.y-from.y}px;--travel-duration:${duration}ms;--delay:0ms`);
+      appendBracketFace(ghost,winner);canvas.append(ghost);
+      setTimeout(()=>{
+        if(token!==matchToken||!tournament||byId('tournament-recap').hidden)return;
+        renderBracket(1);
+        if(tournament.bracket.length===2)audio.setMusic('victory');
+        setTimeout(()=>{
+          if(token!==matchToken||!tournament||byId('tournament-recap').hidden)return;
+          if(pair+1<tournament.bracket.length/2){tournament.matchIndex++;startMatch();}
+          else if(tournament.bracket.length===2)startTournament(32,true);
+          else advanceTournament();
+        },1800);
+      },duration+150);
     }
     function showVictoryEffect(){
       const orbit=byId(outcome==='loss'?'enemy-win-orbit':'win-orbit');
@@ -824,7 +844,8 @@
       audio.setMusic(outcome==='win'&&!watchMode&&!tournament.random&&tournament.bracket.length===2?'victory':'bracket');
       byId('match-actions').hidden=watchMode||(outcome==='loss'&&!!tournament.revealRounds);
       byId('next-match').hidden=!watchMode&&outcome==='win'&&tournament.bracket.length===2;
-      if(tournament.revealRounds)animateBracketReveal(1,matchToken);
+      if(watchMode&&tournament.revealRounds)animateWatchMatch(matchToken);
+      else if(tournament.revealRounds)animateBracketReveal(1,matchToken);
       else if(watchMode)setTimeout(()=>{if(tournament&&byId('tournament-recap').hidden===false)startMatch();},1800);
     }
     function scheduleRecap(){
