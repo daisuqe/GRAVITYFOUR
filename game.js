@@ -1,6 +1,6 @@
   (() => {
     'use strict';
-    const N=10, HUMAN=1, COM=2, EMPTY=0;
+    const N=9, ROWS=9, HUMAN=1, COM=2, EMPTY=0;
     const boardEl=document.getElementById('board');
     const art=document.getElementById('board-art');
     const ctx=art.getContext('2d');
@@ -16,15 +16,15 @@
     const requiresPlace=typeof window.matchMedia==='function'&&window.matchMedia('(hover: none), (pointer: coarse)').matches;
     const cells=[];const directions=[[0,1],[1,0],[1,1],[1,-1]];
     const windows=[];
-    for(let r=0;r<N;r++)for(let c=0;c<N;c++)for(const [dr,dc] of directions){
+    for(let r=0;r<ROWS;r++)for(let c=0;c<N;c++)for(const [dr,dc] of directions){
       for(const length of [4,5]){
         const endR=r+dr*(length-1),endC=c+dc*(length-1);
-        if(endR<0||endR>=N||endC<0||endC>=N)continue;
+        if(endR<0||endR>=ROWS||endC<0||endC>=N)continue;
         const indices=Array.from({length},(_,k)=>(r+dr*k)*N+c+dc*k);
         windows.push({indices,length,dr,dc,r,c});
       }
     }
-    let board=new Uint8Array(N*N),turn=HUMAN,ended=false,winningCells=new Set(),thinking=false,hoverIndex=-1,selectedIndex=-1,lastComMove=-1;
+    let board=new Uint8Array(N*ROWS),turn=HUMAN,ended=false,winningCells=new Set(),thinking=false,hoverIndex=-1,selectedIndex=-1,lastComMove=-1,endedByScore=false;
     const roster=window.GravityFourRoster||[];
     const player=window.GravityFourPlayer;
     const playerStorageKey='gravityfour-player-v1';
@@ -82,7 +82,7 @@
     ];
     const settings={depth:2,mistake:10,trick:30,attack:50,defense:50,edgeExplore:50,ride:50,unusual:50,center:50,consistency:80};
     const watchSettings={...settings,depth:2,mistake:12,trick:35};
-    let tournament=null,opponent=null,watchLeft=null,outcome=null,matchToken=0,pendingWinners=null,introActive=false,watchMode=false;
+    let tournament=null,opponent=null,watchLeft=null,outcome=null,matchToken=0,pendingWinners=null,introActive=false,watchMode=false,watchLeftHasSpoken=false;
     const audio=window.GravityFourAudio||{unlock(){},speak(){return 0},setMusic(){},stop(){}};
     function drawScanlines(mask,id){
       const canvas=byId(id),context=canvas.getContext('2d');
@@ -306,15 +306,15 @@
     function startMatch(){
       matchToken++;introActive=true;
       byId('stage').className=watchMode?'stage watching':'stage';
-      board=new Uint8Array(N*N);turn=tournament.bracket.indexOf(null)%2===0?HUMAN:COM;ended=false;thinking=false;
+      board=new Uint8Array(N*ROWS);turn=tournament.bracket.indexOf(null)%2===0?HUMAN:COM;ended=false;thinking=false;
       setPlayerExpression('normal');
-      winningCells=new Set();hoverIndex=-1;selectedIndex=-1;lastComMove=-1;outcome=null;pendingWinners=null;tournament.revealRounds=null;
+      winningCells=new Set();hoverIndex=-1;selectedIndex=-1;lastComMove=-1;endedByScore=false;outcome=null;pendingWinners=null;tournament.revealRounds=null;
       byId('win-orbit').hidden=true;
       comFlashAnimation?.cancel();comFlashAnimation=null;clearStoneFlight();
       byId('victory-effect').hidden=true;
       byId('board-frame').className='board-frame';
-      byId('tournament-recap').hidden=true;
-      byId('thinking').hidden=true;
+      byId('tournament-recap').hidden=true;byId('continue-overlay').hidden=true;byId('back').hidden=false;
+      byId('thinking').hidden=true;byId('watch-thinking').hidden=true;
       opponent=tournament.bracket[tournament.bracket.indexOf(null)^1];
       Object.assign(settings,opponent.profile);
       byId('score-player-name').textContent=watchMode?watchLeft.name:playerName();
@@ -348,8 +348,10 @@
         progress.replaceChildren(current,arrow,next);
         progress.setAttribute('aria-label',tournament.type.label+' '+tournament.bracket.length+' to '+(tournament.bracket.length/2));
       }
-      byId('speech').hidden=true;
+      byId('speech').hidden=true;byId('watch-speech').hidden=true;watchLeftHasSpoken=false;
       const round=tournament.round,token=matchToken;
+      byId('round-intro-tournament').textContent=tournament.type.label+'\nTOURNAMENT';
+      byId('round-intro-tournament').hidden=tournament.random;
       byId('round-intro-title').textContent=tournament.random?'RANDOM MATCH':['1ST','2ND','3RD','4TH','5TH'][round]+' ROUND';
       byId('round-intro-count').textContent=tournament.random?'':'('+(round+1)+'/'+Math.log2(tournament.type.size)+')';
       byId('round-intro').hidden=false;
@@ -406,7 +408,7 @@
       byId('stage').className='stage';clearStoneFlight();
       audio.stop();audio.setMusic('bracket');byId('round-intro').hidden=true;
       byId('stage').hidden=true;byId('menu').hidden=false;byId('place').hidden=true;
-      byId('tournament-recap').hidden=true;byId('thinking').hidden=true;byId('victory-effect').hidden=true;
+      byId('tournament-recap').hidden=true;byId('continue-overlay').hidden=true;byId('back').hidden=false;byId('thinking').hidden=true;byId('victory-effect').hidden=true;
       byId('leave-confirm').hidden=true;
       byId('history-view').hidden=true;byId('history-log-view').hidden=true;byId('editor-view').hidden=true;renderDailyHeader();
     }
@@ -414,61 +416,107 @@
       if(tournament&&!tournament.random&&!ended)byId('leave-confirm').hidden=false;
       else showMenu();
     }
-    function maybeSay(message,frequency,force=false){
-      const bubble=byId('speech');
-      if(!force&&Math.random()*100>=settings.talkativeness*frequency){
+    function lineFor(character,create){
+      const saved={...settings};
+      Object.assign(settings,character.profile);
+      try{return create();}finally{Object.assign(settings,saved);}
+    }
+    function maybeSay(message,frequency,force=false,speaker=opponent){
+      const left=watchMode&&speaker===watchLeft;
+      const bubble=byId(left?'watch-speech':'speech'),other=byId(left?'speech':'watch-speech');
+      const profile=left?speaker.profile:settings;
+      if(!force&&Math.random()*100>=profile.talkativeness*frequency){
         bubble.hidden=true;bubble.textContent='';return;
       }
+      other.hidden=true;other.textContent='';
       bubble.hidden=false;
-      const line=settings.voice==='quirky'&&message.endsWith('。')
+      const line=profile.voice==='quirky'&&message.endsWith('。')
         &&!/(ダヨ|ッス|デスゾ|……)\。$/.test(message)
-        ?message.slice(0,-1)+(opponent.id%2?'ッス。':'ダヨ。')
+        ?message.slice(0,-1)+(speaker.id%2?'ッス。':'ダヨ。')
         :message;
       bubble.textContent=line.replace(/[。、]/g,' ').replace(/\s+/g,' ').trim();
-      bubble.className='speech';
+      bubble.className=left?'speech watch-speech':'speech';
       void bubble.offsetWidth;
-      bubble.className='speech flash';
-      audio.speak(bubble.textContent,'character',opponent.id);
+      bubble.className+=' flash';
+      audio.speak(bubble.textContent,'character',speaker.id,speaker.hair);
     }
     const chooseLine=lines=>lines[Math.floor(Math.random()*lines.length)];
+    function battleSituation(player=COM){
+      const rival=player===COM?HUMAN:COM;
+      const own=wins(board,player),other=wins(board,rival);
+      return {ownFours:own.four.length,otherFours:other.four.length,
+        ownThreats:potential(board,player).threats,otherThreats:potential(board,rival).threats,
+        stones:board.reduce((count,stone)=>count+(stone!==EMPTY),0),
+        ownFive:own.five.length,otherFive:other.five.length};
+    }
     function openingLine(){
-      if(settings.voice==='quirky')return chooseLine(['ヨロシクデスゾ。','オテヤワラカニダヨ。','ヨロシクッス！']);
-      if(settings.voice==='polite')return chooseLine(['ヨロシクオネガイシマス。','オテヤワラカニ。','イイショウブヲ。']);
-      if(settings.personality==='teasing')return chooseLine(['コンチワ。マケナイデネ？','ヨロシク。タノシマセテヨ。','ウィッス。ココカラダヨ。']);
-      if(settings.personality==='friendly')return chooseLine(['コンチワ！ヨロシクネ。','ヨロシク！タノシモウ。','オテヤワラカニネ。']);
-      if(settings.personality==='reserved')return chooseLine(['ヨロシク。','……ヨロシク。']);
-      return chooseLine(['ヨロシク。','コンチワ。','ウィッス。','オテヤワラカニ。']);
+      if(turn===COM&&Math.random()<.33)return chooseLine(['サキニイクヨ。','サッソクハジメヨウ。','センテハモラッタ。']);
+      if(settings.voice==='quirky')return chooseLine(['ヨロシクデスゾ。','オテヤワラカニダヨ。','ヨロシクッス！','イザショウブッス。','キョウモガンバルダヨ。','ドウゾヨロシクデスゾ。','オモシロクナリソウッス。','マケナイダヨ。','ハジメルデスゾ。']);
+      if(settings.voice==='polite')return chooseLine(['ヨロシクオネガイシマス。','オテヤワラカニ。','イイショウブヲ。','サア ハジメマショウ。','ゴタイセンオネガイシマス。','タノシミニシテイマシタ。','ドウゾオテヤワラカニ。','ヨイショウブニシマショウ。','セイイッパイイキマス。']);
+      if(settings.personality==='teasing')return chooseLine(['コンチワ。マケナイデネ？','ヨロシク。タノシマセテヨ。','ウィッス。ココカラダヨ。','キミノテヲミセテヨ。','スグニオワラセナイヨ。','サア ドコマデヤレル？','ワタシヲオドロカセテ。','ヨロシクネ オテヤワラカニ。','フフッ ハジメヨウカ。']);
+      if(settings.personality==='friendly')return chooseLine(['コンチワ！ヨロシクネ。','ヨロシク！タノシモウ。','オテヤワラカニネ。','キョウハイイショウブニシヨウ。','アエテウレシイヨ。','イッショニタノシモウネ。','オタガイガンバロウ。','ヨロシクオネガイシマス。','サア ハジメヨッカ。']);
+      if(settings.personality==='reserved')return chooseLine(['ヨロシク。','……ヨロシク。','ハジメヨウ。','ドウゾ。','ウン。ヨロシク。','……ショウブ。']);
+      return chooseLine(['ヨロシク。','コンチワ。','ウィッス。','オテヤワラカニ。','サア ハジメヨウ。','イイショウブヲ。','カカッテキテ。','キョウハマケナイ。','ヨロシクネ。','サキハナガイヨ。','ショウブダ。','イザ タイセン。']);
     }
-    function thinkingLine(){
-      const lines=['ウーン……','エット……','フム……','ンー、ドウシヨウ。','♪ フフン、フーン ♪','ナルホド……'];
-      if(settings.depth===3)lines.push('モウスコシヨム……','ソウキタカ……');
-      if(settings.trick>70)lines.push('アノテデイクカ……','フフ、ミエタ。');
-      if(settings.personality==='teasing')lines.push('ドコニオコウカナ？');
-      if(settings.personality==='reserved')lines.push('……。');
+    function thinkingLine(player=COM){
+      const state=battleSituation(player);
+      if(state.otherFours>=2)return chooseLine(['ツギヲトメナイト。','ココデマケラレナイ。','ウッ キビシイ。','マズイ テヲヨモウ。','イッポンデギャクテンカ。','アキラメナイ。']);
+      if(state.otherThreats>=2)return chooseLine(['アブナイナ……','フセグテヲサガソウ。','ソコハミエテイル。','ウーン ケイカイシヨウ。','ツギヲヨンデオコウ。','イマハマモリダ。']);
+      if(state.ownFours>=2)return chooseLine(['アトイッポンダ。','ココデキメタイ。','ショウブドコロダ。','カチスジヲサガソウ。','モウスコシデトドク。','アセルナ ヨクミロ。']);
+      if(state.ownThreats>=2)return chooseLine(['ツナガリソウダ。','イイカタチカモ。','ツギガミエタ。','ココヲノバソウ。','スキマヲネラオウ。','センヲツクレルカナ。']);
+      if(state.stones>=40)return chooseLine(['バンガセマクナッタ。','ノコリヲカゾエヨウ。','オワリガチカイ。','ココカラガムズカシイ。','イッテヲタイセツニ。','サイゴマデヨモウ。']);
+      const lines=['ウーン……','エット……','フム……','ンー ドウシヨウ。','♪ フフン フーン ♪','ナルホド……','コッチカナ……','チョットマッテ……','ドコガイイカナ。','マダキメラレナイ。','フフーン……','ムムム……','ソウダナ……','スコシカンガエル。','コレカ コレカ……','ヨシ ヨンデミヨウ。','ウーン ナヤムナ。','ナニカアルハズ。'];
+      if(settings.depth===3)lines.push('モウスコシヨム……','ソウキタカ……','サンテサキマデ……','ココハジックリ。','ウラノテモアルナ。','ミオトシハナイカ。');
+      if(settings.trick>70)lines.push('アノテデイクカ……','フフ ミエタ。','チョットヒネロウ。','ウラヲカコウ。','マヨワセタイナ。','ココデフイヲツク。');
+      if(settings.personality==='teasing')lines.push('ドコニオコウカナ？','マヨッテルフリ。','キミハキヅクカナ。');
+      if(settings.personality==='reserved')lines.push('……。','フム……','……カンガエチュウ。');
       return chooseLine(lines);
     }
-    function moveLine(){
-      const lines=['ココダ。','フム。','ヨシッ。','アッ、コッチカ。','♪ フフフーン ♪','ナルホド……'];
-      if(settings.personality==='teasing')lines.push('オヤ？ソコデイイノ？','フフッ、ドウスル？','マダマダダネ。');
-      if(settings.personality==='friendly')lines.push('イイテダネ！','イッショニタノシモウ。','オオ、ヤルネ！');
-      if(settings.personality==='thoughtful')lines.push('コノサキハ……','ヨミドオリ。');
-      if(settings.ride>75)lines.push('ソノコマ、カリルヨ。');
-      if(settings.unusual>75)lines.push('コレハドウ？','ヘンナテモイイヨネ。');
-      if(settings.expressiveness>65)lines.push('オッ！','ウッ……','アハハ！');
+    function moveLine(player=COM){
+      const state=battleSituation(player);
+      if(state.ownFours>=2)return chooseLine(['アトイッポン！','コレデキマルカナ。','ショウブハココカラ。','イイカタチダ。','ツギデネラエル。','サア ドウスル？']);
+      if(state.ownFours>state.otherFours)return chooseLine(['イッポンモラッタ。','コッチガリード。','ヨシッ ツナガッタ。','コノママイクヨ。','イイナガレダ。','マダノバセル。']);
+      if(state.otherFours>state.ownFours)return chooseLine(['マダマダコレカラ。','トリカエサナイト。','サガヒライタナ。','ウッ マズイカモ。','ココカラタテナオス。','オイツクヨ。']);
+      if(state.otherThreats>=2)return chooseLine(['ココハフセグ。','ソノセンハトメル。','アブナカッタ。','マモリヲカタメル。','ソコハワタサナイ。','イッタンシノゴウ。']);
+      if(state.stones>=40)return chooseLine(['ノコリハスクナイ。','コノイッテニカケル。','サイゴマデイクヨ。','ココデツナグ。','オワリヲヨモウ。','アトハタイミング。']);
+      const lines=['ココダ。','フム。','ヨシッ。','アッ コッチカ。','♪ フフフーン ♪','ナルホド……','ココニシヨウ。','イイカンジ。','オイテミタ。','マア コレデ。','コッチヲエラブ。','ウマクイクカナ。','ホイッ。','サテ ツギハ。','コレデドウダ。','ウン ワルクナイ。','チョットボウケン。','ココヲツカオウ。'];
+      if(settings.personality==='teasing')lines.push('オヤ？ソコデイイノ？','フフッ ドウスル？','マダマダダネ。','コノテハヨメタ？','チョットコマッタ？','キミノバンダヨ。','ホラ ミテミテ。','フフ コレハドウ？','ツギガタノシミ。');
+      if(settings.personality==='friendly')lines.push('イイテダネ！','イッショニタノシモウ。','オオ ヤルネ！','ココガスキ。','ナカナカイイネ。','キミノテモミタイ。','ワクワクスルネ。','オタガイガンバロウ。','イイショウブダネ。');
+      if(settings.personality==='thoughtful')lines.push('コノサキハ……','ヨミドオリ。','スジハミエテイル。','ココヲオサエル。','ツギノカタチヲミル。','コレガイチバン。');
+      if(settings.ride>75)lines.push('ソノコマ カリルヨ。','ソコヲアシバニ。','キミノコマモツカウヨ。');
+      if(settings.unusual>75)lines.push('コレハドウ？','ヘンナテモイイヨネ。','チョットカワッタテ。','ヨソウガイデショ。','ココカライケル。','ナナメノハッソウ。');
+      if(settings.expressiveness>65)lines.push('オッ！','ウッ……','アハハ！','ヤッタ。','エエッ？','フフフ。','ムムッ。','オオー。','ヨーシ。');
       return chooseLine(lines);
     }
-    function resultLine(result){
-      if(result==='win')return chooseLine(settings.personality==='teasing'
-        ?['ウッ、ヤラレタ……','ヤルネ……ツギハマケナイヨ。']
-        :settings.personality==='friendly'
-          ?['オメデトウ！ツヨイネ。','マケチャッタ。イイショウブ！']
-          :['ウッ……ツヨイ。','ナルホド……ヤラレタ。']);
-      if(result==='loss')return chooseLine(settings.personality==='teasing'
-        ?['フフ、コノショウブハモラッタヨ。','ドウ？オドロイタ？']
-        :settings.personality==='friendly'
-          ?['アリガトウ！タノシカッタ。','イイショウブダッタネ！']
-          :['ヨシッ、カッタ。','フウ……ヤッタ。']);
-      return chooseLine(['ヒキワケカ。','アララ、オアイコ。','ウーン……モウイッカイ。']);
+    function resultLine(result,player=COM){
+      const state=battleSituation(player);
+      if(result==='win'){
+        const tone=settings.personality==='teasing'
+          ?['ウッ ヤラレタ……','ヤルネ ツギハマケナイヨ。','コレハクヤシイ。','チョットユダンダカナ。','ウマクヤッタネ。','フフ ツギハチガウヨ。']
+          :settings.personality==='friendly'
+            ?['オメデトウ！ツヨイネ。','マケチャッタ イイショウブ！','カッタネ オメデトウ。','タノシカッタヨ。','マタショウブシヨウ。','ステキナテダッタ。']
+            :['ウッ……ツヨイ。','ナルホド……ヤラレタ。','マケタカ……','ミゴトダヨ。','アノテガヨカッタ。','ツギハガンバル。'];
+        const situation=state.otherFive
+          ?['ゴレンデキマッタ！','ソコマデヨンデタノ？','アッ ゴメン マケタ。','ゴレンハツヨイ。','ミゴトナイッテ。','ソレハトメラレナイ。']
+          :state.otherFours>=3
+            ?['サンボンソロッタカ。','センヲミオトシタ。','キレイニツナイダネ。','ウッ ヨマレタ。','ソノカタチハミゴト。','マイッタ ヤルネ。']
+            :[];
+        return chooseLine([...situation,...tone]);
+      }
+      if(result==='loss'){
+        const tone=settings.personality==='teasing'
+          ?['フフ コノショウブハモラッタヨ。','ドウ？オドロイタ？','ツギハマケナイデネ。','ココマデヨンデタ。','フフッ ウマクイッタ。','マタカカッテキテ。']
+          :settings.personality==='friendly'
+            ?['アリガトウ！タノシカッタ。','イイショウブダッタネ！','マタアソボウネ。','ギリギリダッタヨ。','キミモツヨカッタ。','タノシイショウブダッタ。']
+            :['ヨシッ カッタ。','フウ……ヤッタ。','ナントカトドイタ。','アブナカッタ。','コレデイッポン。','ツギモガンバル。'];
+        const situation=state.ownFive
+          ?['ゴレンデキマッタ！','コレデキマリ。','ヨシ ゴレンダ。','キレイニソロッタ。','コノセンガミエテタ。','イイキマリテダ。']
+          :state.ownFours>=3
+            ?['サンボンソロッタ。','コレデカチダ。','センガツナガッタ。','ヨシッ キマッタ。','イッポンメカラネラッテタ。','キレイナカタチダ。']
+            :[];
+        return chooseLine([...situation,...tone]);
+      }
+      return chooseLine(['ヒキワケカ。','アララ オアイコ。','ウーン……モウイッカイ。','ドッチモユズラナイネ。','モウイチドショウブ。','キレイニナランダネ。','コレハサイセンカ。','マダオワラナイヨ。','ツギデキメヨウ。']);
     }
     const bracketLayout={cardWidth:38,cardHeight:36,step:53,slot:37,margin:4,top:32,gap:19,championY:16};
     function bracketWidth(size){
@@ -476,10 +524,10 @@
       return 2*(margin+depth*step+cardWidth)+gap;
     }
     function bracketPosition(size,level,index,character){
-      const {cardWidth,step,slot,margin,top,championY,gap}=bracketLayout;
+      const {cardWidth,cardHeight,step,slot,margin,top,championY,gap}=bracketLayout;
       const roundCount=Math.log2(size),width=bracketWidth(size);
       const name=character===null?playerName():character==='TBD'?'—':character?.name||'';
-      const ownWidth=Math.max(19,Math.min(cardWidth,Math.ceil(name.length*8.3+4)));
+      const ownWidth=character===null||character==='TBD'?cardHeight:Math.max(19,Math.min(cardWidth,Math.ceil(name.length*8.3+4)));
       if(level===roundCount)return {x:(width-ownWidth)/2,y:championY,width:ownWidth};
       const sideCount=size/2**(level+1),right=index>=sideCount;
       if(level===roundCount-1)return {x:right?width/2+gap/2:width/2-gap/2-ownWidth,
@@ -626,7 +674,7 @@
         championKnown&&rounds[depth][0]===champion,depth*170);
       line(axis,finalY,rightFinal.x,finalY,
         championKnown&&rounds[depth][1]===champion,depth*170);
-      if(championKnown)line(axis,0,axis,finalY,true,depth*170+45);
+      if(championKnown)line(axis-1,0,axis-1,finalY,true,depth*170+45);
       container.replaceChildren(canvas);
       container.className='bracket-rounds full-bracket';
       centerBracket();
@@ -727,6 +775,7 @@
     function showRecap(){
       if(!ended||!tournament||flightIndex>=0||!byId('tournament-recap').hidden)return;
       if(watchMode){startRandomMatch();return;}
+      byId('continue-overlay').hidden=true;byId('back').hidden=false;
       byId('victory-effect').hidden=true;byId('win-orbit').hidden=true;
       byId('board-frame').className='board-frame';
       byId('tournament-recap').hidden=false;
@@ -747,33 +796,33 @@
     }
     function styleBonus(i){
       const r=Math.floor(i/N),c=i%N;
-      const edges=[r===0,r===N-1,c===0,c===N-1];
+      const edges=[r===0,r===ROWS-1,c===0,c===N-1];
       const used=[false,false,false,false];
-      for(let j=0;j<N*N;j++)if(board[j]===COM){
+      for(let j=0;j<N*ROWS;j++)if(board[j]===COM){
         const row=Math.floor(j/N),col=j%N;
-        if(row===0)used[0]=true;if(row===N-1)used[1]=true;
+        if(row===0)used[0]=true;if(row===ROWS-1)used[1]=true;
         if(col===0)used[2]=true;if(col===N-1)used[3]=true;
       }
       const freshEdge=edges.some((edge,j)=>edge&&!used[j]);
       const neighbours=[[r-1,c],[r+1,c],[r,c-1],[r,c+1]];
-      const supportedByRival=neighbours.some(([row,col])=>row>=0&&row<N&&col>=0&&col<N&&board[row*N+col]===HUMAN);
+      const supportedByRival=neighbours.some(([row,col])=>row>=0&&row<ROWS&&col>=0&&col<N&&board[row*N+col]===HUMAN);
       const turnCount=board.reduce((count,stone)=>count+(stone!==EMPTY),0);
       const variation=Math.sin((i+1)*12.9898+(turnCount+1)*78.233)*43758.5453;
       const noise=(variation-Math.floor(variation))-.5;
       return (freshEdge?settings.edgeExplore*.12:0)+(supportedByRival?settings.ride*.1:0)
-        +(settings.unusual*.12)*(1-Math.min(1,positionValue(i)/9))
+        +(settings.unusual*.12)*(1-Math.min(1,positionValue(i)/8))
         +noise*(100-settings.consistency)*.22;
     }
     const byId=id=>document.getElementById(id);
     function legalMoves(b){
       const result=[];
-      for(let r=0;r<N;r++)for(let c=0;c<N;c++){
+      for(let r=0;r<ROWS;r++)for(let c=0;c<N;c++){
         const i=r*N+c;if(b[i])continue;
         let ok=true;
         for(let x=c-1;x>=0;x--)if(!b[r*N+x]){ok=false;break;}
         if(!ok){ok=true;for(let x=c+1;x<N;x++)if(!b[r*N+x]){ok=false;break;}}
         if(!ok){ok=true;for(let y=r-1;y>=0;y--)if(!b[y*N+c]){ok=false;break;}}
-        if(!ok){ok=true;for(let y=r+1;y<N;y++)if(!b[y*N+c]){ok=false;break;}}
+        if(!ok){ok=true;for(let y=r+1;y<ROWS;y++)if(!b[y*N+c]){ok=false;break;}}
         if(ok)result.push(i);
       }
       return result;
@@ -785,13 +834,13 @@
         // Only count complete runs of exactly four; a run of five wins separately.
         if(w.length===5){five.push(w.indices);continue;}
         const beforeR=w.r-w.dr,beforeC=w.c-w.dc,afterR=w.r+w.dr*4,afterC=w.c+w.dc*4;
-        const before=beforeR>=0&&beforeR<N&&beforeC>=0&&beforeC<N&&b[beforeR*N+beforeC]===player;
-        const after=afterR>=0&&afterR<N&&afterC>=0&&afterC<N&&b[afterR*N+afterC]===player;
+        const before=beforeR>=0&&beforeR<ROWS&&beforeC>=0&&beforeC<N&&b[beforeR*N+beforeC]===player;
+        const after=afterR>=0&&afterR<ROWS&&afterC>=0&&afterC<N&&b[afterR*N+afterC]===player;
         if(!before&&!after)four.push(w.indices);
       }
       return {four,five,won:five.length>0||four.length>=3};
     }
-    function positionValue(i){const r=Math.floor(i/N),c=i%N;return (4.5-Math.abs(r-4.5))+(4.5-Math.abs(c-4.5));}
+    function positionValue(i){const r=Math.floor(i/N),c=i%N;return (4-Math.abs(r-4))+(4-Math.abs(c-4));}
     function potential(b,player){
       let value=0,threats=0;
       for(const w of windows){
@@ -812,7 +861,7 @@
       if(hw.won)return -1000000;
       const cp=potential(b,COM),hp=potential(b,HUMAN);
       let score=cp.value*(.7+settings.attack*.006)-hp.value*(.7+settings.defense*.007)+(cp.threats**2-hp.threats**2)*settings.trick*.035;
-      for(let i=0;i<N*N;i++)if(b[i])score+=positionValue(i)*(b[i]===COM?1:-1)*settings.center*.009;
+      for(let i=0;i<N*ROWS;i++)if(b[i])score+=positionValue(i)*(b[i]===COM?1:-1)*settings.center*.009;
       return score;
     }
     function rankedMoves(b,player,limit){
@@ -896,7 +945,7 @@
       flashCtx.fillStyle='#f7ffff';
       for(let y=0;y<11;y++)for(let x=0;x<11;x++)
         if(crystal[y][x]!=='.')flashCtx.fillRect(x+3,y+3,1,1);
-      comFlash.setAttribute('style',`position:absolute;z-index:3;width:10%;height:10%;left:${5+(i%N)*10}%;top:${5+Math.floor(i/N)*10}%;transform:translate(-50%,-50%);opacity:0;image-rendering:pixelated;pointer-events:none;filter:drop-shadow(0 0 7px #f7ffff)`);
+      comFlash.setAttribute('style',`position:absolute;z-index:3;width:${100/N}%;height:${100/ROWS}%;left:${(i%N+.5)*100/N}%;top:${(Math.floor(i/N)+.5)*100/ROWS}%;transform:translate(-50%,-50%);opacity:0;image-rendering:pixelated;pointer-events:none;filter:drop-shadow(0 0 7px #f7ffff)`);
       comFlashAnimation?.cancel();
       if(typeof comFlash.animate==='function')comFlashAnimation=comFlash.animate([
         {opacity:0},{opacity:.95,offset:.45},{opacity:.95,offset:.55},{opacity:0}
@@ -940,7 +989,7 @@
       const size=Math.max(15,Math.min(42,target.width/N*.72));
       const sx=from.left+from.width/2-size/2,sy=from.bottom+5;
       const ex=target.left+(i%N+.5)*target.width/N-size/2;
-      const ey=target.top+(Math.floor(i/N)+.5)*target.height/N-size/2;
+      const ey=target.top+(Math.floor(i/N)+.5)*target.height/ROWS-size/2;
       flight.setAttribute('style',`width:${size}px;height:${size}px;left:0;top:0`);
       byId('stage').append(flight);flightElement=flight;flightIndex=i;
       flightAnimation=flight.animate([
@@ -957,11 +1006,16 @@
     }
     function drawBoard(legal,hs,cs){
       const greenFours=new Set(hs.four.flat()),redFours=new Set(cs.four.flat());
-      ctx.clearRect(0,0,160,160);
-      for(let n=0;n<N;n++){
-        const p=8+n*16;
-        ctx.fillStyle='#124d36';ctx.fillRect(8,p-.75,144,1.5);ctx.fillRect(p-.75,8,1.5,144);
-        ctx.fillStyle='#2a9e68';ctx.fillRect(8,p-.25,144,.5);ctx.fillRect(p-.25,8,.5,144);
+      ctx.clearRect(0,0,144,144);
+      for(let row=0;row<ROWS;row++){
+        const y=8+row*16;
+        ctx.fillStyle='#124d36';ctx.fillRect(8,y-.75,128,1.5);
+        ctx.fillStyle='#2a9e68';ctx.fillRect(8,y-.25,128,.5);
+      }
+      for(let col=0;col<N;col++){
+        const x=8+col*16;
+        ctx.fillStyle='#124d36';ctx.fillRect(x-.75,8,1.5,128);
+        ctx.fillStyle='#2a9e68';ctx.fillRect(x-.25,8,.5,128);
       }
       const cursor=selectedIndex>=0?selectedIndex:hoverIndex;
       if(legal.has(cursor)){
@@ -969,45 +1023,50 @@
         ctx.fillStyle='#9affcd';
         for(const [dx,dy,sx,sy] of [[-7,-7,1,4],[-7,-7,4,1],[6,-7,1,4],[3,-7,4,1],[-7,3,1,4],[-7,6,4,1],[6,3,1,4],[3,6,4,1]])ctx.fillRect(x+dx,y+dy,sx,sy);
       }
-      for(let i=0;i<N*N;i++)if(board[i]&&i!==flightIndex)drawStone(8+(i%N)*16,8+Math.floor(i/N)*16,board[i],
+      for(let i=0;i<N*ROWS;i++)if(board[i]&&i!==flightIndex)drawStone(8+(i%N)*16,8+Math.floor(i/N)*16,board[i],
         (board[i]===HUMAN?greenFours:redFours).has(i),winningCells.has(i),i===lastComMove);
+    }
+    function noMoveOutcome(b=board){
+      const humanPoints=wins(b,HUMAN).four.length,comPoints=wins(b,COM).four.length;
+      return humanPoints>comPoints?'win':comPoints>humanPoints?'loss':'draw';
+    }
+    function finishMatch(){
+      ended=true;
+      if(outcome!=='draw')tournament.battles.push({round:tournament.round,opponent,result:outcome});
+      settleRound();
+      if(!watchMode)recordResult();
+      const expressionFile=outcome==='win'?opponent.loseFile:outcome==='loss'?opponent.winFile:null;
+      const mask=outcome==='win'?opponent.loseMask:outcome==='loss'?opponent.winMask:opponent.normalMask;
+      byId('opponent-eyes').hidden=!!expressionFile;
+      byId('opponent-mouth').hidden=!!expressionFile;
+      byId('opponent-expression').hidden=!expressionFile;
+      if(expressionFile)byId('opponent-expression').src='characters/'+expressionFile;
+      byId('opponent-tear').hidden=!(outcome==='win'&&opponent.profile.tearful);
+      drawScanlines(mask,'opponent-scanlines');
+      if(watchMode){
+        const expression=outcome==='win'?watchLeft.winFile:outcome==='loss'?watchLeft.loseFile:null;
+        const leftMask=outcome==='win'?watchLeft.winMask:outcome==='loss'?watchLeft.loseMask:watchLeft.normalMask;
+        byId('watch-left-eyes').hidden=!!expression;byId('watch-left-mouth').hidden=!!expression;
+        byId('watch-left-expression').hidden=!expression;
+        if(expression)byId('watch-left-expression').src='characters/'+expression;
+        byId('watch-left-tear').hidden=!(outcome==='loss'&&watchLeft.profile.tearful);
+        drawScanlines(leftMask,'watch-left-scanlines');
+      }
+      setPlayerExpression(outcome==='win'?'win':outcome==='loss'?'lose':'normal');
+      maybeSay(resultLine(outcome),1,true);
+      if(watchMode){ const token=matchToken, leftResult=outcome==='win'?'loss':outcome==='loss'?'win':'draw'; setTimeout(()=>{if(token===matchToken&&ended&&watchMode) maybeSay(lineFor(watchLeft,()=>resultLine(leftResult,HUMAN)),1,true,watchLeft);},1400); }
+      render();
+      if(outcome==='win')showVictoryEffect();
+      if(watchMode)scheduleRecap();else{byId('continue-overlay').hidden=false;byId('back').hidden=true;}
     }
     function play(i,player){
       if(introActive||ended||flightIndex>=0||board[i]||!legalMoves(board).includes(i))return false;
       board[i]=player;const flying=launchStoneFlight(i,player);if(player===COM){lastComMove=i;if(!flying)flashComMove(i);}selectedIndex=-1;hoverIndex=-1;
       const result=wins(board,player);
-      if(result.won){ended=true;outcome=player===HUMAN?'win':'loss';winningCells=new Set((result.five[0]||result.four[0]).concat(result.four.flat()));}
-      else if(!legalMoves(board).length){ended=true;outcome='draw';}
+      if(result.won){outcome=player===HUMAN?'win':'loss';winningCells=new Set((result.five[0]||result.four[0]).concat(result.four.flat()));}
+      else if(!legalMoves(board).length){endedByScore=true;outcome=noMoveOutcome();}
       else turn=player===HUMAN?COM:HUMAN;
-      if(ended){
-        if(outcome!=='draw')tournament.battles.push({round:tournament.round,opponent,result:outcome});
-        settleRound();
-        if(!watchMode)recordResult();
-        const expressionFile=outcome==='win'?opponent.loseFile:outcome==='loss'?opponent.winFile:null;
-        const mask=outcome==='win'?opponent.loseMask:outcome==='loss'?opponent.winMask:opponent.normalMask;
-        byId('opponent-eyes').hidden=!!expressionFile;
-        byId('opponent-mouth').hidden=!!expressionFile;
-        byId('opponent-expression').hidden=!expressionFile;
-        if(expressionFile)byId('opponent-expression').src='characters/'+expressionFile;
-        byId('opponent-tear').hidden=!(outcome==='win'&&opponent.profile.tearful);
-        drawScanlines(mask,'opponent-scanlines');
-        if(watchMode){
-          const expression=outcome==='win'?watchLeft.winFile:outcome==='loss'?watchLeft.loseFile:null;
-          const leftMask=outcome==='win'?watchLeft.winMask:outcome==='loss'?watchLeft.loseMask:watchLeft.normalMask;
-          byId('watch-left-eyes').hidden=!!expression;byId('watch-left-mouth').hidden=!!expression;
-          byId('watch-left-expression').hidden=!expression;
-          if(expression)byId('watch-left-expression').src='characters/'+expression;
-          byId('watch-left-tear').hidden=!(outcome==='loss'&&watchLeft.profile.tearful);
-          drawScanlines(leftMask,'watch-left-scanlines');
-        }
-        setPlayerExpression(outcome==='win'?'win':outcome==='loss'?'lose':'normal');
-        maybeSay(resultLine(outcome),1,true);
-      }
-      render();
-      if(ended){
-        if(outcome==='win')showVictoryEffect();
-        scheduleRecap();
-      }
+      if(outcome)finishMatch();else render();
       return true;
     }
     function render(){
@@ -1031,7 +1090,7 @@
       byId('match-actions').hidden=!ended;
       if(ended){
         const decisive=outcome==='win'?hs:cs;
-        const reason=outcome==='draw'?'NO LEGAL MOVES':decisive.five.length?'FIVE IN A ROW':'THREE LINES OF FOUR';
+        const reason=endedByScore?(outcome==='draw'?'EQUAL POINTS':'MORE POINTS'):decisive.five.length?'FIVE IN A ROW':'THREE LINES OF FOUR';
         const leftName=watchMode?watchLeft.name:playerName();
         const champion=outcome==='win'&&!tournament.random&&tournament.bracket.length===2;
         const status=champion?'CHAMPION':outcome==='win'?leftName+' WIN':outcome==='loss'?leftName+' LOSE':'DRAW';
@@ -1054,17 +1113,26 @@
         if(flightIndex>=0){setTimeout(respond,80);return;} if(!byId('leave-confirm').hidden){setTimeout(respond,200);return;}
         const i=chooseComMove();thinking=false;byId('thinking').hidden=true;
         if(i>=0){play(i,COM);if(!ended)maybeSay(moveLine(),.35);if(watchMode&&!ended&&turn===HUMAN)scheduleWatchMove();}
-        else{ended=true;outcome='draw';maybeSay(resultLine('draw'),1,true);render();scheduleRecap();}
+        else{thinking=false;byId('thinking').hidden=true;endedByScore=true;outcome=noMoveOutcome();finishMatch();}
       };
       setTimeout(respond,wait*(watchMode?3:1));
     }
     function scheduleWatchMove(){
       const token=matchToken;
+      byId('watch-thinking').hidden=false;
+      if(watchLeftHasSpoken)maybeSay(lineFor(watchLeft,()=>thinkingLine(HUMAN)),.25,false,watchLeft);
       setTimeout(()=>{
         if(token!==matchToken||!watchMode||ended||turn!==HUMAN)return;
         const move=chooseWatchMove();
-        if(move>=0){play(move,HUMAN);if(!ended&&turn===COM)scheduleCom();}
-        else{ended=true;outcome='draw';render();scheduleRecap();}
+        byId('watch-thinking').hidden=true;
+        if(move>=0){
+          play(move,HUMAN);
+          if(!ended){
+            maybeSay(lineFor(watchLeft,()=>moveLine(HUMAN)),.65,!watchLeftHasSpoken,watchLeft);
+            watchLeftHasSpoken=true;
+            if(turn===COM)setTimeout(()=>{if(token===matchToken&&!ended&&turn===COM)scheduleCom();},1400);
+          }
+        }else{endedByScore=true;outcome=noMoveOutcome();finishMatch();}
       },(650+Math.floor(Math.random()*500))*3);
     }
     function boardIndexFromPointer(event,fallback){
@@ -1072,10 +1140,10 @@
       const bounds=boardEl.getBoundingClientRect();
       if(!bounds.width||!bounds.height)return fallback;
       const col=Math.floor((event.clientX-bounds.left)*N/bounds.width);
-      const row=Math.floor((event.clientY-bounds.top)*N/bounds.height);
-      return row>=0&&row<N&&col>=0&&col<N?row*N+col:-1;
+      const row=Math.floor((event.clientY-bounds.top)*ROWS/bounds.height);
+      return row>=0&&row<ROWS&&col>=0&&col<N?row*N+col:-1;
     }
-    for(let i=0;i<N*N;i++){
+    for(let i=0;i<N*ROWS;i++){
       const button=document.createElement('button');button.type='button';button.className='cell';button.setAttribute('role','gridcell');
       button.addEventListener('click',event=>{
         const index=boardIndexFromPointer(event,i);
@@ -1132,7 +1200,13 @@
     byId('history-back').addEventListener('click',()=>{
       byId('history-view').hidden=true;byId('menu').hidden=false;renderDailyHeader();
     });
-    byId('result').addEventListener('click',showRecap);
+    function continueMatchResult(){
+      if(!ended||watchMode||!tournament)return;
+      if(flightIndex>=0){clearStoneFlight();render();}
+      showRecap();
+    }
+    byId('result').addEventListener('click',continueMatchResult);
+    byId('continue-overlay').addEventListener('click',continueMatchResult);
     byId('next-match').addEventListener('click',()=>{
       if(!tournament||!ended)return;
       if(tournament.random){if(outcome==='draw')startMatch();else startRandomMatch();return;}

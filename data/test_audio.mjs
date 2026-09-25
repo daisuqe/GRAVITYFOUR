@@ -46,6 +46,10 @@ audio.setMusic('off');
 assert.equal(timers.size,0,'music stops cleanly');
 console.log('Distinct finite-note music tracks passed');
 
-const pitchFrom=id=>{const before=oscillators.length;audio.speak('ア','character',id);return oscillators[before].frequency.value};
+const pitchFrom=(id,hair='')=>{const before=oscillators.length;audio.speak('ア','character',id,hair);return oscillators[before].frequency.value};
 assert.notEqual(pitchFrom(1),pitchFrom(2),'characters have distinct speaking pitches');
 assert.equal(pitchFrom(1),pitchFrom(1),'each character keeps a stable pitch');
+const pitchRange=Array.from({length:19},(_,index)=>pitchFrom(index+1));
+assert.ok(Math.max(...pitchRange)-Math.min(...pitchRange)>=150,'character voices span a clearly wider pitch range');
+for(const hair of ['hair1','hair2','hair10','hair11'])assert.ok(pitchFrom(1,hair)>Math.max(...pitchRange),'selected hair always uses a high voice: '+hair);
+assert.equal(pitchFrom(1,'hair11'),pitchFrom(1,'hair11'),'the high hair voice stays at its assigned pitch');

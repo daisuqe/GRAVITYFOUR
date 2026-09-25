@@ -104,7 +104,7 @@
     for(let i=0;i<samples.length;i++)samples[i]=Math.random()*2-1;
     return noiseBuffer;
   }
-  function speak(text,kind='character',voiceId=0){
+  function speak(text,kind='character',voiceId=0,hair=''){
     const sounds=phonemes(text);
     const duration=sounds.reduce((total,sound)=>total+sound.duration,0);
     if(!unlock()||!sounds.length)return Math.round(duration*1000);
@@ -113,8 +113,9 @@
     if(!voiceBus){voiceBus=context.createGain();voiceBus.connect(context.destination);}
     voiceBus.gain.value=kind==='announcer'?.43:.32;
     let cursor=start;
-    const characterPitches=[104,116,130,146,164,184,207,110,123,138,155,174];
-    const pitch=kind==='announcer'?104:characterPitches[(Math.abs(Number(voiceId)||0)*7)%characterPitches.length];
+    const characterPitches=[170,188,206,224,242,260,278,296,314,332,180,198,216,234,252,270,288,306,324];
+    const highHair=['hair1','hair2','hair10','hair11'].includes(String(hair).toLowerCase());
+    const pitch=kind==='announcer'?104:highHair?370+(Math.abs(Number(voiceId)||0)%5)*28:characterPitches[(Math.abs(Number(voiceId)||0)*7)%characterPitches.length];
     for(const sound of sounds){
       if(sound.pause){cursor+=sound.duration;continue;}
       const end=cursor+sound.duration,osc=context.createOscillator(),env=context.createGain();

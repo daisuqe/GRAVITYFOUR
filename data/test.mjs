@@ -9,15 +9,24 @@ const styles=fs.readFileSync(new URL('../style.css',import.meta.url),'utf8');
 assert.match(page,/href="help.html"/,'title links to help');
 assert.match(help,/基本ルール/,'help covers rules');
 assert.match(help,/トーナメント/,'help covers tournaments');
+assert.doesNotMatch(help,/初級7人|中級8人|強豪16人/,'help omits roster mix explanations');
 assert.doesNotMatch(page,/CHALLENGER|portrait-frame/,'portrait has no enclosing panel');
+assert.ok(styles.includes('.bracket-entry.you { border: 3px solid #9effc5'),'player cards have a thick outline');
+assert.ok(!styles.includes('.bracket-crowning .crowning-center::after'),'the champion connector does not cross the brown banner');
 assert.match(styles,/\.menu > \.help-button \{[^}]*min-height: 66px/,'help button is prominent');
 assert.match(styles,/grid-template-rows: clamp\(134px, 22svh, 190px\) 58px/,'scoreboard reserves stable height');
+assert.ok(!page.includes('BEGINNER RANK')&&!page.includes('REGULAR RANK')&&!page.includes('CHAMPION RANK'),'HISTORY headings omit RANK');
+assert.ok(styles.includes('min-width: 660px; border-collapse: collapse'),'HISTORY table is narrower');
 const rosterScript=fs.readFileSync(new URL('../characters.js',import.meta.url),'utf8');
 const cupsScript=fs.readFileSync(new URL('../daily-cups.js',import.meta.url),'utf8');
 assert.match(page,/src="daily-cups.js"/,'fixed-date cup calendar loads');
 assert.match(page,/id="history-view"/,'trophy room exists');
 const manifest=JSON.parse(fs.readFileSync(new URL('./characters.json',import.meta.url),'utf8'));
 assert.equal(manifest.characters.length,99);
+assert.ok(manifest.characters.filter(character=>character.profile.rank==='beginner').every(character=>character.profile.mistake>=39),'beginner opponents make more mistakes');
+assert.ok(manifest.characters.filter(character=>character.profile.rank==='regular').every(character=>character.profile.mistake>=26),'regular opponents make more mistakes');
+const publishedRoster={};vm.runInNewContext(rosterScript,{window:publishedRoster});
+assert.ok(publishedRoster.GravityFourRoster.every((character,index)=>character.hair===manifest.characters[index].hair),'published character hair reaches the speech engine');
 assert.equal(manifest.characters.filter(character=>character.profile.tearful).length,20,'one fifth of opponents keep the tear pixel');
 assert.ok(manifest.characters.every(character=>Number.isInteger(character.profile.friendliness)&&Number.isInteger(character.profile.taunt)&&character.profile.personality&&character.profile.voice),'every character has a stable personality');
 assert.match(styles,/\.scoreboard \.speech \{[^}]*yodaka/,'dialogue uses YODAKA');
@@ -55,8 +64,8 @@ function boot(coarse=false,random=null,day='2026-09-23',storage=new Map()){
   if(random!==null)context.Math=Object.assign(Object.create(Math),{random:()=>random});
   vm.runInNewContext(rosterScript,context,{filename:'characters.js'});
   vm.runInNewContext(cupsScript,context,{filename:'daily-cups.js'});
-  vm.runInNewContext(gameScript.replace('    window.GravityFour={legalMoves', '    window.__testPlay=play; window.__testBracketPosition=bracketPosition; window.GravityFour={legalMoves'),context,{filename:'game.js'});
-  return {game:context.window.GravityFour,play:context.window.__testPlay,bracketPosition:context.window.__testBracketPosition,elements,timers,drawn,buttons:elements.get('board').children};
+  vm.runInNewContext(gameScript.replace('    window.GravityFour={legalMoves', '    window.__testPlay=play; window.__testNoMoveOutcome=noMoveOutcome; window.__testThinkingLine=thinkingLine; window.__testMoveLine=moveLine; window.__testMaybeSay=maybeSay; window.__testBracketPosition=bracketPosition; window.GravityFour={legalMoves'),context,{filename:'game.js'});
+  return {game:context.window.GravityFour,play:context.window.__testPlay,noMoveOutcome:context.window.__testNoMoveOutcome,thinkingLine:context.window.__testThinkingLine,moveLine:context.window.__testMoveLine,say:context.window.__testMaybeSay,bracketPosition:context.window.__testBracketPosition,elements,timers,drawn,buttons:elements.get('board').children};
 }
 
 function finishBracket(fixture){
@@ -75,11 +84,21 @@ assert.notEqual(viewing.elements.get('score-player-name').textContent,viewing.el
 assert.match(viewing.elements.get('watch-left-face').src,/^characters\//,'the left COM has its own portrait');
 viewing.timers.shift()();
 assert.equal(viewing.buttons[0].disabled,true,'watch mode has no playable cells');
+assert.equal(viewing.elements.get('watch-thinking').hidden,false,'the left watcher shows thinking pixels above the portrait');
 viewing.timers.shift()();
 assert.equal([...viewing.game.getBoard()].filter(Boolean).length,1,'AI makes the first green move');
+assert.equal(viewing.elements.get('watch-thinking').hidden,true,'left thinking pixels stop after moving');
+assert.equal(viewing.elements.get('watch-speech').hidden,false,'the left watcher speaks');
+assert.equal(viewing.elements.get('speech').hidden,true,'the older opponent line disappears when the left watcher speaks');
+viewing.say('テスト',1,true);
+assert.equal(viewing.elements.get('watch-speech').hidden,true,'the left line clears when the right opponent speaks');
+assert.equal(viewing.elements.get('speech').hidden,false,'the right line replaces it in the same area');
+assert.equal(viewing.timers[0].delay,1400,'the left line stays visible before the opponent thinks');
+viewing.timers.shift()();
 assert.ok(viewing.timers[0].delay>=3300,'the watching opponent thinks three times longer');
 viewing.timers.shift()();
 assert.equal([...viewing.game.getBoard()].filter(Boolean).length,2,'opponent COM replies and watch mode continues');
+
 viewing.elements.get('back').onclick();
 assert.equal(viewing.elements.get('menu').hidden,false,'watch mode can return to the menu');
 
@@ -94,10 +113,19 @@ assert.equal([...looping.game.getBoard()].filter(Boolean).length,0,'watch mode s
 assert.equal(looping.elements.get('match-progress').textContent,'WATCH MODE');
 assert.equal(watchStorage.has('gravityfour-history-v1'),false,'watch mode does not alter records');
 
+const defending=boot(false,0);defending.game.startTournament(8);defending.timers.shift()();
+for(const cell of [0,1,2,9,10,11])defending.play(cell,1);
+assert.match(defending.thinkingLine(),/アブナイ|フセグ|ケイカイ/,'thinking responds to multiple rival threats');
+const leading=boot(false,0);leading.game.startTournament(8);leading.timers.shift()();
+for(const cell of [0,1,2,3])leading.play(cell,2);
+assert.match(leading.moveLine(),/イッポン|リード|ツナガッタ/,'move dialogue reflects a lead');
+
 const narrowCard=boot(false,0);
 const shortName=narrowCard.bracketPosition(32,0,0,{name:'AB'});
 const longName=narrowCard.bracketPosition(32,0,0,{name:'ABCD'});
 assert.ok(shortName.width<longName.width,'the portrait card follows its name width');
+assert.equal(narrowCard.bracketPosition(32,0,0,null).width,36,'the player portrait card is square');
+assert.equal(narrowCard.bracketPosition(32,1,0,'TBD').width,36,'an empty tournament slot is square');
 const finalLeft=narrowCard.bracketPosition(32,4,0,{name:'AAAA'}),finalRight=narrowCard.bracketPosition(32,4,1,{name:'BBBB'});
 assert.equal(finalRight.x-finalLeft.x-finalLeft.width,19,'finalists are separated by one third of the former gap');
 const narrowFinalLeft=narrowCard.bracketPosition(32,4,0,{name:'A'}),narrowFinalRight=narrowCard.bracketPosition(32,4,1,{name:'B'});
@@ -109,20 +137,29 @@ const {game,buttons,timers}=desktop;
 assert.equal(desktop.elements.get('tournament-list').children.length,3);
 assert.equal(desktop.elements.has('menu-gallery'),false,'title screen has no portraits');
 assert.equal(desktop.elements.get('menu').hidden,false);
-const empty=new Uint8Array(100);
-assert.equal(game.legalMoves(empty).length,36,'opening has 36 legal cells');
+const empty=new Uint8Array(81);
+assert.equal(game.legalMoves(empty).length,32,'opening has 32 legal cells on the nine by nine board');
 assert.equal(game.legalMoves(empty).includes(11),false,'interior initially unavailable');
+assert.equal(game.getBoard().length,81,'the board has nine rows');
 empty[1]=1;
-assert.equal(game.legalMoves(empty).includes(11),true,'stone at top supports cell below');
-const four=new Uint8Array(100);
-for(const row of [0,2,4])for(let col=0;col<4;col++)four[row*10+col]=1;
+assert.equal(game.legalMoves(empty).includes(10),true,'stone at top supports cell below');
+const four=new Uint8Array(81);
+for(const row of [0,2,4])for(let col=0;col<4;col++)four[row*9+col]=1;
 assert.equal(game.wins(four,1).won,true,'three fours win');
-const five=new Uint8Array(100);
+const five=new Uint8Array(81);
 for(let col=0;col<5;col++)five[col]=2;
 assert.equal(game.wins(five,2).five.length,1,'five wins');
+const pointsBoard=new Uint8Array(81);
+pointsBoard.set([1,1,1,1],0);
+assert.equal(desktop.noMoveOutcome(pointsBoard),'win','more four-line points wins when no move remains');
+pointsBoard.set([2,2,2,2],72);
+assert.equal(desktop.noMoveOutcome(pointsBoard),'draw','equal points require a rematch');
+pointsBoard.fill(0,0,4);
+assert.equal(desktop.noMoveOutcome(pointsBoard),'loss','the opponent can win on points');
 for(const [size,expected] of [[8,{beginner:7,regular:0,champion:0}],[16,{beginner:7,regular:8,champion:0}],[32,{beginner:7,regular:8,champion:16}]]){
   game.startTournament(size);
   assert.equal(desktop.elements.get('round-intro').hidden,false);
+  assert.equal(desktop.elements.get('round-intro-tournament').textContent,{8:'BEGINNER',16:'REGULAR',32:'CHAMPION'}[size]+'\nTOURNAMENT','the intro names the tournament above the round');
   timers.shift()();
   const state=game.getTournament();
   assert.equal(state.size,size);
@@ -151,7 +188,7 @@ assert.ok(desktop.drawn.some(([color])=>color==='#ffabc0'),'latest COM stone sta
 const flash=desktop.elements.get('board').children.find(child=>child.className==='com-move-flash');
 assert.equal(flash.animation.options.iterations,2,'COM stone flashes twice');
 assert.equal(flash.animation.options.duration,900,'COM stone flashes slowly');
-assert.match(flash.style,/left:\d+%;top:\d+%/,'flash is centered on the COM move');
+assert.match(flash.style,/left:[\d.]+%;top:[\d.]+%/,'flash is centered on the COM move');
 assert.equal(desktop.elements.get('thinking').hidden,true,'thinking indicator clears');
 desktop.elements.get('back').onclick();
 assert.equal(desktop.elements.get('leave-confirm').hidden,false,'an active tournament asks before returning to menu');
@@ -205,8 +242,10 @@ for(let round=0;round<3;round++){
   assert.ok(run.drawn.some(([kind])=>kind==='scan'),'defeat scanlines redraw');
   assert.equal(run.elements.get('speech').hidden,false,'opponent always speaks after the result');
   if(round===2){assert.ok(run.elements.get('board-frame').className.includes('champion-result'),'champion trophy is shown on the board');assert.equal(run.elements.get('victory-effect').hidden,false,'champion celebration returns');assert.equal(run.elements.get('victory-title').textContent,'CHAMPION');assert.equal(run.elements.get('victory-particles').children.length,70,'champion confetti returns');}
-  assert.equal(run.timers[0].delay,5200,'the board remains visible long enough to read the result');
-  run.timers.shift()();
+  assert.equal(run.timers.length,0,'the result stays on screen until the player taps');
+  assert.equal(run.elements.get('continue-overlay').hidden,false,'the whole screen accepts the continue tap');
+  assert.equal(run.elements.get('back').hidden,true,'MENU is hidden while the result awaits a tap');
+  run.elements.get('result').onclick();
   assert.equal(run.elements.get('tournament-recap').hidden,false,'recap appears after match');
   const battles=run.elements.get('recap-battles').children;
   assert.equal(battles.length,round+2,'recap shows every match in this tournament');
@@ -230,7 +269,7 @@ for(let round=0;round<3;round++){
 for(const size of [16,32]){
   const fixture=boot(false,0,'2026-09-24');fixture.game.startTournament(size);fixture.timers.shift()();
   for(let col=0;col<5;col++)fixture.play(col,1);
-  fixture.timers.shift()();
+  fixture.elements.get('result').onclick();
   const canvas=fixture.elements.get('bracket-rounds').children[0];
   assert.ok(canvas.children.some(child=>child.className.includes('bracket-traveler')),'both sides send winning cards toward the center');
   assert.ok(canvas.className.includes('two-sided'),size+' player bracket joins from both sides');
@@ -243,7 +282,7 @@ for(const size of [16,32]){
 const championAdvance=boot(false,0,'2026-09-24');
 championAdvance.game.startTournament(32);championAdvance.timers.shift()();
 for(let col=0;col<5;col++)championAdvance.play(col,1);
-championAdvance.timers.shift()();
+championAdvance.elements.get('result').onclick();
 assert.equal(championAdvance.elements.get('match-actions').hidden,false,'NEXT MATCH is available while the champion bracket animates');
 championAdvance.elements.get('next-match').onclick();
 championAdvance.timers.shift()(); // Stale bracket animation is cancelled by the new match token.
@@ -253,7 +292,7 @@ for(const size of [8,32]){
   const loss=boot(false,0,size===32?'2026-09-24':'2026-09-23');
   loss.game.startTournament(size);loss.timers.shift()();
   for(let col=0;col<5;col++)loss.play(col,2);
-  loss.timers.shift()();
+  loss.elements.get('result').onclick();
   let canvas=loss.elements.get('bracket-rounds').children[0];
   assert.ok(canvas.children.some(child=>child.className.includes('bracket-traveler')),'eliminating opponent advances along the bracket line');
   finishBracket(loss);
@@ -275,12 +314,12 @@ for(const size of [8,32]){
   assert.ok(loss.elements.get('bracket-champion-scanlines'),'the large champion portrait receives the remote effect');
 }
 const pointer=boot(false,0,'2026-09-24');pointer.game.startTournament(32);pointer.timers.shift()();
-pointer.elements.get('board').getBoundingClientRect=()=>({left:100,top:200,width:320,height:320});
-pointer.buttons[0].onmousemove({clientX:404,clientY:216});
-pointer.buttons[0].onclick({clientX:404,clientY:216});
-assert.equal(pointer.game.getBoard()[9],1,'pointer coordinates select the crystal position on the canvas');const flying=boot(false,0);
+pointer.elements.get('board').getBoundingClientRect=()=>({left:100,top:200,width:288,height:288});
+pointer.buttons[0].onmousemove({clientX:372,clientY:216});
+pointer.buttons[0].onclick({clientX:372,clientY:216});
+assert.equal(pointer.game.getBoard()[8],1,'pointer coordinates select the crystal position on the canvas');const flying=boot(false,0);
 flying.game.startTournament(8);flying.timers.shift()();
-flying.elements.get('board').getBoundingClientRect=()=>({left:100,top:200,width:320,height:320});
+flying.elements.get('board').getBoundingClientRect=()=>({left:100,top:200,width:288,height:288});
 flying.elements.get('score-player-name').getBoundingClientRect=()=>({left:20,top:100,width:60,height:30,bottom:130});
 flying.elements.get('score-opponent-name').getBoundingClientRect=()=>({left:330,top:100,width:60,height:30,bottom:130});
 assert.equal(flying.play(0,1),true);
@@ -363,7 +402,7 @@ const sharedStorage=new Map(),career=boot(false,0,'2026-03-21',sharedStorage);
 career.game.startTournament(8);career.timers.shift()();
 for(let round=0;round<3;round++){
   for(let col=0;col<5;col++)career.play(col,1);
-  if(round<2){career.timers.shift()();finishBracket(career);career.elements.get('next-match').onclick();career.timers.shift()();}
+  if(round<2){career.elements.get('result').onclick();finishBracket(career);career.elements.get('next-match').onclick();career.timers.shift()();}
 }
 career.elements.get('back').onclick();
 career.elements.get('history-button').onclick();
@@ -425,5 +464,7 @@ console.log('Gravity Four tournament checks passed');
 const tapRecap=boot(false,0);tapRecap.game.startTournament(8);tapRecap.timers.shift()();
 for(let col=0;col<5;col++)assert.equal(tapRecap.play(col,1),true);
 assert.equal(tapRecap.elements.get('tournament-recap').hidden,true);
-tapRecap.elements.get('result').onclick();
-assert.equal(tapRecap.elements.get('tournament-recap').hidden,false,'tapping the line opens the tournament update');
+assert.equal(tapRecap.timers.length,0,'a finished normal match has no automatic recap timer');
+tapRecap.elements.get('continue-overlay').onclick();
+assert.equal(tapRecap.elements.get('tournament-recap').hidden,false,'tapping anywhere opens the tournament update');
+assert.equal(tapRecap.elements.get('continue-overlay').hidden,true,'the tap layer clears on the next screen');

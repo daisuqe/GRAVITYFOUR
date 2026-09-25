@@ -61,8 +61,21 @@ for character in characters:
     character['profile']['tearful'] = False
 for character in sorted(characters, key=lambda c: (-c['profile']['expressiveness'], c['name']))[:20]:
     character['profile']['tearful'] = True
+
+# Ease the strongest 60 opponents while preserving the weaker 39 profiles.
+for character in sorted(characters, key=lambda c: (-c['profile']['strength'], c['name']))[:60]:
+    character['profile']['mistake'] = min(100, character['profile']['mistake'] + 14)
+
+# Keep the two entry-level tiers more forgiving without changing champions.
+for character in characters:
+    profile = character['profile']
+    if profile['rank'] == 'beginner':
+        profile['mistake'] = min(100, profile['mistake'] + 20)
+    elif profile['rank'] == 'regular':
+        profile['mistake'] = min(100, profile['mistake'] + 18)
+
 manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-roster = [{'id': c['id'], 'name': c['name'], 'file': c['file'],
+roster = [{'id': c['id'], 'name': c['name'], 'file': c['file'], 'hair': c['hair'],
            'eyes': c['eyes'], 'mouth': c['mouth'], 'winFile': c['winFile'],
            'loseFile': c['loseFile'], 'profile': c['profile'],
            **{key: c[key] for key in ('normalMask', 'winMask', 'loseMask') if key in c}}

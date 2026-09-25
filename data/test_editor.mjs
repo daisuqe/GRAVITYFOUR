@@ -98,7 +98,7 @@ assert.equal(get('player-eyes').hidden,true);
 assert.equal(get('player-mouth').hidden,true);
 assert.equal(get('next-match').textContent,'NEW MATCH');
 assert.equal(storage.has('gravityfour-history-v1'),false,'random match does not alter records');
-timers.shift()();
+get('result').onclick();
 get('next-match').onclick();timers.shift()();
 assert.equal(get('player-expression').hidden,true,'new match restores normal face');
 for(let col=0;col<5;col++)window.__testPlay(col,2);
