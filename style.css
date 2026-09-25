@@ -56,7 +56,7 @@ h1, h2, p { margin-top: 0; }
 @media (hover: none), (pointer: coarse) { .place-button { display: block; } .app { padding-bottom: 86px; } }
 @media (max-width: 760px) { .speech { min-height: 48px; padding: 8px 11px; font-size: 12px; } }
 @media (max-width: 540px) { .app { padding: 12px 9px 95px; } .menu { gap: 15px; } .match-bar { margin-bottom: 8px; font-size: 10px; } .board-frame { padding: 4px; } .bracket-rounds { max-height: 56vh; } .recap-card { max-height: 95vh; } }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }
 
 /* Compact menu and connected tournament bracket */
 .menu { min-height: calc(100vh - 70px); justify-content: center; gap: 24px; }
@@ -1025,4 +1025,13 @@ html, body, button, a { touch-action: manipulation; }
   .bracket-rounds.full-bracket { height: min(65dvh, 620px); max-height: min(65dvh, 620px); }
   .place-button { bottom: calc(1.5svh + env(safe-area-inset-bottom)); }
   .help-page { height: 100%; overflow-y: auto; overscroll-behavior: contain; padding-top: calc(1.5svh + env(safe-area-inset-top)); padding-bottom: calc(2svh + env(safe-area-inset-bottom)); }
+}
+
+/* Portrait effects follow the portrait size and keep their normal timing on phones. */
+.player-portrait, .enemy-portrait { --thinking-pixel: clamp(15px, calc(var(--portrait-size) * .2), 19px); --thinking-gap: clamp(11px, calc(var(--portrait-size) * .17), 20px); }
+.win-orbit { --orbit-size: calc(var(--portrait-size) * 1.55); }
+.enemy-portrait .thinking, .stage.watching .player-portrait #watch-thinking { top: calc(100% - var(--portrait-size) - var(--thinking-pixel) * 1.3); gap: var(--thinking-gap); }
+.enemy-portrait .thinking i, .stage.watching .player-portrait #watch-thinking i { width: var(--thinking-pixel); height: var(--thinking-pixel); }
+@media (hover: none), (pointer: coarse) {
+  .player-portrait, .enemy-portrait { --portrait-size: clamp(78px, 12dvh, 104px); }
 }
