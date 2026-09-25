@@ -1043,12 +1043,12 @@ html, body, button, a { touch-action: manipulation; }
 .win-orbit { --orbit-time: 6.667s; animation-duration: var(--orbit-time); }
 .win-orbit i { animation-duration: var(--orbit-time), 1.1s; }
 .stage.watching .win-orbit { --orbit-time: 13.333s; }
-.match-confetti-piece { bottom: -20px; width: 14px; height: 19px; animation-timing-function: cubic-bezier(.24,.66,.43,1); }
-.match-confetti-piece:nth-child(3n) { width: 11px; height: 15px; }
-.match-confetti-piece:nth-child(5n) { width: 17px; height: 11px; }
+.match-confetti-piece { bottom: -40px; width: 28px; height: 38px; animation-timing-function: cubic-bezier(.17,.64,.43,1); }
+.match-confetti-piece:nth-child(3n) { width: 22px; height: 30px; }
+.match-confetti-piece:nth-child(5n) { width: 34px; height: 22px; }
 @keyframes match-confetti-burst {
   0% { transform: translate(0,0) rotate(0deg); opacity: 0; }
-  12% { opacity: .85; }
-  48% { transform: translate(var(--apex-x),var(--apex-y)) rotate(var(--mid-spin)); opacity: .9; }
-  100% { transform: translate(var(--land-x),var(--land-y)) rotate(var(--spin)); opacity: 0; }
+  8% { opacity: .9; }
+  68% { opacity: .85; }
+  100% { transform: translate(var(--travel-x),var(--travel-y)) rotate(var(--spin)); opacity: 0; }
 }

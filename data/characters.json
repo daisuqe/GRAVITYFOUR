@@ -1,6 +1,6 @@
 {
   "source": "E:\\User\\Daisuke\\Unity\\GRAVITYFOUR\\data\\human01.psd",
-  "source_sha256": "29ff689f90b1471f07536ebbc540da8438a59fa4889a35b62e1da855cf66bd47",
+  "source_sha256": "5962d2c41733b61d41099573fc8c009bf56317749ff4bfb97037b18e14e2901c",
   "seed": 20260923,
   "count": 99,
   "palette_sizes": {
@@ -279,7 +279,7 @@
         "cloth": "#48164B",
         "skin": "#FFB985"
       },
-      "sha256": "676a671cef5438ea829d68ec184c02210a0ed3b46b55a0bb6401759e269be8fb",
+      "sha256": "75e1783d3c715d1aa338532c53223ce26e83616a1652a46309eb73e5d070e020",
       "profile": {
         "rank": "regular",
         "level": 4,
@@ -309,9 +309,9 @@
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
       "faceSha256": "b5b94ca774b7c7e70f83237a5b83e67fea67054b43acfff586106255cd2a3410",
-      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "normalMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "winMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "loseMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0"
     },
     {
       "id": 3,
@@ -538,7 +538,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "5cc06cb5ed6b9938346a69a8f75c897a21b2e94e4878e8c2fe29ab9a501ea41f",
+      "faceSha256": "a524859580dccec21760cadf1b965bf132bf5beec798abbb605c2919822a981a",
       "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
@@ -601,7 +601,7 @@
         "cloth": "#CD0000",
         "skin": "#FFB985"
       },
-      "sha256": "3c26b9663234d2ec046c274a5ea024e850b94c120755c1d74efb99811b159683",
+      "sha256": "5c85b202749fe55bf33003e456de69e4f733225737042b936632744eda35c182",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -630,10 +630,10 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "e7d9f56aa46d5edb8fe522be6156a11cc2d12e62bf8f76a250201eb3d33fe02a",
-      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
+      "faceSha256": "0c0d440520b7dc946af3cd6dd150632ab9612d8034182d82402a3bde581fa0f9",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe"
     },
     {
       "id": 10,
@@ -831,7 +831,7 @@
         "cloth": "#CD0000",
         "skin": "#FFB985"
       },
-      "sha256": "4d87c185cebe109a3ca43f5df1c34bcdf443323627c0cce3d2acde4d3e0bd7de",
+      "sha256": "a0c4225e5ea8e2e4f678a553913fa46ffbc910dbcc7a4ee6220695333b3e4ecc",
       "profile": {
         "rank": "regular",
         "level": 3,
@@ -861,9 +861,9 @@
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
       "faceSha256": "c3ac9e1b11d884e774ae407656933074886e7dd7e3e956e5072bc4b99bca9a41",
-      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "normalMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "winMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "loseMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0"
     },
     {
       "id": 15,
@@ -969,7 +969,7 @@
         "cloth": "#00ACCE",
         "skin": "#FFCDB3"
       },
-      "sha256": "3fa09a82bceac43472c17cb5f72572a1976eaea338ee67c272d78f581717598a",
+      "sha256": "6316f02247235c6f715fb09770d3efd3f864e70e7e3172fa2af90c470eede177",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -998,10 +998,10 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "f52706d0375428b41764cd57961aa47bd591a2812e87ce40141cc5dcdc48d75f",
-      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
+      "faceSha256": "1f57d81dd9ca9d1c9ad98462bd2c5ef2272c2fa15b29ef942575907997638c8e",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe"
     },
     {
       "id": 18,
@@ -1107,7 +1107,7 @@
         "cloth": "#CD0000",
         "skin": "#7F5A3F"
       },
-      "sha256": "9085d22c4b3e8eb68432b5c15f0c34bd38ac5fa3d8dfc8314dff301d64f67263",
+      "sha256": "527ca68acf930970de3a4788e826d84d556521d42512ed97035ebf056773558c",
       "profile": {
         "rank": "champion",
         "level": 5,
@@ -1137,9 +1137,9 @@
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
       "faceSha256": "ea12bc4786a4614b9dd14322e7bba1b564d68a82ecac1db85e49602c59a43282",
-      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "normalMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "winMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "loseMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0"
     },
     {
       "id": 21,
@@ -1228,7 +1228,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "f57d37e4afeba4fa1291adb09a7652b0fd2acc3addfc2ebfe30f52f1a14c6a89",
+      "faceSha256": "1708f4b297f76e6193d11945848a50ee54e5a1fa727b76bee0ca944d3ed54160",
       "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
@@ -1320,7 +1320,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "89df69ef0f937b6ab59b42c48ad9fa00b14edc48d9d23024cebb0906abcf5418",
+      "faceSha256": "0ab1e988d43214e2496e8a01306e90b03eec6b1936b073be02b3b57e0ed87058",
       "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
@@ -1366,7 +1366,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "dc6e253b80500192a972281f4b43cbd835d03108526bcf7729e481e9e614836b",
+      "faceSha256": "76ffdee726dd9bbba99cfe5a33b97c4ad2b831189b791772deab5548e609445c",
       "normalMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
       "winMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0",
       "loseMask": "00000fe01ff83ffc3ffc7ffe7ffe7ffe7ffe7ffe7ffe3ffc0ff0018007e00ff0"
@@ -1596,7 +1596,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "e2600e0ad1e2ae9a379e21c4fec1460328dcd7637dee42eaaee6f580136cb291",
+      "faceSha256": "644b9d9b0a4be80e7532855904e5c7f8a4f19660519fb6a4b218e872c36f2eea",
       "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
@@ -1613,7 +1613,7 @@
         "cloth": "#000000",
         "skin": "#7F5A3F"
       },
-      "sha256": "b29371f29bddc6c06baa62e11dd86897b860c37502d1c11788927ae44e83df72",
+      "sha256": "0bf48ddf56fab368f01c42a4348dfd41c70fc1d94ed809f704f5ab720f357827",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -1642,10 +1642,10 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "d2df641ba21e27a97f97c9d7865f96bf994400c5529db2ca921c13fa9b66d13f",
-      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
+      "faceSha256": "11d2c6cddc4f6efdcc3d58b2303c566f02ab06608bdd41c992071d511dda3b2f",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe"
     },
     {
       "id": 32,
@@ -1780,7 +1780,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "f23464dcfbe6bb03fc8065badd96888a1e96dd6eb4dfbf678cd1a0ee6c2182b7",
+      "faceSha256": "e57b0bee45b887d8561f8c7b394e8721d793d0620d4a0acc0283bccf59bad6e1",
       "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
@@ -1843,7 +1843,7 @@
         "cloth": "#000000",
         "skin": "#FFB985"
       },
-      "sha256": "f2fdbd3f5154597713a1e9806de270ae10d43a26adb5972053267150d51cd48d",
+      "sha256": "8322b69accf43b51e25843b60545106ca84002a8dddb2eee88c90a9c67632436",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -1872,10 +1872,10 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "d4b1b89d303bea14944ea53632b7cdb03644f13b4a23429055c3d688d7d367d9",
-      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
+      "faceSha256": "cf0cfce2870ddee31d14a04adbbf2c8080b52d9b98e80d6339e20fa33359e4f9",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe"
     },
     {
       "id": 37,
@@ -1889,7 +1889,7 @@
         "cloth": "#48164B",
         "skin": "#7F5A3F"
       },
-      "sha256": "3ff4097c012bfe933681fe26a4847395d3540c35cfbeb8b00e75f8390e08d519",
+      "sha256": "8f19f567833127096306b8289c356245797a5b58443662dc02e7e269d48dca8f",
       "profile": {
         "rank": "champion",
         "level": 5,
@@ -1919,9 +1919,9 @@
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
       "faceSha256": "5ac22299152c8c9b133e7d904c4bff0a754267d1a2f8440fb6ba347ad5b2bbe0",
-      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "normalMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "winMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "loseMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0"
     },
     {
       "id": 38,
@@ -2027,7 +2027,7 @@
         "cloth": "#0D00FF",
         "skin": "#FCC79F"
       },
-      "sha256": "3bb94344ba6a9f7c0c2f06f1374ae3631c07d1ef6a9b6e280295bc60d1e50109",
+      "sha256": "48b71ee67365240300d1ae2ad2f44269a4cda214077e645c3e08baa7603ec95d",
       "profile": {
         "rank": "beginner",
         "level": 2,
@@ -2056,7 +2056,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "bebf46fe14bbe3670f29c83a23de82c7d342d4b75ccb5410876b3d0561f2e303",
+      "faceSha256": "c20d162e3d510ae5de95c234032ba4809338e3fb2b899d9318251da52705d1b5",
       "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
       "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
       "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
@@ -2119,7 +2119,7 @@
         "cloth": "#005700",
         "skin": "#FCC79F"
       },
-      "sha256": "0c2af2bc75fc156bf17d30c3c3f305d9be08f6746f4b6a70a46adcaef7e1c223",
+      "sha256": "b6ad7324e57c6d1a42d941792c8d8e73f23d29e571ad12702cffe537ebc27e0d",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -2148,10 +2148,10 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "2d4affea078d6bae160b1f4e921906c541409faadf128bd35076b0b0cb785512",
-      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
+      "faceSha256": "ac72fc73874b987e9a5a712444bf4ddffc1bfc9fd815cda152ca2308ff548df9",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe"
     },
     {
       "id": 43,
@@ -2165,7 +2165,7 @@
         "cloth": "#0D00FF",
         "skin": "#FFB985"
       },
-      "sha256": "24f742d1062d73620758bc8f809e6132c3327e7f30f6b0a84ff57be787952dad",
+      "sha256": "09e928b4966288aacaf10f329f00ab002f3a456d54bbf5eacb3ae74224a79611",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -2194,10 +2194,10 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "f57d37e4afeba4fa1291adb09a7652b0fd2acc3addfc2ebfe30f52f1a14c6a89",
-      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe",
-      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe3ffe7ffefffe"
+      "faceSha256": "1708f4b297f76e6193d11945848a50ee54e5a1fa727b76bee0ca944d3ed54160",
+      "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe",
+      "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffe1ffe1ffe1ffe3ffe3ffe"
     },
     {
       "id": 44,
@@ -2349,7 +2349,7 @@
         "cloth": "#C95407",
         "skin": "#FFB985"
       },
-      "sha256": "68c2ddf923726eec838df734f8291e0b44e20febab4f6db44f486694fa53a952",
+      "sha256": "87910c3b0633f9e48d48589ff69df82c89731d14ec61c6b1817409277abe1281",
       "profile": {
         "rank": "beginner",
         "level": 2,
@@ -2379,9 +2379,9 @@
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
       "faceSha256": "33550c19becd03317c26350b2a93a42851ef7d6511b02917e891295af8dbb777",
-      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "normalMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "winMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "loseMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0"
     },
     {
       "id": 48,
@@ -2470,7 +2470,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "6947ca26489362892ccc68591e884d54c26d2e5dcd85fe1d4874099444f2e295",
+      "faceSha256": "78f196cd2d141abb5a0da1763263c63c8d093e24fd43ed5f563d6d0496d275d8",
       "normalMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
       "winMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0",
       "loseMask": "1fe01ff81ff81ffc1ffc1ffc1ff81ff81ff81ff81ff80ff007e0018007e00ff0"
@@ -2608,7 +2608,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "e13312797dcf7d9098c1bf36e79b5d6eb0148af3b09c9f62a61466583c7494d0",
+      "faceSha256": "3a16719745c0086426aa9cb046b55afb2182c9ccf2cc2787cc9722c54ed2e496",
       "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
@@ -2625,7 +2625,7 @@
         "cloth": "#EEEEEE",
         "skin": "#FFCDB3"
       },
-      "sha256": "ea5d471d62e1a4b27ea9125d022a02e0fc8ab515c34ebe0f20c9131061b5dbd5",
+      "sha256": "91fd504467e86f581718675790d7dd8b28f1275422ad65fcd89b5c6f9b561e6d",
       "profile": {
         "rank": "beginner",
         "level": 2,
@@ -2792,7 +2792,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "f23464dcfbe6bb03fc8065badd96888a1e96dd6eb4dfbf678cd1a0ee6c2182b7",
+      "faceSha256": "e57b0bee45b887d8561f8c7b394e8721d793d0620d4a0acc0283bccf59bad6e1",
       "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
@@ -3085,7 +3085,7 @@
         "cloth": "#B5B5B5",
         "skin": "#7F5A3F"
       },
-      "sha256": "6a7c2ef3a4cd4a9938bae63d67abc637332e9514c19976c993c7d1a451440120",
+      "sha256": "fa0a0a1a7c3c97c174d341055e60c2653a16a67f6daa5c2d1686a84c6ff38e85",
       "profile": {
         "rank": "regular",
         "level": 3,
@@ -3114,10 +3114,10 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "f85f3c33adeffc369f2ab6b7e4447ea76c2090f14a8cb0923519aa69023284e8",
-      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "faceSha256": "8c04a70188d1d91bc44275e1972dae7b238572f53cb25c360167cb0e7706d2e0",
+      "normalMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "winMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "loseMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0"
     },
     {
       "id": 64,
@@ -3160,7 +3160,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "e13312797dcf7d9098c1bf36e79b5d6eb0148af3b09c9f62a61466583c7494d0",
+      "faceSha256": "3a16719745c0086426aa9cb046b55afb2182c9ccf2cc2787cc9722c54ed2e496",
       "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
@@ -3344,7 +3344,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "2d4affea078d6bae160b1f4e921906c541409faadf128bd35076b0b0cb785512",
+      "faceSha256": "ac72fc73874b987e9a5a712444bf4ddffc1bfc9fd815cda152ca2308ff548df9",
       "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
@@ -3361,7 +3361,7 @@
         "cloth": "#48164B",
         "skin": "#FCC79F"
       },
-      "sha256": "0e08f418b8979c562693627e860ecd3990640c0333bc697d67de454825cbf2a0",
+      "sha256": "d76a2853efd49cd240da5b2a0d28c5dae5a00ae4784390b8e57c80bc204fb14d",
       "profile": {
         "rank": "beginner",
         "level": 2,
@@ -3390,7 +3390,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "d4b1b89d303bea14944ea53632b7cdb03644f13b4a23429055c3d688d7d367d9",
+      "faceSha256": "cf0cfce2870ddee31d14a04adbbf2c8080b52d9b98e80d6339e20fa33359e4f9",
       "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
       "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
       "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
@@ -3528,7 +3528,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "2d4affea078d6bae160b1f4e921906c541409faadf128bd35076b0b0cb785512",
+      "faceSha256": "ac72fc73874b987e9a5a712444bf4ddffc1bfc9fd815cda152ca2308ff548df9",
       "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
@@ -3545,7 +3545,7 @@
         "cloth": "#005700",
         "skin": "#7F5A3F"
       },
-      "sha256": "737ade0e5ba4230ac3d693f94b6acdcb123fed7a1a42ccfcddabc84469aa41da",
+      "sha256": "f94b7c9996f5f65a762ee4c4166fa0e84c5a9d2d665245bf75806c620b0d1d24",
       "profile": {
         "rank": "beginner",
         "level": 2,
@@ -3574,7 +3574,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "dc6e253b80500192a972281f4b43cbd835d03108526bcf7729e481e9e614836b",
+      "faceSha256": "76ffdee726dd9bbba99cfe5a33b97c4ad2b831189b791772deab5548e609445c",
       "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
       "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
       "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
@@ -3591,7 +3591,7 @@
         "cloth": "#CD0000",
         "skin": "#FCC79F"
       },
-      "sha256": "d61439372165a88cdcbca8d813d683b8e7d3cbcc6e1b88146a747123444a1854",
+      "sha256": "7a01ad4ae0271bc7a1582a1948c6ef2d45560c696a8cb2bbbe11376b2bf87bff",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -3620,7 +3620,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "4ee01387dbaf6206d9ff731a7ee91e086f6d099299ecab7ce935ebe6ba642d12",
+      "faceSha256": "7bf8fcc387d4d8702c5ef370556a56ed2d56dab8c4a4391c81ba794c70d9f50e",
       "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff01ff0018007e00ff0",
       "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
       "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"
@@ -3942,7 +3942,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "5cc06cb5ed6b9938346a69a8f75c897a21b2e94e4878e8c2fe29ab9a501ea41f",
+      "faceSha256": "a524859580dccec21760cadf1b965bf132bf5beec798abbb605c2919822a981a",
       "normalMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "winMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe",
       "loseMask": "07f01ffc1ffc3ffe3ffe5ffe5ffe1ffe1ffe1ffe1ffe0ffe0ffe0ffe0ffe0ffe"
@@ -4005,7 +4005,7 @@
         "cloth": "#800000",
         "skin": "#FFB985"
       },
-      "sha256": "ac28ec0c0c5ed3f0cd424996e9b8f513e83f15a1e232d3570da2b718128919ba",
+      "sha256": "0efb2624fa13af12d5fc53b09b630c5b5921908714ba879ff728bee6e003c831",
       "profile": {
         "rank": "champion",
         "level": 5,
@@ -4035,9 +4035,9 @@
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
       "faceSha256": "1b2cd00166e4772b998748e0df332ec469ca44ae6365ab4328e89d89e61cfbfe",
-      "normalMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff81ff0018007e00ff0",
-      "winMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0",
-      "loseMask": "000007c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ff807e0018007e00ff0"
+      "normalMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc1ff0018007e00ff0",
+      "winMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0",
+      "loseMask": "07c007f81ff83ffc3ffc3ffc3ffc3ffc3ffc3ffc1ffc0ffc07f0018007e00ff0"
     },
     {
       "id": 84,
@@ -4586,7 +4586,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "b7eb42715f957064c2919c818e700fc045f35c9ca80d5a836dcb919e9f44b19d",
+      "faceSha256": "e77672fb2297c4fc6492363751a1c610ccd72b6be94fbd983f81d95f884c5210",
       "normalMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "winMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3",
       "loseMask": "07e61fff1fff3fff3fff1fff1fff1fff1fff1fff1fff0ffe07ee018e07e60ff3"
@@ -4603,7 +4603,7 @@
         "cloth": "#800000",
         "skin": "#7F5A3F"
       },
-      "sha256": "69b934ba8df60ca1e97af949cc70ce9fb8d43230d46b3cafda3fa7f63d44c9e8",
+      "sha256": "3a9bfd800fd2e3e67c05156661c3202820c2aea0851735cacb5943f7b0358aab",
       "profile": {
         "rank": "beginner",
         "level": 1,
@@ -4632,7 +4632,7 @@
       "loseFile": "lose.png",
       "winSha256": "741674ed88c19eb0a8bd33d043a0d2e48afec937b49c0001275209327443ee4c",
       "loseSha256": "2d37449f2e044483fbf73627e73e8cd77c18836f12573619c46052665ef078b0",
-      "faceSha256": "eefb039a7964c5d7b0c2dc9a91898d48c1a4e2366b58c4c02d61b2000d654090",
+      "faceSha256": "ffe2c024b3d270394b0e7030bc14e6ea0785c9a984eee740feef76d5235948df",
       "normalMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
       "winMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0",
       "loseMask": "07f01ffc1ffc3ffe3ffe3ffe3ffe3ffe1ffe1ffe1ffc0ff007e0018007e00ff0"

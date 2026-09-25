@@ -35,10 +35,11 @@ def main():
     output = PROJECT / "characters" / "player-parts"
     output.mkdir(parents=True, exist_ok=True)
     files = {"eyes": {}, "mouth": {}}
+    asset_version = psd["sha256"][:8]
 
     def save(image, filename):
         image.save(output / filename)
-        return "characters/player-parts/" + filename
+        return "characters/player-parts/" + filename + "?v=" + asset_version
 
     for part in ("eyes", "mouth"):
         for name in options[part]:
@@ -75,6 +76,7 @@ def main():
             "lose": alpha_mask(body, tint_layer(psd, layers["lose"])),
         }
     player = {"defaults": defaults, "options": options, "palettes": palettes,
+              "assetVersion": asset_version,
               "layerMasks": layer_masks, "files": files,
               "expressions": expressions, "tearFile": tear_file, "masks": masks}
     (PROJECT / "player.js").write_text(

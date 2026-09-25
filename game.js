@@ -27,6 +27,8 @@
     let board=new Uint8Array(N*ROWS),turn=HUMAN,ended=false,winningCells=new Set(),thinking=false,hoverIndex=-1,selectedIndex=-1,lastComMove=-1,endedByScore=false;
     const roster=window.GravityFourRoster||[];
     const player=window.GravityFourPlayer;
+    const partUrl=name=>'characters/player-parts/'+name+'.png'+(player?.assetVersion?'?v='+player.assetVersion:'');
+    const portraitUrl=name=>'characters/'+name+(player?.assetVersion?'?v='+player.assetVersion:'');
     const playerStorageKey='gravityfour-player-v1';
     function readPlayerSelection(){
       if(!player)return null;
@@ -330,19 +332,19 @@
       Object.assign(settings,opponent.profile);
       byId('score-player-name').textContent=watchMode?watchLeft.name:playerName();
       if(watchMode){
-        byId('watch-left-face').src='characters/'+watchLeft.file;
+        byId('watch-left-face').src=portraitUrl(watchLeft.file);
         byId('watch-left-face').alt=watchLeft.name+' portrait';
-        byId('watch-left-eyes').src='characters/player-parts/'+watchLeft.eyes+'.png';
-        byId('watch-left-mouth').src='characters/player-parts/'+watchLeft.mouth+'.png';
+        byId('watch-left-eyes').src=partUrl(watchLeft.eyes);
+        byId('watch-left-mouth').src=partUrl(watchLeft.mouth);
         byId('watch-left-eyes').hidden=false;byId('watch-left-mouth').hidden=false;
         byId('watch-left-expression').hidden=true;byId('watch-left-tear').hidden=true;
         drawScanlines(watchLeft.normalMask,'watch-left-scanlines');
       }
       byId('score-opponent-name').textContent=opponent.name;
-      byId('opponent-face').src='characters/'+opponent.file;
+      byId('opponent-face').src=portraitUrl(opponent.file);
       byId('opponent-face').alt=opponent.name+' portrait';
-      byId('opponent-eyes').src='characters/player-parts/'+opponent.eyes+'.png';
-      byId('opponent-mouth').src='characters/player-parts/'+opponent.mouth+'.png';
+      byId('opponent-eyes').src=partUrl(opponent.eyes);
+      byId('opponent-mouth').src=partUrl(opponent.mouth);
       byId('opponent-eyes').hidden=false;
       byId('opponent-mouth').hidden=false;
       byId('opponent-expression').hidden=true;
@@ -577,9 +579,9 @@
       }else if((character||watchLeft)&&character!=='TBD'){
         if(character===null)character=watchLeft;
         const portrait=document.createElement('span');portrait.className='bracket-portrait';
-        for(const file of ['characters/'+character.file,
-          'characters/player-parts/'+character.eyes+'.png',
-          'characters/player-parts/'+character.mouth+'.png']){
+        for(const file of [portraitUrl(character.file),
+          partUrl(character.eyes),
+          partUrl(character.mouth)]){
           const image=document.createElement('img');image.src=file;image.alt='';portrait.append(image);
         }
         entry.append(portrait);
@@ -598,8 +600,8 @@
         const round=document.createElement('span');round.className='recap-battle-round';
         round.textContent=['1ST','2ND','3RD','4TH','5TH'][battle.round]+' ROUND';
         const face=document.createElement('span');face.className='recap-battle-face';
-        const body=document.createElement('img');body.src='characters/'+battle.opponent.file;body.alt='';face.append(body);
-        const expression=document.createElement('img');expression.src='characters/'+(battle.result==='win'?battle.opponent.loseFile:battle.opponent.winFile);
+        const body=document.createElement('img');body.src=portraitUrl(battle.opponent.file);body.alt='';face.append(body);
+        const expression=document.createElement('img');expression.src=portraitUrl(battle.result==='win'?battle.opponent.loseFile:battle.opponent.winFile);
         expression.alt='';face.append(expression);
         const name=document.createElement('span');name.className='recap-battle-name';name.textContent=battle.opponent.name;
         const result=document.createElement('b');result.textContent=battle.result==='win'?'WIN':'LOSE';
@@ -729,8 +731,8 @@
         if(own&&!watchMode){if(player)paintPlayer('bracket-champion-player','win');}
         else{
           const winner=own?watchLeft:champion;
-          byId('bracket-champion-face').src='characters/'+winner.file;
-          byId('bracket-champion-expression').src='characters/'+winner.winFile;
+          byId('bracket-champion-face').src=portraitUrl(winner.file);
+          byId('bracket-champion-expression').src=portraitUrl(winner.winFile);
           drawScanlines(winner.winMask,'bracket-champion-scanlines');
         }
         const confetti=byId('bracket-confetti');confetti.replaceChildren();
@@ -825,8 +827,7 @@
           const piece=document.createElement('i'),fromLeft=n%2===0;
           piece.className='match-confetti-piece';
           const spin=(fromLeft?1:-1)*(150+(n*31)%300);
-          const apex=30+(n*19)%62;
-          piece.setAttribute('style',`--origin:${fromLeft?0:100}%;--apex-x:${fromLeft?'':'-'}${18+(n*29)%77}vw;--land-x:${fromLeft?'':'-'}${24+(n*37)%79}vw;--apex-y:-${apex}vh;--land-y:-${Math.max(18,apex-8)}vh;--mid-spin:${spin*.55}deg;--spin:${spin}deg;--duration:${5.2+(n%9)*.3}s;--delay:${(n%18)*.075}s;--hue:${n%4===0?47:n%4===1?153:n%4===2?345:190}`);
+          piece.setAttribute('style',`--origin:${fromLeft?0:100}%;--travel-x:${fromLeft?'':'-'}${6+(n*37)%91}vw;--travel-y:-${28+(n*29)%75}vh;--spin:${spin}deg;--duration:${3.8+(n%9)*.22}s;--delay:${(n%18)*.045}s;--hue:${n%4===0?47:n%4===1?153:n%4===2?345:190}`);
           pieces.push(piece);
         }
         confetti.replaceChildren(...pieces);confetti.hidden=false;
@@ -1119,7 +1120,7 @@
       byId('opponent-eyes').hidden=!!expressionFile;
       byId('opponent-mouth').hidden=!!expressionFile;
       byId('opponent-expression').hidden=!expressionFile;
-      if(expressionFile)byId('opponent-expression').src='characters/'+expressionFile;
+      if(expressionFile)byId('opponent-expression').src=portraitUrl(expressionFile);
       byId('opponent-tear').hidden=!(outcome==='win'&&opponent.profile.tearful);
       drawScanlines(mask,'opponent-scanlines');
       if(watchMode){
@@ -1127,7 +1128,7 @@
         const leftMask=outcome==='win'?watchLeft.winMask:outcome==='loss'?watchLeft.loseMask:watchLeft.normalMask;
         byId('watch-left-eyes').hidden=!!expression;byId('watch-left-mouth').hidden=!!expression;
         byId('watch-left-expression').hidden=!expression;
-        if(expression)byId('watch-left-expression').src='characters/'+expression;
+        if(expression)byId('watch-left-expression').src=portraitUrl(expression);
         byId('watch-left-tear').hidden=!(outcome==='loss'&&watchLeft.profile.tearful);
         drawScanlines(leftMask,'watch-left-scanlines');
       }

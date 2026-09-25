@@ -22,7 +22,7 @@ for mask in (player["layerMasks"]["skin"], player["layerMasks"]["cloth"],
              *player["layerMasks"]["hair"].values()):
     assert re.fullmatch(r"[0-9a-f]{64}", mask)
 assert "parts" not in player
-files = {Path(path).name for values in player["files"].values() for path in values.values()}
+files = {Path(path.split("?", 1)[0]).name for values in player["files"].values() for path in values.values()}
 assert len(files) == 27
 part_dir = ROOT / "characters" / "player-parts"
 assert {path.name for path in part_dir.glob("*.png")} == files
