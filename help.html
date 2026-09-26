@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#050a0b">
   <title>HOW TO PLAY — GRAVITY FOUR</title>
-  <link rel="stylesheet" href="style.css?v=20">
+  <script>try{if(localStorage.getItem('gravityfour-lang')==='en')document.documentElement.lang='en';}catch{}</script>
+  <link rel="stylesheet" href="style.css?v=21">
 </head>
 <body>
   <main class="help-page">
-    <a class="back-button help-back" href="index.html"><span class="ui-arrow" aria-hidden="true"></span>GAME</a>
-    <header class="help-header"><span class="eyebrow">GRAVITY FOUR / GUIDE</span><h1>HOW TO PLAY</h1><p>周囲が地面の四目並べです</p></header>
+    <div class="help-topbar"><a class="back-button help-back" href="index.html"><span class="ui-arrow" aria-hidden="true"></span>GAME</a><button class="back-button help-lang" id="help-lang" type="button"><span data-lang="ja">TO ENGLISH</span><span data-lang="en">TO JAPANESE</span></button></div>
+    <header class="help-header"><span class="eyebrow">GRAVITY FOUR / GUIDE</span><h1>HOW TO PLAY</h1><p data-lang="ja">周囲が地面の四目並べです</p><p data-lang="en">Connect four where every edge is the ground.</p></header>
+    <div data-lang="ja">
     <section class="help-section">
       <h2>基本ルール</h2>
       <ul>
@@ -38,9 +40,46 @@
       <p>トップ画面の<strong>TROPHIES / RECORDS</strong>から 各大会の今日の最高順位 通算最高順位 優勝回数を確認できます 記録は使用中のブラウザに保存されます</p>
       <p><strong class="inline-arrow-label">HISTORY <span class="ui-arrow right" aria-hidden="true"></span></strong>では日ごとのカップ名 順位 スコアとトータルスコアを確認できます 各大会のその日の最高結果から計算し 1勝で1点 2勝で3点 3勝で7点です 同じ日に再挑戦してもスコアは重複しません</p>
 </section>
+    </div>
+    <div data-lang="en">
+    <section class="help-section">
+      <h2>BASIC RULES</h2>
+      <ul>
+        <li>Players take turns placing green and red crystals on the intersections of a 9 × 9 grid.</li>
+        <li>At the start, only the 32 intersections along the outer edge are open.</li>
+        <li>All four walls act as floors, each pulling in its own direction. You can place a crystal on an intersection when an unbroken line of stones connects it to the edge, either vertically or horizontally. Stones of either color count toward that line.</li>
+        <li>Click an empty intersection to place a crystal. On touch screens, select an intersection and confirm with <strong>PLACE</strong>.</li>
+</ul>
+</section>
+    <section class="help-section">
+      <h2>WINNING AND SCORE</h2>
+      <p>You win by making three lines of <strong>exactly four</strong> in a row (vertical, horizontal, or diagonal), or by lining up <strong>five</strong> in a row. Lines of four count even when they cross. Stones in a completed four get a glowing frame, and the number of fours appears in the score at the top, such as “YOU 1-0 TONE”.</p>
+      <p>A line of five does not count as a four; it wins the match on the spot. If no open intersections remain, the side with more fours wins. If the count is tied, the match is replayed.</p>
+</section>
+    <section class="help-section">
+      <h2>TOURNAMENTS</h2>
+      <p>You are one of the entrants. Win a round to move on to the next match. The other matches are decided by each character’s strength, and upsets can happen.</p>
+      <p>The cup name changes every day based on that day’s observance. The day switches at midnight in your device’s local time, and the entrants are the same for the same day and rank. When you try again, the bracket positions, including yours, and the other match results change.</p>
+      <div class="help-tournaments">
+        <div><strong>BEGINNER</strong><span>8 PLAYERS</span></div>
+        <div><strong>REGULAR</strong><span>16 PLAYERS</span></div>
+        <div><strong>CHAMPION</strong><span>32 PLAYERS</span></div>
+</div>
+      <p>The bracket appears after each match. A loss ends that tournament, and a draw replays the same match.</p>
+      <p>From <strong>TROPHIES / RECORDS</strong> on the title screen, you can check today’s best placing, your all-time best placing, and your number of titles for each tournament. Records are saved in the browser you are using.</p>
+      <p><strong class="inline-arrow-label">HISTORY <span class="ui-arrow right" aria-hidden="true"></span></strong> shows each day’s cup name, placings, and score, along with your total score. Scores come from your best result in each tournament that day: 1 win is 1 point, 2 wins are 3 points, and 3 wins are 7 points. Playing again on the same day does not add points twice.</p>
+</section>
+    </div>
     <a class="help-button help-bottom" href="index.html">BACK TO GAME</a>
 </main>
-<script src="audio.js"></script>
-<script>window.GravityFourAudio.setMusic('bracket');</script>
+<script src="audio.js?v=8"></script>
+<script>
+  window.GravityFourAudio.setMusic('bracket');
+  document.getElementById('help-lang').addEventListener('click',()=>{
+    const lang=document.documentElement.lang==='en'?'ja':'en';
+    document.documentElement.lang=lang;
+    try{localStorage.setItem('gravityfour-lang',lang);}catch{}
+  });
+</script>
 </body>
 </html>

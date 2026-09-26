@@ -1128,3 +1128,9 @@ input, select, textarea, button { font-family: inherit; }
   .history-player-row .history-ranking strong { font-size: 34px; }
   .history-player-row .history-ranking small { font-size: 16px; }
 }
+
+/* Japanese / English switch (help page and dialogs). */
+html:not([lang="en"]) [data-lang="en"], html[lang="en"] [data-lang="ja"] { display: none; }
+.help-topbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.help-lang { cursor: pointer; }
+.help-tournaments span { font-family: yodaka, monospace; }

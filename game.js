@@ -1051,6 +1051,12 @@
         +noise*(100-settings.consistency)*.22;
     }
     const byId=id=>document.getElementById(id);
+    // English mode (chosen on the help page) only changes dialog text; character lines stay in katakana.
+    const language=(()=>{try{return window.localStorage.getItem('gravityfour-lang')==='en'?'en':'ja';}catch{return 'ja';}})();
+    if(language==='en'){
+      document.documentElement.lang='en';
+      byId('leave-confirm-text').textContent='THE TOURNAMENT WILL START OVER. ARE YOU SURE?';
+    }
     function legalMoves(b){
       const result=[];
       for(let r=0;r<ROWS;r++)for(let c=0;c<N;c++){
