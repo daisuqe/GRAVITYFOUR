@@ -78,10 +78,10 @@
             if(rank>4||medals[day]?.[size])continue;
             (medals[day]||={})[size]=[rank===1?'gold':rank<=2?'silver':'bronze'];
           }
-          return {days,best:saved.best||{},wins:saved.wins||{},medals};
+          return {days,best:saved.best||{},wins:saved.wins||{},medals,rating:Number.isFinite(saved.rating)?saved.rating:null};
         }
       }catch{}
-      return {days:{},best:{},wins:{},medals:{}};
+      return {days:{},best:{},wins:{},medals:{},rating:null};
     }
     const records=readHistory();
     function saveHistory(){try{window.localStorage.setItem(storageKey,JSON.stringify(records));}catch{}}
@@ -227,7 +227,7 @@
     function renderDailyHeader(){
       const day=localDate(),details=dayDetails(day);
       byId('daily-cup-title').textContent=details[0];
-      byId('daily-cup-date').textContent=day;
+      byId('daily-cup-date').textContent=Number(day.slice(5,7))+'/'+Number(day.slice(8,10))+' '+details[1];
       renderTournamentChoices(day);
     }
     function renderTournamentChoices(day){
@@ -269,22 +269,63 @@
       const wins=Math.max(0,Math.log2(size)-Math.ceil(Math.log2(rank)));
       return 2**wins-1;
     }
+    function dayScore(ranks){
+      return tournamentTypes.reduce((sum,type)=>sum+scoreForRank(type.size,ranks?.[type.size]),0);
+    }
+    // Elo-style ranking: characters hold fixed ratings from their strength, the player's rating moves only by match results.
+    const START_RATING=1200,RATING_WEIGHT={tournament:40,random:20};
+    const characterRating=character=>1000+character.profile.strength*8;
+    function applyRating(opponentRating,score,weight){
+      const expected=1/(1+10**((opponentRating-records.rating)/400));
+      records.rating=Math.round((records.rating+weight*(score-expected))*10)/10;
+    }
+    function ensureRating(){
+      if(Number.isFinite(records.rating))return;
+      records.rating=START_RATING;
+      // Older saves only kept placings, so replay them against each tournament's average entrant.
+      for(const day of Object.keys(records.days).filter(day=>/^\d{4}-\d{2}-\d{2}$/.test(day)).sort()){
+        for(const type of tournamentTypes){
+          const rank=records.days[day]?.[type.size];
+          if(!Number.isInteger(rank)||rank<1)continue;
+          const entrants=type.levels.flatMap((count,index)=>selectLevel(index+1,count,day+'|'+type.size));
+          const average=entrants.reduce((sum,character)=>sum+characterRating(character),0)/entrants.length;
+          const won=Math.max(0,Math.log2(type.size)-Math.ceil(Math.log2(rank)));
+          for(let i=0;i<won;i++)applyRating(average,1,RATING_WEIGHT.tournament);
+          if(rank>1)applyRating(average,0,RATING_WEIGHT.tournament);
+        }
+      }
+      saveHistory();
+    }
+    function careerRanking(){
+      ensureRating();
+      const rank=1+roster.filter(character=>characterRating(character)>records.rating).length;
+      return {rank,total:roster.length+1,rating:Math.round(records.rating)};
+    }
+    function medalFor(rank){
+      return !Number.isInteger(rank)||rank<1||rank>4?null:rank===1?'gold':rank<=2?'silver':'bronze';
+    }
     function renderHistory(){
-      const day=localDate(),details=dayDetails(day);
-      byId('history-cup').textContent=details[0];
-      byId('history-date').textContent=day;
+      const day=localDate(),ranking=careerRanking();
+      byId('history-rank').textContent=String(ranking.rank);
+      byId('history-rank-total').textContent='/ '+ranking.total;
+      byId('history-rank-score').textContent=ranking.rating+' PTS';
       const list=byId('history-list');list.replaceChildren();
       for(const type of tournamentTypes){
         const card=document.createElement('article');card.className='record-card';
         const title=document.createElement('h3');title.textContent=type.label+' TOURNAMENT';card.append(title);
-        for(const [label,value] of [
-          ['TODAY',rankText(records.days[day]?.[type.size])],
-          ['BSET',rankText(records.best[type.size])],
-          ['TOTAL 1ST',String(records.wins[type.size]||0)]
+        for(const [label,value,medal] of [
+          ['TODAY',rankText(records.days[day]?.[type.size]),medalFor(records.days[day]?.[type.size])],
+          ['BEST',rankText(records.best[type.size]),medalFor(records.best[type.size])],
+          ['TOTAL 1ST',String(records.wins[type.size]||0),null]
         ]){
           const row=document.createElement('div');row.className='record-row';
           const name=document.createElement('span');name.textContent=label;
-          const number=document.createElement('strong');number.textContent=value;
+          const number=document.createElement('strong');
+          if(medal){
+            const trophy=document.createElement('img');trophy.className='record-trophy medal-'+medal;
+            trophy.src='trophy.svg';trophy.alt=medal.toUpperCase()+' TROPHY';number.append(trophy);
+          }
+          number.append(value);
           row.append(name,number);card.append(row);
         }
         list.append(card);
@@ -296,7 +337,7 @@
       let total=0;
       for(const day of days){
         const ranks=records.days[day]||{},row=document.createElement('tr');
-        const score=tournamentTypes.reduce((sum,type)=>sum+scoreForRank(type.size,ranks[type.size]),0);
+        const score=dayScore(ranks);
         total+=score;
         const date=document.createElement('td');date.className='history-day';
         const monthDay=document.createElement('strong');monthDay.textContent=day.slice(5).replace('-','/');
@@ -311,6 +352,9 @@
       byId('history-empty').hidden=days.length>0;
     }
     function recordResult(){
+      ensureRating();
+      applyRating(characterRating(opponent),outcome==='win'?1:outcome==='loss'?0:.5,tournament.random?RATING_WEIGHT.random:RATING_WEIGHT.tournament);
+      saveHistory();
       if(outcome==='draw'||tournament.random)return;
       const size=tournament.type.size,day=tournament.day;
       const rank=outcome==='win'?tournament.bracket.length/2:tournament.bracket.length/2+1;
@@ -507,7 +551,7 @@
       }
       other.hidden=true;other.textContent='';
       bubble.hidden=false;
-      const dialect=['ヤデ','ダベ','ジャ','バイ','ッス'][speaker.id%5];
+      const dialect=['デスゾ','ダベ','ジャ','バイ','ッス'][speaker.id%5];
       const line=profile.voice==='quirky'&&message.endsWith('。')&&!message.endsWith('……。')
         ?message.slice(0,-1).replace(/(デスゾ|ッス|ダヨ|ダ|ヨ|ネ)$/,'')+dialect+'。'
         :message;

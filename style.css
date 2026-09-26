@@ -234,6 +234,7 @@ h1, h2, p { margin-top: 0; }
 /* Daily cup and locally saved tournament records */
 .daily-cup { width: min(100%, 680px); padding: 12px 18px 18px; border-top: 1px solid #35a66d; border-bottom: 1px solid #35a66d; text-align: center; background: linear-gradient(90deg, transparent, #0b2b1b99 18%, #0b2b1b99 82%, transparent); }
 .daily-cup span, .history-view p { color: #8bcdae; font-size: 15px; }
+.daily-cup #daily-cup-date { display: block; margin-top: 6px; font-size: 13px; letter-spacing: .03em; }
 .daily-cup h2 { margin: 8px 0 0; color: #d8ffeb; font: clamp(30px, 5vw, 56px)/1.06 yodaka, monospace; letter-spacing: .04em; overflow-wrap: anywhere; text-shadow: 0 0 20px #41ed9655; }
 .history-button { width: min(100%, 520px); min-height: 56px; border: 1px solid #5cba88; background: #0c281d; color: #d6ffe8; font: clamp(18px, 2.4vw, 24px) yodaka, monospace; cursor: pointer; }
 .history-button:hover, .history-button:focus-visible { border-color: #c8ffe4; box-shadow: 0 0 22px #4cff9b55; }
@@ -241,7 +242,15 @@ h1, h2, p { margin-top: 0; }
 .history-panel { width: 100%; padding: clamp(18px, 4vw, 42px); border: 1px solid #46ac77; background: linear-gradient(145deg, #0c251a, #06120e); box-shadow: 0 0 45px #0fa26335; }
 .history-panel .back-button { display: block; margin-bottom: 30px; }
 .history-panel h2 { margin: 10px 0 0; color: #d7ffea; font: clamp(35px, 6vw, 68px)/1.05 yodaka, monospace; overflow-wrap: anywhere; }
-.history-panel #history-date { margin: 8px 0 26px; }
+.history-ranking { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 16px; margin: 12px 0 22px; padding: 10px 14px; border-top: 1px solid #35a66d; border-bottom: 1px solid #35a66d; color: #8bcdae; }
+.history-ranking > span, .history-ranking > small { font-size: 14px; letter-spacing: .08em; }
+.history-ranking strong { color: #ffe295; font: clamp(34px, 5.5vw, 60px)/1 yodaka, monospace; text-shadow: 0 0 18px #e9dd9355; }
+.history-ranking div small { margin-left: 8px; color: #91c7aa; font: 20px yodaka, monospace; }
+.record-row strong { display: inline-flex; align-items: center; gap: 8px; }
+.record-trophy { width: 30px; height: 20px; object-fit: contain; image-rendering: pixelated; }
+.record-trophy.medal-gold { filter: brightness(1.1) drop-shadow(0 0 5px #f4d47299); }
+.record-trophy.medal-silver { filter: grayscale(1) brightness(1.42) drop-shadow(0 0 4px #c9d9ec99); }
+.record-trophy.medal-bronze { filter: sepia(1) saturate(3.3) hue-rotate(-36deg) brightness(.72) drop-shadow(0 0 2px #9e4b42a0); }
 .history-summary { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-top: 1px solid #45ad77; border-bottom: 1px solid #45ad77; color: #a7e1bf; font: clamp(17px, 2.5vw, 24px) yodaka, monospace; }
 .history-summary strong { color: #ffe295; font-size: clamp(32px, 5vw, 52px); }
 .history-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
@@ -1073,3 +1082,12 @@ html, body, button, a { touch-action: manipulation; }
 }
 
 .choice-face .portrait-tint { filter: drop-shadow(0 0 3px #65ffc050) drop-shadow(0 0 7px #36ee9838); }
+
+/* Dialogue always uses the yodaka pixel font. */
+.speech, .scoreboard .speech, .victory-opponent p { font-family: yodaka, monospace; }
+
+/* Every screen except the help page uses the yodaka pixel font. */
+:root { font-family: yodaka, monospace; }
+input, select, textarea, button { font-family: inherit; }
+.help-page { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+.help-page .eyebrow { font-family: yodaka, monospace; }

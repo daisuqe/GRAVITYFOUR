@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   let context=null, musicBus=null, musicTimer=null,voiceSource=null,voiceBus=null,pendingMusicStart=null;
-  let musicLevel=0;
+  let musicLevel=0,musicMode='off';
   const voiceCache=new Map();
   const voiceStyles=['man','boy','woman','girl'];
   const voicePitch={man:155,boy:245,woman:290,girl:355};
@@ -52,7 +52,9 @@
     }
   };
   function setMusic(mode){
+    musicMode=mode;
     stopMusic();
+    if(pageHidden())return;
     const track=musicTracks[mode];
     if(!track||!unlock())return;
     musicLevel=track.level*3;
@@ -111,10 +113,23 @@
     }
     return Math.round(buffer.duration*1000);
   }
-  function stop(){stopVoice();stopMusic();}
+  const pageHidden=()=>typeof document!=='undefined'&&document.hidden;
+  function stop(){stopVoice();stopMusic();musicMode='off';}
+  // Silence everything while the page is hidden or closing; resume the same track when it comes back.
+  function pause(){
+    stopVoice();stopMusic();
+    if(context&&context.state==='running')context.suspend().catch(()=>{});
+  }
+  function resume(){
+    if(!context)return;
+    context.resume().catch(()=>{});
+    if(musicTimer===null)setMusic(musicMode);
+  }
   window.GravityFourAudio={unlock,speak,setMusic,stop};
   if(typeof window.addEventListener==='function'){
     window.addEventListener('pointerdown',unlock,{once:true});
     window.addEventListener('keydown',unlock,{once:true});
+    window.addEventListener('pagehide',pause);
+    if(typeof document!=='undefined')document.addEventListener('visibilitychange',()=>pageHidden()?pause():resume());
   }
 })();

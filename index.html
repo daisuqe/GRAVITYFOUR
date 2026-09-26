@@ -11,7 +11,7 @@
   <main class="app">
     <section class="menu" id="menu" aria-label="Tournament selection">
       <header class="brand"><canvas class="title-crystal green" id="title-green-crystal" width="11" height="11" aria-hidden="true"></canvas><h1>GRAVITY FOUR</h1><canvas class="title-crystal red" id="title-red-crystal" width="11" height="11" aria-hidden="true"></canvas></header>
-      <div class="daily-cup"><span id="daily-cup-date"></span><div class="cup-heading"><img src="trophy.svg" alt="" width="54" height="36"><h2 id="daily-cup-title"></h2><img src="trophy.svg" alt="" width="54" height="36"></div></div>
+      <div class="daily-cup"><div class="cup-heading"><img src="trophy.svg" alt="" width="54" height="36"><h2 id="daily-cup-title"></h2><img src="trophy.svg" alt="" width="54" height="36"></div><span id="daily-cup-date"></span></div>
       <div class="tournament-list" id="tournament-list"></div>
       <button class="random-button" id="random-match" type="button">RANDOM MATCH</button>
       <button class="history-button" id="history-button" type="button"><img class="choice-trophy" src="trophy.svg" alt=""><span>TROPHIES / RECORDS</span><img class="choice-trophy" src="trophy.svg" alt=""></button>
@@ -28,7 +28,7 @@
       <div class="history-panel">
         <div class="history-nav"><button class="back-button" id="history-back" type="button"><span class="ui-arrow" aria-hidden="true"></span>MENU</button><button class="history-open" id="history-open" type="button">HISTORY<span class="ui-arrow right" aria-hidden="true"></span></button></div>
         <span class="eyebrow">TROPHY ROOM</span>
-        <div class="cup-heading"><img src="trophy.svg" alt="" width="54" height="36"><h2 id="history-cup"></h2><img src="trophy.svg" alt="" width="54" height="36"></div><p id="history-date"></p>
+        <div class="history-ranking"><span>RANKING</span><div><strong id="history-rank">—</strong><small id="history-rank-total"></small></div><small id="history-rank-score"></small></div>
         <div class="history-list" id="history-list"></div>
         <p class="history-note">TODAY SHOWS YOUR BEST PLACING IN EACH LOCAL DAY.</p>
       </div>

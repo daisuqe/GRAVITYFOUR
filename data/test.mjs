@@ -513,7 +513,7 @@ assert.ok(career.elements.get('tournament-list').children[0].children[0].childre
 assert.ok(career.elements.get('tournament-list').children[0].children[2].children[0].className.includes('medal-bronze'));
 career.elements.get('history-button').onclick();
 assert.equal(career.elements.get('history-view').hidden,false);
-assert.equal(career.elements.get('history-cup').textContent,'FLOWER CUP');
+assert.match(career.elements.get('history-rank').textContent,/^\d+$/,'trophy room shows the career ranking');
 assert.equal(career.elements.has('history-total-wins'),false,'global title counter is removed');
 const beginnerRecord=career.elements.get('history-list').children[0];
 assert.equal(beginnerRecord.children[1].children[1].textContent,'1ST','today shows the best rank');

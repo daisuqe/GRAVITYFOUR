@@ -23,4 +23,6 @@ for character in "".join(source_rows):
         assert font["glyf"][glyph_name].numberOfContours, f"Empty {character!r}"
 
 assert font["glyf"][cmap[ord("　")]].numberOfContours == 0
+for character in "～·—":
+    assert font["glyf"][cmap[ord(character)]].numberOfContours, f"Missing {character!r} used on screen"
 print("YODAKA source glyphs are present in yodaka.woff")
