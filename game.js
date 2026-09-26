@@ -480,7 +480,7 @@
       },watchMode&&!roundOpening?950:Math.max(1700,duration+350)*(watchMode?1.5:1));
     }
     function simulatedWinner(first,second,index,round=tournament.round){
-      const chance=1/(1+Math.exp((second.profile.strength-first.profile.strength)/12));
+      const chance=1/(1+Math.exp((second.profile.strength-first.profile.strength)/5));
       return Math.random()<chance?first:second;
     }
     function settleRound(){
