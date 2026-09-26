@@ -231,6 +231,12 @@
       byId('daily-cup-date').textContent=Number(day.slice(5,7))+'/'+Number(day.slice(8,10))+' '+details[1];
       renderTournamentChoices(day);
     }
+    // Trophy drawn in two layers (body + glow overlaid on top) by CSS.
+    function trophyIcon(className,medal){
+      const trophy=document.createElement('span');trophy.className=className+' trophy medal-'+medal;
+      trophy.setAttribute('role','img');trophy.setAttribute('aria-label',medal.toUpperCase()+' TROPHY');
+      return trophy;
+    }
     function renderTournamentChoices(day){
       for(const type of tournamentTypes){
         const sides=choiceSides.get(type.size);
@@ -243,8 +249,7 @@
           side.replaceChildren();
           const medal=ranked[index];
           if(medal){
-            const trophy=document.createElement('img');trophy.className='choice-trophy medal-'+medal;
-            trophy.src='trophy.svg';trophy.alt=medal.toUpperCase()+' TROPHY';side.append(trophy);
+            side.append(trophyIcon('choice-trophy',medal));
           }else{
             const character=faces[index];
             const face=document.createElement('span');face.className='choice-face';face.setAttribute('aria-label',character.name);
@@ -378,8 +383,7 @@
           const name=document.createElement('span');name.textContent=label;
           const number=document.createElement('strong');
           if(medal){
-            const trophy=document.createElement('img');trophy.className='record-trophy medal-'+medal;
-            trophy.src='trophy.svg';trophy.alt=medal.toUpperCase()+' TROPHY';number.append(trophy);
+            number.append(trophyIcon('record-trophy',medal));
           }
           number.append(value);
           row.append(name,number);card.append(row);

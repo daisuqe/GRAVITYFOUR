@@ -1134,3 +1134,11 @@ html:not([lang="en"]) [data-lang="en"], html[lang="en"] [data-lang="ja"] { displ
 .help-topbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .help-lang { cursor: pointer; }
 .help-tournaments span { font-family: yodaka, monospace; }
+
+/* Trophies: gold / silver / bronze bodies spaced evenly in brightness (luminance ~.92 / .76 / .64), all with a gold glow. */
+.trophy { position: relative; display: block; flex: none; aspect-ratio: 3 / 2; filter: none !important; --trophy-image: url("trophy.svg"); --trophy-glow: drop-shadow(0 0 3px #ffe38a) drop-shadow(0 0 8px #f4d472cc); }
+.trophy::before { content: ""; position: absolute; inset: 0; background: var(--trophy-image) center / contain no-repeat; image-rendering: pixelated; filter: var(--trophy-glow); }
+.trophy.medal-gold { --trophy-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6' shape-rendering='crispEdges'%3E%3Cpath fill='%23f8eca6' d='M0 0h9v1H0z M0 1h1v1H0z M2 1h5v1H2z M8 1h1v1H8z M0 2h9v1H0z M2 3h5v1H2z M4 4h1v1H4z M2 5h5v1H2z'/%3E%3Cpath fill='%23ffffff' opacity='.2' d='M0 0h1v3H0z M2 3h1v1H2z M2 5h1v1H2z'/%3E%3C/svg%3E"); }
+.trophy.medal-silver { --trophy-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6' shape-rendering='crispEdges'%3E%3Cpath fill='%23c2c2c2' d='M0 0h9v1H0z M0 1h1v1H0z M2 1h5v1H2z M8 1h1v1H8z M0 2h9v1H0z M2 3h5v1H2z M4 4h1v1H4z M2 5h5v1H2z'/%3E%3Cpath fill='%23ffffff' opacity='.2' d='M0 0h1v3H0z M2 3h1v1H2z M2 5h1v1H2z'/%3E%3C/svg%3E"); --trophy-glow: drop-shadow(0 0 3px #fff1c5e6) drop-shadow(0 0 7px #faeab9b3); }
+.trophy.medal-bronze { --trophy-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6' shape-rendering='crispEdges'%3E%3Cpath fill='%23f29270' d='M0 0h9v1H0z M0 1h1v1H0z M2 1h5v1H2z M8 1h1v1H8z M0 2h9v1H0z M2 3h5v1H2z M4 4h1v1H4z M2 5h5v1H2z'/%3E%3Cpath fill='%23ffffff' opacity='.2' d='M0 0h1v3H0z M2 3h1v1H2z M2 5h1v1H2z'/%3E%3C/svg%3E"); --trophy-glow: drop-shadow(0 0 3px #ffd78acc) drop-shadow(0 0 5px #f6c26699); }
+.cup-heading .trophy { width: 100%; height: auto; }
