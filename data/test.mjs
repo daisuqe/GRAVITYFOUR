@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const gameScript=fs.readFileSync(new URL('../game.js',import.meta.url),'utf8');
+const playerScript=fs.readFileSync(new URL('../player.js',import.meta.url),'utf8');
 const page=fs.readFileSync(new URL('../index.html',import.meta.url),'utf8');
 const help=fs.readFileSync(new URL('../help.html',import.meta.url),'utf8');
 const styles=fs.readFileSync(new URL('../style.css',import.meta.url),'utf8');
@@ -49,7 +50,7 @@ for(const character of manifest.characters){
   for(const suffix of ['face-scan','win-scan','lose-scan'])assert.equal(fs.existsSync(new URL('../characters/'+character.name+'-'+suffix+'.png',import.meta.url)),false);
 }
 
-function boot(coarse=false,random=null,day='2026-09-23',storage=new Map()){
+function boot(coarse=false,random=null,day='2026-09-23',storage=new Map(),includePlayer=false){
   const elements=new Map(),timers=[],drawn=[];
   function element(){
     return {children:[],className:'',hidden:false,classList:{toggle(){},remove(){}},animate(keyframes,options){this.animation={keyframes,options};this.activeAnimation={cancel(){}};return this.activeAnimation},
@@ -65,6 +66,7 @@ function boot(coarse=false,random=null,day='2026-09-23',storage=new Map()){
   if(random!==null)context.Math=Object.assign(Object.create(Math),{random:()=>random});
   vm.runInNewContext(rosterScript,context,{filename:'characters.js'});
   vm.runInNewContext(cupsScript,context,{filename:'daily-cups.js'});
+  if(includePlayer)vm.runInNewContext(playerScript,context,{filename:'player.js'});
   vm.runInNewContext(gameScript.replace('    window.GravityFour={legalMoves', '    window.__testPlay=play; window.__testNoMoveOutcome=noMoveOutcome; window.__testThinkingLine=thinkingLine; window.__testMoveLine=moveLine; window.__testMaybeSay=maybeSay; window.__testBracketPosition=bracketPosition; window.GravityFour={legalMoves'),context,{filename:'game.js'});
   return {game:context.window.GravityFour,play:context.window.__testPlay,noMoveOutcome:context.window.__testNoMoveOutcome,thinkingLine:context.window.__testThinkingLine,moveLine:context.window.__testMoveLine,say:context.window.__testMaybeSay,bracketPosition:context.window.__testBracketPosition,elements,timers,drawn,buttons:elements.get('board').children};
 }
@@ -75,6 +77,30 @@ function finishBracket(fixture){
     fixture.timers.shift()();
   }
 }
+
+const menuFaces=boot(false,0,'2026-03-21');
+for(const choice of menuFaces.elements.get('tournament-list').children){
+  assert.equal(choice.children[0].children[0].children.length,5,'left menu face has body, eyes, mouth and remote canvases');
+  assert.equal(choice.children[2].children[0].children.length,5,'right menu face has body, eyes, mouth and remote canvases');
+}
+assert.ok(menuFaces.drawn.some(entry=>entry[0]==='scan'),'menu portraits draw masked scanlines');
+const beginnerChoice=menuFaces.elements.get('tournament-list').children[0];
+const shownNames=[beginnerChoice.children[0],beginnerChoice.children[2]].map(side=>side.children[0]['aria-label']);
+menuFaces.game.startTournament(8);
+assert.ok(shownNames.every(name=>menuFaces.game.getTournament().entrants.includes(name)),'menu faces belong to the daily tournament roster');
+assert.match(styles,/\.choice-left \.choice-face \{ transform: scaleX\(-1\)/,'the left menu face looks right');
+const medalStorage=new Map([['gravityfour-history-v1',JSON.stringify({
+  days:{'2026-03-21':{8:4,16:2,32:1}},best:{},wins:{},
+  medals:{'2026-03-21':{8:['bronze'],16:['bronze','silver'],32:['bronze','gold','silver']}}
+})]]);
+const medalMenu=boot(false,0,'2026-03-21',medalStorage);
+const medalChoices=medalMenu.elements.get('tournament-list').children;
+assert.ok(medalChoices[0].children[0].children[0].className.includes('medal-bronze'));
+assert.ok(medalChoices[0].children[2].children[0].className.includes('choice-face'));
+assert.ok(medalChoices[1].children[0].children[0].className.includes('medal-silver'));
+assert.ok(medalChoices[1].children[2].children[0].className.includes('medal-bronze'));
+assert.ok(medalChoices[2].children[0].children[0].className.includes('medal-gold'));
+assert.ok(medalChoices[2].children[2].children[0].className.includes('medal-silver'));
 
 const viewing=boot(false,0);
 viewing.elements.get('watch-button').onclick();
@@ -107,11 +133,13 @@ assert.equal([...viewing.game.getBoard()].filter(Boolean).length,2,'opponent COM
 viewing.elements.get('back').onclick();
 assert.equal(viewing.elements.get('menu').hidden,false,'watch mode can return to the menu');
 
-const watchStorage=new Map(),looping=boot(false,0,'2026-03-21',watchStorage);
+const watchStorage=new Map(),looping=boot(false,0,'2026-03-21',watchStorage,true);
 looping.elements.get('watch-button').onclick();
+const watchedName=looping.elements.get('score-player-name').textContent;
 looping.timers.shift()();
 for(let col=0;col<5;col++)assert.equal(looping.play(col,1),true);
 assert.equal(looping.elements.get('result').hidden,false,'watch mode shows the result');
+assert.equal(looping.elements.get('score-player-name').textContent,watchedName,'watch winner keeps the left COM name');
 assert.equal(looping.timers.at(-1).delay,7800,'watch mode halves the post-match pause');
 assert.doesNotMatch(looping.elements.get('result').textContent,/TAP TO CONTINUE/,'watch results advance automatically');
 looping.timers.pop()();
@@ -456,7 +484,13 @@ for(let round=0;round<3;round++){
   for(let col=0;col<5;col++)career.play(col,1);
   if(round<2){career.elements.get('result').onclick();finishBracket(career);career.elements.get('next-match').onclick();career.timers.shift()();}
 }
+assert.deepEqual(JSON.parse(sharedStorage.get('gravityfour-history-v1')).medals['2026-03-21'][8],['gold'],'one championship upgrades the same daily trophy');
+career.game.startTournament(8);career.timers.shift()();
+for(let col=0;col<5;col++)career.play(col,1);
+assert.deepEqual(JSON.parse(sharedStorage.get('gravityfour-history-v1')).medals['2026-03-21'][8],['gold','bronze'],'another top-four run earns the right trophy');
 career.elements.get('back').onclick();
+assert.ok(career.elements.get('tournament-list').children[0].children[0].children[0].className.includes('medal-gold'));
+assert.ok(career.elements.get('tournament-list').children[0].children[2].children[0].className.includes('medal-bronze'));
 career.elements.get('history-button').onclick();
 assert.equal(career.elements.get('history-view').hidden,false);
 assert.equal(career.elements.get('history-cup').textContent,'FLOWER CUP');

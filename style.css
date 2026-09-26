@@ -1052,3 +1052,24 @@ html, body, button, a { touch-action: manipulation; }
   68% { opacity: .85; }
   100% { transform: translate(var(--travel-x),var(--travel-y)) rotate(var(--spin)); opacity: 0; }
 }
+
+/* Daily opponents become earned trophies on each tournament choice. */
+.tournament-choice { grid-template-columns: clamp(42px, 7svh, 58px) minmax(0, 1fr) clamp(42px, 7svh, 58px); }
+.choice-side { display: grid; place-items: center; width: 100%; height: clamp(42px, 7svh, 58px); }
+.choice-left { grid-column: 1; grid-row: 1; }
+.choice-right { grid-column: 3; grid-row: 1; }
+.choice-face { position: relative; display: block; width: clamp(34px, 5.6svh, 46px); aspect-ratio: 1; filter: drop-shadow(0 0 3px #5affad40); }
+.choice-left .choice-face { transform: scaleX(-1); }
+.choice-face img, .choice-face canvas { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; }
+.tournament-choice .choice-side .choice-trophy { width: clamp(38px, 6.7svh, 54px); height: clamp(31px, 5.5svh, 45px); }
+.tournament-choice .choice-side .medal-bronze { filter: sepia(1) saturate(3.3) hue-rotate(-36deg) brightness(.72) drop-shadow(0 0 2px #9e4b42a0); }
+.tournament-choice .choice-side .medal-silver { filter: grayscale(1) brightness(1.42) drop-shadow(0 0 4px #c9d9ec99); }
+.tournament-choice .choice-side .medal-gold { filter: brightness(1.1) drop-shadow(0 0 5px #f4d47299); }
+@media (max-width: 540px) {
+  .tournament-choice { grid-template-columns: 44px minmax(0, 1fr) 44px; }
+  .choice-side { height: clamp(34px, 5.2dvh, 44px); }
+  .choice-face { width: clamp(30px, 4.5dvh, 36px); }
+  .tournament-choice .choice-side .choice-trophy { width: clamp(34px, 5.2dvh, 42px); height: clamp(28px, 4.5dvh, 35px); }
+}
+
+.choice-face .portrait-tint { filter: drop-shadow(0 0 3px #65ffc050) drop-shadow(0 0 7px #36ee9838); }

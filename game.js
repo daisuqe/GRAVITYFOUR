@@ -72,9 +72,16 @@
     function readHistory(){
       try{
         const saved=JSON.parse(window.localStorage.getItem(storageKey));
-        if(saved&&typeof saved==='object')return {days:saved.days||{},best:saved.best||{},wins:saved.wins||{}};
+        if(saved&&typeof saved==='object'){
+          const days=saved.days||{},medals=saved.medals||{};
+          for(const [day,ranks] of Object.entries(days))for(const [size,rank] of Object.entries(ranks||{})){
+            if(rank>4||medals[day]?.[size])continue;
+            (medals[day]||={})[size]=[rank===1?'gold':rank<=2?'silver':'bronze'];
+          }
+          return {days,best:saved.best||{},wins:saved.wins||{},medals};
+        }
       }catch{}
-      return {days:{},best:{},wins:{}};
+      return {days:{},best:{},wins:{},medals:{}};
     }
     const records=readHistory();
     function saveHistory(){try{window.localStorage.setItem(storageKey,JSON.stringify(records));}catch{}}
@@ -83,13 +90,16 @@
       {key:'regular',label:'REGULAR',size:16,levels:[4,4,4,3,0]},
       {key:'champion',label:'CHAMPION',size:32,levels:[0,8,8,8,7]}
     ];
+    const choiceSides=new Map();
     const settings={depth:2,mistake:10,trick:30,attack:50,defense:50,edgeExplore:50,ride:50,unusual:50,center:50,consistency:80};
     const watchSettings={...settings,depth:2,mistake:12,trick:35};
     let tournament=null,opponent=null,watchLeft=null,outcome=null,matchToken=0,pendingWinners=null,introActive=false,watchMode=false,watchLeftHasSpoken=false;
     const audio=window.GravityFourAudio||{unlock(){},speak(){return 0},setMusic(){},stop(){}};
     function drawScanlines(mask,id){
-      const canvas=byId(id),context=canvas.getContext('2d');
-      const tintContext=byId(id.replace('scanlines','tint')).getContext('2d');
+      drawRemoteEffect(mask,byId(id),byId(id.replace('scanlines','tint')));
+    }
+    function drawRemoteEffect(mask,canvas,tintCanvas,scanStrength=1){
+      const context=canvas.getContext('2d'),tintContext=tintCanvas.getContext('2d');
       const pixels=context.createImageData(64,64),bytes=Uint8Array.from({length:32},(_,i)=>parseInt(mask.slice(i*2,i*2+2),16));
       const tint=tintContext.createImageData(64,64);
       for(let y=0;y<64;y++)for(let x=0;x<64;x++){
@@ -103,7 +113,7 @@
         pixels.data[offset]=bright?170:0;
         pixels.data[offset+1]=bright?255:8;
         pixels.data[offset+2]=bright?208:9;
-        pixels.data[offset+3]=bright?79:86;
+        pixels.data[offset+3]=Math.round((bright?79:86)*scanStrength);
       }
       tintContext.putImageData(tint,0,0);
       context.putImageData(pixels,0,0);
@@ -141,7 +151,7 @@
     }
     function renderPlayer(){
       if(!player)return;
-      byId('score-player-name').textContent=playerSelection.name;
+      if(!watchMode)byId('score-player-name').textContent=playerSelection.name;
       byId('editor-name').value=playerSelection.name;
       paintPlayer('player',playerExpression);
       paintPlayer('victory-player',playerExpression);
@@ -218,6 +228,35 @@
       const day=localDate(),details=dayDetails(day);
       byId('daily-cup-title').textContent=details[0];
       byId('daily-cup-date').textContent=day;
+      renderTournamentChoices(day);
+    }
+    function renderTournamentChoices(day){
+      for(const type of tournamentTypes){
+        const sides=choiceSides.get(type.size);
+        if(!sides)continue;
+        const entrants=type.levels.flatMap((count,index)=>selectLevel(index+1,count,day+'|'+type.size));
+        const faces=shuffle(entrants,day+'|'+type.size+'|menu').slice(0,2);
+        const medals=records.medals[day]?.[type.size]||[];
+        const ranked=medals.slice().sort((a,b)=>({gold:3,silver:2,bronze:1}[b]||0)-({gold:3,silver:2,bronze:1}[a]||0));
+        sides.forEach((side,index)=>{
+          side.replaceChildren();
+          const medal=ranked[index];
+          if(medal){
+            const trophy=document.createElement('img');trophy.className='choice-trophy medal-'+medal;
+            trophy.src='trophy.svg';trophy.alt=medal.toUpperCase()+' TROPHY';side.append(trophy);
+          }else{
+            const character=faces[index];
+            const face=document.createElement('span');face.className='choice-face';face.setAttribute('aria-label',character.name);
+            for(const src of [portraitUrl(character.file),partUrl(character.eyes),partUrl(character.mouth)]){
+              const layer=document.createElement('img');layer.src=src;layer.alt='';face.append(layer);
+            }
+            const tint=document.createElement('canvas');tint.className='portrait-tint';tint.width=64;tint.height=64;
+            const scanlines=document.createElement('canvas');scanlines.className='portrait-scanlines';scanlines.width=64;scanlines.height=64;
+            face.append(tint,scanlines);drawRemoteEffect(character.normalMask,scanlines,tint,.55);
+            side.append(face);
+          }
+        });
+      }
     }
     function rankText(rank){
       if(!Number.isInteger(rank)||rank<1)return '—';
@@ -279,6 +318,12 @@
       records.days[day][size]=Math.min(records.days[day][size]||Infinity,rank);
       records.best[size]=Math.min(records.best[size]||Infinity,rank);
       if(outcome==='win'&&rank===1)records.wins[size]=(Number(records.wins[size])||0)+1;
+      if(rank<=4){
+        const medals=(records.medals[day]||={})[size]||((records.medals[day])[size]=[]);
+        const medal=rank===1?'gold':rank<=2?'silver':'bronze';
+        if(tournament.medalIndex==null)tournament.medalIndex=medals.push(medal)-1;
+        else medals[tournament.medalIndex]=medal;
+      }
       saveHistory();
     }
     function startTournament(size,watching=false){
@@ -1251,10 +1296,10 @@
     });
     for(const type of tournamentTypes){
       const button=document.createElement('button');button.type='button';button.className='tournament-choice '+type.key;
-      const leftTrophy=document.createElement('img');leftTrophy.className='choice-trophy';leftTrophy.src='trophy.svg';leftTrophy.alt='';
+      const leftSide=document.createElement('span');leftSide.className='choice-side choice-left';
       const title=document.createElement('strong');title.textContent=type.label+' TOURNAMENT';
-      const rightTrophy=document.createElement('img');rightTrophy.className='choice-trophy';rightTrophy.src='trophy.svg';rightTrophy.alt='';
-      button.append(leftTrophy,title,rightTrophy);
+      const rightSide=document.createElement('span');rightSide.className='choice-side choice-right';
+      button.append(leftSide,title,rightSide);choiceSides.set(type.size,[leftSide,rightSide]);
       button.addEventListener('click',()=>startTournament(type.size));
       byId('tournament-list').append(button);
     }
