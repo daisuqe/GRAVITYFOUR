@@ -77,7 +77,7 @@
   function speak(text,kind='character',voiceId=0,hair=''){
     const synth=window.VoiceSynth;
     if(!synth||!unlock())return 0;
-    const spokenText=text.replace(/…+/g,'、');
+    const spokenText=text.replace(/HELLO[～~]?/gi,'ハロー').replace(/…+/g,'、');
     const mora=synth.moraList(spokenText);
     if(!mora.length)return 0;
     stopVoice();

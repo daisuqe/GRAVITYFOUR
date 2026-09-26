@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const source=fs.readFileSync(new URL('../audio.js',import.meta.url),'utf8');
-const oscillators=[],gains=[],voices=[],timers=new Map();
+const oscillators=[],gains=[],voices=[],timers=new Map(),spokenTexts=[];
 let nextTimer=1;
 const parameter=()=>({value:0,setValueAtTime(value){this.value=value},
   exponentialRampToValueAtTime(value){this.value=value},linearRampToValueAtTime(value){this.value=value},
@@ -18,7 +18,7 @@ class AudioContext {
     voices.push(source);return source}
 }
 const window={AudioContext,VoiceSynth:{
-  moraList(text){return [...text]},params(preset){return {preset,f0:0,fs:1,mora:150}},
+  moraList(text){spokenTexts.push(text);return [...text]},params(preset){return {preset,f0:0,fs:1,mora:150}},
   render(_context,_mora,params){return {duration:.5,pitch:params.f0,formantScale:params.fs,mora:params.mora,
     preset:params.preset,speed:params.speed}}
 }};
@@ -72,6 +72,8 @@ audio.speak('ヨロシク','character',1);
 const regularPace=voices.at(-1).buffer.mora;
 assert.ok(regularPace>=144&&regularPace<=156,'ordinary lines use the source engine natural mora length');
 assert.equal(voices.at(-1).buffer.speed,1.62,'dialogue is ten percent slower than before');
+audio.speak('HELLO～','character',1);
+assert.equal(spokenTexts.at(-1),'ハロー','the displayed HELLO greeting is pronounced in Japanese');
 assert.equal(gains.at(-1).gain.value,.392,'character dialogue volume is reduced by another thirty percent');
 audio.speak('ヨロシク','character',2);
 assert.notEqual(voices.at(-1).buffer.mora,regularPace,'characters have distinct stable speaking rates');

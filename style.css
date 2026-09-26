@@ -1043,9 +1043,9 @@ html, body, button, a { touch-action: manipulation; }
 .win-orbit { --orbit-time: 6.667s; animation-duration: var(--orbit-time); }
 .win-orbit i { animation-duration: var(--orbit-time), 1.1s; }
 .stage.watching .win-orbit { --orbit-time: 13.333s; }
-.match-confetti-piece { bottom: -40px; width: 28px; height: 38px; animation-timing-function: cubic-bezier(.17,.64,.43,1); }
-.match-confetti-piece:nth-child(3n) { width: 22px; height: 30px; }
-.match-confetti-piece:nth-child(5n) { width: 34px; height: 22px; }
+.match-confetti-piece { bottom: -32px; width: 22px; height: 30px; animation-timing-function: cubic-bezier(.17,.64,.43,1); }
+.match-confetti-piece:nth-child(3n) { width: 18px; height: 24px; }
+.match-confetti-piece:nth-child(5n) { width: 27px; height: 18px; }
 @keyframes match-confetti-burst {
   0% { transform: translate(0,0) rotate(0deg); opacity: 0; }
   8% { opacity: .9; }

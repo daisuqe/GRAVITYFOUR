@@ -67,8 +67,8 @@ function boot(coarse=false,random=null,day='2026-09-23',storage=new Map(),includ
   vm.runInNewContext(rosterScript,context,{filename:'characters.js'});
   vm.runInNewContext(cupsScript,context,{filename:'daily-cups.js'});
   if(includePlayer)vm.runInNewContext(playerScript,context,{filename:'player.js'});
-  vm.runInNewContext(gameScript.replace('    window.GravityFour={legalMoves', '    window.__testPlay=play; window.__testNoMoveOutcome=noMoveOutcome; window.__testThinkingLine=thinkingLine; window.__testMoveLine=moveLine; window.__testMaybeSay=maybeSay; window.__testBracketPosition=bracketPosition; window.GravityFour={legalMoves'),context,{filename:'game.js'});
-  return {game:context.window.GravityFour,play:context.window.__testPlay,noMoveOutcome:context.window.__testNoMoveOutcome,thinkingLine:context.window.__testThinkingLine,moveLine:context.window.__testMoveLine,say:context.window.__testMaybeSay,bracketPosition:context.window.__testBracketPosition,elements,timers,drawn,buttons:elements.get('board').children};
+  vm.runInNewContext(gameScript.replace('    window.GravityFour={legalMoves', '    window.__testPlay=play; window.__testNoMoveOutcome=noMoveOutcome; window.__testOpeningLine=openingLine; window.__testThinkingLine=thinkingLine; window.__testMoveLine=moveLine; window.__testMaybeSay=maybeSay; window.__testBracketPosition=bracketPosition; window.GravityFour={legalMoves'),context,{filename:'game.js'});
+  return {game:context.window.GravityFour,play:context.window.__testPlay,noMoveOutcome:context.window.__testNoMoveOutcome,opening:context.window.__testOpeningLine,thinkingLine:context.window.__testThinkingLine,moveLine:context.window.__testMoveLine,say:context.window.__testMaybeSay,bracketPosition:context.window.__testBracketPosition,elements,timers,drawn,buttons:elements.get('board').children};
 }
 
 function finishBracket(fixture){
@@ -101,6 +101,20 @@ assert.ok(medalChoices[1].children[0].children[0].className.includes('medal-silv
 assert.ok(medalChoices[1].children[2].children[0].className.includes('medal-bronze'));
 assert.ok(medalChoices[2].children[0].children[0].className.includes('medal-gold'));
 assert.ok(medalChoices[2].children[2].children[0].className.includes('medal-silver'));
+
+const opening=boot(false,0);
+opening.game.settings.gender='male';
+assert.equal(opening.opening(),'カツゼ！！','rough male characters can open energetically');
+opening.game.settings.gender='female';
+assert.equal(opening.opening(),'HELLO～','gentle female characters can open softly');
+const dialect=boot(false,0);
+dialect.game.settings.voice='quirky';
+dialect.say('ヨロシク。',1,true,{id:1,hair:'hair8m'});
+assert.equal(dialect.elements.get('speech').textContent,'ヨロシクダベ','quirky speech uses a dialect-like ending');
+dialect.say('ココダ。',1,true,{id:2,hair:'hair3w'});
+assert.equal(dialect.elements.get('speech').textContent,'ココジャ','the dialect ending varies by character');
+dialect.say('ヨロシク。',1,true,{id:4,hair:'hair8m'});
+assert.equal(dialect.elements.get('speech').textContent,'ヨロシクッス','some quirky characters keep the ssu ending');
 
 const viewing=boot(false,0);
 viewing.elements.get('watch-button').onclick();
@@ -291,7 +305,7 @@ assert.equal([...mobile.game.getBoard()].filter(Boolean).length,2,'COM replies a
 const deliberate=boot(false,0);
 deliberate.game.startTournament(8);deliberate.timers.shift()();
 assert.equal(deliberate.elements.get('speech').hidden,false,'each opponent greets at match start');
-assert.match(deliberate.elements.get('speech').textContent,/ヨロシク|コンチワ|ウィッス|オテヤワラカニ|ショウブ/,'greeting is katakana');
+assert.match(deliberate.elements.get('speech').textContent,/ヨロシク|コンチワ|ウィッス|オテヤワラカニ|ショウブ|カツゼ|キアイ|バッチコーイ|HELLO|マケマセンワ|ガンバリマス/,'greeting uses an opening line');
 deliberate.buttons[0].onclick();
 assert.ok(deliberate.timers[0].delay>=1400,'some opponents pause to think');
 deliberate.game.settings.talkativeness=0;
@@ -313,7 +327,7 @@ for(let round=0;round<3;round++){
   assert.equal(run.elements.get('win-orbit').hidden,false,'victory orbit appears around the player');
   assert.equal(run.elements.get('win-orbit').children.length,11,'eleven larger crystal blocks celebrate the win');
   assert.equal(run.elements.get('match-confetti').hidden,false,'paper bursts from the lower corners on a player win');
-  assert.equal(run.elements.get('match-confetti').children.length,84,'both lower corners fill the screen with paper pieces');
+  assert.equal(run.elements.get('match-confetti').children.length,112,'both lower corners fill the screen with paper pieces');
   assert.equal(run.elements.get('opponent-expression').src,'characters/lose.png','opponent reacts to defeat');
   assert.ok(run.drawn.some(([kind])=>kind==='scan'),'defeat scanlines redraw');
   assert.equal(run.elements.get('speech').hidden,false,'opponent always speaks after the result');
@@ -482,7 +496,13 @@ const sharedStorage=new Map(),career=boot(false,0,'2026-03-21',sharedStorage);
 career.game.startTournament(8);career.timers.shift()();
 for(let round=0;round<3;round++){
   for(let col=0;col<5;col++)career.play(col,1);
-  if(round<2){career.elements.get('result').onclick();finishBracket(career);career.elements.get('next-match').onclick();career.timers.shift()();}
+  if(round<2){
+    career.elements.get('result').onclick();finishBracket(career);career.elements.get('next-match').onclick();
+    const knockoutTitle=round===0?'SEMIFINAL':'FINAL';
+    assert.equal(career.elements.get('round-intro-title').textContent,knockoutTitle,'knockout intro uses its stage name');
+    assert.equal(career.elements.get('match-progress').textContent,'BEGINNER '+knockoutTitle,'knockout match header uses its stage name');
+    career.timers.shift()();
+  }
 }
 assert.deepEqual(JSON.parse(sharedStorage.get('gravityfour-history-v1')).medals['2026-03-21'][8],['gold'],'one championship upgrades the same daily trophy');
 career.game.startTournament(8);career.timers.shift()();

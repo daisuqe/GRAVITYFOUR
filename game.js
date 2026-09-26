@@ -396,8 +396,13 @@
       byId('opponent-tear').hidden=true;
       drawScanlines(opponent.normalMask,'opponent-scanlines');
       const progress=byId('match-progress');
+      const knockoutTitle=!tournament.random&&(tournament.bracket.length===2?'FINAL':tournament.bracket.length===4?'SEMIFINAL':null);
       if(tournament.random){
         progress.textContent='RANDOM MATCH';
+        progress.setAttribute('aria-label',progress.textContent);
+      }else if(knockoutTitle){
+        progress.replaceChildren();
+        progress.textContent=tournament.type.label+' '+knockoutTitle;
         progress.setAttribute('aria-label',progress.textContent);
       }else{
         const current=document.createElement('span');current.textContent=tournament.type.label+' '+tournament.bracket.length;
@@ -411,14 +416,14 @@
       const roundOpening=!watchMode||tournament.matchIndex===0;
       byId('round-intro-tournament').textContent=tournament.type.label+'\nTOURNAMENT';
       byId('round-intro-tournament').hidden=tournament.random||!roundOpening;
-      byId('round-intro-title').textContent=watchMode&&!roundOpening?'MATCH '+(tournament.matchIndex+1)
-        :tournament.random?'RANDOM MATCH':['1ST','2ND','3RD','4TH','5TH'][round]+' ROUND';
+      byId('round-intro-title').textContent=tournament.random?'RANDOM MATCH':knockoutTitle
+        ||(watchMode&&!roundOpening?'MATCH '+(tournament.matchIndex+1):['1ST','2ND','3RD','4TH','5TH'][round]+' ROUND');
       byId('round-intro-count').textContent=tournament.random?'':watchMode&&!roundOpening
         ?'('+(tournament.matchIndex+1)+'/'+(tournament.bracket.length/2)+')'
         :'('+(round+1)+'/'+Math.log2(tournament.type.size)+')';
       byId('round-intro').hidden=false;
       audio.setMusic('off');
-      const duration=roundOpening?audio.speak(tournament.random?'ランダムマッチ':['ファーストラウンド','セカンドラウンド','サードラウンド','フォースラウンド','フィフスラウンド'][round],'announcer'):0;
+      const duration=roundOpening?audio.speak(tournament.random?'ランダムマッチ':knockoutTitle==='FINAL'?'ファイナル':knockoutTitle==='SEMIFINAL'?'セミファイナル':['ファーストラウンド','セカンドラウンド','サードラウンド','フォースラウンド','フィフスラウンド'][round],'announcer'):0;
       render();
       setTimeout(()=>{
         if(token!==matchToken||!tournament)return;
@@ -502,9 +507,9 @@
       }
       other.hidden=true;other.textContent='';
       bubble.hidden=false;
-      const line=profile.voice==='quirky'&&message.endsWith('。')
-        &&!/(ダヨ|ッス|デスゾ|……)\。$/.test(message)
-        ?message.slice(0,-1)+(speaker.id%2?'ッス。':'ダヨ。')
+      const dialect=['ヤデ','ダベ','ジャ','バイ','ッス'][speaker.id%5];
+      const line=profile.voice==='quirky'&&message.endsWith('。')&&!message.endsWith('……。')
+        ?message.slice(0,-1).replace(/(デスゾ|ッス|ダヨ|ダ|ヨ|ネ)$/,'')+dialect+'。'
         :message;
       bubble.textContent=line.replace(/[。、]/g,' ').replace(/\s+/g,' ').trim();
       bubble.className=left?'speech watch-speech':'speech';
@@ -523,7 +528,11 @@
     }
     function openingLine(){
       if(turn===COM&&Math.random()<.33)return chooseLine(['サキニイクヨ。','サッソクハジメヨウ。','センテワモラッタ。']);
-      if(settings.voice==='quirky')return chooseLine(['ヨロシクデスゾ。','オテヤワラカニダヨ。','ヨロシクッス！','イザショウブッス。','キョウモガンバルダヨ。','ドウゾヨロシクデスゾ。','オモシロクナリソウッス。','マケナイダヨ。','ハジメルデスゾ。']);
+      if((settings.gender==='male'||settings.taunt>=72)&&Math.random()<.55)
+        return chooseLine(['カツゼ！！','キアイ！キアイ！','バッチコーイ！']);
+      if((settings.gender==='female'||settings.friendliness>=70)&&Math.random()<.55)
+        return chooseLine(['HELLO～','マケマセンワ','・・・ガンバリマス']);
+      if(settings.voice==='quirky')return chooseLine(['ヨロシク。','オテヤワラカニ。','イザショウブ。','キョウモガンバル。','ドウゾヨロシク。','オモシロクナリソウ。','マケナイ。','サア ハジメル。','イイショウブニシヨウ。']);
       if(settings.voice==='polite')return chooseLine(['ヨロシクオネガイシマス。','オテヤワラカニ。','イイショウブオ。','サア ハジメマショウ。','ゴタイセンオネガイシマス。','タノシミニシテイマシタ。','ドウゾオテヤワラカニ。','ヨイショウブニシマショウ。','セイイッパイイキマス。']);
       if(settings.personality==='teasing')return chooseLine(['コンチワ。マケナイデネ？','ヨロシク。タノシマセテヨ。','ウィッス。ココカラダヨ。','キミノテオミセテヨ。','スグニオワラセナイヨ。','サア ドコマデヤレル？','ワタシオオドロカセテ。','ヨロシクネ オテヤワラカニ。','フフッ ハジメヨウカ。']);
       if(settings.personality==='friendly')return chooseLine(['コンチワ！ヨロシクネ。','ヨロシク！タノシモウ。','オテヤワラカニネ。','キョウワイイショウブニシヨウ。','アエテウレシイヨ。','イッショニタノシモウネ。','オタガイガンバロウ。','ヨロシクオネガイシマス。','サア ハジメヨッカ。']);
@@ -537,8 +546,8 @@
       if(state.ownFours>=2)return chooseLine(['アトイッポンダ。','ココデキメタイ。','ショウブドコロダ。','カチスジオサガソウ。','モウスコシデトドク。','アセルナ ヨクミロ。']);
       if(state.ownThreats>=2)return chooseLine(['ツナガリソウダ。','イイカタチカモ。','ツギガミエタ。','ココオノバソウ。','スキマオネラオウ。','センオツクレルカナ。']);
       if(state.stones>=40)return chooseLine(['バンガセマクナッタ。','ノコリオカゾエヨウ。','オワリガチカイ。','ココカラガムズカシイ。','イッテオタイセツニ。','サイゴマデヨモウ。']);
-      const lines=['ウーン……','エット……','フム……','ンー ドウシヨウ。','♪ フフン フーン ♪','ナルホド……','コッチカナ……','チョットマッテ……','ドコガイイカナ。','マダキメラレナイ。','フフーン……','ムムム……','ソウダナ……','スコシカンガエル。','コレカ コレカ……','ヨシ ヨンデミヨウ。','ウーン ナヤムナ。','ナニカアルハズ。'];
-      if(settings.depth===3)lines.push('モウスコシヨム……','ソウキタカ……','サンテサキマデ……','ココワジックリ。','ウラノテモアルナ。','ミオトシワナイカ。');
+      const lines=['ウーン……','エット……','フム……','ンー ドウシヨウ。','♪ フフン フーン ♪','ナルホド……','コッチカナ……','チョットマッテ……','ドコガイイカナ。','マダキメラレナイ。','フフーン……','ムムム……','ソウダナ……','スコシカンガエル。','コレカ コレカ……','ヨシ ヨンデミヨウ。','ウーン ナヤムナ。','ナニカアルハズ。','ネムイ・・・','ハラヘッタ・・・','グミタベタイ','フゥ','ウンウン','ポリポリ'];
+      if(settings.depth===3)lines.push('モウスコシヨム……','ソウキタカ……','サンテサキマデ……','ココワジックリ。','ウラノテモアルナ。','ミオトシワナイカ。','アソコガアアダカラ・・');
       if(settings.trick>70)lines.push('アノテデイクカ……','フフ ミエタ。','チョットヒネロウ。','ウラオカコウ。','マヨワセタイナ。','ココデフイオツク。');
       if(settings.personality==='teasing')lines.push('ドコニオコウカナ？','マヨッテルフリ。','キミワキヅクカナ。');
       if(settings.personality==='reserved')lines.push('……。','フム……','……カンガエチュウ。');
@@ -551,12 +560,13 @@
       if(state.otherFours>state.ownFours)return chooseLine(['マダマダコレカラ。','トリカエサナイト。','サガヒライタナ。','ウッ マズイカモ。','ココカラタテナオス。','オイツクヨ。']);
       if(state.otherThreats>=2)return chooseLine(['ココワフセグ。','ソノセンワトメル。','アブナカッタ。','マモリオカタメル。','ソコワワタサナイ。','イッタンシノゴウ。']);
       if(state.stones>=40)return chooseLine(['ノコリワスクナイ。','コノイッテニカケル。','サイゴマデイクヨ。','ココデツナグ。','オワリオヨモウ。','アトワタイミング。']);
-      const lines=['ココダ。','フム。','ヨシッ。','アッ コッチカ。','♪ フフフーン ♪','ナルホド……','ココニシヨウ。','イイカンジ。','オイテミタ。','マア コレデ。','コッチオエラブ。','ウマクイクカナ。','ホイッ。','サテ ツギワ。','コレデドウダ。','ウン ワルクナイ。','チョットボウケン。','ココオツカオウ。'];
+      const lines=['ココダ。','フム。','ヨシッ。','アッ コッチカ。','♪ フフフーン ♪','ナルホド……','ココニシヨウ。','イイカンジ。','オイテミタ。','マア コレデ。','コッチオエラブ。','ウマクイクカナ。','ホイッ。','サテ ツギワ。','コレデドウダ。','ウン ワルクナイ。','チョットボウケン。','ココオツカオウ。','ツギドウゾー','アッ！！'];
       if(settings.personality==='teasing')lines.push('オヤ？ソコデイイノ？','フフッ ドウスル？','マダマダダネ。','コノテワヨメタ？','チョットコマッタ？','キミノバンダヨ。','ホラ ミテミテ。','フフ コレワドウ？','ツギガタノシミ。');
-      if(settings.personality==='friendly')lines.push('イイテダネ！','イッショニタノシモウ。','オオ ヤルネ！','ココガスキ。','ナカナカイイネ。','キミノテモミタイ。','ワクワクスルネ。','オタガイガンバロウ。','イイショウブダネ。');
+      if(settings.personality==='friendly')lines.push('イイテダネ！','イッショニタノシモウ。','オオ ヤルネ！','ココガスキ。','ナカナカイイネ。','キミノテモミタイ。','ワクワクスルネ。','オタガイガンバロウ。','イイショウブダネ。','タノシクナッテキタ♪');
       if(settings.personality==='thoughtful')lines.push('コノサキワ……','ヨミドオリ。','スジワミエテイル。','ココオオサエル。','ツギノカタチオミル。','コレガイチバン。');
       if(settings.ride>75)lines.push('ソノコマ カリルヨ。','ソコオアシバニ。','キミノコマモツカウヨ。');
       if(settings.unusual>75)lines.push('コレワドウ？','ヘンナテモイイヨネ。','チョットカワッタテ。','ヨソウガイデショ。','ココカライケル。','ナナメノハッソウ。');
+      if(settings.trick>70)lines.push('ト、ミセカケテ');
       if(settings.expressiveness>65)lines.push('オッ！','ウッ……','アハハ！','ヤッタ。','エエッ？','フフフ。','ムムッ。','オオー。','ヨーシ。');
       return chooseLine(lines);
     }
@@ -868,11 +878,11 @@
       if(outcome==='loss')return;
       if(!watchMode){
         const confetti=byId('match-confetti'),pieces=[];
-        for(let n=0;n<84;n++){
+        for(let n=0;n<112;n++){
           const piece=document.createElement('i'),fromLeft=n%2===0;
           piece.className='match-confetti-piece';
           const spin=(fromLeft?1:-1)*(150+(n*31)%300);
-          piece.setAttribute('style',`--origin:${fromLeft?0:100}%;--travel-x:${fromLeft?'':'-'}${6+(n*37)%91}vw;--travel-y:-${28+(n*29)%75}vh;--spin:${spin}deg;--duration:${3.8+(n%9)*.22}s;--delay:${(n%18)*.045}s;--hue:${n%4===0?47:n%4===1?153:n%4===2?345:190}`);
+          piece.setAttribute('style',`--origin:${fromLeft?0:100}%;--travel-x:${fromLeft?'':'-'}${10+(n*37)%106}vw;--travel-y:-${35+(n*29)%95}vh;--spin:${spin}deg;--duration:${3+(n%9)*.16}s;--delay:${(n%18)*.045}s;--hue:${n%4===0?47:n%4===1?153:n%4===2?345:190}`);
           pieces.push(piece);
         }
         confetti.replaceChildren(...pieces);confetti.hidden=false;
