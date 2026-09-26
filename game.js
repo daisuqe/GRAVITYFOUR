@@ -78,10 +78,11 @@
             if(rank>4||medals[day]?.[size])continue;
             (medals[day]||={})[size]=[rank===1?'gold':rank<=2?'silver':'bronze'];
           }
-          return {days,best:saved.best||{},wins:saved.wins||{},medals,rating:Number.isFinite(saved.rating)?saved.rating:null};
+          return {days,best:saved.best||{},wins:saved.wins||{},medals,rating:Number.isFinite(saved.rating)?saved.rating:null,
+            ratings:saved.ratings&&typeof saved.ratings==='object'?saved.ratings:{}};
         }
       }catch{}
-      return {days:{},best:{},wins:{},medals:{},rating:null};
+      return {days:{},best:{},wins:{},medals:{},rating:null,ratings:{}};
     }
     const records=readHistory();
     function saveHistory(){try{window.localStorage.setItem(storageKey,JSON.stringify(records));}catch{}}
@@ -272,12 +273,24 @@
     function dayScore(ranks){
       return tournamentTypes.reduce((sum,type)=>sum+scoreForRank(type.size,ranks?.[type.size]),0);
     }
-    // Elo-style ranking: characters hold fixed ratings from their strength, the player's rating moves only by match results.
+    // Elo-style ranking: everyone starts from strength order; only matches in tournaments the player entered move points.
     const START_RATING=1200,RATING_WEIGHT={tournament:40,random:20};
-    const characterRating=character=>1000+character.profile.strength*8;
+    const baseRating=character=>1000+character.profile.strength*8;
+    const characterRating=character=>Number.isFinite(records.ratings[character.id])?records.ratings[character.id]:baseRating(character);
+    const expectedScore=(rating,rival)=>1/(1+10**((rival-rating)/400));
+    const roundRating=value=>Math.round(value*10)/10;
     function applyRating(opponentRating,score,weight){
-      const expected=1/(1+10**((opponentRating-records.rating)/400));
-      records.rating=Math.round((records.rating+weight*(score-expected))*10)/10;
+      records.rating=roundRating(records.rating+weight*(score-expectedScore(records.rating,opponentRating)));
+    }
+    function ratePlayerMatch(character,score,weight){
+      const player=records.rating,rival=characterRating(character);
+      records.rating=roundRating(player+weight*(score-expectedScore(player,rival)));
+      records.ratings[character.id]=roundRating(rival+weight*((1-score)-expectedScore(rival,player)));
+    }
+    function rateComMatch(winner,loser){
+      const high=characterRating(winner),low=characterRating(loser),shift=RATING_WEIGHT.tournament*(1-expectedScore(high,low));
+      records.ratings[winner.id]=roundRating(high+shift);
+      records.ratings[loser.id]=roundRating(low-shift);
     }
     function ensureRating(){
       if(Number.isFinite(records.rating))return;
@@ -288,7 +301,7 @@
           const rank=records.days[day]?.[type.size];
           if(!Number.isInteger(rank)||rank<1)continue;
           const entrants=type.levels.flatMap((count,index)=>selectLevel(index+1,count,day+'|'+type.size));
-          const average=entrants.reduce((sum,character)=>sum+characterRating(character),0)/entrants.length;
+          const average=entrants.reduce((sum,character)=>sum+baseRating(character),0)/entrants.length;
           const won=Math.max(0,Math.log2(type.size)-Math.ceil(Math.log2(rank)));
           for(let i=0;i<won;i++)applyRating(average,1,RATING_WEIGHT.tournament);
           if(rank>1)applyRating(average,0,RATING_WEIGHT.tournament);
@@ -296,10 +309,52 @@
       }
       saveHistory();
     }
-    function careerRanking(){
+    function rankingTable(){
       ensureRating();
-      const rank=1+roster.filter(character=>characterRating(character)>records.rating).length;
-      return {rank,total:roster.length+1,rating:Math.round(records.rating)};
+      const rows=roster.map(character=>({character,rating:characterRating(character)}));
+      rows.push({character:null,rating:records.rating});
+      // Ties go to the player so an equal score never pushes them down.
+      rows.sort((a,z)=>z.rating-a.rating||(a.character?1:0)-(z.character?1:0)||(a.character&&z.character?a.character.id-z.character.id:0));
+      return rows.map((row,index)=>({...row,rank:index+1}));
+    }
+    function careerRanking(){
+      const table=rankingTable(),you=table.find(row=>!row.character);
+      return {rank:you.rank,total:table.length,rating:Math.round(you.rating)};
+    }
+    function playerFace(className){
+      const face=document.createElement('span');face.className=className;face.setAttribute('aria-hidden','true');
+      if(!player)return face;
+      for(const key of ['skin','hair','cloth']){
+        const canvas=document.createElement('canvas');canvas.width=16;canvas.height=16;
+        drawTintedPart(canvas,key==='hair'?player.layerMasks.hair[playerSelection.hair]:player.layerMasks[key],playerSelection[key+'Color']);
+        face.append(canvas);
+      }
+      for(const key of ['eyes','mouth']){
+        const layer=document.createElement('img');layer.src=player.files[key][playerSelection[key]];layer.alt='';face.append(layer);
+      }
+      return face;
+    }
+    function renderRanking(){
+      const rows=byId('ranking-rows');rows.replaceChildren();
+      let yourRow=null;
+      for(const entry of rankingTable()){
+        const row=document.createElement('tr');
+        const rank=document.createElement('td');rank.textContent=String(entry.rank);
+        const name=document.createElement('td');name.className='ranking-name';
+        if(entry.character){
+          const face=document.createElement('span');face.className='ranking-face';face.setAttribute('aria-hidden','true');
+          for(const src of [portraitUrl(entry.character.file),partUrl(entry.character.eyes),partUrl(entry.character.mouth)]){
+            const layer=document.createElement('img');layer.src=src;layer.alt='';face.append(layer);
+          }
+          name.append(face,entry.character.name);
+        }else{
+          row.className='ranking-you';yourRow=row;
+          name.append(playerFace('ranking-face'),playerName());
+        }
+        const points=document.createElement('td');points.textContent=String(Math.round(entry.rating));
+        row.append(rank,name,points);rows.append(row);
+      }
+      yourRow?.scrollIntoView?.({block:'center'});
     }
     function medalFor(rank){
       return !Number.isInteger(rank)||rank<1||rank>4?null:rank===1?'gold':rank<=2?'silver':'bronze';
@@ -308,7 +363,8 @@
       const day=localDate(),ranking=careerRanking();
       byId('history-rank').textContent=String(ranking.rank);
       byId('history-rank-total').textContent='/ '+ranking.total;
-      byId('history-rank-score').textContent=ranking.rating+' PTS';
+      const you=byId('history-player');you.replaceChildren(playerFace('history-player-face'));
+      const youName=document.createElement('strong');youName.textContent=playerName();you.append(youName);
       const list=byId('history-list');list.replaceChildren();
       for(const type of tournamentTypes){
         const card=document.createElement('article');card.className='record-card';
@@ -353,7 +409,7 @@
     }
     function recordResult(){
       ensureRating();
-      applyRating(characterRating(opponent),outcome==='win'?1:outcome==='loss'?0:.5,tournament.random?RATING_WEIGHT.random:RATING_WEIGHT.tournament);
+      ratePlayerMatch(opponent,outcome==='win'?1:outcome==='loss'?0:.5,tournament.random?RATING_WEIGHT.random:RATING_WEIGHT.tournament);
       saveHistory();
       if(outcome==='draw'||tournament.random)return;
       const size=tournament.type.size,day=tournament.day;
@@ -481,7 +537,9 @@
     }
     function simulatedWinner(first,second,index,round=tournament.round){
       const chance=1/(1+Math.exp((second.profile.strength-first.profile.strength)/5));
-      return Math.random()<chance?first:second;
+      const winner=Math.random()<chance?first:second;
+      if(!watchMode&&!tournament.random){ensureRating();rateComMatch(winner,winner===first?second:first);}
+      return winner;
     }
     function settleRound(){
       if(outcome==='draw'||tournament.random)return;
@@ -531,7 +589,7 @@
       byId('stage').hidden=true;byId('menu').hidden=false;byId('place').hidden=true;
       byId('tournament-recap').hidden=true;byId('continue-overlay').hidden=true;byId('back').hidden=false;byId('thinking').hidden=true;byId('victory-effect').hidden=true;byId('win-orbit').hidden=true;byId('enemy-win-orbit').hidden=true;byId('match-confetti').hidden=true;
       byId('leave-confirm').hidden=true;
-      byId('history-view').hidden=true;byId('history-log-view').hidden=true;byId('editor-view').hidden=true;renderDailyHeader();
+      byId('history-view').hidden=true;byId('history-log-view').hidden=true;byId('ranking-view').hidden=true;byId('editor-view').hidden=true;renderDailyHeader();
     }
     function requestMenu(){
       if(tournament&&!tournament.random&&!ended&&!watchMode)byId('leave-confirm').hidden=false;
@@ -1377,6 +1435,14 @@
     });
     byId('history-log-back').addEventListener('click',()=>{
       byId('history-log-view').hidden=true;byId('history-view').hidden=false;renderHistory();
+    });
+    const openRanking=()=>{
+      byId('history-view').hidden=true;byId('ranking-view').hidden=false;renderRanking();
+    };
+    byId('history-ranking').addEventListener('click',openRanking);
+    byId('ranking-open').addEventListener('click',openRanking);
+    byId('ranking-back').addEventListener('click',()=>{
+      byId('ranking-view').hidden=true;byId('history-view').hidden=false;renderHistory();
     });
     byId('history-back').addEventListener('click',()=>{
       byId('history-view').hidden=true;byId('menu').hidden=false;renderDailyHeader();

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#050a0b">
   <title>GRAVITY FOUR</title>
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
   <main class="app">
@@ -26,11 +26,18 @@
     </section>
     <section class="history-view" id="history-view" aria-label="Trophies and records" hidden>
       <div class="history-panel">
-        <div class="history-nav"><button class="back-button" id="history-back" type="button"><span class="ui-arrow" aria-hidden="true"></span>MENU</button><button class="history-open" id="history-open" type="button">HISTORY<span class="ui-arrow right" aria-hidden="true"></span></button></div>
-        <span class="eyebrow">TROPHY ROOM</span>
-        <div class="history-ranking"><span>RANKING</span><div><strong id="history-rank">—</strong><small id="history-rank-total"></small></div><small id="history-rank-score"></small></div>
+        <div class="history-nav"><button class="back-button" id="history-back" type="button"><span class="ui-arrow" aria-hidden="true"></span>MENU</button><div class="history-nav-links"><button class="history-open" id="ranking-open" type="button">RANKING<span class="ui-arrow right" aria-hidden="true"></span></button><button class="history-open" id="history-open" type="button">HISTORY<span class="ui-arrow right" aria-hidden="true"></span></button></div></div>
+        <div class="history-player" id="history-player"></div>
+        <button class="history-ranking" id="history-ranking" type="button" aria-label="Open the full ranking"><span>RANK</span><div><strong id="history-rank">—</strong><small id="history-rank-total"></small></div></button>
         <div class="history-list" id="history-list"></div>
         <p class="history-note">TODAY SHOWS YOUR BEST PLACING IN EACH LOCAL DAY.</p>
+      </div>
+    </section>
+    <section class="history-log-view ranking-view" id="ranking-view" aria-label="Full ranking" hidden>
+      <div class="history-log-panel">
+        <button class="back-button" id="ranking-back" type="button"><span class="ui-arrow" aria-hidden="true"></span>RECORDS</button>
+        <h2>RANKING</h2>
+        <div class="history-table-wrap ranking-wrap"><table class="history-table ranking-table"><thead><tr><th scope="col">RANK</th><th scope="col">NAME</th><th scope="col">PTS</th></tr></thead><tbody id="ranking-rows"></tbody></table></div>
       </div>
     </section>
     <section class="history-log-view" id="history-log-view" aria-label="Daily tournament history" hidden>
@@ -78,7 +85,7 @@
   <script src="player.js?v=4"></script>
   <script src="daily-cups.js"></script>
   <script src="voice.js?v=3"></script>
-  <script src="audio.js?v=7"></script>
-  <script src="game.js?v=18"></script>
+  <script src="audio.js?v=8"></script>
+  <script src="game.js?v=22"></script>
 </body>
 </html>
