@@ -1,4 +1,4 @@
-@font-face { font-family: yodaka; src: url("./yodaka.woff") format("woff"); font-display: swap; }
+@font-face { font-family: yodaka; src: url("./yodaka.woff?v=2") format("woff"); font-display: swap; }
 :root { color-scheme: dark; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; color: #d4f8e9; background: #050a0b; }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }

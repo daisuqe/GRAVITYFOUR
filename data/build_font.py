@@ -171,6 +171,11 @@ for source_row, characters in source_rows:
         ]
 patterns['　'] = ['.....'] * 5
 
+# Hand-corrected glyphs (override the sheet / earlier drafts).
+patterns["ゼ"] = ["..#.#", ".#...", "#####", ".#..#", ".###."]
+patterns["♪"] = ["..##.", "..#.#", "..#.#", "###..", "###.."]
+patterns["～"] = patterns["〜"] = list(patterns["~"])
+
 def glyph_for(rows, unit=UNIT, left=70):
     pen = TTGlyphPen(None)
     if rows:
