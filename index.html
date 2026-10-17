@@ -1,11 +1,21 @@
 <!doctype html>
+<!--
+  GRAVITY FOUR
+  © 2026 daisuqe. All rights reserved.
+  本ゲームのソースコード、画像、音楽データ、文章の著作権は daisuqe が保有します。
+  無断での複製・改変・再配布・転載を禁じます。
+  Unauthorized copying, modification, redistribution, or reposting of any part of this game is prohibited.
+  See LICENSE for details. / 詳しくは LICENSE を見てください。
+-->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#050a0b">
+  <meta name="author" content="daisuqe">
+  <meta name="copyright" content="Copyright (c) 2026 daisuqe. All rights reserved.">
   <title>GRAVITY FOUR</title>
-  <link rel="stylesheet" href="style.css?v=33">
+  <link rel="stylesheet" href="style.css?v=47">
 </head>
 <body>
   <main class="app">
@@ -18,6 +28,7 @@
       <button class="watch-button" id="watch-button" type="button">WATCH MODE</button>
       <button class="editor-button" id="editor-button" type="button">CHARACTER EDIT</button>
       <a class="help-button" href="help.html">HOW TO PLAY</a>
+      <button class="copyright-button" id="copyright-button" type="button" aria-haspopup="dialog">© 2026 daisuqe. All rights reserved.</button>
     </section>
     <section class="editor-view" id="editor-view" aria-label="Character editor" hidden>
       <div class="editor-panel"><button class="back-button" id="editor-back" type="button"><span class="ui-arrow" aria-hidden="true"></span>MENU</button>
@@ -80,11 +91,25 @@
     </section>
   </main>
   <button class="place-button" id="place" type="button" disabled>PLACE</button>
+  <div class="license-dialog" id="license-dialog" role="dialog" aria-modal="true" aria-labelledby="license-title" hidden><div class="license-card"><h2 id="license-title">LICENSE</h2><pre class="license-text" id="license-text" tabindex="0">Copyright (c) 2026 daisuqe. All rights reserved.
+
+This game ("GRAVITY FOUR"), including its source code, graphics, music data, and
+text, is the property of the copyright holder. No license is granted to copy,
+modify, distribute, sublicense, sell, or publish any part of it, in source or
+compiled form, without prior written permission from the copyright holder.
+
+You may play the game as published at its official page.
+
+本ゲーム「GRAVITY FOUR」(ソースコード、画像、音楽データ、文章を含む)の著作権は、
+daisuqe が保有します。著作権者の事前の書面による許可なく、全部または一部を、
+複製、改変、再配布、転載、販売、公開することを禁じます。
+
+公式に公開されているページで、遊ぶことは自由です。</pre><button class="license-close" id="license-close" type="button">CLOSE</button></div></div>
   <script src="characters.js?v=5"></script>
   <script src="player.js?v=4"></script>
   <script src="daily-cups.js"></script>
   <script src="voice.js?v=3"></script>
   <script src="audio.js?v=8"></script>
-  <script src="game.js?v=24"></script>
+  <script src="game.js?v=25"></script>
 </body>
 </html>

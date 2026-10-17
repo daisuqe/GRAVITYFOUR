@@ -1457,6 +1457,18 @@
     byId('history-back').addEventListener('click',()=>{
       byId('history-view').hidden=true;byId('menu').hidden=false;renderDailyHeader();
     });
+    // License dialog opened from the copyright notice on the title screen.
+    let licenseOpener=null;
+    function closeLicense(){
+      byId('license-dialog').hidden=true;
+      licenseOpener?.focus?.();licenseOpener=null;
+    }
+    byId('copyright-button').addEventListener('click',event=>{
+      licenseOpener=event.currentTarget;byId('license-dialog').hidden=false;byId('license-close').focus?.();
+    });
+    byId('license-close').addEventListener('click',closeLicense);
+    byId('license-dialog').addEventListener('click',event=>{if(event.target===event.currentTarget)closeLicense();});
+    byId('license-dialog').addEventListener('keydown',event=>{if(event.key==='Escape')closeLicense();});
     function continueMatchResult(){
       if(!ended||watchMode||!tournament)return;
       if(flightIndex>=0){clearStoneFlight();render();}

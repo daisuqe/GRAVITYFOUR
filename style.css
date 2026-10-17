@@ -1,4 +1,4 @@
-@font-face { font-family: yodaka; src: url("./yodaka.woff?v=2") format("woff"); font-display: swap; }
+@font-face { font-family: yodaka; src: url("./yodaka.woff?v=14") format("woff"); font-display: swap; }
 :root { color-scheme: dark; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; color: #d4f8e9; background: #050a0b; }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -1142,3 +1142,19 @@ html:not([lang="en"]) [data-lang="en"], html[lang="en"] [data-lang="ja"] { displ
 .trophy.medal-silver { --trophy-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6' shape-rendering='crispEdges'%3E%3Cpath fill='%23c2c2c2' d='M0 0h9v1H0z M0 1h1v1H0z M2 1h5v1H2z M8 1h1v1H8z M0 2h9v1H0z M2 3h5v1H2z M4 4h1v1H4z M2 5h5v1H2z'/%3E%3Cpath fill='%23ffffff' opacity='.2' d='M0 0h1v3H0z M2 3h1v1H2z M2 5h1v1H2z'/%3E%3C/svg%3E"); --trophy-glow: drop-shadow(0 0 3px #fff1c5e6) drop-shadow(0 0 7px #faeab9b3); }
 .trophy.medal-bronze { --trophy-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 6' shape-rendering='crispEdges'%3E%3Cpath fill='%23f29270' d='M0 0h9v1H0z M0 1h1v1H0z M2 1h5v1H2z M8 1h1v1H8z M0 2h9v1H0z M2 3h5v1H2z M4 4h1v1H4z M2 5h5v1H2z'/%3E%3Cpath fill='%23ffffff' opacity='.2' d='M0 0h1v3H0z M2 3h1v1H2z M2 5h1v1H2z'/%3E%3C/svg%3E"); --trophy-glow: drop-shadow(0 0 3px #ffd78acc) drop-shadow(0 0 5px #f6c26699); }
 .cup-heading .trophy { width: 100%; height: auto; }
+
+/* Copyright notice on the title screen and the license dialog it opens. */
+.copyright-button { flex: none; margin: 0; padding: 3px 8px; border: 0; background: transparent; color: #4f8069; font: 11px/1 yodaka, monospace; letter-spacing: .06em; cursor: pointer; }
+.copyright-button:hover, .copyright-button:focus-visible { color: #9ccbb0; outline: 1px solid #46ac77; outline-offset: 1px; }
+.license-dialog { position: fixed; z-index: 45; inset: 0; display: grid; place-items: center; padding: 16px; background: #020907ed; }
+.license-card { display: flex; flex-direction: column; gap: 14px; width: min(100%, 720px); max-height: calc(100dvh - 32px); padding: clamp(16px, 4vw, 32px); border: 2px solid #68d89a; background: #0a2118; box-shadow: 0 0 40px #3fed8e55; }
+.license-card h2 { margin: 0; color: #d7ffea; font: clamp(24px, 4vw, 36px)/1 yodaka, monospace; text-align: center; }
+.license-text { flex: 1 1 auto; min-height: 0; margin: 0; overflow: auto; padding: 4px 2px; color: #cfeedd; font: 13px/1.75 ui-monospace, "Cascadia Code", Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.license-close { align-self: center; min-width: 110px; min-height: 48px; border: 1px solid #6cd49b; background: #113523; color: #e2ffeb; font: 22px yodaka, monospace; cursor: pointer; }
+.license-close:hover, .license-close:focus-visible { border-color: #e1ffe9; background: #1c5435; }
+/* When the title menu is taller than a small screen (e.g. phones in landscape), keep every item reachable
+   instead of cutting off the title and the bottom rows. Layouts that already fit are unchanged. */
+.menu { justify-content: safe center; }
+@media (hover: none), (pointer: coarse) {
+  .menu { overflow-y: auto; overscroll-behavior: contain; }
+}
