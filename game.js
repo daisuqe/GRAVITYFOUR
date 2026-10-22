@@ -1457,6 +1457,60 @@
     byId('history-back').addEventListener('click',()=>{
       byId('history-view').hidden=true;byId('menu').hidden=false;renderDailyHeader();
     });
+    // App list button on the title screen: confirm before leaving for the app list.
+    const APPS_ICON=[
+      '......###...###.',
+      '.....#...#.#...#',
+      '.....#...#.#...#',
+      '.....#..#..#..#.',
+      '.....#..#..#..#.',
+      '....##..####..#.',
+      '..##.......#..#.',
+      '.#............#.',
+      '#.............#.',
+      '#..............#',
+      '############...#',
+      '............#..#',
+      '.###########...#',
+      '.#............#.',
+      '..##........##..',
+      '....########....'
+    ];
+    {
+      const ctx=byId('apps-icon').getContext?.('2d');
+      if(ctx){
+        ctx.fillStyle='#9affcd';  // UI green, same as the board cursor
+        APPS_ICON.forEach((row,y)=>[...row].forEach((dot,x)=>{if(dot==='#')ctx.fillRect(x,y,1,1);}));
+      }
+    }
+    byId('apps-dialog-text').textContent=language==='en'
+      ?'This will take you to the app list.\nDo you want to leave this game?'
+      :'アプリ一覧に移動します。\nこのゲームを離れますがよろしいですか？';
+    byId('apps-dialog-text').lang=language;
+    const appsChoices=[byId('apps-yes'),byId('apps-no')];
+    function setGameInert(value){for(const id of ['menu','place'])byId(id).inert=value;}
+    function openAppsDialog(){
+      byId('apps-dialog').hidden=false;setGameInert(true);byId('apps-no').focus?.();
+    }
+    function closeAppsDialog(){
+      byId('apps-dialog').hidden=true;setGameInert(false);
+      void byId('menu').offsetWidth;  // let the menu leave the inert state before focusing back into it
+      byId('apps-button').focus?.();
+    }
+    byId('apps-button').addEventListener('click',openAppsDialog);
+    byId('apps-yes').addEventListener('click',()=>{location.href='https://daisuqe.github.io/';});
+    byId('apps-no').addEventListener('click',closeAppsDialog);
+    byId('apps-dialog').addEventListener('click',event=>{if(event.target===event.currentTarget)closeAppsDialog();});
+    byId('apps-dialog').addEventListener('keydown',event=>{
+      // Keys stay inside the dialog: Esc closes, arrows/Tab move between Yes and No.
+      event.stopPropagation();
+      if(event.key==='Escape'){event.preventDefault();closeAppsDialog();return;}
+      const index=appsChoices.indexOf(document.activeElement);
+      if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Tab'].includes(event.key)){
+        event.preventDefault();
+        appsChoices[index===0?1:0].focus();
+      }
+    });
     // License dialog opened from the copyright notice on the title screen.
     let licenseOpener=null;
     function closeLicense(){

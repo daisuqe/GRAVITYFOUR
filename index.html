@@ -15,11 +15,12 @@
   <meta name="author" content="daisuqe">
   <meta name="copyright" content="Copyright (c) 2026 daisuqe. All rights reserved.">
   <title>GRAVITY FOUR</title>
-  <link rel="stylesheet" href="style.css?v=47">
+  <link rel="stylesheet" href="style.css?v=51">
 </head>
 <body>
   <main class="app">
     <section class="menu" id="menu" aria-label="Tournament selection">
+      <button class="apps-button" id="apps-button" type="button" aria-label="App list" aria-haspopup="dialog"><canvas id="apps-icon" width="16" height="16" aria-hidden="true"></canvas></button>
       <header class="brand"><canvas class="title-crystal green" id="title-green-crystal" width="11" height="11" aria-hidden="true"></canvas><h1>GRAVITY FOUR</h1><canvas class="title-crystal red" id="title-red-crystal" width="11" height="11" aria-hidden="true"></canvas></header>
       <div class="daily-cup"><div class="cup-heading"><span class="trophy medal-gold" aria-hidden="true"></span><h2 id="daily-cup-title"></h2><span class="trophy medal-gold" aria-hidden="true"></span></div><span id="daily-cup-date"></span></div>
       <div class="tournament-list" id="tournament-list"></div>
@@ -91,6 +92,7 @@
     </section>
   </main>
   <button class="place-button" id="place" type="button" disabled>PLACE</button>
+  <div class="apps-dialog" id="apps-dialog" role="dialog" aria-modal="true" aria-labelledby="apps-dialog-text" hidden><div class="apps-dialog-panel"><p class="apps-dialog-text" id="apps-dialog-text"></p><div class="apps-dialog-actions"><button id="apps-yes" type="button">Yes</button><button id="apps-no" type="button">No</button></div></div></div>
   <div class="license-dialog" id="license-dialog" role="dialog" aria-modal="true" aria-labelledby="license-title" hidden><div class="license-card"><h2 id="license-title">LICENSE</h2><pre class="license-text" id="license-text" tabindex="0">Copyright (c) 2026 daisuqe. All rights reserved.
 
 This game ("GRAVITY FOUR"), including its source code, graphics, music data, and
@@ -110,6 +112,6 @@ daisuqe が保有します。著作権者の事前の書面による許可なく
   <script src="daily-cups.js"></script>
   <script src="voice.js?v=3"></script>
   <script src="audio.js?v=8"></script>
-  <script src="game.js?v=25"></script>
+  <script src="game.js?v=28"></script>
 </body>
 </html>

@@ -1158,3 +1158,27 @@ html:not([lang="en"]) [data-lang="en"], html[lang="en"] [data-lang="ja"] { displ
 @media (hover: none), (pointer: coarse) {
   .menu { overflow-y: auto; overscroll-behavior: contain; }
 }
+
+/* App list button (top right of the title screen) and its confirmation dialog. */
+.menu { position: relative; }
+.apps-button { position: absolute; z-index: 2; top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); width: 48px; height: 48px; padding: 0; border: 0; background: none; opacity: .7; cursor: pointer; }
+.apps-button:hover { opacity: 1; }
+.apps-button { filter: drop-shadow(0 0 6px #38ec9266); }
+.apps-button:focus-visible { opacity: 1; outline: 2px solid #d4ffe4; outline-offset: 2px; }
+.apps-button canvas { display: block; width: 48px; height: 48px; image-rendering: pixelated; }
+.apps-dialog { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; padding: 16px; background: rgba(0, 0, 0, .5); }
+.apps-dialog-panel { width: min(380px, 100%); padding: 22px 20px 20px; border: 1px solid #4a5570; border-radius: 10px; background: rgba(10, 12, 17, .9); color: #d6dae2; text-align: center; }
+.apps-dialog-text { margin: 0 0 18px; font: 16px/1.6 yodaka, system-ui, sans-serif; white-space: pre-line; }
+.apps-dialog-text:lang(ja) { font-family: system-ui, sans-serif; }
+.apps-dialog-actions { display: flex; justify-content: center; gap: 16px; }
+.apps-dialog-actions button { box-sizing: border-box; width: 110px; height: 36px; padding: 0; border: 1px solid #6cd49b; background: #113523; color: #e2ffeb; font: 18px/1 yodaka, monospace; cursor: pointer; }
+.apps-dialog-actions button:hover, .apps-dialog-actions button:focus-visible { border-color: #e1ffe9; background: #1c5435; outline: none; }
+@media (max-height: 500px) {
+  /* Short landscape screens: shrink to 2x so the icon clears the cup banner below it. */
+  .apps-button, .apps-button canvas { width: 32px; height: 32px; }
+}
+@media (max-width: 359px) {
+  /* Very narrow phones: 2x size, tucked into the corner so it clears the title crystal. */
+  .apps-button, .apps-button canvas { width: 32px; height: 32px; }
+  .apps-button { top: max(4px, env(safe-area-inset-top)); right: -5px; }
+}
